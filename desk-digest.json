@@ -1,10 +1,31 @@
 {
- "tijdstip": "2026-09-29T17:03:59+02:00",
- "equity_eur": 66590.1,
- "rendement_pct": -22.5,
- "trades": 7496,
- "pf_4u": 1.332,
- "pf_8u": 0.981,
- "gerealiseerd_eur": -24142.43,
- "open_posities": 1
+  "schema": "desk-digest/v1",
+  "paper_only": true,
+  "updated_at": "2026-09-29T17:03:59+02:00",
+  "digest_date": "2026-09-29",
+  "measured_at": "2026-09-29T17:03:59+02:00",
+  "window_4h_utc": "11:03-15:03",
+  "verdict": "HOLD",
+  "headline": "Desk-digest: HOLD op freeze-config; hyper staat niet aan",
+  "config": "TP12 / MIN28 / FILL / REBUY40 / MAXPOS10 / HUNT45 / SIZE2%",
+  "metrics_4h": {
+    "exits": 44,
+    "winrate_pct": 61.4,
+    "profit_factor": 1.332,
+    "expectancy_eur": 18.87,
+    "fees_eur": 372,
+    "fees_per_hour_eur": 93
+  },
+  "metrics_8h": {
+    "exits": 74,
+    "winrate_pct": 54.1,
+    "profit_factor": 0.981,
+    "expectancy_eur": -1.3
+  },
+  "summary_nl": [
+    "Live-config is de freeze (HUNT45/REBUY40/SIZE2%/HOLD45), niet het hyper-pakket; bot tickt wel (laatste trade ~711s geleden).",
+    "4u PF 1,33 (sterk), 8u PF 0,98: niet structureel onder 0,85; fees ongeveer €93 per uur, binnen of onder de freeze-baseline.",
+    "Equity 4u €72625→€73206 / total €86183→€87019 (deels 9× UI-payout €255); rebuy-gap minuut 40,2, geen churn onder 30 seconden."
+  ],
+  "next_nl": "Geen knop: freeze houden. Killrule heeft hyper gisterenavond teruggedraaid (PF ~0,45); opnieuw aanzetten alleen op jouw expliciete GO, niet via deze digest."
 }
