@@ -1,19 +1,170 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-02T18:08:19+00:00",
+  "updated": "2026-10-03T04:17:54+00:00",
   "kpis": {
     "start_eur": 107100.0,
-    "cash_eur": 60399.49,
+    "cash_eur": 51101.02,
     "banked_eur": 17098.51,
-    "equity_approx": 60399.49,
-    "total": 77498.0,
-    "realized_pnl_eur": -29602.0,
-    "trades": 7793,
-    "open_positions": 0,
-    "rendement_pct": -27.6
+    "equity_approx": 59647.6,
+    "total": 76746.11,
+    "realized_pnl_eur": -30332.47,
+    "trades": 7811,
+    "open_positions": 4,
+    "rendement_pct": -28.3
   },
   "tape": [
+    {
+      "t": "2026-10-03T04:17:54+00:00",
+      "side": "BUY",
+      "symbol": "GUSTAVO",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 6.10167e-05,
+      "reason": "early-hunt score 30.2 age 0.1u"
+    },
+    {
+      "t": "2026-10-03T04:16:23+00:00",
+      "side": "SELL",
+      "symbol": "GENIUS",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 5.74607e-05,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-11.9%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:15:38+00:00",
+      "side": "BUY",
+      "symbol": "GENIUS",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 6.17458e-05,
+      "reason": "early-hunt score 30.1 age 0.4u"
+    },
+    {
+      "t": "2026-10-03T04:14:07+00:00",
+      "side": "BUY",
+      "symbol": "PUDU",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 8.20361e-05,
+      "reason": "early-hunt score 34.9 age 0.1u"
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "side": "SELL",
+      "symbol": "ミズラ",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 8.61865e-05,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-29.83%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "side": "SELL",
+      "symbol": "PENIS",
+      "bedrag_eur": 2363.19,
+      "prijs_eur": 9.20935e-05,
+      "pnl_eur": 221.19,
+      "reason": "take-profit (25.97%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "side": "SELL",
+      "symbol": "CHIPINU",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 8.7725e-06,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-16.58%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:11:51+00:00",
+      "side": "BUY",
+      "symbol": "金蟾",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 1.42042e-05,
+      "reason": "early-hunt score 33.2 age 0.6u"
+    },
+    {
+      "t": "2026-10-03T04:11:51+00:00",
+      "side": "BUY",
+      "symbol": "ミズラ",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 9.26139e-05,
+      "reason": "early-hunt score 35.3 age 0.7u"
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "side": "SELL",
+      "symbol": "TIPTOE",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 7.0091e-05,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-9.78%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "side": "SELL",
+      "symbol": "CHAD",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 0.0001619502,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-12.16%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "side": "SELL",
+      "symbol": "STUPIDINU",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 0.0003792695,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-6.58%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "PENIS",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 8.30569e-05,
+      "reason": "early-hunt score 33.6 age 1.0u"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "TIPTOE",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 7.53181e-05,
+      "reason": "early-hunt score 34.7 age 0.9u"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "CHAD",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0001740278,
+      "reason": "early-hunt score 37.5 age 0.8u"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "BAG",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0003977343,
+      "reason": "early-hunt score 40.0 age 4.8u"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "STUPIDINU",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0004075537,
+      "reason": "early-hunt score 40.0 age 5.7u"
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "side": "BUY",
+      "symbol": "CHIPINU",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 9.4267e-06,
+      "reason": "early-hunt score 40.0 age 0.7u"
+    },
     {
       "t": "2026-10-02T18:05:17+00:00",
       "side": "SELL",
@@ -73,288 +224,9 @@
       "bedrag_eur": 2142.0,
       "prijs_eur": 5.87708e-05,
       "reason": "early-hunt score 28.7 age 0.1u"
-    },
-    {
-      "t": "2026-10-02T17:47:50+00:00",
-      "side": "SELL",
-      "symbol": "SHFTR",
-      "bedrag_eur": 2363.19,
-      "prijs_eur": 6.76661e-05,
-      "pnl_eur": 221.19,
-      "reason": "take-profit (12.52%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:45:34+00:00",
-      "side": "BUY",
-      "symbol": "SHFTR",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 6.10264e-05,
-      "reason": "early-hunt score 36.1 age 0.3u"
-    },
-    {
-      "t": "2026-10-02T17:28:52+00:00",
-      "side": "SELL",
-      "symbol": "KARAT",
-      "bedrag_eur": 2363.19,
-      "prijs_eur": 8.9129e-05,
-      "pnl_eur": 221.19,
-      "reason": "take-profit (23.02%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:27:21+00:00",
-      "side": "BUY",
-      "symbol": "KARAT",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 8.03833e-05,
-      "reason": "early-hunt score 37.0 age 0.3u"
-    },
-    {
-      "t": "2026-10-02T17:26:35+00:00",
-      "side": "SELL",
-      "symbol": "BILI",
-      "bedrag_eur": 1983.39,
-      "prijs_eur": 7.20452e-05,
-      "pnl_eur": -158.61,
-      "reason": "stop-loss (-7.21%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:25:50+00:00",
-      "side": "BUY",
-      "symbol": "BILI",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 7.74181e-05,
-      "reason": "early-hunt score 34.8 age 0.1u"
-    },
-    {
-      "t": "2026-10-02T17:18:09+00:00",
-      "side": "SELL",
-      "symbol": "BULLCOP",
-      "bedrag_eur": 1090.87,
-      "prijs_eur": 6.73496e-05,
-      "pnl_eur": -87.23,
-      "reason": "stop-loss (-66.53%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:17:24+00:00",
-      "side": "PARTIAL",
-      "symbol": "BULLCOP",
-      "bedrag_eur": 992.22,
-      "prijs_eur": 7.48727e-05,
-      "pnl_eur": 28.32,
-      "reason": "partial-tp (8.79% → 45%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:16:38+00:00",
-      "side": "BUY",
-      "symbol": "BULLCOP",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 7.23722e-05,
-      "reason": "early-hunt score 34.4 age 0.1u"
-    },
-    {
-      "t": "2026-10-02T17:16:38+00:00",
-      "side": "SELL",
-      "symbol": "SAEGIS",
-      "bedrag_eur": 1090.87,
-      "prijs_eur": 6.14597e-05,
-      "pnl_eur": -87.23,
-      "reason": "stop-loss (-31.76%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:15:53+00:00",
-      "side": "BUY",
-      "symbol": "SNAP",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 1.97653e-05,
-      "reason": "early-hunt score 30.4 age 0.1u"
-    },
-    {
-      "t": "2026-10-02T17:12:51+00:00",
-      "side": "PARTIAL",
-      "symbol": "SAEGIS",
-      "bedrag_eur": 992.22,
-      "prijs_eur": 6.83248e-05,
-      "pnl_eur": 28.32,
-      "reason": "partial-tp (7.76% → 45%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:10:35+00:00",
-      "side": "BUY",
-      "symbol": "SAEGIS",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 6.60431e-05,
-      "reason": "early-hunt score 28.2 age 0.0u"
-    },
-    {
-      "t": "2026-10-02T17:09:49+00:00",
-      "side": "SELL",
-      "symbol": "CALLINU",
-      "bedrag_eur": 1983.39,
-      "prijs_eur": 6.09801e-05,
-      "pnl_eur": -158.61,
-      "reason": "stop-loss (-6.27%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:07:33+00:00",
-      "side": "BUY",
-      "symbol": "CALLINU",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 6.55278e-05,
-      "reason": "early-hunt score 31.7 age 1.4u"
-    },
-    {
-      "t": "2026-10-02T17:02:59+00:00",
-      "side": "SELL",
-      "symbol": "CATFLIX",
-      "bedrag_eur": 2363.19,
-      "prijs_eur": 0.0002784474,
-      "pnl_eur": 221.19,
-      "reason": "take-profit (43.83%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T17:02:59+00:00",
-      "side": "SELL",
-      "symbol": "GUS",
-      "bedrag_eur": 1186.66,
-      "prijs_eur": 1.96152e-05,
-      "pnl_eur": 8.56,
-      "reason": "trailing-stop (-6.1% vanaf top) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-02T16:59:11+00:00",
-      "side": "SELL",
-      "symbol": "CODYNC",
-      "bedrag_eur": 2363.19,
-      "prijs_eur": 0.0001441337,
-      "pnl_eur": 221.19,
-      "reason": "take-profit (16.03%) [fill@trigger]"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-02T17:30:23+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:31:09+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:31:55+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:32:41+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:33:26+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:34:12+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:34:57+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:35:43+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:36:28+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:37:14+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:37:59+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:38:45+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:39:30+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:40:15+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:41:01+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:41:47+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:42:32+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:43:18+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:44:03+00:00",
-      "total": 77116.22
-    },
-    {
-      "t": "2026-10-02T17:44:48+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:45:34+00:00",
-      "total": 77018.47
-    },
-    {
-      "t": "2026-10-02T17:45:34+00:00",
-      "total": 77110.86
-    },
-    {
-      "t": "2026-10-02T17:46:20+00:00",
-      "total": 76926.61
-    },
-    {
-      "t": "2026-10-02T17:47:05+00:00",
-      "total": 77110.86
-    },
-    {
-      "t": "2026-10-02T17:47:50+00:00",
-      "total": 77337.4
-    },
-    {
-      "t": "2026-10-02T17:47:50+00:00",
-      "total": 77239.66
-    },
-    {
-      "t": "2026-10-02T17:48:36+00:00",
-      "total": 77239.66
-    },
-    {
-      "t": "2026-10-02T17:48:36+00:00",
-      "total": 77332.05
-    },
-    {
-      "t": "2026-10-02T17:49:22+00:00",
-      "total": 77178.8
-    },
-    {
-      "t": "2026-10-02T17:49:22+00:00",
-      "total": 77081.05
-    },
-    {
-      "t": "2026-10-02T17:50:08+00:00",
-      "total": 77081.05
-    },
     {
       "t": "2026-10-02T17:50:53+00:00",
       "total": 77178.8
@@ -470,8 +342,161 @@
     {
       "t": "2026-10-02T18:08:19+00:00",
       "total": 77498.0
+    },
+    {
+      "t": "2026-10-02T18:09:04+00:00",
+      "total": 77498.0
+    },
+    {
+      "t": "2026-10-02T18:09:50+00:00",
+      "total": 77498.0
+    },
+    {
+      "t": "2026-10-03T04:10:20+00:00",
+      "total": 77498.0
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77498.0
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77492.64
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77487.29
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77481.93
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77476.58
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77471.22
+    },
+    {
+      "t": "2026-10-03T04:11:05+00:00",
+      "total": 77465.87
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "total": 77312.61
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "total": 77159.36
+    },
+    {
+      "t": "2026-10-03T04:11:50+00:00",
+      "total": 77006.1
+    },
+    {
+      "t": "2026-10-03T04:11:51+00:00",
+      "total": 76834.7
+    },
+    {
+      "t": "2026-10-03T04:11:51+00:00",
+      "total": 77000.75
+    },
+    {
+      "t": "2026-10-03T04:11:51+00:00",
+      "total": 76995.39
+    },
+    {
+      "t": "2026-10-03T04:12:36+00:00",
+      "total": 76995.39
+    },
+    {
+      "t": "2026-10-03T04:13:21+00:00",
+      "total": 76995.39
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "total": 76842.14
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "total": 77068.68
+    },
+    {
+      "t": "2026-10-03T04:14:06+00:00",
+      "total": 76915.43
+    },
+    {
+      "t": "2026-10-03T04:14:07+00:00",
+      "total": 76764.18
+    },
+    {
+      "t": "2026-10-03T04:14:07+00:00",
+      "total": 76910.08
+    },
+    {
+      "t": "2026-10-03T04:14:52+00:00",
+      "total": 76910.08
+    },
+    {
+      "t": "2026-10-03T04:15:37+00:00",
+      "total": 79446.86
+    },
+    {
+      "t": "2026-10-03T04:15:38+00:00",
+      "total": 76904.72
+    },
+    {
+      "t": "2026-10-03T04:16:23+00:00",
+      "total": 76751.47
+    },
+    {
+      "t": "2026-10-03T04:16:23+00:00",
+      "total": 80800.01
+    },
+    {
+      "t": "2026-10-03T04:17:08+00:00",
+      "total": 76751.47
+    },
+    {
+      "t": "2026-10-03T04:17:54+00:00",
+      "total": 79089.35
+    },
+    {
+      "t": "2026-10-03T04:17:54+00:00",
+      "total": 76746.11
     }
   ],
-  "open_positions": [],
-  "rendement_pct": -27.6
+  "open_positions": [
+    {
+      "symbol": "GUSTAVO",
+      "opened_at": "2026-10-03T04:17:54+00:00",
+      "cost_eur": 2142.0,
+      "entry_price": 6.101666666666667e-05,
+      "qty": 35017399.61759082
+    },
+    {
+      "symbol": "PUDU",
+      "opened_at": "2026-10-03T04:14:07+00:00",
+      "cost_eur": 2142.0,
+      "entry_price": 8.203611111111111e-05,
+      "qty": 26045176.582128465
+    },
+    {
+      "symbol": "金蟾",
+      "opened_at": "2026-10-03T04:11:51+00:00",
+      "cost_eur": 2142.0,
+      "entry_price": 1.4204166666666669e-05,
+      "qty": 150423819.30184802
+    },
+    {
+      "symbol": "BAG",
+      "opened_at": "2026-10-03T04:11:05+00:00",
+      "cost_eur": 2142.0,
+      "entry_price": 0.00039773425925925925,
+      "qty": 5372041.633977647
+    }
+  ],
+  "rendement_pct": -28.3
 }
