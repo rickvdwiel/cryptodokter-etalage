@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-10-03T05:40:52Z",
+  "generated_at": "2026-10-04T05:48:37Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-s-ontslaglijst-groeit-anchorage-digital-s-37ecb2fd",
-      "title": "Crypto’s ontslaglijst groeit: Anchorage Digital schrapt naar verluidt 17% van het personeel",
-      "url": "https://nl.beincrypto.com/anchorage-digital-ontslagen-zeventien-procent-personeel/",
+      "id": "trump-verdubbelt-zijn-5-000-midterm-belofte-gaat-8dd56cd6",
+      "title": "Trump verdubbelt zijn $5.000 midterm-belofte: gaat de Bitcoin koers schommelen?",
+      "url": "https://nl.beincrypto.com/trump-herhaalt-5000-dollar-belofte-bitcoin/",
       "source": "BeInCrypto NL",
-      "published_at": "2026-10-03T04:01:42Z",
+      "published_at": "2026-10-03T21:54:50Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bank-group-sues-u-s-regulator-over-granting-cryp-7f3f0e8e",
-      "title": "Bank group sues U.S. regulator over granting crypto trust charters",
-      "url": "https://www.coindesk.com/policy/2026/10/02/bank-group-sues-u-s-regulator-over-granting-crypto-trust-charters",
-      "source": "CoinDesk",
-      "published_at": "2026-10-02T21:23:20Z",
+      "id": "bitcoin-etf-s-gered-door-sterke-vrijdag-met-153--bfbb9e58",
+      "title": "Bitcoin-ETF’s gered door sterke vrijdag met €153 miljoen instroom",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/bitcoin-etfs-gered-door-sterke-vrijdag-met-e153-miljoen-instroom/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-10-03T20:02:28Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-02T20:46:58Z",
+      "id": "dit-zeggen-analisten-over-bitcoin-vandaag-daar-g-bd3c405b",
+      "title": "Dit zeggen analisten over Bitcoin vandaag: ‘daar ga ik kopen’",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/dit-zeggen-analisten-over-bitcoin-vandaag-daar-ga-ik-kopen/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-10-03T19:01:28Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "european-crypto-users-have-more-faith-in-regulat-007dfcfa",
-      "title": "European crypto users have ‘more faith’ in regulated firms under MiCA: Bitpanda co-CEO",
-      "url": "https://cointelegraph.com/news/mica-strengthened-retail-trust-regulated-crypto-exchanges-bitpanda-ceo-says?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-02T20:40:47Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "ethereum-now-lets-you-pay-for-ai-without-reveali-9b748c4c",
-      "title": "Ethereum Now Lets You Pay for AI Without Revealing Who You Are",
-      "url": "https://decrypt.co/379991/ethereum-now-pay-for-ai-without-revealing-identity",
+      "id": "chainalysis-used-ai-to-trace-the-387m-bitget-hac-3347ac05",
+      "title": "Chainalysis Used AI to Trace the $387M Bitget Hack Back to North Korea",
+      "url": "https://decrypt.co/380005/chainalysis-ai-87m-bitget-hack-north-korea",
       "source": "Decrypt",
-      "published_at": "2026-10-02T20:16:04Z",
+      "published_at": "2026-10-03T17:01:03Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "crypto-job-postings-triple-to-over-1-200-in-sept-79da57fa",
+      "title": "Crypto job postings triple to over 1,200 in September, but applications fall",
+      "url": "https://www.coindesk.com/business/2026/10/03/crypto-job-postings-triple-to-over-1-200-in-september-but-applications-fall",
+      "source": "CoinDesk",
+      "published_at": "2026-10-03T16:00:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "pricing-out-the-hike-f4e947a3",
+      "title": "Pricing Out the Hike",
+      "url": "https://research.glassnode.com/macro-special-pricing-out-the-hike/",
+      "source": "Glassnode",
+      "published_at": "2026-10-03T12:45:46Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "bitcoin-optech-newsletter-425-55b25978",
@@ -62,15 +71,6 @@
       "url": "https://www.chainalysis.com/blog/387m-bitget-theft-2026/",
       "source": "Chainalysis",
       "published_at": "2026-10-01T22:36:41Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "introducing-zkapi-private-usage-credits-for-any--4c29abea",
-      "title": "Introducing zkAPI: private usage credits for any API",
-      "url": "https://blog.ethereum.org/en/2026/10/01/introducing-zkapi",
-      "source": "Ethereum Foundation",
-      "published_at": "2026-10-01T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
