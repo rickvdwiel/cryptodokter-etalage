@@ -1,19 +1,87 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-05T12:18:13+00:00",
+  "updated": "2026-10-05T14:32:52+00:00",
   "kpis": {
     "start_eur": 107100.0,
-    "cash_eur": 51167.92,
-    "banked_eur": 19307.71,
-    "equity_approx": 51167.92,
-    "total": 70475.63,
-    "realized_pnl_eur": -36624.38,
-    "trades": 8609,
-    "open_positions": 0,
-    "rendement_pct": -34.2
+    "cash_eur": 48494.5,
+    "banked_eur": 19364.35,
+    "equity_approx": 50844.81,
+    "total": 70209.16,
+    "realized_pnl_eur": -36884.95,
+    "trades": 8617,
+    "open_positions": 2,
+    "rendement_pct": -34.4
   },
   "tape": [
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "side": "PARTIAL",
+      "symbol": "蛹",
+      "bedrag_eur": 992.22,
+      "prijs_eur": 5.01196e-05,
+      "pnl_eur": 28.32,
+      "reason": "partial-tp (9.71% → 45%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "side": "SELL",
+      "symbol": "SI",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 9.46368e-05,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-6.22%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "side": "SELL",
+      "symbol": "TEEM",
+      "bedrag_eur": 1983.39,
+      "prijs_eur": 0.0001025082,
+      "pnl_eur": -158.61,
+      "reason": "stop-loss (-12.83%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-05T14:32:06+00:00",
+      "side": "PARTIAL",
+      "symbol": "躺赢",
+      "bedrag_eur": 992.22,
+      "prijs_eur": 0.0001298379,
+      "pnl_eur": 28.32,
+      "reason": "partial-tp (6.09% → 45%) [fill@trigger]"
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "side": "BUY",
+      "symbol": "蛹",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 4.84458e-05,
+      "reason": "early-hunt score 28.9 age 0.7u"
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "side": "BUY",
+      "symbol": "SI",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0001016944,
+      "reason": "early-hunt score 35.3 age 0.4u"
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "side": "BUY",
+      "symbol": "TEEM",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0001101528,
+      "reason": "early-hunt score 35.7 age 0.1u"
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "side": "BUY",
+      "symbol": "躺赢",
+      "bedrag_eur": 2142.0,
+      "prijs_eur": 0.0001255019,
+      "reason": "early-hunt score 40.0 age 0.5u"
+    },
     {
       "t": "2026-10-05T12:12:54+00:00",
       "side": "SELL",
@@ -159,129 +227,9 @@
       "bedrag_eur": 2142.0,
       "prijs_eur": 5.25681e-05,
       "reason": "early-hunt score 28.6 age 0.0u"
-    },
-    {
-      "t": "2026-10-05T11:46:23+00:00",
-      "side": "SELL",
-      "symbol": "SHIBLING",
-      "bedrag_eur": 1983.39,
-      "prijs_eur": 5.74064e-05,
-      "pnl_eur": -158.61,
-      "reason": "stop-loss (-9.28%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-05T11:45:38+00:00",
-      "side": "BUY",
-      "symbol": "SHIBLING",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 6.16875e-05,
-      "reason": "early-hunt score 38.7 age 1.0u"
-    },
-    {
-      "t": "2026-10-05T11:27:29+00:00",
-      "side": "SELL",
-      "symbol": "ANY",
-      "bedrag_eur": 2363.19,
-      "prijs_eur": 8.0408e-05,
-      "pnl_eur": 221.19,
-      "reason": "take-profit (31.51%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-05T11:25:59+00:00",
-      "side": "BUY",
-      "symbol": "ANY",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 7.25181e-05,
-      "reason": "early-hunt score 34.7 age 0.1u"
-    },
-    {
-      "t": "2026-10-05T11:19:55+00:00",
-      "side": "SELL",
-      "symbol": "STOMPY",
-      "bedrag_eur": 1983.39,
-      "prijs_eur": 0.0006063264,
-      "pnl_eur": -158.61,
-      "reason": "stop-loss (-14.92%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-05T11:16:03+00:00",
-      "side": "BUY",
-      "symbol": "STOMPY",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 0.0006515435,
-      "reason": "early-hunt score 40.0 age 0.9u"
-    },
-    {
-      "t": "2026-10-05T11:12:16+00:00",
-      "side": "SELL",
-      "symbol": "QUARANTINU",
-      "bedrag_eur": 1983.39,
-      "prijs_eur": 6.26268e-05,
-      "pnl_eur": -158.61,
-      "reason": "stop-loss (-11.06%) [fill@trigger]"
-    },
-    {
-      "t": "2026-10-05T11:11:31+00:00",
-      "side": "BUY",
-      "symbol": "QUARANTINU",
-      "bedrag_eur": 2142.0,
-      "prijs_eur": 6.72972e-05,
-      "reason": "early-hunt score 32.3 age 0.0u"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-05T11:47:08+00:00",
-      "total": 70827.76
-    },
-    {
-      "t": "2026-10-05T11:47:09+00:00",
-      "total": 70937.39
-    },
-    {
-      "t": "2026-10-05T11:47:54+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:47:54+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:48:40+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:49:25+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:50:10+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:50:56+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:51:41+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:52:26+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:53:12+00:00",
-      "total": 70743.47
-    },
-    {
-      "t": "2026-10-05T11:53:12+00:00",
-      "total": 70738.12
-    },
-    {
-      "t": "2026-10-05T11:53:12+00:00",
-      "total": 70732.76
-    },
     {
       "t": "2026-10-05T11:53:57+00:00",
       "total": 70804.1
@@ -469,8 +417,75 @@
     {
       "t": "2026-10-05T12:18:13+00:00",
       "total": 70475.62
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "total": 70475.62
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "total": 70470.27
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "total": 70464.91
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "total": 70459.56
+    },
+    {
+      "t": "2026-10-05T14:31:21+00:00",
+      "total": 70454.2
+    },
+    {
+      "t": "2026-10-05T14:32:06+00:00",
+      "total": 70525.54
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70525.54
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70372.28
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70219.03
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70290.36
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70290.36
+    },
+    {
+      "t": "2026-10-05T14:32:07+00:00",
+      "total": 70394.82
+    },
+    {
+      "t": "2026-10-05T14:32:52+00:00",
+      "total": 70209.16
     }
   ],
-  "open_positions": [],
-  "rendement_pct": -34.2
+  "open_positions": [
+    {
+      "symbol": "躺赢",
+      "opened_at": "2026-10-05T14:31:21+00:00",
+      "cost_eur": 1178.1,
+      "entry_price": 0.00012550185185185186,
+      "qty": 9363644.700535625
+    },
+    {
+      "symbol": "蛹",
+      "opened_at": "2026-10-05T14:31:21+00:00",
+      "cost_eur": 1178.1,
+      "entry_price": 4.8445833333333336e-05,
+      "qty": 24257086.09271523
+    }
+  ],
+  "rendement_pct": -34.4
 }
