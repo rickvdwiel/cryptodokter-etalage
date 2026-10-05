@@ -1,30 +1,33 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-02T06:52:00+02:00",
-  "digest_date": "2026-10-01",
-  "measured_at": "2026-10-01T16:57:00+02:00",
-  "window_4h_utc": "10:57-14:57",
-  "verdict": "HOLD",
-  "headline": "Desk-digest: HOLD op REBUY40, middag sterk na zwakke ochtend",
-  "config": "TP12 / MIN28 / FILL / REBUY40 / MAXPOS10 / HUNT45 / SIZE2%",
+  "updated_at": "2026-10-05T16:56:00+02:00",
+  "digest_date": "2026-10-05",
+  "measured_at": "2026-10-05T16:54:00+02:00",
+  "window_4h_utc": "10:54-14:54",
+  "verdict": "KNOP-VOORSTEL",
+  "headline": "Desk-digest: PF 0,62 over 4 uur; voorstel herkoop-pauze 40 naar 120 minuten",
+  "config": "TP12 / MIN28 / FILL / REBUY40 / MAXPOS10 / HUNT45 / SIZE2% / HOLD45",
   "metrics_4h": {
-    "exits": 45,
-    "winrate_pct": 57.8,
-    "profit_factor": 1.217,
-    "expectancy_eur": 12.8,
-    "net_eur": 575.84,
-    "fees_eur": 382,
-    "fees_per_hour_eur": 96
+    "exits": 31,
+    "winrate_pct": 45.2,
+    "profit_factor": 0.619,
+    "expectancy_eur": -30.51,
+    "net_eur": -945.66,
+    "fees_eur": 265.72,
+    "fees_per_hour_eur": 66.4
   },
   "metrics_8h": {
-    "profit_factor": 0.885,
-    "net_eur": -599
+    "exits": 77,
+    "winrate_pct": 46.8,
+    "profit_factor": 0.843,
+    "expectancy_eur": -11.96,
+    "net_eur": -920.84
   },
   "summary_nl": [
-    "Laatste 4 uur: 45 exits, winrate 58%, PF 1,22, netto +€576; fees ongeveer €96 per uur.",
-    "Over 8 uur PF 0,89 (netto −€599) door een zwakke ochtend; de middag trok dat grotendeels recht.",
-    "Geen churn: minstens 40 minuten tussen herkopen. Equity-lijn heeft nog mark-uitschieters; exit-cijfers komen uit fills."
+    "Laatste 4 uur: 31 exits, winrate 45%, PF 0,62, netto −€946; fees ongeveer €66 per uur.",
+    "Over 8 uur PF 0,84 (netto −€921); de stop-losses kosten meer dan de take-profits opleveren.",
+    "Herkopen van een munt binnen 2 uur na verkoop deden het slecht: over 72 uur PF 0,47 en −€3.840."
   ],
-  "next_nl": "Geen knop: REBUY40 houden. Paper-only, geen echte orders."
+  "next_nl": "Voorstel aan Titan: herkoop-pauze van 40 naar 120 minuten. Nog niets aangepast. Paper-only, geen echte orders."
 }
