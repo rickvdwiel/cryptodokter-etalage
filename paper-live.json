@@ -21,7 +21,7 @@
       "bedrag_eur": 2363.19,
       "prijs_eur": 0.0001166396,
       "pnl_eur": 221.19,
-      "reason": "take-profit (30.27%) [fill@trigger]"
+      "reason": "winst genomen"
     },
     {
       "t": "2026-10-06T08:07:55+00:00",
@@ -29,7 +29,7 @@
       "symbol": "SWORDPHIL",
       "bedrag_eur": 2142.0,
       "prijs_eur": 0.0001051944,
-      "reason": "early-hunt score 35.8 age 0.1u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T08:01:06+00:00",
@@ -38,7 +38,7 @@
       "bedrag_eur": 2363.19,
       "prijs_eur": 1.2277e-06,
       "pnl_eur": 221.19,
-      "reason": "take-profit (52.45%) [fill@trigger]"
+      "reason": "winst genomen"
     },
     {
       "t": "2026-10-06T07:59:36+00:00",
@@ -46,7 +46,7 @@
       "symbol": "CLKCAT",
       "bedrag_eur": 2142.0,
       "prijs_eur": 1.1073e-06,
-      "reason": "early-hunt score 40.0 age 0.1u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:59:36+00:00",
@@ -55,7 +55,7 @@
       "bedrag_eur": 1206.99,
       "prijs_eur": 1.54264e-05,
       "pnl_eur": 28.89,
-      "reason": "trailing-stop (-5.6% vanaf top) [fill@trigger]"
+      "reason": "exit"
     },
     {
       "t": "2026-10-06T07:57:20+00:00",
@@ -64,7 +64,7 @@
       "bedrag_eur": 992.22,
       "prijs_eur": 1.54996e-05,
       "pnl_eur": 28.32,
-      "reason": "partial-tp (8.34% → 45%) [fill@trigger]"
+      "reason": "deels winst genomen"
     },
     {
       "t": "2026-10-06T07:55:49+00:00",
@@ -72,7 +72,7 @@
       "symbol": "ORDAL",
       "bedrag_eur": 2142.0,
       "prijs_eur": 1.49819e-05,
-      "reason": "early-hunt score 33.6 age 0.2u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:51:17+00:00",
@@ -80,7 +80,7 @@
       "symbol": "GROMBI",
       "bedrag_eur": 2142.0,
       "prijs_eur": 7.82931e-05,
-      "reason": "early-hunt score 36.1 age 0.9u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:48:16+00:00",
@@ -89,7 +89,7 @@
       "bedrag_eur": 1983.39,
       "prijs_eur": 6.93219e-05,
       "pnl_eur": -158.61,
-      "reason": "stop-loss (-7.88%) [fill@trigger]"
+      "reason": "stop-loss"
     },
     {
       "t": "2026-10-06T07:46:00+00:00",
@@ -97,7 +97,7 @@
       "symbol": "CAESAR",
       "bedrag_eur": 2142.0,
       "prijs_eur": 7.44917e-05,
-      "reason": "early-hunt score 37.8 age 0.1u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:46:00+00:00",
@@ -106,7 +106,7 @@
       "bedrag_eur": 2363.19,
       "prijs_eur": 6.11657e-05,
       "pnl_eur": 221.19,
-      "reason": "take-profit (15.56%) [fill@trigger]"
+      "reason": "winst genomen"
     },
     {
       "t": "2026-10-06T07:44:36+00:00",
@@ -114,7 +114,7 @@
       "symbol": "APU",
       "bedrag_eur": 2142.0,
       "prijs_eur": 5.51639e-05,
-      "reason": "early-hunt score 29.3 age 0.1u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:27:13+00:00",
@@ -123,7 +123,7 @@
       "bedrag_eur": 2363.19,
       "prijs_eur": 7.88126e-05,
       "pnl_eur": 221.19,
-      "reason": "take-profit (16.32%) [fill@trigger]"
+      "reason": "winst genomen"
     },
     {
       "t": "2026-10-06T07:24:12+00:00",
@@ -132,7 +132,7 @@
       "bedrag_eur": 1983.39,
       "prijs_eur": 0.0010234532,
       "pnl_eur": -158.61,
-      "reason": "stop-loss (-14.55%) [fill@trigger]"
+      "reason": "stop-loss"
     },
     {
       "t": "2026-10-06T07:21:57+00:00",
@@ -140,7 +140,7 @@
       "symbol": "PHUBBER",
       "bedrag_eur": 2142.0,
       "prijs_eur": 0.0010997778,
-      "reason": "early-hunt score 40.0 age 1.3u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:19:40+00:00",
@@ -148,7 +148,7 @@
       "symbol": "CONTAGION",
       "bedrag_eur": 2142.0,
       "prijs_eur": 7.10792e-05,
-      "reason": "early-hunt score 34.4 age 3.6u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:15:53+00:00",
@@ -157,7 +157,7 @@
       "bedrag_eur": 1983.39,
       "prijs_eur": 0.0001257602,
       "pnl_eur": -158.61,
-      "reason": "stop-loss (-8.46%) [fill@trigger]"
+      "reason": "stop-loss"
     },
     {
       "t": "2026-10-06T07:13:38+00:00",
@@ -165,7 +165,7 @@
       "symbol": "NORA",
       "bedrag_eur": 2142.0,
       "prijs_eur": 0.0001351389,
-      "reason": "early-hunt score 36.4 age 0.9u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T07:10:36+00:00",
@@ -174,7 +174,7 @@
       "bedrag_eur": 2064.14,
       "prijs_eur": 0.0001970833,
       "pnl_eur": -77.86,
-      "reason": "hyper-hold (45 min)"
+      "reason": "tijd-exit"
     },
     {
       "t": "2026-10-06T07:00:02+00:00",
@@ -183,7 +183,7 @@
       "bedrag_eur": 2363.19,
       "prijs_eur": 7.07276e-05,
       "pnl_eur": 221.19,
-      "reason": "take-profit (27.61%) [fill@trigger]"
+      "reason": "winst genomen"
     },
     {
       "t": "2026-10-06T06:57:46+00:00",
@@ -191,7 +191,7 @@
       "symbol": "GUS",
       "bedrag_eur": 2142.0,
       "prijs_eur": 6.37875e-05,
-      "reason": "early-hunt score 31.0 age 0.1u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T06:51:44+00:00",
@@ -200,7 +200,7 @@
       "bedrag_eur": 1983.39,
       "prijs_eur": 6.28258e-05,
       "pnl_eur": -158.61,
-      "reason": "stop-loss (-31.96%) [fill@trigger]"
+      "reason": "stop-loss"
     },
     {
       "t": "2026-10-06T06:49:28+00:00",
@@ -208,7 +208,7 @@
       "symbol": "FOMOCHAN",
       "bedrag_eur": 2142.0,
       "prijs_eur": 6.75111e-05,
-      "reason": "early-hunt score 37.4 age 0.9u"
+      "reason": "instap"
     },
     {
       "t": "2026-10-06T06:42:39+00:00",
@@ -217,7 +217,7 @@
       "bedrag_eur": 1983.39,
       "prijs_eur": 1.06262e-05,
       "pnl_eur": -158.61,
-      "reason": "stop-loss (-19.67%) [fill@trigger]"
+      "reason": "stop-loss"
     },
     {
       "t": "2026-10-06T06:41:54+00:00",
@@ -225,7 +225,7 @@
       "symbol": "ERNCAT",
       "bedrag_eur": 2142.0,
       "prijs_eur": 1.14186e-05,
-      "reason": "early-hunt score 40.0 age 0.8u"
+      "reason": "instap"
     }
   ],
   "equity_points": [

@@ -1243,7 +1243,6 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     }
     radar.slice(0, 8).forEach(function (r) {
       var el = mk("span", "chip", (r && r.symbol) || "?");
-      if (r && r.score != null) el.appendChild(mk("span", "sc", fmtNum(r.score, { digits: 0 })));
       host.appendChild(el);
     });
   }
@@ -1377,6 +1376,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     return { net: Math.round(net * 100) / 100, issues: issues };
   }
 
+  var PUBLIC_REASONS = ["instap", "winst genomen", "deels winst genomen", "stop-loss", "tijd-exit", "exit"];
   function normalizeSnap(raw) {
     if (!raw || typeof raw !== "object" || raw.paper_only === false) return null;
     /* paper-live.json shape OR Designer snapshot shape — never invent totals */
@@ -1403,17 +1403,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
               : (openArr.length ? openArr.length : null));
     var tape = (Array.isArray(raw.tape) ? raw.tape : []).map(function (row) {
       if (!row) return null;
-      var note = row.note || null;
+      /* Publieke redenen zijn een vaste generieke set (kluis); alles daarbuiten -> generiek per kant */
       var reason = String(row.reason || "");
-      if (!note && reason) {
-        var rl = reason.toLowerCase();
-        if (rl.indexOf("take-profit") >= 0 || rl.indexOf("partial-tp") >= 0) note = "take-profit";
-        else if (rl.indexOf("stop-loss") >= 0) note = "stop-loss";
-        else if (rl.indexOf("early-hunt") >= 0) note = "early-hunt";
-        else if (rl.indexOf("hyper-hold") >= 0) note = "hyper-hold";
-        else if (rl.indexOf("uitbetaling") >= 0) note = "payout";
-        else note = "paper fill";
-      }
+      if (PUBLIC_REASONS.indexOf(reason) < 0) reason = String(row.side || "").toUpperCase() === "BUY" ? "instap" : "exit";
+      var note = reason;
       /* pnl_pct alleen als de data hem levert (reden-% is trigger/mark, geen fill-PnL) */
       var pnl_pct = row.pnl_pct != null ? row.pnl_pct : null;
       return {
@@ -1434,12 +1427,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     });
     var radar = Array.isArray(raw.radar) ? raw.radar : [];
     if (!radar.length) {
-      /* Honest radar from recent early-hunt buys on tape — no fake scores */
+      /* "Recent gekocht": recente paper-aankopen uit de tape, zonder scores */
       var seen = {};
       tape.forEach(function (row) {
         if (radar.length >= 8) return;
         if (String(row.side || "").toUpperCase() !== "BUY") return;
-        if (row.note !== "early-hunt") return;
         if (seen[row.symbol]) return;
         seen[row.symbol] = 1;
         radar.push({ symbol: row.symbol });
