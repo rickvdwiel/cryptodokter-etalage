@@ -593,6 +593,31 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 .ticker-wrap{display:none}
 .how{display:none}
 .don-copy,.btn{border-radius:6px}
+/* Vergelijking (% sinds start): paper-bot, BTC/top-10 hold, H4 forward-test */
+.fwd-legend{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.fwd-item{appearance:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;max-width:100%;
+  font:500 12px/1.3 var(--font);color:var(--tx);background:var(--surf);border:1px solid var(--line);border-radius:6px;padding:6px 9px;text-align:left}
+.fwd-item:hover{border-color:var(--muted)}
+.fwd-item[aria-pressed="false"]{opacity:.45}
+.fwd-item[aria-pressed="false"] .lbl{text-decoration:line-through}
+.fwd-item .val{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.fwd-sw{display:inline-block;width:18px;height:0;border-top:2px solid currentColor;flex-shrink:0}
+.fwd-h4{color:var(--accent);stroke:var(--accent)}
+.fwd-bh{color:var(--accent);stroke:var(--accent)}
+.fwd-bot{color:var(--tx);stroke:var(--tx)}
+.fwd-btc{color:var(--up);stroke:var(--up)}
+.fwd-bk{color:var(--muted);stroke:var(--muted)}
+.fwd-sw.fwd-bh{border-top-style:dashed;opacity:.75}
+.fwd-sw.fwd-bk{border-top-style:dotted;border-top-width:3px}
+.fwd-line{fill:none;stroke-width:1.75;stroke-linejoin:round;stroke-linecap:round}
+.fwd-line.fwd-h4{stroke-width:2.5}
+.fwd-line.fwd-bh{stroke-dasharray:6 4;opacity:.75}
+.fwd-line.fwd-bk{stroke-dasharray:2 3}
+.fwd-zero{stroke:var(--line);stroke-width:1}
+.fwd-svg{height:200px}
+.fwd-sum{margin:10px 0 0;font-size:13px;color:var(--tx)}
+.fwd-note{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.fwd-hint{margin:0 0 8px;font-size:11px;color:var(--muted)}
 .hero .ctas{margin:14px 0 0}
 @media(max-width:620px){.cock-body{grid-template-columns:1fr}.hero-heading{gap:4px}.hero-heading .tools{width:100%}.cock-kpis .kpi .v{font-size:18px}.kpi-card .v{font-size:19px}.nav .pill{display:none}.waterfall li{grid-template-columns:43px 45px minmax(0,1fr) minmax(0,1.1fr);gap:6px}.performance strong{font-size:24px}.analysis,.visitors{margin-top:16px}.balance-row{gap:8px 16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
@@ -734,6 +759,19 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       <div class="trade-controls"><input type="search" id="trade-search" aria-label="Zoek munt of transactiereden" placeholder="Zoek munt of reden"><select id="trade-filter" aria-label="Filter transacties"><option value="all">Alle transacties</option><option value="buy">Aankopen</option><option value="sell">Verkopen</option><option value="profit">Met winst</option><option value="loss">Met verlies</option></select></div>
       <p class="trade-meta" id="trade-meta"></p>
       <ul class="waterfall" id="waterfall"></ul>
+    </div>
+  </section>
+
+  <section class="panel-row single" id="forward-test" aria-labelledby="fwd-title" hidden>
+    <div class="panel">
+      <h2 id="fwd-title">Vergelijking · % sinds start</h2>
+      <p class="sub" id="fwd-sub">Paper · per uur</p>
+      <p class="fwd-hint">Tik op een lijn in de legenda om die te verbergen of te tonen; de schaal past zich aan.</p>
+      <div class="fwd-legend" id="fwd-legend" role="group" aria-label="Lijnen tonen of verbergen"></div>
+      <svg class="eq-svg fwd-svg" id="fwd-svg" viewBox="0 0 640 200" preserveAspectRatio="none" role="img" aria-label="Vergelijking, procentuele verandering sinds start, paper"></svg>
+      <p class="curve-range"><span id="fwd-start"></span><span id="fwd-range"></span><span id="fwd-end"></span></p>
+      <p class="fwd-sum" id="fwd-sum" hidden></p>
+      <p class="fwd-note" id="fwd-note" hidden></p>
     </div>
   </section>
 
@@ -1574,7 +1612,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     if (polling) return Promise.resolve();
     polling = true;
     var button = document.getElementById("refresh-data"); button.disabled = true;
-    return Promise.all([loadSnapshot(), loadEquityCurve(), loadDigest()]).finally(function () { polling = false; button.disabled = false; });
+    return Promise.all([loadSnapshot(), loadEquityCurve(), loadDigest(), loadForward()]).finally(function () { polling = false; button.disabled = false; });
   }
   function startPoll() { if (!pollTimer && !manualPaused) pollTimer = setInterval(pollOnce, POLL_MS); }
   function stopPoll() { if (pollTimer) { clearInterval(pollTimer); pollTimer = null; } }
@@ -1684,6 +1722,146 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       .catch(function () { if (document.getElementById("digest-body").hidden) setText("digest-headline", "Strategieanalyse momenteel niet beschikbaar."); });
   }
   loadDigest();
+
+  /* ——— Vergelijking (% sinds start), één grafiek:
+     benchmark.json (benchmark/v1): paper-bot, BTC hold, top-10 hold — % t.o.v. invested_eur per punt (stortingen tellen niet als rendement);
+     h4-forward.json (strategy-line/v1): H4 en zijn buy & hold — % t.o.v. start_eur, eigen start (30 sep).
+     Elke poll beide bestanden volledig opnieuw (bh_eur wordt achteraf herrekend). Alleen createElementNS/textContent. ——— */
+  var SVGNS = "http://www.w3.org/2000/svg";
+  var fwdOff = {}, fwdLast = { h4: null, bm: null };
+  function tsMs(s) { var d = parseTs(s); return d ? d.getTime() : null; }
+  function svgEl(tag, attrs) {
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) if (Object.prototype.hasOwnProperty.call(attrs, k)) n.setAttribute(k, String(attrs[k]));
+    return n;
+  }
+  function validH4(d) {
+    return d && typeof d === "object" && d.schema === "strategy-line/v1" && d.paper_only === true &&
+      tsMs(d.start_ts) != null && numOrNull(d.start_eur) > 0 && Array.isArray(d.series) && d.series.length > 0;
+  }
+  function validBm(d) {
+    return d && typeof d === "object" && d.schema === "benchmark/v1" && d.paper_only === true &&
+      tsMs(d.start_ts) != null && Array.isArray(d.series) && d.series.length > 1;
+  }
+  function h4Pts(d, key) {
+    var start = tsMs(d.start_ts), base = numOrNull(d.start_eur), out = [];
+    d.series.forEach(function (p) {
+      var t = tsMs(p && p.ts), v = numOrNull(p && p[key]);
+      if (t != null && v != null && t >= start) out.push({ t: t, v: (v / base - 1) * 100 });
+    });
+    return out;
+  }
+  function bmPts(d, key) {
+    var out = [];
+    d.series.forEach(function (p) {
+      var t = tsMs(p && p.ts), v = numOrNull(p && p[key]), inv = numOrNull(p && p.invested_eur);
+      if (t != null && v != null && inv != null && inv > 0) out.push({ t: t, v: (v / inv - 1) * 100 });
+    });
+    return out;
+  }
+  function pct1(v) { return fmtNum(v, { digits: 1, suffix: "%", plus: true }); }
+  function pct0(v) { return fmtNum(v, { digits: 0, suffix: "%", plus: true }); }
+  function ddmm(ms) { var p = amsParts(new Date(ms)); return String(p.day).padStart(2, "0") + "-" + String(p.month).padStart(2, "0"); }
+  function renderForward() {
+    var sec = document.getElementById("forward-test"), svg = document.getElementById("fwd-svg"), leg = document.getElementById("fwd-legend");
+    if (!sec || !svg || !leg) return;
+    var h4 = fwdLast.h4, bm = fwdLast.bm, lines = [];
+    if (h4) {
+      lines.push({ key: "h4", cls: "fwd-h4", label: "H4-strategie (paper, forward-test)", pts: h4Pts(h4, "total_eur") });
+      lines.push({ key: "h4bh", cls: "fwd-bh", label: "Buy & hold zelfde inleg", pts: h4Pts(h4, "bh_eur") });
+    }
+    if (bm) {
+      lines.push({ key: "bot", cls: "fwd-bot", label: "CryptoDokter paper-bot", pts: bmPts(bm, "bot_total_eur") });
+      lines.push({ key: "btc", cls: "fwd-btc", label: "BTC vasthouden", pts: bmPts(bm, "btc_hold_eur") });
+      lines.push({ key: "bk", cls: "fwd-bk", label: "Top-10 mand vasthouden", pts: bmPts(bm, "basket_hold_eur") });
+    }
+    lines = lines.filter(function (l) { return l.pts.length > 1; });
+    if (!lines.length) return;
+    var vis = lines.filter(function (l) { return !fwdOff[l.key]; });
+    if (!vis.length) { fwdOff = {}; vis = lines; }
+    var tMin = Infinity, tMax = -Infinity, vMin = 0, vMax = 0;
+    vis.forEach(function (l) {
+      l.pts.forEach(function (p) {
+        if (p.t < tMin) tMin = p.t; if (p.t > tMax) tMax = p.t;
+        if (p.v < vMin) vMin = p.v; if (p.v > vMax) vMax = p.v;
+      });
+    });
+    var span = vMax - vMin; if (span < 1) { vMax += (1 - span) / 2; vMin -= (1 - span) / 2; span = vMax - vMin; }
+    vMax += span * 0.06; vMin -= span * 0.06;
+    var W = 640, H = 200, PX = 6, PY = 8;
+    function x(t) { return PX + (tMax === tMin ? 0 : (t - tMin) / (tMax - tMin)) * (W - 2 * PX); }
+    function y(v) { return PY + (vMax - v) / (vMax - vMin) * (H - 2 * PY); }
+    clearEl(svg);
+    var y0 = y(0).toFixed(1);
+    svg.appendChild(svgEl("line", { x1: 0, y1: y0, x2: W, y2: y0, "class": "fwd-zero", "vector-effect": "non-scaling-stroke" }));
+    var summary = [];
+    vis.forEach(function (l) {
+      var d = l.pts.map(function (p, i) { return (i ? "L" : "M") + x(p.t).toFixed(1) + " " + y(p.v).toFixed(1); }).join(" ");
+      svg.appendChild(svgEl("path", { d: d, "class": "fwd-line " + l.cls, "vector-effect": "non-scaling-stroke" }));
+      summary.push(l.label + " " + pct1(l.pts[l.pts.length - 1].v));
+    });
+    clearEl(leg);
+    lines.forEach(function (l) {
+      var on = !fwdOff[l.key];
+      var b = mk("button", "fwd-item");
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.setAttribute("data-key", l.key);
+      var sw = mk("span", "fwd-sw " + l.cls); sw.setAttribute("aria-hidden", "true");
+      b.appendChild(sw);
+      b.appendChild(mk("span", "lbl", l.label));
+      b.appendChild(mk("span", "val", pct1(l.pts[l.pts.length - 1].v)));
+      leg.appendChild(b);
+    });
+    svg.setAttribute("aria-label", "Vergelijking, % sinds start (paper): " + summary.join("; "));
+    setText("fwd-start", fmtUpdated(new Date(tMin).toISOString()));
+    setText("fwd-end", fmtUpdated(new Date(tMax).toISOString()));
+    setText("fwd-range", pct1(vMin) + " – " + pct1(vMax));
+    setText("fwd-sub", "Paper · % sinds start · per uur · bijgewerkt " + fmtUpdated(new Date(tMax).toISOString()));
+    /* Eén eerlijke regel uit het laatste benchmark-punt; ontbrekende cijfers weglaten */
+    var sum = document.getElementById("fwd-sum"), parts = [];
+    if (bm) {
+      var lp = bm.series[bm.series.length - 1] || {}, inv = numOrNull(lp.invested_eur);
+      [["bot", "bot_total_eur"], ["BTC", "btc_hold_eur"], ["top-10", "basket_hold_eur"]].forEach(function (m) {
+        var v = numOrNull(lp[m[1]]);
+        if (v != null && inv != null && inv > 0) parts.push(m[0] + " " + pct0((v / inv - 1) * 100));
+      });
+    }
+    if (sum) {
+      if (parts.length) { sum.textContent = "Paper. Sinds " + ddmm(tsMs(bm.start_ts)) + ": " + parts.join(", ") + "."; sum.hidden = false; }
+      else sum.hidden = true;
+    }
+    var note = document.getElementById("fwd-note");
+    if (note) {
+      if (h4) {
+        var sp = amsParts(new Date(tsMs(h4.start_ts)));
+        note.textContent = "Forward-test H4 loopt sinds " + Number(sp.day) + " " + MONTHS[Number(sp.month) - 1] + "; nog te kort om te beoordelen. Paper-only.";
+        note.hidden = false;
+      } else note.hidden = true;
+    }
+    sec.hidden = false;
+  }
+  (function () {
+    var leg = document.getElementById("fwd-legend");
+    if (!leg) return;
+    leg.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button[data-key]");
+      if (!b) return;
+      var k = b.getAttribute("data-key");
+      var shown = leg.querySelectorAll('button[aria-pressed="true"]').length;
+      if (!fwdOff[k] && shown <= 1) return; /* minstens één lijn zichtbaar */
+      fwdOff[k] = !fwdOff[k];
+      renderForward();
+      var nb = leg.querySelector('button[data-key="' + k + '"]');
+      if (nb) nb.focus();
+    });
+  })();
+  function loadForward() {
+    var a = fetchJson("h4-forward.json", 5000).then(function (d) { if (validH4(d)) fwdLast.h4 = d; }, function () {});
+    var b = fetchJson("benchmark.json", 5000).then(function (d) { if (validBm(d)) fwdLast.bm = d; }, function () {});
+    return Promise.all([a, b]).then(renderForward);
+  }
+  loadForward();
 })();
 
 /* —— Marktbulletin (same-origin bulletin.json) —— */
