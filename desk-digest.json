@@ -6,8 +6,7 @@
   "measured_at": "2026-10-05T16:54:00+02:00",
   "window_4h_utc": "10:54-14:54",
   "verdict": "KNOP-VOORSTEL",
-  "headline": "Desk-digest: PF 0,62 over 4 uur; voorstel herkoop-pauze 40 naar 120 minuten",
-  "config": "TP12 / MIN28 / FILL / REBUY40 / MAXPOS10 / HUNT45 / SIZE2% / HOLD45",
+  "headline": "Desk-digest: PF 0,62 over 4 uur",
   "metrics_4h": {
     "exits": 31,
     "winrate_pct": 45.2,
@@ -26,8 +25,6 @@
   },
   "summary_nl": [
     "Laatste 4 uur: 31 exits, winrate 45%, PF 0,62, netto −€946; fees ongeveer €66 per uur.",
-    "Over 8 uur PF 0,84 (netto −€921); de stop-losses kosten meer dan de take-profits opleveren.",
-    "Herkopen van een munt binnen 2 uur na verkoop deden het slecht: over 72 uur PF 0,47 en −€3.840."
-  ],
-  "next_nl": "Voorstel aan Titan: herkoop-pauze van 40 naar 120 minuten. Nog niets aangepast. Paper-only, geen echte orders."
+    "Over 8 uur PF 0,84 (netto −€921); de stop-losses kosten meer dan de take-profits opleveren."
+  ]
 }
