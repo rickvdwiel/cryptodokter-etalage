@@ -535,6 +535,24 @@ h1{
 @media (max-width:620px){.don-copy{align-self:stretch;width:100%}}
 .don-qr{width:184px;height:184px;border-radius:8px;background:#fff;image-rendering:pixelated}
 @media (max-width:620px){.don-qr{width:min(200px,100%);height:auto;aspect-ratio:1/1;justify-self:center}}
+/* Euro (PayPal + bankoverschrijving) — tekst-only, geen externe PayPal-assets */
+.don-group{margin:0 0 8px;font:700 13px/1.3 var(--font);text-transform:uppercase;color:var(--muted)}
+.don-euro{margin:0 0 22px}
+.don-euro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:10px}
+@media (max-width:620px){.don-euro-grid{grid-template-columns:minmax(0,1fr)}}
+.don-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);min-width:0;padding:18px;display:flex;flex-direction:column;gap:10px}
+@media (max-width:620px){.don-card{padding:14px}}
+.don-card h4{margin:0;font:700 16px/1.25 var(--font);color:var(--tx)}
+.don-pp-link{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;align-self:flex-start;min-width:180px;box-sizing:border-box;
+  font:600 14px/1.2 var(--font);padding:12px 18px;border-radius:6px;text-decoration:none;
+  border:1px solid var(--accent);background:rgba(75,156,245,.12);color:var(--tx);
+}
+.don-pp-link:hover{background:rgba(75,156,245,.2);text-decoration:none}
+.don-pp-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:620px){.don-pp-link{align-self:stretch;width:100%}}
+.don-iban{word-break:normal;overflow-wrap:anywhere;font-size:15px;font-weight:600}
+.don-bank-meta{margin:0;font-size:13px;line-height:1.5;color:var(--tx)}
 .don-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .foot-links{display:flex;gap:14px;flex-wrap:wrap}
 /* Cockpit-8 */
@@ -832,6 +850,25 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   <section class="doneer" id="doneer" aria-labelledby="doneer-title">
     <h2 id="doneer-title" tabindex="-1">Steun CryptoDokter</h2>
     <p class="don-lede">CryptoDokter is een open, paper-only project. Een bijdrage is vrijwillig en gaat volledig naar de verdere ontwikkeling. Je krijgt er geen rendement, beloning of tegenprestatie voor terug, en dit is geen beleggingsadvies.</p>
+    <div class="don-euro" role="group" aria-labelledby="don-euro-title">
+      <h3 class="don-group" id="don-euro-title">Euro</h3>
+      <div class="don-euro-grid">
+        <div class="don-card" id="don-pp-card">
+          <h4>PayPal</h4>
+          <a class="don-pp-link" id="don-paypal" href="https://paypal.me/rickvdwiel" target="_blank" rel="noopener noreferrer">PayPal<span aria-hidden="true">↗</span><span class="don-sr"> (opent in een nieuw venster)</span></a>
+          <p class="don-note">paypal.me/rickvdwiel</p>
+        </div>
+        <div class="don-card" id="don-bank-card">
+          <h4>Bankoverschrijving</h4>
+          <code class="don-addr don-iban" id="don-iban" translate="no" data-copy-compact="">NL77 KNAB 0800 2701 50</code>
+          <p class="don-bank-meta"><span id="don-bank-name">Knab</span><span aria-hidden="true"> · </span><span id="don-bank-holder">t.n.v. R. van de Wiel</span></p>
+          <button type="button" class="don-copy" data-copy-target="don-iban" data-status="don-st-iban" data-label="Kopieer IBAN">Kopieer IBAN</button>
+          <span class="don-sr" id="don-st-iban" role="status" aria-live="polite"></span>
+          <p class="don-note" id="don-bank-hint">Overmaken via je bank-app (iDEAL/Wero), omschrijving: Steun cryptodokter.nl</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="don-group" id="don-crypto-title">Crypto</h3>
     <p class="don-check">Controleer het adres altijd in je wallet voordat je verstuurt, en kies het netwerk dat bij het adres hoort.</p>
     <div class="don-tabs" role="tablist" aria-label="Kies een netwerk" hidden>
       <button type="button" role="tab" class="don-tab" id="don-tab-bitcoin" aria-controls="don-panel-bitcoin" aria-selected="true" tabindex="0" data-net="bitcoin"><img src="assets/logos/bitcoin.svg" width="18" height="18" alt="">Bitcoin</button>
@@ -2212,14 +2249,17 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     var src = document.getElementById(btn.getAttribute("data-copy-target"));
     var st = document.getElementById(btn.getAttribute("data-status"));
     if (!src) return;
-    copyText(src.textContent.trim()).then(function (ok) {
+    var text = src.textContent.trim();
+    if (src.hasAttribute("data-copy-compact")) text = text.replace(/\s+/g, "");
+    var label = btn.getAttribute("data-label") || LABEL;
+    copyText(text).then(function (ok) {
       var msg = ok ? "Gekopieerd" : "Kopiëren lukte niet, selecteer het adres";
       btn.textContent = msg;
       btn.classList.toggle("is-done", ok);
       if (st) st.textContent = msg;
       clearTimeout(btn._t);
       btn._t = setTimeout(function () {
-        btn.textContent = LABEL;
+        btn.textContent = label;
         btn.classList.remove("is-done");
         if (st) st.textContent = "";
       }, 2000);
