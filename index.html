@@ -1,4 +1,2053 @@
-<!doctype html>
+<html lang="nl" translate="no" data-build="cryptodokter-cockpit-8"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c1016">
+<meta name="description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cryptodokter.nl/">
+<title>CryptoDokter — Paper-bot op tape</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cryptodokter.nl/">
+<meta property="og:site_name" content="CryptoDokter">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="CryptoDokter — Paper-bot op tape">
+<meta property="og:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
+<meta property="og:image" content="https://cryptodokter.nl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CryptoDokter — Paper-bot op tape. Alleen papier, geen live orders.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CryptoDokter — Paper-bot op tape">
+<meta name="twitter:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
+<meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style class="native-dark-class-modified">
+:root{
+  --bg:#0c1016; --surf:#131921; --surf2:#18212c; --line:#243041;
+  --tx:#E8EEF5; --muted:#8B98A8; --accent:#4B9CF5; --up:#3dd68c; --dn:#f07178;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --font:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --pad:max(18px, env(safe-area-inset-left));
+  --padr:max(18px, env(safe-area-inset-right));
+  --radius:8px;
+  --text-secondary:#B7C2CF; --text-muted:var(--muted);
+  --max:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;min-height:100%;background:var(--bg);color:var(--tx);
+  font:15px/1.55 var(--font);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,.btn:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;
+}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{
+  position:fixed;left:16px;top:16px;z-index:100;width:auto;height:auto;
+  padding:10px 14px;background:var(--surf);border:1px solid var(--line);
+  color:var(--tx);border-radius:10px;font-weight:600;font-size:14px;
+}
+
+/* Header */
+.top{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  max-width:var(--max);margin:0 auto;
+  padding:max(14px, env(safe-area-inset-top)) var(--padr) 10px var(--pad);
+}
+.brand{
+  margin:0;font:600 15px/1.2 var(--font);letter-spacing:-.02em;color:var(--tx);
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  min-width:0;
+}
+.brand-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.brand:hover{text-decoration:none}
+.brand-mark{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 3px rgba(75,156,245,.18);
+  flex-shrink:0;
+}
+.nav{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+.nav a{
+  font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;
+}
+.nav a:hover{color:var(--tx);text-decoration:none}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--up);border:1px solid rgba(61,214,140,.35);
+  background:rgba(61,214,140,.08);padding:4px 9px;border-radius:999px;white-space:nowrap;
+}
+.pill .dot{width:5px;height:5px;border-radius:50%;background:var(--up)}
+@media (max-width:520px){
+  .top{gap:10px}
+  .brand{font-size:14px;gap:7px}
+  .nav{gap:9px;flex-shrink:0}
+  .nav .pill{font-size:9px;letter-spacing:.03em;padding:3px 7px;gap:5px}
+  .nav a{font-size:11.5px}
+}
+@media (max-width:360px){.nav .pill{letter-spacing:.01em;padding:3px 6px}}
+
+/* Marquee ticker */
+.ticker-wrap{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--surf);overflow:hidden;position:relative;
+}
+.ticker-wrap::before,.ticker-wrap::after{
+  content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none;
+}
+.ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--surf),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(270deg,var(--surf),transparent)}
+.ticker{
+  display:flex;gap:0;width:max-content;
+  animation:tickerX 42s linear infinite;
+  font-family:var(--mono);font-size:11px;letter-spacing:.02em;
+  padding:8px 0;color:var(--muted);white-space:nowrap;
+}
+.ticker span{padding:0 18px;border-right:1px solid var(--line)}
+.ticker .up{color:var(--up)}.ticker .dn{color:var(--dn)}.ticker .sym{color:var(--tx);font-weight:600}
+@keyframes tickerX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker{animation:none}}
+
+/* Hero split */
+.hero{
+  max-width:var(--max);margin:0 auto;
+  padding:28px var(--padr) 12px var(--pad);
+  display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;
+}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:20px;padding-top:18px}}
+.eyebrow{
+  margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);
+}
+h1{
+  margin:0 0 12px;font:700 clamp(26px,4.6vw,38px)/1.15 var(--font);
+  letter-spacing:-.03em;color:var(--tx);max-width:18ch;
+}
+.lede{margin:0 0 20px;color:var(--muted);font-size:15px;line-height:1.55;max-width:42ch}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 12px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 18px;border-radius:10px;font:600 14px/1.2 var(--font);
+  letter-spacing:-.01em;text-decoration:none;border:1px solid transparent;cursor:pointer;
+  transition:filter .15s ease,background .15s ease,border-color .15s ease;
+}
+.btn:hover{text-decoration:none;filter:brightness(1.06)}
+.btn-primary{background:var(--accent);color:#0a1018;border-color:var(--accent)}
+@media (max-width:480px){
+  .ctas{flex-direction:column;align-items:stretch}
+  .ctas .btn-primary{width:100%;text-align:center}
+}
+.snap-meta{
+  margin:-4px 0 12px;font-size:12px;font-weight:500;color:var(--muted);
+  font-variant-numeric:tabular-nums;letter-spacing:0;
+}
+.hint{margin:0;font-size:12px;color:var(--muted);line-height:1.45;max-width:44ch}
+
+/* Desk-digest (hero) */
+.digest-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:0 0 10px}
+.verdict{
+  display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid rgba(75,156,245,.4);
+  color:var(--accent);background:rgba(75,156,245,.08);white-space:nowrap;
+}
+.verdict.up{color:var(--up);border-color:rgba(61,214,140,.4);background:rgba(61,214,140,.08)}
+.verdict.dn{color:var(--dn);border-color:rgba(240,113,120,.4);background:rgba(240,113,120,.08)}
+.digest-date{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--muted);font-variant-numeric:tabular-nums}
+.digest-sum{margin:0 0 14px;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;max-width:48ch}
+.digest-sum li{position:relative;padding-left:14px;font-size:14px;line-height:1.5;color:var(--muted)}
+.digest-sum li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7}
+.digest-kpis{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.digest-kpis .chip .k{color:var(--muted);margin-right:5px}
+.digest-kpis .chip .sc{margin-left:5px}
+.digest-next{margin:0 0 16px;font-size:12px;color:var(--muted);line-height:1.5;max-width:48ch}
+.digest-next strong{color:var(--tx);font-weight:600}
+.digest-top[hidden],#digest-body[hidden],.digest-sum[hidden],.digest-kpis[hidden],.digest-next[hidden],.lede[hidden],.verdict[hidden]{display:none!important}
+
+/* Cockpit */
+.cockpit{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);
+  display:flex;flex-direction:column;min-height:340px;overflow:hidden;position:relative;
+}
+.cockpit::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(75,156,245,.07), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.015), transparent 40%);
+}
+.cock-head{
+  position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 12px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.18);
+}
+.cock-head .cap{
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.cock-head .meta{
+  font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.02em;
+}
+.cock-head{flex-wrap:wrap;row-gap:6px}
+.cock-head .cap{white-space:nowrap}
+.cock-head .pill{font-size:9px;padding:3px 7px}
+.cock-head .meta{order:3;flex-basis:100%}
+
+.cock-kpis{
+  position:relative;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border-bottom:1px solid var(--line);
+}
+.kpi{
+  padding:10px 10px 11px;border-right:1px solid var(--line);
+  min-width:0;
+}
+.kpi:last-child{border-right:0}
+.kpi .k{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.kpi .v{
+  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:-.02em;
+  color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.kpi .v.up{color:var(--up)}.kpi .v.dn{color:var(--dn)}
+@media (max-width:520px){
+  .cock-kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi:nth-child(2){border-right:0}
+  .kpi:nth-child(1),.kpi:nth-child(2){border-bottom:1px solid var(--line)}
+}
+
+.cock-body{
+  position:relative;display:grid;grid-template-columns:1.1fr .9fr;flex:1;min-height:0;
+}
+@media (max-width:620px){.cock-body{grid-template-columns:1fr}}
+.spark-pane{
+  padding:10px 12px 8px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;
+}
+@media (max-width:620px){.spark-pane{border-right:0;border-bottom:1px solid var(--line)}}
+.spark-pane .lab{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.spark-pane svg{width:100%;height:78px;display:block}
+.radar-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.chip{
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  padding:3px 7px;border-radius:6px;border:1px solid var(--line);
+  background:var(--surf2);color:var(--tx);letter-spacing:.01em;
+}
+.chip .sc{color:var(--muted);margin-left:4px}
+.chip-empty{font-size:11px;color:var(--muted);padding:4px 0}
+.row-empty{display:block!important;font-family:var(--font);font-size:12px;color:var(--muted);padding:10px 12px!important;border-bottom:0!important}
+.waterfall .row-empty{padding:10px 0!important}
+
+.tape-pane{
+  padding:8px 0 8px;display:flex;flex-direction:column;min-height:0;overflow:hidden;
+}
+.tape-pane .lab{
+  font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);
+  padding:0 12px 6px;
+}
+.tape{
+  flex:1;overflow:hidden;position:relative;
+  mask-image:linear-gradient(180deg,#000 70%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);
+}
+.tape-list{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:11px}
+.tape-list li{
+  display:grid;grid-template-columns:52px 44px 1fr auto;gap:6px;align-items:center;
+  padding:5px 12px;border-bottom:1px solid rgba(36,48,65,.55);color:var(--muted);
+}
+.tape-list .t{color:var(--muted);font-size:10px}
+.tape-list .side{font-weight:700;font-size:10px;letter-spacing:.04em}
+.tape-list .side.buy{color:var(--up)}.tape-list .side.sell{color:var(--dn)}
+.tape-list .sym{color:var(--tx);font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.tape-list .amt{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.tape-list .amt.up{color:var(--up)}.tape-list .amt.dn{color:var(--dn)}
+/* Nieuwe paper-fills: subtiele highlight */
+.tape-list li.is-new,.waterfall li.is-new,.pos-list li.is-new{animation:rowNew 3s ease-out}
+@keyframes rowNew{0%{background:rgba(75,156,245,.16)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){
+  .tape-list li.is-new,.waterfall li.is-new,.pos-list li.is-new{animation:none;box-shadow:inset 2px 0 0 var(--accent)}
+}
+
+/* KPI strip (page) */
+.kpi-strip{
+  max-width:var(--max);margin:18px auto 0;
+  padding:0 var(--padr) 0 var(--pad);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+}
+@media (max-width:720px){.kpi-strip{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{
+  border:1px solid var(--line);border-radius:10px;background:var(--surf);
+  padding:12px 14px;
+}
+.kpi-card .k{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.kpi-card .v{font-family:var(--mono);font-size:18px;font-weight:600;letter-spacing:-.02em;margin:0}
+.kpi-card .v.up{color:var(--up)}.kpi-card .v.dn{color:var(--dn)}
+.kpi-card .s{margin:4px 0 0;font-size:11px;color:var(--muted)}
+
+/* Equity + waterfall */
+.panel-row{
+  max-width:var(--max);margin:22px auto 0;
+  padding:0 var(--padr) 0 var(--pad);
+  display:grid;grid-template-columns:1.15fr .85fr;gap:14px;
+}
+@media (max-width:860px){.panel-row{grid-template-columns:1fr}}
+.panel{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);
+  padding:14px 16px 16px;min-width:0;
+}
+.panel h2{
+  margin:0 0 4px;font:600 13px/1.3 var(--font);letter-spacing:-.01em;
+}
+.panel .sub{margin:0 0 12px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.panel-row{scroll-margin-top:16px}
+.panel h2[tabindex="-1"]:focus{outline:none}
+.panel h2[tabindex="-1"]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.eq-empty{margin:0;padding:18px 0;font-size:12px;color:var(--muted)}
+.how{scroll-margin-top:16px}
+.section-label[tabindex="-1"]:focus{outline:none}
+.eq-svg{width:100%;height:160px;display:block}
+.waterfall{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:11px}
+.waterfall li{
+  display:grid;grid-template-columns:64px 52px 1fr auto;gap:8px;align-items:center;
+  padding:8px 0;border-bottom:1px solid rgba(36,48,65,.7);color:var(--muted);
+}
+.waterfall li:last-child{border-bottom:0}
+.waterfall .t{font-size:10px}
+.waterfall .side{font-weight:700;font-size:10px;letter-spacing:.04em}
+.waterfall .side.buy{color:var(--up)}.waterfall .side.sell{color:var(--dn)}
+.waterfall .sym{color:var(--tx);font-weight:600}
+.waterfall .note{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:14ch}
+/* Open posities */
+.panel-row.single{grid-template-columns:1fr;margin-top:14px}
+.pos-list li{grid-template-columns:minmax(0,1fr) 64px 84px 110px}
+.pos-list li.pos-head{padding:0 0 6px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-family:var(--font)}
+.pos-list .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos-list .sym{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:520px){.pos-list li{grid-template-columns:minmax(0,1fr) 52px 72px 88px;gap:6px}}
+
+/* How */
+.how{
+  max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);
+}
+.section-label{
+  margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);
+}
+.how ol{
+  margin:0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:how;
+}
+@media (max-width:720px){.how ol{grid-template-columns:1fr}}
+.how li{
+  border:1px solid var(--line);border-radius:10px;background:var(--surf);
+  padding:16px 16px 14px;counter-increment:how;position:relative;
+}
+.how li::before{
+  content:counter(how, decimal-leading-zero);
+  font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent);
+  display:block;margin-bottom:8px;letter-spacing:.04em;
+}
+.how h3{margin:0 0 6px;font:600 14px/1.3 var(--font)}
+.how p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+
+
+/* Marktbulletin */
+.bulletin{
+  max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);
+}
+.bulletin-head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:10px 16px;margin-bottom:14px;
+}
+.bulletin-titles{min-width:0;flex:1 1 220px}
+.bulletin-titles h2{
+  margin:0 0 4px;font:700 clamp(18px,2.8vw,22px)/1.25 var(--font);
+  letter-spacing:-.02em;color:var(--tx);
+}
+.bulletin-sub{margin:0;font-size:13px;color:var(--muted);line-height:1.45}
+.bulletin-meta{
+  margin:0;font-size:11px;font-weight:600;letter-spacing:.02em;
+  color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.bulletin-seg{
+  display:inline-flex;align-items:center;gap:0;
+  border:1px solid var(--line);border-radius:8px;background:var(--surf);
+  padding:2px;margin:0 0 12px;
+}
+.bulletin-seg button{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  font:600 12px/1.2 var(--font);color:var(--muted);
+  padding:7px 12px;border-radius:6px;letter-spacing:-.01em;
+}
+.bulletin-seg button[aria-pressed="true"]{
+  background:rgba(75,156,245,.14);color:var(--tx);
+}
+.bulletin-seg button:hover{color:var(--tx)}
+.bulletin-list{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-direction:column;gap:10px;
+}
+.bulletin-card{
+  border:1px solid var(--line);border-radius:10px;background:var(--surf);
+  padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;
+  border-left:3px solid var(--line);
+}
+.bulletin-card[data-kind="news"]{border-left-color:var(--accent)}
+.bulletin-card[data-kind="outlook"]{border-left-color:rgba(139,152,168,.55)}
+.bulletin-card-top{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;
+}
+.b-chip{
+  display:inline-flex;align-items:center;
+  font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
+  background:transparent;
+}
+.bulletin-card[data-kind="news"] .b-chip.cat{
+  color:var(--accent);border-color:rgba(75,156,245,.4);
+  background:rgba(75,156,245,.08);
+}
+.bulletin-card[data-kind="outlook"] .b-chip.cat{
+  color:var(--muted);border-color:var(--line);background:rgba(255,255,255,.03);
+}
+.b-chip.sent-bullish{
+  color:var(--up);border-color:rgba(61,214,140,.4);background:rgba(61,214,140,.08);
+}
+.b-chip.sent-bearish{
+  color:var(--dn);border-color:rgba(240,113,120,.4);background:rgba(240,113,120,.08);
+}
+.b-chip.sent-neutral{
+  color:var(--muted);border-color:var(--line);background:rgba(139,152,168,.08);
+}
+.bulletin-card h3{margin:0;font:600 14px/1.35 var(--font);letter-spacing:-.01em}
+.bulletin-card h3 a{color:var(--tx);text-decoration:none}
+.bulletin-card h3 a:hover{color:var(--accent);text-decoration:underline}
+.bulletin-card-meta{
+  display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;
+  font-size:12px;color:var(--muted);
+}
+.bulletin-card-meta .src{font-weight:600;color:var(--tx);opacity:.85}
+.bulletin-card-meta time{font-variant-numeric:tabular-nums}
+.bulletin-foot{
+  margin:12px 0 0;font-size:12px;color:var(--muted);line-height:1.45;
+}
+.bulletin-empty{
+  margin:0;padding:18px 14px;border:1px dashed var(--line);border-radius:10px;
+  background:var(--surf);color:var(--muted);font-size:13px;line-height:1.5;
+}
+@media (prefers-reduced-motion:reduce){
+  .bulletin-seg button,.bulletin-card h3 a{transition:none}
+}
+
+/* Trust strip */
+.trust{
+  max-width:var(--max);margin:28px auto 0;padding:0 var(--padr) 0 var(--pad);
+}
+.trust-inner{
+  display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;
+  border:1px solid var(--line);border-radius:10px;background:var(--surf);
+  padding:12px 16px;font-size:12px;color:var(--muted);
+}
+.trust-inner strong{color:var(--tx);font-weight:600}
+.trust-badges{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tb{
+  font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
+}
+
+/* Footer */
+.foot{
+  max-width:var(--max);margin:40px auto 0;
+  padding:18px var(--padr) max(24px, env(safe-area-inset-bottom)) var(--pad);
+  border-top:1px solid var(--line);
+  font-size:12px;color:var(--muted);line-height:1.55;
+}
+.foot-row{
+  display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:baseline;
+  margin-bottom:10px;
+}
+.foot strong{color:var(--tx);font-weight:600}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--accent)}
+.disclaimer{margin:0;max-width:78ch}
+/* Bezoekersteller (GoatCounter) — Designer-spec: desktop in de topbalk links van de pill, mobiel in de hero-metaregel */
+.hitc,.hitc-m{
+  font-family:"IBM Plex Mono",var(--mono);font-size:12px;line-height:16px;font-weight:400;letter-spacing:0;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.hitc-n{color:var(--text-secondary)}
+.hitc-l{color:var(--text-muted)}
+.hitc{margin-right:4px} /* nav-gap 12px + 4px = 16px tot de pill */
+.hitc-m{font-weight:400}
+.hitc[hidden],.hitc-m[hidden]{display:none!important}
+@media (max-width:767.98px){.hitc{display:none!important}}
+@media (min-width:768px){.hitc-m{display:none!important}}
+/* Steun CryptoDokter (doneer) — geïsoleerd blok; netwerkknoppen + één paneel (zonder JS: alle panelen) */
+.doneer{max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);scroll-margin-top:16px}
+.doneer h2{margin:0 0 6px;font:700 clamp(18px,2.8vw,22px)/1.25 var(--font);letter-spacing:-.02em;color:var(--tx)}
+.doneer h2[tabindex="-1"]:focus{outline:none}
+.don-lede{margin:0 0 6px;max-width:68ch;font-size:13px;line-height:1.55;color:var(--muted)}
+.don-check{margin:0 0 14px;max-width:68ch;font-size:12px;line-height:1.5;color:var(--tx);opacity:.85}
+.don-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.don-tabs[hidden]{display:none!important}
+.don-tab{
+  appearance:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+  font:600 12px/1.2 var(--font);letter-spacing:-.01em;color:var(--muted);white-space:nowrap;
+  padding:7px 11px 7px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surf);
+}
+.don-tab img{width:18px;height:18px;flex-shrink:0}
+.don-tab:hover{color:var(--tx);border-color:rgba(75,156,245,.45)}
+.don-tab[aria-selected="true"]{color:var(--tx);border-color:var(--accent);background:rgba(75,156,245,.12)}
+.don-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.don-panels{display:grid;gap:10px}
+.don-panel{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);min-width:0;
+  padding:18px;display:grid;grid-template-columns:minmax(0,1fr) 184px;gap:20px;align-items:start;
+}
+.don-panel[hidden]{display:none!important}
+.don-panel:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (max-width:620px){.don-panel{grid-template-columns:minmax(0,1fr);gap:14px;padding:14px}}
+.don-info{min-width:0;display:flex;flex-direction:column;gap:10px}
+.don-head{display:flex;align-items:center;gap:10px;min-width:0}
+.don-head img{width:36px;height:36px;flex-shrink:0}
+.don-head h3{margin:0;font:700 18px/1.25 var(--font);letter-spacing:-.02em;color:var(--tx)}
+.don-note{margin:0;font-size:12px;line-height:1.5;color:var(--muted);max-width:52ch}
+.don-addr{
+  display:block;margin:0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);
+  font:500 13px/1.5 var(--mono);letter-spacing:0;color:var(--tx);
+  word-break:break-all;overflow-wrap:anywhere;white-space:normal;user-select:all;-webkit-user-select:all;
+}
+.don-copy{
+  appearance:none;cursor:pointer;align-self:flex-start;min-width:180px;
+  font:600 14px/1.2 var(--font);letter-spacing:-.01em;padding:12px 18px;border-radius:10px;
+  border:1px solid var(--accent);background:rgba(75,156,245,.12);color:var(--tx);
+}
+.don-copy:hover{background:rgba(75,156,245,.2)}
+.don-copy.is-done{border-color:var(--up);background:rgba(61,214,140,.12);color:var(--up)}
+@media (max-width:620px){.don-copy{align-self:stretch;width:100%}}
+.don-qr{width:184px;height:184px;border-radius:8px;background:#fff;image-rendering:pixelated}
+@media (max-width:620px){.don-qr{width:min(200px,100%);height:auto;aspect-ratio:1/1;justify-self:center}}
+.don-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.foot-links{display:flex;gap:14px;flex-wrap:wrap}
+/* Dashboard */
+:root{--bg:#111113;--surf:#19191d;--surf2:#212126;--line:#35353c;--muted:#a1a1ad;--accent:#61cfc1;--up:#78d6a0;--dn:#ff929c;--max:1200px}
+body,body *{letter-spacing:0!important}
+[hidden]{display:none!important}
+.hero{grid-template-columns:1fr;gap:20px;padding-top:20px}
+h1{font-size:30px;max-width:none;margin-bottom:8px}
+.hero .lede{max-width:78ch;margin-bottom:14px}
+.cockpit{min-height:0;border-radius:8px}
+.cockpit::before{display:none}
+.cock-kpis .kpi .v{font-size:20px;margin:0}
+.cock-body{grid-template-columns:1fr 1.2fr}
+.spark-pane{justify-content:center;padding:16px}
+.tape{max-height:235px;overflow:auto;mask-image:none;-webkit-mask-image:none}
+.tape-list li{grid-template-columns:45px 48px minmax(0,1fr) auto}
+.panel{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:16px 0}
+.panel h2{font-size:17px}
+.kpi-card{border-radius:8px;min-width:0}
+.kpi-card .v{font-size:22px;overflow-wrap:anywhere}
+.bulletin h2,.doneer h2{font-size:22px}
+.hero-heading,.section-head{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.tools{display:flex;align-items:center;gap:6px}
+.tool{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:var(--surf);color:var(--tx);cursor:pointer}
+.tool:hover,.tool[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.tool:disabled{opacity:.4;cursor:wait}
+.tool svg{width:17px;height:17px}
+.run-state{font-size:12px;color:var(--muted);margin-right:8px}
+.performance{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:12px 0}
+.performance strong{font:600 28px/1.3 var(--mono);overflow-wrap:anywhere}
+.performance .dn{color:var(--dn)}.performance .up{color:var(--up)}
+.performance span{font-size:13px;color:var(--muted)}
+.data-warning{margin:0;color:var(--dn);font-size:13px}
+.analysis,.visitors{max-width:var(--max);margin:22px auto 0;padding:16px var(--padr) 0 var(--pad)}
+.analysis h2,.visitors h2{font-size:18px;margin:0 0 12px}
+.analysis{border-top:1px solid var(--line)}
+.analysis .digest-sum{max-width:90ch;margin-bottom:12px}
+.analysis .digest-sum li{font-size:14px}
+.analysis .digest-next{max-width:90ch;font-size:13px}
+.analysis .digest-kpis{font:500 13px/1.5 var(--mono);margin:12px 0}
+.analysis .digest-top{margin:0 0 12px}
+.balance-row{display:flex;gap:12px 24px;flex-wrap:wrap;margin:10px 0 0;font-size:12px;color:var(--muted)}
+.balance-row strong{font:500 12px var(--mono);color:var(--tx);margin-left:6px}
+.curve-range{display:flex;justify-content:space-between;gap:12px;font:11px var(--mono);color:var(--muted);margin:12px 0 0;flex-wrap:wrap}
+.trade-controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;align-items:center}
+.trade-controls select,.trade-controls input{min-width:0;height:38px;background:var(--surf);border:1px solid var(--line);border-radius:6px;color:var(--tx);padding:6px 10px;font:13px var(--font)}
+.trade-controls input{flex:1;width:140px}.trade-controls select{width:146px}
+.trade-meta{font-size:12px;color:var(--muted);margin:8px 0}
+.waterfall .note{white-space:normal;max-width:24ch;overflow-wrap:anywhere}
+#waterfall{max-height:370px;overflow:auto;padding-right:8px;scrollbar-color:var(--line) var(--bg)}
+.tape{scrollbar-color:var(--line) var(--surf)}
+.visitor-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:500px}
+.visitor-values div{border-left:2px solid var(--line);padding-left:14px}
+.visitor-values dt{font-size:12px;color:var(--muted)}
+.visitor-values dd{margin:4px 0 0;font:600 22px var(--mono)}
+.visitors p{color:var(--muted);font-size:12px;margin:10px 0}
+.nav a{color:var(--tx)}
+.brand{font-size:18px}.brand-mark{background:var(--accent);box-shadow:none}
+.ticker-wrap{display:none}
+.how{display:none}
+.don-copy,.btn{border-radius:6px}
+@media(max-width:620px){.cock-body{grid-template-columns:1fr}.hero-heading{gap:4px}.hero-heading .tools{width:100%}.cock-kpis .kpi .v{font-size:18px}.kpi-card .v{font-size:19px}.nav .pill{display:none}.waterfall li{grid-template-columns:43px 45px minmax(0,1fr) minmax(0,1.1fr);gap:6px}.performance strong{font-size:24px}.analysis,.visitors{margin-top:16px}.balance-row{gap:8px 16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style></head>
+<body>
+<a class="skip" href="#hoofdinhoud">Ga naar inhoud</a>
+
+
+<header class="top">
+  <a class="brand" href="/" aria-label="CryptoDokter home">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">CryptoDokter</span>
+  </a>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <span class="hitc" id="hitc" role="group" aria-label="aantal bezoeken" hidden=""><span class="hitc-n" id="hitc-v"></span> <span class="hitc-l">bezoeken</span></span>
+    <span class="pill" title="Alleen papieren simulatie — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
+    <a href="#analyse" id="nav-how">Analyse</a>
+  </nav>
+</header>
+
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker" id="ticker"><span><span class="sym">PAPER</span> · geen live orders</span><span>equity <span class="sym">€46.528</span></span><span>rendement <span class="dn">−37,9%</span></span><span><span class="up">BUY</span> <span class="sym">ENGRAM</span></span><span><span class="up">BUY</span> <span class="sym">QVT</span></span><span><span class="dn">SELL</span> <span class="sym">ZTO</span></span><span><span class="up">BUY</span> <span class="sym">ZTO</span></span><span><span class="dn">SELL</span> <span class="sym">CAESAR</span></span><span><span class="up">BUY</span> <span class="sym">CAESAR</span></span><span><span class="dn">SELL</span> <span class="sym">BEYOND</span></span><span><span class="up">BUY</span> <span class="sym">BEYOND</span></span><span><span class="dn">SELL</span> <span class="sym">CPU</span></span><span><span class="dn">SELL</span> <span class="sym">UP</span></span><span><span class="up">BUY</span> <span class="sym">CPU</span></span><span><span class="up">BUY</span> <span class="sym">UP</span></span><span>open <span class="sym">QVT</span></span><span>open <span class="sym">ENGRAM</span></span><span><span class="sym">PAPER</span> · geen live orders</span><span>equity <span class="sym">€46.528</span></span><span>rendement <span class="dn">−37,9%</span></span><span><span class="up">BUY</span> <span class="sym">ENGRAM</span></span><span><span class="up">BUY</span> <span class="sym">QVT</span></span><span><span class="dn">SELL</span> <span class="sym">ZTO</span></span><span><span class="up">BUY</span> <span class="sym">ZTO</span></span><span><span class="dn">SELL</span> <span class="sym">CAESAR</span></span><span><span class="up">BUY</span> <span class="sym">CAESAR</span></span><span><span class="dn">SELL</span> <span class="sym">BEYOND</span></span><span><span class="up">BUY</span> <span class="sym">BEYOND</span></span><span><span class="dn">SELL</span> <span class="sym">CPU</span></span><span><span class="dn">SELL</span> <span class="sym">UP</span></span><span><span class="up">BUY</span> <span class="sym">CPU</span></span><span><span class="up">BUY</span> <span class="sym">UP</span></span><span>open <span class="sym">QVT</span></span><span>open <span class="sym">ENGRAM</span></span></div>
+</div>
+
+<main id="hoofdinhoud" data-protonpass-form="">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <div class="hero-heading">
+        <div><p class="eyebrow">Paper-trading monitor</p><h1 id="hero-title">CryptoDokter</h1></div>
+        <div class="tools">
+          <span class="run-state" id="run-state" role="status">Automatisch verversen</span>
+          <button class="tool" id="refresh-data" type="button" aria-label="Gegevens verversen" title="Gegevens verversen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg></button>
+          <button class="tool" id="pause-data" type="button" aria-label="Automatisch verversen pauzeren" aria-pressed="false" title="Automatisch verversen pauzeren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"></rect><rect x="5" y="3" width="5" height="18" rx="1"></rect></svg></button>
+          <button class="tool" id="export-trades" type="button" aria-label="Zichtbare transacties downloaden" title="Zichtbare transacties downloaden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></button>
+        </div>
+      </div>
+      <p class="snap-meta"><span id="hero-snap">Paper-snapshot · laatst bijgewerkt 07:09 (2 u geleden)</span><span class="hitc-m" id="hitc-m" role="group" aria-label="aantal bezoeken" hidden=""> · <span class="hitc-n" id="hitc-m-v"></span> <span class="hitc-l">bezoeken</span></span></p>
+      <p class="lede" id="hero-lede">
+        Resultaten, open posities en transacties van de paper-bot. Alle bedragen zijn gesimuleerd.
+      </p>
+      <div class="performance" aria-label="Netto paper-resultaat sinds start"><strong id="net-result" class="dn">−€40.641,30</strong><span id="performance-label">Verlies sinds start · papier</span></div>
+      <p class="data-warning" id="data-warning" role="status">Stand ouder dan 20 minuten; botactiviteit is niet actueel bevestigd.</p>
+      <div class="balance-row"><span>Actieve portefeuille<strong id="balance-active">€46.528</strong></span><span>Opzij gezet<strong id="balance-banked">€19.931</strong></span><span>Kas<strong id="balance-cash">€42.255</strong></span></div>
+    </div>
+
+    <aside class="cockpit" aria-label="Paper cockpit — tape en equity">
+      <div class="cock-head">
+        <span class="cap">Paper cockpit</span>
+        <span class="pill" title="Alleen papieren simulatie — geen echte orders"><span class="dot" aria-hidden="true"></span>Paper — geen echte orders</span>
+        <span class="meta" id="snap-updated" aria-live="polite">Paper · laatst bijgewerkt 07:09 (2 u geleden)</span>
+      </div>
+      <div class="cock-kpis" aria-label="Paper KPI's">
+        <div class="kpi"><p class="k">Totale paperwaarde</p><p class="v" id="kpi-eq">€66.459</p></div>
+        <div class="kpi"><p class="k">Rendement</p><p class="v dn" id="kpi-rend">−37,9%</p></div>
+        <div class="kpi"><p class="k">Trades</p><p class="v" id="kpi-trades">8.921</p></div>
+        <div class="kpi"><p class="k">Open</p><p class="v" id="kpi-open">2</p></div>
+      </div>
+      <div class="cock-body">
+        <div class="spark-pane">
+          <div class="lab">Equity curve · paper</div>
+          <svg id="spark-svg" viewBox="0 0 320 78" preserveAspectRatio="none" role="img" aria-label="Paper equity spark">
+            <line x1="0" y1="39" x2="320" y2="39" stroke="#243041" stroke-width="1"></line>
+            <path id="spark-path" fill="none" stroke="#4B9CF5" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" d="M4.0 63.4 L9.3 63.4 L14.6 63.4 L19.9 63.4 L25.2 63.4 L30.4 63.4 L35.7 63.4 L41.0 63.4 L46.3 63.4 L51.6 63.4 L56.9 63.4 L62.2 63.4 L67.5 63.4 L72.7 63.4 L78.0 63.4 L83.3 63.4 L88.6 63.7 L93.9 63.7 L99.2 73.3 L104.5 73.3 L109.8 73.7 L115.1 74.0 L120.3 74.0 L125.6 59.8 L130.9 45.6 L136.2 45.6 L141.5 45.6 L146.8 45.6 L152.1 45.6 L157.4 45.6 L162.6 45.6 L167.9 45.9 L173.2 31.7 L178.5 31.7 L183.8 32.1 L189.1 32.1 L194.4 17.9 L199.7 17.9 L204.9 17.9 L210.2 18.2 L215.5 18.2 L220.8 19.9 L226.1 18.2 L231.4 14.7 L236.7 18.2 L242.0 18.2 L247.3 4.0 L252.5 4.0 L257.8 4.0 L263.1 4.0 L268.4 4.0 L273.7 4.0 L279.0 4.0 L284.3 4.0 L289.6 4.0 L294.8 4.0 L300.1 4.3 L305.4 4.7 L310.7 9.2 L316.0 4.7"></path>
+            <circle id="spark-dot" cx="316" cy="4.671377142549594" r="2.5" fill="#3dd68c" opacity="0.95"></circle>
+          </svg>
+          <div class="lab" style="margin-top:4px">Recent gekocht</div>
+          <div class="radar-chips" id="radar-chips"><span class="chip">ENGRAM</span><span class="chip">QVT</span><span class="chip">ZTO</span><span class="chip">CAESAR</span><span class="chip">BEYOND</span><span class="chip">CPU</span><span class="chip">UP</span><span class="chip">SLOP</span></div>
+        </div>
+        <div class="tape-pane">
+          <div class="lab">Paper tape</div>
+          <div class="tape" aria-live="polite">
+            <ul class="tape-list" id="tape-list"><li><span class="t">07:07</span><span class="side buy">BUY</span><span class="sym">ENGRAM</span><span class="amt">€2.142</span></li><li><span class="t">07:07</span><span class="side buy">BUY</span><span class="sym">QVT</span><span class="amt">€2.142</span></li><li><span class="t">07:01</span><span class="side sell">SELL</span><span class="sym">ZTO</span><span class="amt up">+€221,19</span></li><li><span class="t">06:56</span><span class="side buy">BUY</span><span class="sym">ZTO</span><span class="amt">€2.142</span></li><li><span class="t">06:55</span><span class="side sell">SELL</span><span class="sym">CAESAR</span><span class="amt up">+€221,19</span></li><li><span class="t">06:54</span><span class="side buy">BUY</span><span class="sym">CAESAR</span><span class="amt">€2.142</span></li><li><span class="t">06:54</span><span class="side sell">SELL</span><span class="sym">BEYOND</span><span class="amt up">+€221,19</span></li><li><span class="t">06:53</span><span class="side buy">BUY</span><span class="sym">BEYOND</span><span class="amt">€2.142</span></li><li><span class="t">06:49</span><span class="side sell">SELL</span><span class="sym">CPU</span><span class="amt up">+€221,19</span></li><li><span class="t">06:49</span><span class="side sell">SELL</span><span class="sym">UP</span><span class="amt up">+€221,19</span></li><li><span class="t">06:48</span><span class="side buy">BUY</span><span class="sym">CPU</span><span class="amt">€2.142</span></li><li><span class="t">06:48</span><span class="side buy">BUY</span><span class="sym">UP</span><span class="amt">€2.142</span></li><li><span class="t">06:48</span><span class="side sell">SELL</span><span class="sym">SLOP</span><span class="amt dn">−€158,61</span></li><li><span class="t">06:46</span><span class="side buy">BUY</span><span class="sym">SLOP</span><span class="amt">€2.142</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="kpi-strip" aria-label="Paper-kerncijfers">
+    <div class="kpi-card">
+      <p class="k">Startkapitaal</p>
+      <p class="v" id="strip-eq">€107.100</p>
+      <p class="s" id="strip-eq-sub">Referentie sinds start · paper</p>
+    </div>
+    <div class="kpi-card">
+      <p class="k">Gerealiseerde P&amp;L</p>
+      <p class="v dn" id="strip-rend">−€40.631</p>
+      <p class="s" id="strip-rend-sub">Netto uit gesloten posities</p>
+    </div>
+    <div class="kpi-card">
+      <p class="k">Opzij gezet</p>
+      <p class="v" id="strip-trades">€19.931</p>
+      <p class="s">Onderdeel van totale waarde</p>
+    </div>
+    <div class="kpi-card">
+      <p class="k">Vrije kas</p>
+      <p class="v" id="strip-open">€42.255</p>
+      <p class="s">Beschikbaar binnen simulatie</p>
+    </div>
+  </section>
+
+  <section class="analysis" id="analyse" aria-labelledby="analysis-title">
+    <h2 id="analysis-title" tabindex="-1">Strategieanalyse</h2>
+    <div class="digest-top" id="digest-top"><span class="verdict dn" id="digest-verdict">KNOP-VOORSTEL</span><span class="digest-date" id="digest-date">5 oktober 2026 · gemeten 5 okt 16:54 (16 u geleden)</span></div>
+    <p id="digest-headline">Desk-digest: PF 0,62 over 4 uur; voorstel herkoop-pauze 40 naar 120 minuten</p>
+    <div id="digest-body"><ul class="digest-sum" id="digest-sum"><li>Laatste 4 uur: 31 exits, winrate 45%, PF 0,62, netto −€946; fees ongeveer €66 per uur.</li><li>Over 8 uur PF 0,84 (netto −€921); de stop-losses kosten meer dan de take-profits opleveren.</li><li>Herkopen van een munt binnen 2 uur na verkoop deden het slecht: over 72 uur PF 0,47 en −€3.840.</li></ul><div class="digest-kpis" id="digest-kpis" aria-label="Strategiecijfers met meetperiode"><span class="chip"><span class="k">PF</span>0,84<span class="sc">8u</span></span><span class="chip"><span class="k">WR</span>46,8%<span class="sc">8u</span></span><span class="chip"><span class="k">Fees</span>€266<span class="sc">4u</span></span></div><p class="digest-next" id="digest-next"><strong>Volgende: </strong>Voorstel aan Titan: herkoop-pauze van 40 naar 120 minuten. Nog niets aangepast. Paper-only, geen echte orders.</p></div>
+  </section>
+
+  <section class="panel-row" id="resultaten" aria-label="Equity en laatste paper-fills">
+    <div class="panel">
+      <h2 id="resultaten-title" tabindex="-1">Totale paperwaarde</h2>
+      <p class="sub" id="eq-sub">Snapshotvenster · paper · bijgewerkt 07:09</p>
+      <svg class="eq-svg" id="eq-svg" viewBox="0 0 640 160" preserveAspectRatio="none" role="img" aria-label="Paper equity curve">
+        <defs>
+          <linearGradient id="eqFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4B9CF5" stop-opacity=".22"></stop>
+            <stop offset="100%" stop-color="#4B9CF5" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="40" x2="640" y2="40" stroke="#243041" stroke-width="1" opacity=".5"></line>
+        <line x1="0" y1="80" x2="640" y2="80" stroke="#243041" stroke-width="1" opacity=".35"></line>
+        <line x1="0" y1="120" x2="640" y2="120" stroke="#243041" stroke-width="1" opacity=".5"></line>
+        <path id="eq-area" fill="url(#eqFill)" d="M6.0 131.6 L16.6 131.6 L27.3 131.6 L37.9 131.6 L48.6 131.6 L59.2 131.6 L69.9 131.6 L80.5 131.6 L91.2 131.6 L101.8 131.6 L112.4 131.6 L123.1 131.6 L133.7 131.6 L144.4 131.6 L155.0 131.6 L165.7 131.6 L176.3 132.3 L186.9 132.3 L197.6 152.6 L208.2 152.6 L218.9 153.3 L229.5 154.0 L240.2 154.0 L250.8 124.0 L261.5 93.9 L272.1 93.9 L282.7 93.9 L293.4 93.9 L304.0 93.9 L314.7 93.9 L325.3 93.9 L336.0 94.7 L346.6 64.6 L357.3 64.6 L367.9 65.3 L378.5 65.3 L389.2 35.3 L399.8 35.3 L410.5 35.3 L421.1 36.0 L431.8 36.0 L442.4 39.6 L453.1 36.0 L463.7 28.6 L474.3 36.0 L485.0 36.0 L495.6 6.0 L506.3 6.0 L516.9 6.0 L527.6 6.0 L538.2 6.0 L548.8 6.0 L559.5 6.0 L570.1 6.0 L580.8 6.0 L591.4 6.0 L602.1 6.7 L612.7 7.4 L623.4 17.0 L634.0 7.4 L634.0 154 L6.0 154 Z"></path>
+        <path id="eq-line" fill="none" stroke="#4B9CF5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M6.0 131.6 L16.6 131.6 L27.3 131.6 L37.9 131.6 L48.6 131.6 L59.2 131.6 L69.9 131.6 L80.5 131.6 L91.2 131.6 L101.8 131.6 L112.4 131.6 L123.1 131.6 L133.7 131.6 L144.4 131.6 L155.0 131.6 L165.7 131.6 L176.3 132.3 L186.9 132.3 L197.6 152.6 L208.2 152.6 L218.9 153.3 L229.5 154.0 L240.2 154.0 L250.8 124.0 L261.5 93.9 L272.1 93.9 L282.7 93.9 L293.4 93.9 L304.0 93.9 L314.7 93.9 L325.3 93.9 L336.0 94.7 L346.6 64.6 L357.3 64.6 L367.9 65.3 L378.5 65.3 L389.2 35.3 L399.8 35.3 L410.5 35.3 L421.1 36.0 L431.8 36.0 L442.4 39.6 L453.1 36.0 L463.7 28.6 L474.3 36.0 L485.0 36.0 L495.6 6.0 L506.3 6.0 L516.9 6.0 L527.6 6.0 L538.2 6.0 L548.8 6.0 L559.5 6.0 L570.1 6.0 L580.8 6.0 L591.4 6.0 L602.1 6.7 L612.7 7.4 L623.4 17.0 L634.0 7.4"></path>
+      </svg>
+      <p class="eq-empty" id="eq-empty" hidden="">Curve verschijnt bij de volgende snapshot.</p>
+      <p class="curve-range"><span id="curve-start">06:35</span><span id="curve-value">€65.353 – €66.469</span><span id="curve-end">07:09</span></p>
+    </div>
+    <div class="panel">
+      <h2>Laatste paper-acties</h2>
+      <div class="trade-controls"><input type="search" id="trade-search" aria-label="Zoek munt of transactiereden" placeholder="Zoek munt of reden"><select id="trade-filter" aria-label="Filter transacties"><option value="all">Alle transacties</option><option value="buy">Aankopen</option><option value="sell">Verkopen</option><option value="profit">Met winst</option><option value="loss">Met verlies</option></select></div>
+      <p class="trade-meta" id="trade-meta">25 van 25 transacties in deze snapshot</p>
+      <ul class="waterfall" id="waterfall"><li title="early-hunt score 28.3 age 7.4u"><span class="t">07:07</span><span class="side buy">BUY</span><span class="sym">ENGRAM</span><span class="note">€2.142</span></li><li title="early-hunt score 40.0 age 0.4u"><span class="t">07:07</span><span class="side buy">BUY</span><span class="sym">QVT</span><span class="note">€2.142</span></li><li title="take-profit (15.62%) [fill@trigger]"><span class="t">07:01</span><span class="side sell">SELL</span><span class="sym">ZTO</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="early-hunt score 32.0 age 6.3u"><span class="t">06:56</span><span class="side buy">BUY</span><span class="sym">ZTO</span><span class="note">€2.142</span></li><li title="take-profit (19.24%) [fill@trigger]"><span class="t">06:55</span><span class="side sell">SELL</span><span class="sym">CAESAR</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="early-hunt score 34.0 age 0.1u"><span class="t">06:54</span><span class="side buy">BUY</span><span class="sym">CAESAR</span><span class="note">€2.142</span></li><li title="take-profit (31.45%) [fill@trigger]"><span class="t">06:54</span><span class="side sell">SELL</span><span class="sym">BEYOND</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="early-hunt score 31.5 age 0.7u"><span class="t">06:53</span><span class="side buy">BUY</span><span class="sym">BEYOND</span><span class="note">€2.142</span></li><li title="take-profit (13.33%) [fill@trigger]"><span class="t">06:49</span><span class="side sell">SELL</span><span class="sym">CPU</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="take-profit (68.16%) [fill@trigger]"><span class="t">06:49</span><span class="side sell">SELL</span><span class="sym">UP</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="early-hunt score 36.6 age 0.2u"><span class="t">06:48</span><span class="side buy">BUY</span><span class="sym">CPU</span><span class="note">€2.142</span></li><li title="early-hunt score 36.6 age 0.1u"><span class="t">06:48</span><span class="side buy">BUY</span><span class="sym">UP</span><span class="note">€2.142</span></li><li title="stop-loss (-22.42%) [fill@trigger]"><span class="t">06:48</span><span class="side sell">SELL</span><span class="sym">SLOP</span><span class="note" style="color: var(--dn);">−€158,61</span></li><li title="early-hunt score 35.0 age 0.8u"><span class="t">06:46</span><span class="side buy">BUY</span><span class="sym">SLOP</span><span class="note">€2.142</span></li><li title="take-profit (26.08%) [fill@trigger]"><span class="t">06:34</span><span class="side sell">SELL</span><span class="sym">MONK</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="early-hunt score 29.7 age 0.1u"><span class="t">06:32</span><span class="side buy">BUY</span><span class="sym">MONK</span><span class="note">€2.142</span></li><li title="stop-loss (-12.32%) [fill@trigger]"><span class="t">06:16</span><span class="side sell">SELL</span><span class="sym">HALLOCAT</span><span class="note" style="color: var(--dn);">−€87,23</span></li><li title="take-profit (12.15%) [fill@trigger]"><span class="t">06:16</span><span class="side sell">SELL</span><span class="sym">ZTO</span><span class="note" style="color: var(--up);">+€221,19</span></li><li title="partial-tp (11.31% → 45%) [fill@trigger]"><span class="t">06:15</span><span class="side sell">PART</span><span class="sym">HALLOCAT</span><span class="note" style="color: var(--up);">+€28,32</span></li><li title="early-hunt score 35.8 age 0.3u"><span class="t">06:13</span><span class="side buy">BUY</span><span class="sym">HALLOCAT</span><span class="note">€2.142</span></li><li title="early-hunt score 40.0 age 5.5u"><span class="t">06:10</span><span class="side buy">BUY</span><span class="sym">ZTO</span><span class="note">€2.142</span></li><li title="stop-loss (-7.74%) [fill@trigger]"><span class="t">06:10</span><span class="side sell">SELL</span><span class="sym">KINEKO</span><span class="note" style="color: var(--dn);">−€158,61</span></li><li title="early-hunt score 33.0 age 5.9u"><span class="t">06:06</span><span class="side buy">BUY</span><span class="sym">KINEKO</span><span class="note">€2.142</span></li><li title="stop-loss (-6.87%) [fill@trigger]"><span class="t">06:06</span><span class="side sell">SELL</span><span class="sym">SLOP</span><span class="note" style="color: var(--dn);">−€158,61</span></li><li title="early-hunt score 34.8 age 0.1u"><span class="t">06:05</span><span class="side buy">BUY</span><span class="sym">SLOP</span><span class="note">€2.142</span></li></ul>
+    </div>
+  </section>
+
+  <section class="panel-row single" id="open-posities" aria-labelledby="pos-title">
+    <div class="panel">
+      <h2 id="pos-title">Open posities</h2>
+      <p class="sub" id="pos-sub">2 open · Paper — geen echte orders</p>
+      <ul class="waterfall pos-list" id="pos-list"><li class="pos-head"><span>Munt</span><span class="num">Sinds</span><span class="num">Inleg</span><span class="num">Entryprijs</span></li><li><span class="sym">QVT</span><span class="num t">07:07</span><span class="num">€2.142</span><span class="num">€0,001361</span></li><li><span class="sym">ENGRAM</span><span class="num t">07:07</span><span class="num">€2.142</span><span class="num">€0,000106</span></li></ul>
+    </div>
+  </section>
+
+  <section class="how" id="hoe-het-werkt" aria-labelledby="how-title">
+    <p class="section-label" id="how-title" tabindex="-1">Hoe het werkt</p>
+    <ol>
+      <li>
+        <h3>Bekijk de tape</h3>
+        <p>Elke paper-fill met tijd, richting en resultaat. Geen exchange-keys, geen live orders.</p>
+      </li>
+      <li>
+        <h3>Volg de equity</h3>
+        <p>Curve en kerncijfers uit dezelfde snapshot, met tijdstip erbij.</p>
+      </li>
+      <li>
+        <h3>Lees het bulletin</h3>
+        <p>Context uit externe bronnen. De bot handelt er niet op.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bulletin" id="marktbulletin" aria-labelledby="bulletin-title">
+    <div class="bulletin-head">
+      <div class="bulletin-titles">
+        <h2 id="bulletin-title">Marktbulletin</h2>
+        <p class="bulletin-sub">Context · geen advies · paper only</p>
+      </div>
+      <p class="bulletin-meta" id="bulletin-updated" aria-live="polite">Bijgewerkt · gisteren</p>
+    </div>
+    <div class="bulletin-seg" role="group" aria-label="Filter bulletin">
+      <button type="button" data-filter="news" aria-pressed="false">Nieuws</button>
+      <button type="button" data-filter="outlook" aria-pressed="false">Outlook</button>
+      <button type="button" data-filter="all" aria-pressed="true">Alles</button>
+    </div>
+    <ul class="bulletin-list" id="bulletin-list"><li class="bulletin-card" data-kind="news"><div class="bulletin-card-top"><span class="b-chip cat">Nieuws</span></div><h3><a href="https://newsbit.nl/crypto-wekker-bitcoin-koers-kent-onrustige-nacht-en-daalt-1-500-in-4-uur/" target="_blank" rel="noopener noreferrer">Crypto wekker: Bitcoin koers kent onrustige nacht en daalt $1.500 in 4 uur</a></h3><div class="bulletin-card-meta"><span class="src">Newsbit</span><time datetime="2026-10-05T05:16:30Z">gisteren</time></div></li><li class="bulletin-card" data-kind="news"><div class="bulletin-card-top"><span class="b-chip cat">Nieuws</span></div><h3><a href="https://www.crypto-insiders.nl/nieuws/bitcoin/trouwe-bitcoin-beleggers-blijven-op-winst-ondanks-koersdaling/" target="_blank" rel="noopener noreferrer">Trouwe bitcoin-beleggers blijven op winst ondanks koersdaling</a></h3><div class="bulletin-card-meta"><span class="src">Crypto Insiders</span><time datetime="2026-10-05T05:02:54Z">gisteren</time></div></li><li class="bulletin-card" data-kind="news"><div class="bulletin-card-top"><span class="b-chip cat">Nieuws</span></div><h3><a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener noreferrer">Here’s what happened in crypto today</a></h3><div class="bulletin-card-meta"><span class="src">Cointelegraph</span><time datetime="2026-10-05T05:00:00Z">gisteren</time></div></li><li class="bulletin-card" data-kind="news"><div class="bulletin-card-top"><span class="b-chip cat">Nieuws</span></div><h3><a href="https://www.coindesk.com/markets/2026/10/05/okx-and-nyse-s-owner-file-for-round-the-clock-tokenized-trading-in-u-s-stocks" target="_blank" rel="noopener noreferrer">Joint venture of OKX and NYSE parent ICE files for 24/7 tokenized U.S. stock trading</a></h3><div class="bulletin-card-meta"><span class="src">CoinDesk</span><time datetime="2026-10-05T04:45:03Z">gisteren</time></div></li><li class="bulletin-card" data-kind="outlook"><div class="bulletin-card-top"><span class="b-chip cat">Outlook</span><span class="b-chip sent-neutral">neutral</span></div><h3><a href="https://research.glassnode.com/macro-special-pricing-out-the-hike/" target="_blank" rel="noopener noreferrer">Pricing Out the Hike</a></h3><div class="bulletin-card-meta"><span class="src">Glassnode</span><time datetime="2026-10-03T12:45:46Z">2 dagen geleden</time></div></li><li class="bulletin-card" data-kind="outlook"><div class="bulletin-card-top"><span class="b-chip cat">Outlook</span><span class="b-chip sent-neutral">neutral</span></div><h3><a href="https://bitcoinops.org/en/newsletters/2026/10/02/" target="_blank" rel="noopener noreferrer">Bitcoin Optech Newsletter #425</a></h3><div class="bulletin-card-meta"><span class="src">Bitcoin Optech</span><time datetime="2026-10-02T00:00:00Z">4 dagen geleden</time></div></li></ul>
+    <p class="bulletin-empty" id="bulletin-empty" hidden="">Het bulletin verschijnt bij de volgende update.</p>
+    <p class="bulletin-foot">Bronnen extern · CryptoDokter handelt niet op dit bulletin</p>
+  </section>
+
+  <section class="visitors" id="bezoekers" aria-labelledby="visitors-title">
+    <h2 id="visitors-title">Bezoeken</h2>
+    <dl class="visitor-values"><div><dt>Vandaag</dt><dd id="visits-today">—</dd></div><div><dt>Totaal gemeten</dt><dd id="visits-total">—</dd></div></dl>
+    <p id="visits-status" role="status">Teller gedeeltelijk of tijdelijk niet beschikbaar.</p>
+    <p>GoatCounter · telling sinds inschakeling · kan tot vier uur achterlopen. Aanwezige bezoekers worden nog niet gemeten.</p>
+  </section>
+
+  <section class="doneer" id="doneer" aria-labelledby="doneer-title">
+    <h2 id="doneer-title" tabindex="-1">Steun CryptoDokter</h2>
+    <p class="don-lede">CryptoDokter is een open, paper-only project. Een bijdrage is vrijwillig en gaat volledig naar de verdere ontwikkeling. Je krijgt er geen rendement, beloning of tegenprestatie voor terug, en dit is geen beleggingsadvies.</p>
+    <p class="don-check">Controleer het adres altijd in je wallet voordat je verstuurt, en kies het netwerk dat bij het adres hoort.</p>
+    <div class="don-tabs" role="tablist" aria-label="Kies een netwerk">
+      <button type="button" role="tab" class="don-tab" id="don-tab-bitcoin" aria-controls="don-panel-bitcoin" aria-selected="true" tabindex="0" data-net="bitcoin"><img src="assets/logos/bitcoin.svg" width="18" height="18" alt="">Bitcoin</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-ethereum" aria-controls="don-panel-ethereum" aria-selected="false" tabindex="-1" data-net="ethereum"><img src="assets/logos/ethereum.svg" width="18" height="18" alt="">Ethereum</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-solana" aria-controls="don-panel-solana" aria-selected="false" tabindex="-1" data-net="solana"><img src="assets/logos/solana.svg" width="18" height="18" alt="">Solana</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-base" aria-controls="don-panel-base" aria-selected="false" tabindex="-1" data-net="base"><img src="assets/logos/base.svg" width="18" height="18" alt="">Base</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-arbitrum" aria-controls="don-panel-arbitrum" aria-selected="false" tabindex="-1" data-net="arbitrum"><img src="assets/logos/arbitrum.svg" width="18" height="18" alt="">Arbitrum</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-optimism" aria-controls="don-panel-optimism" aria-selected="false" tabindex="-1" data-net="optimism"><img src="assets/logos/optimism.svg" width="18" height="18" alt="">Optimism</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-polygon" aria-controls="don-panel-polygon" aria-selected="false" tabindex="-1" data-net="polygon"><img src="assets/logos/polygon.svg" width="18" height="18" alt="">Polygon</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-bnb" aria-controls="don-panel-bnb" aria-selected="false" tabindex="-1" data-net="bnb"><img src="assets/logos/bnb.svg" width="18" height="18" alt="">BNB Chain</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-linea" aria-controls="don-panel-linea" aria-selected="false" tabindex="-1" data-net="linea"><img src="assets/logos/linea.svg" width="18" height="18" alt="">Linea</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-monad" aria-controls="don-panel-monad" aria-selected="false" tabindex="-1" data-net="monad"><img src="assets/logos/monad.svg" width="18" height="18" alt="">Monad</button>
+      <button type="button" role="tab" class="don-tab" id="don-tab-tron" aria-controls="don-panel-tron" aria-selected="false" tabindex="-1" data-net="tron"><img src="assets/logos/tron.svg" width="18" height="18" alt="">Tron</button>
+    </div>
+    <div class="don-panels">
+      <div class="don-panel" id="don-panel-bitcoin" data-net="bitcoin" role="tabpanel" aria-labelledby="don-tab-bitcoin">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/bitcoin.svg" width="36" height="36" alt=""><h3>Bitcoin</h3></div>
+          <code class="don-addr" id="don-addr-bitcoin" translate="no">bc1qmhsrrm86wfp35uzv9063xq9h7hhx5vulhc8hy5</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-bitcoin" data-status="don-st-bitcoin">Kopieer adres</button>
+          <span class="don-sr" id="don-st-bitcoin" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-btc.svg" width="184" height="184" alt="QR-code van het Bitcoin-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-ethereum" data-net="ethereum" role="tabpanel" aria-labelledby="don-tab-ethereum" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/ethereum.svg" width="36" height="36" alt=""><h3>Ethereum</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-ethereum" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-ethereum" data-status="don-st-ethereum">Kopieer adres</button>
+          <span class="don-sr" id="don-st-ethereum" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Ethereum-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-solana" data-net="solana" role="tabpanel" aria-labelledby="don-tab-solana" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/solana.svg" width="36" height="36" alt=""><h3>Solana</h3></div>
+          <code class="don-addr" id="don-addr-solana" translate="no">8pa7goTuEguWNp4opDqRzjZsrw1N8MQQzicyV6rkfFzp</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-solana" data-status="don-st-solana">Kopieer adres</button>
+          <span class="don-sr" id="don-st-solana" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-sol.svg" width="184" height="184" alt="QR-code van het Solana-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-base" data-net="base" role="tabpanel" aria-labelledby="don-tab-base" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/base.svg" width="36" height="36" alt=""><h3>Base</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-base" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-base" data-status="don-st-base">Kopieer adres</button>
+          <span class="don-sr" id="don-st-base" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Base-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-arbitrum" data-net="arbitrum" role="tabpanel" aria-labelledby="don-tab-arbitrum" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/arbitrum.svg" width="36" height="36" alt=""><h3>Arbitrum</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-arbitrum" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-arbitrum" data-status="don-st-arbitrum">Kopieer adres</button>
+          <span class="don-sr" id="don-st-arbitrum" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Arbitrum-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-optimism" data-net="optimism" role="tabpanel" aria-labelledby="don-tab-optimism" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/optimism.svg" width="36" height="36" alt=""><h3>Optimism</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-optimism" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-optimism" data-status="don-st-optimism">Kopieer adres</button>
+          <span class="don-sr" id="don-st-optimism" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Optimism-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-polygon" data-net="polygon" role="tabpanel" aria-labelledby="don-tab-polygon" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/polygon.svg" width="36" height="36" alt=""><h3>Polygon</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-polygon" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-polygon" data-status="don-st-polygon">Kopieer adres</button>
+          <span class="don-sr" id="don-st-polygon" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Polygon-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-bnb" data-net="bnb" role="tabpanel" aria-labelledby="don-tab-bnb" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/bnb.svg" width="36" height="36" alt=""><h3>BNB Chain</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-bnb" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-bnb" data-status="don-st-bnb">Kopieer adres</button>
+          <span class="don-sr" id="don-st-bnb" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het BNB Chain-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-linea" data-net="linea" role="tabpanel" aria-labelledby="don-tab-linea" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/linea.svg" width="36" height="36" alt=""><h3>Linea</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-linea" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-linea" data-status="don-st-linea">Kopieer adres</button>
+          <span class="don-sr" id="don-st-linea" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Linea-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-monad" data-net="monad" role="tabpanel" aria-labelledby="don-tab-monad" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/monad.svg" width="36" height="36" alt=""><h3>Monad</h3></div>
+          <p class="don-note">Hetzelfde adres op alle EVM-netwerken; kies in je wallet het juiste netwerk.</p>
+          <code class="don-addr" id="don-addr-monad" translate="no">0x284DA4553A5f122E437B006c2CcA717Ed6b40DB7</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-monad" data-status="don-st-monad">Kopieer adres</button>
+          <span class="don-sr" id="don-st-monad" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-evm.svg" width="184" height="184" alt="QR-code van het Monad-adres" loading="lazy" decoding="async">
+      </div>
+      <div class="don-panel" id="don-panel-tron" data-net="tron" role="tabpanel" aria-labelledby="don-tab-tron" hidden="">
+        <div class="don-info">
+          <div class="don-head"><img src="assets/logos/tron.svg" width="36" height="36" alt=""><h3>Tron</h3></div>
+          <code class="don-addr" id="don-addr-tron" translate="no">TNERbUKNMQhB9uFJ4TumXG32QgZ9WtQwrv</code>
+          <button type="button" class="don-copy" data-copy-target="don-addr-tron" data-status="don-st-tron">Kopieer adres</button>
+          <span class="don-sr" id="don-st-tron" role="status" aria-live="polite"></span>
+        </div>
+        <img class="don-qr" src="assets/qr/doneer-tron.svg" width="184" height="184" alt="QR-code van het Tron-adres" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Vertrouwen">
+    <div class="trust-inner">
+      <div><strong>PAPER ONLY</strong> — geen beleggingsadvies · geen live orders · geen fake PnL</div>
+      <div class="trust-badges">
+        <span class="tb">Paper</span>
+        <span class="tb">Geen live orders</span>
+        <span class="tb">Geen API-keys</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <!-- build: spectrum-landing-7-counter-spec -->
+  <div class="foot-row">
+    <span><strong>cryptodokter.nl</strong> · paper-only</span>
+    <span class="foot-links"><a href="#doneer" id="foot-doneer">Steun CryptoDokter</a></span>
+  </div>
+  <p class="disclaimer">
+    Disclaimer: CryptoDokter op deze site is uitsluitend een paper-/simulatieomgeving.
+    Geen echte orders, geen API-keys, geen rendementclaims en geen beleggingsadvies.
+    Verleden paper-resultaat zegt niets over de toekomst. Getoonde cijfers komen uit een paper-snapshot.
+  </p>
+</footer>
+
+
+<script>
+/* spectrum-landing-5-snapshot-1 — paper snapshot (same-origin JSON) + marktbulletin */
+(function () {
+  "use strict";
+  var reduceMotion = false;
+  try { reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) {}
+
+  /* ——— In-page anchors: smooth scroll (respects reduced motion) + focus heading ——— */
+  function wireAnchor(linkId, targetId, focusId) {
+    var link = document.getElementById(linkId);
+    if (!link) return;
+    link.addEventListener("click", function (ev) {
+      var target = document.getElementById(targetId);
+      if (!target) return;
+      ev.preventDefault();
+      try { target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }); }
+      catch (e) { target.scrollIntoView(); }
+      var f = document.getElementById(focusId || targetId);
+      if (f) { try { f.focus({ preventScroll: true }); } catch (e2) { f.focus(); } }
+      try { history.replaceState(null, "", "#" + targetId); } catch (e3) {}
+    });
+  }
+  wireAnchor("cta-primary", "resultaten", "resultaten-title");
+  wireAnchor("nav-how", "analyse", "analysis-title");
+  wireAnchor("foot-doneer", "doneer", "doneer-title");
+
+  /* ——— One number formatter: nl-NL, U+2212 for negatives ——— */
+  var MINUS = "\u2212";
+  function fmtNum(n, o) {
+    o = o || {};
+    if (n == null || n === "" || isNaN(Number(n))) return "—";
+    n = Number(n);
+    var abs = Math.abs(n);
+    var digits = o.digits != null ? o.digits : 0;
+    var s = abs.toLocaleString("nl-NL", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    var isZero = Number(abs.toFixed(digits)) === 0;
+    var sign = isZero ? "" : (n < 0 ? MINUS : (o.plus && n > 0 ? "+" : ""));
+    return sign + (o.prefix || "") + s + (o.suffix || "");
+  }
+  function fmtEur(n, plus) {
+    if (n == null || isNaN(Number(n))) return "—";
+    return fmtNum(n, { prefix: "€", digits: Math.abs(Number(n)) >= 1000 ? 0 : 2, plus: !!plus });
+  }
+  function fmtPct(n) { return fmtNum(n, { digits: 1, suffix: "%", plus: true }); }
+  function fmtInt(n) { return fmtNum(n, { digits: 0 }); }
+
+  /* ——— One 'bijgewerkt' formatter: Europe/Amsterdam, 24h ——— */
+  var TZ = "Europe/Amsterdam";
+  var MONTHS = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+  function amsParts(d) {
+    var out = {};
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: TZ, year: "numeric", month: "numeric", day: "numeric",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(d).forEach(function (p) { out[p.type] = p.value; });
+    return out;
+  }
+  function parseTs(iso) {
+    if (!iso) return null;
+    var d = new Date(iso);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function hhmm(d) {
+    var p = amsParts(d);
+    return String(p.hour).padStart(2, "0") + ":" + String(p.minute).padStart(2, "0");
+  }
+  function fmtUpdated(iso) {
+    var d = parseTs(iso);
+    if (!d) return "";
+    try {
+      var p = amsParts(d), now = amsParts(new Date());
+      var same = p.year === now.year && p.month === now.month && p.day === now.day;
+      return same ? hhmm(d) : (Number(p.day) + " " + MONTHS[Number(p.month) - 1] + " " + hhmm(d));
+    } catch (e) { return ""; }
+  }
+  function updatedLabel(prefix, iso) {
+    var t = fmtUpdated(iso);
+    return t ? prefix + " · bijgewerkt " + t : prefix;
+  }
+  function shortTime(iso) {
+    var d = parseTs(iso);
+    if (!d) return "—";
+    try { return hhmm(d); } catch (e) { return "—"; }
+  }
+  function setText(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function sideClass(side) {
+    var s = String(side || "").toUpperCase();
+    if (s.indexOf("BUY") === 0) return "buy";
+    if (s.indexOf("SELL") === 0 || s === "PARTIAL") return "sell";
+    return "";
+  }
+  function sideLabel(side) {
+    var s = String(side || "").toUpperCase();
+    if (s === "SELL_PARTIAL" || s === "PARTIAL") return "PART";
+    if (s.indexOf("BUY") === 0) return "BUY";
+    if (s.indexOf("SELL") === 0) return "SELL";
+    return s.slice(0, 4) || "—";
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function pathFromPoints(points, w, h, pad) {
+    pad = pad == null ? 4 : pad;
+    if (!points || !points.length) return { line: "", area: "", last: null };
+    var vals = [];
+    for (var i = 0; i < points.length; i++) {
+      var p = points[i];
+      var v = null;
+      if (typeof p === "number") v = p;
+      else if (p && p.total != null) v = Number(p.total);
+      else if (p && p.equity != null) v = Number(p.equity);
+      if (v != null && !isNaN(v)) vals.push(v);
+    }
+    if (!vals.length) return { line: "", area: "", last: null };
+    var min = Math.min.apply(null, vals);
+    var max = Math.max.apply(null, vals);
+    if (max === min) { max = min + 1; }
+    var n = vals.length;
+    var coords = vals.map(function (v, i) {
+      var x = pad + (n === 1 ? (w - 2 * pad) / 2 : (i / (n - 1)) * (w - 2 * pad));
+      var y = pad + (1 - (v - min) / (max - min)) * (h - 2 * pad);
+      return [x, y];
+    });
+    var line = coords.map(function (c, i) { return (i ? "L" : "M") + c[0].toFixed(1) + " " + c[1].toFixed(1); }).join(" ");
+    var last = coords[coords.length - 1];
+    var area = line + " L" + last[0].toFixed(1) + " " + (h - pad) + " L" + coords[0][0].toFixed(1) + " " + (h - pad) + " Z";
+    return { line: line, area: area, last: last };
+  }
+
+  function renderSpark(points) {
+    var path = document.getElementById("spark-path");
+    var dot = document.getElementById("spark-dot");
+    if (!path) return;
+    var g = pathFromPoints(points, 320, 78, 4);
+    path.setAttribute("d", g.line || "");
+    if (dot && g.last) {
+      dot.setAttribute("cx", g.last[0]);
+      dot.setAttribute("cy", g.last[1]);
+      dot.setAttribute("opacity", "0.95");
+    }
+  }
+  var equityFromFile = false;
+  function renderEquity(points) {
+    var line = document.getElementById("eq-line");
+    var area = document.getElementById("eq-area");
+    var empty = document.getElementById("eq-empty");
+    var svg = document.getElementById("eq-svg");
+    if (!line) return false;
+    var g = pathFromPoints(points, 640, 160, 6);
+    line.setAttribute("d", g.line || "");
+    if (area) area.setAttribute("d", g.area || "");
+    var ok = !!g.line;
+    if (empty) empty.hidden = ok;
+    if (svg) svg.style.display = ok ? "" : "none";
+    if (ok && points.length) {
+      setText("curve-start", fmtUpdated(points[0].t));
+      setText("curve-end", fmtUpdated(points[points.length - 1].t));
+      var values = points.map(function (p) { return numOrNull(p.total != null ? p.total : p.equity); }).filter(function (v) { return v != null; });
+      if (values.length) setText("curve-value", fmtEur(Math.min.apply(null, values)) + " – " + fmtEur(Math.max.apply(null, values)));
+    }
+    return ok;
+  }
+
+  /* Safe DOM: data alleen via textContent/createElement */
+  function mk(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = String(text);
+    return n;
+  }
+  function clearEl(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
+  function emptyRow(ul, text) {
+    clearEl(ul);
+    ul.appendChild(mk("li", "row-empty", text));
+  }
+  var NO_FILLS = "Nog geen paper-fills in deze snapshot.";
+  /* Nieuwe fills markeren: sleutel per trade, pas na de eerste render */
+  var seenKeys = null, newKeys = {};
+  function rowKey(row) { return [row.t, row.side, row.symbol, row.notional, row.pnl_eur].join("|"); }
+  function markNew(tape) {
+    var cur = {};
+    newKeys = {};
+    (tape || []).forEach(function (r) {
+      var k = rowKey(r);
+      cur[k] = 1;
+      if (seenKeys && !seenKeys[k]) newKeys[k] = 1;
+    });
+    seenKeys = cur;
+  }
+
+  function renderTape(tape, limit) {
+    var ul = document.getElementById("tape-list");
+    if (!ul) return;
+    clearEl(ul);
+    var rows = (tape || []).slice(0, limit || 14);
+    if (!rows.length) { emptyRow(ul, NO_FILLS); return; }
+    rows.forEach(function (row) {
+      var li = document.createElement("li");
+      var sc = sideClass(row.side);
+      var amt = "";
+      var amtClass = "amt";
+      var isBuy = String(row.side || "").toUpperCase().indexOf("BUY") === 0;
+      if (!isBuy && row.pnl_pct != null) {
+        amt = fmtPct(row.pnl_pct);
+        amtClass += row.pnl_pct >= 0 ? " up" : " dn";
+      } else if (!isBuy && row.pnl_eur != null && Number(row.pnl_eur) !== 0) {
+        amt = fmtEur(row.pnl_eur, true);
+        amtClass += row.pnl_eur >= 0 ? " up" : " dn";
+      } else if (row.notional != null) {
+        amt = fmtEur(row.notional);
+      } else if (row.pnl_eur != null) {
+        amt = fmtEur(row.pnl_eur);
+      }
+      li.appendChild(mk("span", "t", shortTime(row.t)));
+      li.appendChild(mk("span", "side " + sc, sideLabel(row.side)));
+      li.appendChild(mk("span", "sym", row.symbol || "—"));
+      li.appendChild(mk("span", amtClass, amt));
+      if (newKeys[rowKey(row)]) li.className = "is-new";
+      ul.appendChild(li);
+    });
+  }
+
+  function renderWaterfall(tape) {
+    var ul = document.getElementById("waterfall");
+    if (!ul) return;
+    clearEl(ul);
+    var rows = filteredTrades(tape);
+    setText("trade-meta", rows.length + " van " + (tape || []).length + " transacties in deze snapshot");
+    if (!rows.length) { emptyRow(ul, "Geen transacties voor dit filter."); return; }
+    rows.forEach(function (row) {
+      var li = document.createElement("li");
+      var sc = sideClass(row.side);
+      var note = row.pnl_eur != null && String(row.side).toUpperCase() !== "BUY" ? fmtEur(row.pnl_eur, true) : fmtEur(row.notional);
+      li.appendChild(mk("span", "t", shortTime(row.t)));
+      li.appendChild(mk("span", "side " + sc, sideLabel(row.side)));
+      li.appendChild(mk("span", "sym", row.symbol || "—"));
+      var result = mk("span", "note", note);
+      if (row.pnl_eur != null && String(row.side).toUpperCase() !== "BUY") result.style.color = row.pnl_eur < 0 ? "var(--dn)" : "var(--up)";
+      li.appendChild(result);
+      li.title = row.reason || row.note || "";
+      if (newKeys[rowKey(row)]) li.className = "is-new";
+      ul.appendChild(li);
+    });
+  }
+
+  function renderRadar(radar) {
+    var host = document.getElementById("radar-chips");
+    if (!host) return;
+    clearEl(host);
+    if (!radar || !radar.length) {
+      host.appendChild(mk("span", "chip-empty", "Geen kandidaten in deze snapshot."));
+      return;
+    }
+    radar.slice(0, 8).forEach(function (r) {
+      var el = mk("span", "chip", (r && r.symbol) || "?");
+      if (r && r.score != null) el.appendChild(mk("span", "sc", fmtNum(r.score, { digits: 0 })));
+      host.appendChild(el);
+    });
+  }
+
+  /* Open posities: alleen velden die in de data staan; lege toestand eerlijk */
+  function fmtPrice(n) {
+    if (n == null || isNaN(Number(n))) return "—";
+    n = Number(n);
+    var a = Math.abs(n);
+    var sig = a >= 1 ? { minimumFractionDigits: 2, maximumFractionDigits: 4 }
+                     : { maximumSignificantDigits: 4 };
+    return "€" + a.toLocaleString("nl-NL", sig);
+  }
+  var seenPos = null;
+  function renderPositions(list, countHint) {
+    var ul = document.getElementById("pos-list");
+    if (!ul) return;
+    clearEl(ul);
+    var rows = Array.isArray(list) ? list.filter(function (p) { return p && p.symbol; }) : [];
+    var sub = document.getElementById("pos-sub");
+    if (!rows.length) {
+      ul.appendChild(mk("li", "row-empty", countHint ? "Open posities zonder details in deze snapshot." : "Geen open paper-posities in deze snapshot."));
+      if (sub) sub.textContent = "Paper — geen echte orders";
+      seenPos = {};
+      return;
+    }
+    if (sub) sub.textContent = fmtInt(rows.length) + " open · Paper — geen echte orders";
+    var hasCur = rows.some(function (p) { return p.current_price != null; });
+    var hasPnl = rows.some(function (p) { return p.unrealized_pnl_eur != null; });
+    var head = mk("li", "pos-head");
+    head.appendChild(mk("span", null, "Munt"));
+    head.appendChild(mk("span", "num", "Sinds"));
+    head.appendChild(mk("span", "num", "Inleg"));
+    head.appendChild(mk("span", "num", hasPnl ? "Ongereal. PnL" : hasCur ? "Huidig" : "Entryprijs"));
+    ul.appendChild(head);
+    var cur = {};
+    rows.forEach(function (p) {
+      var k = p.symbol + "|" + (p.opened_at || "");
+      cur[k] = 1;
+      var li = mk("li");
+      li.appendChild(mk("span", "sym", p.symbol));
+      li.appendChild(mk("span", "num t", shortTime(p.opened_at)));
+      li.appendChild(mk("span", "num", p.cost_eur != null ? fmtEur(p.cost_eur) : "—"));
+      var last;
+      if (hasPnl) {
+        last = mk("span", "num", p.unrealized_pnl_eur != null ? fmtEur(p.unrealized_pnl_eur, true) : "—");
+        if (p.unrealized_pnl_eur > 0) last.style.color = "var(--up)";
+        else if (p.unrealized_pnl_eur < 0) last.style.color = "var(--dn)";
+      } else if (hasCur) {
+        last = mk("span", "num", fmtPrice(p.current_price));
+      } else {
+        last = mk("span", "num", fmtPrice(p.entry_price));
+      }
+      li.appendChild(last);
+      if (seenPos && !seenPos[k]) li.className = "is-new";
+      ul.appendChild(li);
+    });
+    seenPos = cur;
+  }
+
+  /* Headline rendement = equity.json rendement_pct as given (never recomputed).
+     Fallback: precomputed rendement_pct in the paper snapshot; else "—". */
+  var lastEq = null;
+  function numOrNull(v) { if (typeof v !== "number" && typeof v !== "string") return null; if (typeof v === "string" && !v.trim()) return null; var n = Number(v); return Number.isFinite(n) ? n : null; }
+  function resolveRend() {
+    var sv = lastSnap ? numOrNull(lastSnap.rendement_pct) : null;
+    if (sv != null) return { v: sv, banked: numOrNull(lastSnap.banked) };
+    var ev = lastEq ? numOrNull(lastEq.rendement_pct) : null;
+    if (ev != null) return { v: ev, banked: numOrNull(lastEq.banked_eur) };
+    return { v: null, banked: null };
+  }
+  function rendSign(v) {
+    if (v == null) return 0;
+    var r = Math.round(v * 10) / 10; /* sign as displayed (one decimal) */
+    return r > 0 ? 1 : r < 0 ? -1 : 0;
+  }
+  function paintRend() {
+    var r = resolveRend();
+    var sg = rendSign(r.v);
+    var cls = "v" + (sg > 0 ? " up" : sg < 0 ? " dn" : "");
+    ["kpi-rend"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = fmtPct(r.v);
+      el.className = cls;
+    });
+  }
+
+  function renderTicker(snap) {
+    var el = document.getElementById("ticker");
+    if (!el) return;
+    var parts = [];
+    function part() {
+      var s = document.createElement("span");
+      for (var i = 0; i < arguments.length; i++) {
+        var a = arguments[i];
+        s.appendChild(typeof a === "string" ? document.createTextNode(a) : a);
+      }
+      parts.push(s);
+    }
+    part(mk("span", "sym", "PAPER"), " · geen live orders");
+    if (snap.equity != null) part("equity ", mk("span", "sym", fmtEur(snap.equity)));
+    var rv = resolveRend().v;
+    if (rv != null) {
+      var rs = rendSign(rv);
+      part("rendement ", mk("span", rs > 0 ? "up" : rs < 0 ? "dn" : "", fmtPct(rv)));
+    }
+    (snap.tape || []).slice(0, 12).forEach(function (row) {
+      var sc = sideClass(row.side);
+      part(mk("span", sc === "buy" ? "up" : sc === "sell" ? "dn" : "", sideLabel(row.side)), " ", mk("span", "sym", row.symbol || ""));
+    });
+    (snap.open || []).slice(0, 6).forEach(function (o) {
+      part("open ", mk("span", "sym", (o && o.symbol) || ""));
+    });
+    clearEl(el);
+    parts.forEach(function (p) { el.appendChild(p); });
+    parts.forEach(function (p) { el.appendChild(p.cloneNode(true)); }); /* duplicate for seamless loop */
+  }
+
+  function paperBalance(input) {
+    var total = numOrNull(input.total), start = numOrNull(input.start);
+    var active = numOrNull(input.active), banked = numOrNull(input.banked);
+    var reported = numOrNull(input.reported), issues = [];
+    if (total == null || total < 0 || start == null || start <= 0) {
+      issues.push("Startkapitaal of totale waarde ontbreekt of is ongeldig.");
+      return { net: null, issues: issues };
+    }
+    if (active != null && banked != null && Math.abs(total - active - banked) > 0.02) issues.push("Totale waarde sluit niet aan op portefeuille plus opzijgezet bedrag.");
+    var net = total - start, calculated = net / start * 100;
+    if (reported != null && Math.abs(calculated - reported) > 0.15) issues.push("Gerapporteerd rendement wijkt af van de balans.");
+    return { net: Math.round(net * 100) / 100, issues: issues };
+  }
+
+  function normalizeSnap(raw) {
+    if (!raw || typeof raw !== "object" || raw.paper_only === false) return null;
+    /* paper-live.json shape OR Designer snapshot shape — never invent totals */
+    var k = raw.kpis || {};
+    var eq = raw.equity != null ? raw.equity
+           : (k.equity_approx != null ? k.equity_approx
+           : (k.total != null ? k.total : null));
+    var start = raw.start != null ? raw.start
+              : (k.start_eur != null ? k.start_eur : null);
+    /* Rendement: only a precomputed field from the data, never derived from equity/start */
+    var rend = raw.rendement_pct != null ? raw.rendement_pct
+             : (k.rendement_pct != null ? k.rendement_pct : null);
+    var banked = raw.banked_eur != null ? raw.banked_eur
+               : (k.banked_eur != null ? k.banked_eur : null);
+    var total = numOrNull(raw.total_eur != null ? raw.total_eur : k.total);
+    var cash = numOrNull(raw.cash_eur != null ? raw.cash_eur : k.cash_eur);
+    eq = numOrNull(eq); start = numOrNull(start); banked = numOrNull(banked); rend = numOrNull(rend);
+    if (total == null && eq != null && banked != null) total = eq + banked;
+    var balance = paperBalance({ total: total, active: eq, banked: banked, start: start, reported: rend });
+    var trades = raw.trades != null ? raw.trades : (k.trades != null ? k.trades : null);
+    var openArr = Array.isArray(raw.open_positions) ? raw.open_positions : (Array.isArray(raw.open) ? raw.open : []);
+    var openN = raw.open_count != null ? raw.open_count
+              : (k.open_positions != null ? k.open_positions
+              : (openArr.length ? openArr.length : null));
+    var tape = (Array.isArray(raw.tape) ? raw.tape : []).map(function (row) {
+      if (!row) return null;
+      var note = row.note || null;
+      var reason = String(row.reason || "");
+      if (!note && reason) {
+        var rl = reason.toLowerCase();
+        if (rl.indexOf("take-profit") >= 0 || rl.indexOf("partial-tp") >= 0) note = "take-profit";
+        else if (rl.indexOf("stop-loss") >= 0) note = "stop-loss";
+        else if (rl.indexOf("early-hunt") >= 0) note = "early-hunt";
+        else if (rl.indexOf("hyper-hold") >= 0) note = "hyper-hold";
+        else if (rl.indexOf("uitbetaling") >= 0) note = "payout";
+        else note = "paper fill";
+      }
+      /* pnl_pct alleen als de data hem levert (reden-% is trigger/mark, geen fill-PnL) */
+      var pnl_pct = row.pnl_pct != null ? row.pnl_pct : null;
+      return {
+        t: row.t,
+        side: row.side,
+        symbol: String(row.symbol || "").slice(0, 80),
+        notional: numOrNull(row.notional != null ? row.notional : row.bedrag_eur),
+        pnl_eur: numOrNull(row.pnl_eur),
+        pnl_pct: numOrNull(pnl_pct),
+        note: note,
+        reason: reason
+      };
+    }).filter(function (r) {
+      if (!r || !r.symbol) return false;
+      var s = String(r.side || "").toUpperCase();
+      if (s === "PAYOUT" || s === "RESET" || r.symbol === "BANK") return false;
+      return true;
+    });
+    var radar = Array.isArray(raw.radar) ? raw.radar : [];
+    if (!radar.length) {
+      /* Honest radar from recent early-hunt buys on tape — no fake scores */
+      var seen = {};
+      tape.forEach(function (row) {
+        if (radar.length >= 8) return;
+        if (String(row.side || "").toUpperCase() !== "BUY") return;
+        if (row.note !== "early-hunt") return;
+        if (seen[row.symbol]) return;
+        seen[row.symbol] = 1;
+        radar.push({ symbol: row.symbol });
+      });
+    }
+    var spark = raw.equity_spark || raw.points || raw.equity_points || null;
+    if (spark && spark.length && typeof spark[0] === "number") {
+      spark = spark.map(function (v) { return { equity: v }; });
+    } else if (spark && spark.length && spark[0] && typeof spark[0] === "object") {
+      spark = spark.map(function (p) {
+        var ev = p.total != null ? p.total : p.equity;
+        return { t: p.t, equity: ev };
+      }).filter(function (p) { return p.equity != null && !isNaN(Number(p.equity)); });
+    }
+    return {
+      updated: raw.updated || raw.generated_at || raw.generated || null,
+      equity: eq,
+      total: total,
+      cash: cash,
+      realized: numOrNull(k.realized_pnl_eur != null ? k.realized_pnl_eur : raw.realized_pnl_eur),
+      balance: balance,
+      start: start,
+      rendement_pct: rend,
+      banked: banked,
+      trades: trades,
+      open: openArr,
+      open_count: openN,
+      tape: tape,
+      radar: radar,
+      equity_spark: spark
+    };
+  }
+
+  function agoText(iso) {
+    var d = parseTs(iso);
+    if (!d) return "";
+    var min = Math.max(0, Math.floor((Date.now() - d.getTime()) / 60000));
+    if (min < 1) return "zojuist";
+    if (min < 60) return min + " min geleden";
+    var h = Math.floor(min / 60);
+    return h < 24 ? h + " u geleden" : Math.floor(h / 24) + " d geleden";
+  }
+  var lastUpdatedIso = null;
+  function liveLabel(prefix, iso) {
+    var t = fmtUpdated(iso);
+    if (!t) return prefix;
+    var ago = agoText(iso);
+    return prefix + " · laatst bijgewerkt " + t + (ago ? " (" + ago + ")" : "");
+  }
+  function setSnapTime(iso) {
+    lastUpdatedIso = iso || null;
+    setText("hero-snap", liveLabel("Paper-snapshot", iso));
+    setText("snap-updated", liveLabel("Paper", iso));
+    var warning = document.getElementById("data-warning"), date = parseTs(iso);
+    var age = date ? Date.now() - date.getTime() : null;
+    var problems = lastSnap && lastSnap.balance ? lastSnap.balance.issues.slice() : [];
+    if (age == null) problems.push("Tijdstip van deze stand ontbreekt.");
+    else if (age > 20 * 60000) problems.push("Stand ouder dan 20 minuten; botactiviteit is niet actueel bevestigd.");
+    else if (age < -120000) problems.push("Tijdstip ligt in de toekomst; controleer de gegevensbron.");
+    if (snapshotFailed) problems.push("Verversen mislukt; de laatst ontvangen stand blijft zichtbaar.");
+    if (warning) { warning.textContent = problems.join(" "); warning.hidden = !problems.length; }
+  }
+
+  var lastSnap = null;
+  function applySnapshot(snap) {
+    var eq = snap.total != null ? snap.total : snap.equity;
+    var openTxt = snap.open_count != null ? fmtInt(snap.open_count) : "—";
+
+    setText("kpi-eq", fmtEur(eq));
+    setText("kpi-trades", fmtInt(snap.trades));
+    setText("kpi-open", openTxt);
+    setText("strip-eq", fmtEur(snap.start));
+    setText("strip-rend", fmtEur(snap.realized, true));
+    document.getElementById("strip-rend").className = "v" + (snap.realized < 0 ? " dn" : snap.realized > 0 ? " up" : "");
+    setText("strip-trades", fmtEur(snap.banked));
+    setText("strip-open", fmtEur(snap.cash));
+    paintRend();
+    setText("strip-eq-sub", "Referentie sinds start · paper");
+    setText("balance-active", fmtEur(snap.equity));
+    setText("balance-banked", fmtEur(snap.banked));
+    setText("balance-cash", fmtEur(snap.cash));
+    var net = snap.balance.net, netEl = document.getElementById("net-result");
+    if (netEl) { netEl.textContent = fmtNum(net, {prefix:"€",digits:2,plus:true}); netEl.className = net < 0 ? "dn" : net > 0 ? "up" : ""; }
+    setText("performance-label", net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Verlies sinds start · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier");
+    document.getElementById("export-trades").disabled = !snap.tape.length;
+
+    setSnapTime(snap.updated);
+
+    markNew(snap.tape);
+    renderTape(snap.tape, 14);
+    renderPositions(snap.open, snap.open_count);
+    renderWaterfall(snap.tape);
+    renderRadar(snap.radar);
+    renderTicker(snap);
+
+    var sparkPts = snap.equity_spark;
+    if (sparkPts && sparkPts.length) {
+      renderSpark(sparkPts);
+      if (renderEquity(sparkPts)) setText("eq-sub", updatedLabel("Snapshotvenster · paper", snap.updated));
+    }
+  }
+
+  function fetchJson(url, ms) {
+    var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctrl) ctrl.abort(); }, ms || 5000);
+    var o = { mode: "same-origin", credentials: "same-origin", cache: "no-store" };
+    if (ctrl) o.signal = ctrl.signal;
+    url += (url.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now(); /* cache-busting */
+    return fetch(url, o).then(function (r) {
+      if (!r.ok) throw new Error("http " + r.status);
+      return r.json();
+    }).finally(function () { clearTimeout(t); });
+  }
+
+  /* Paper snapshot: same-origin paper-live.json → paper-public-snapshot.json (no invented numbers) */
+  function loadSnapshot() {
+    return fetchJson("paper-live.json", 4000)
+      .catch(function () { return fetchJson("paper-public-snapshot.json", 4000); })
+      .then(function (raw) {
+        var n = normalizeSnap(raw);
+        if (n && n.equity != null && n.start > 0 && parseTs(n.updated)) {
+          if (lastSnap && parseTs(n.updated).getTime() < parseTs(lastSnap.updated).getTime()) throw new Error("older snapshot");
+          snapshotFailed = false;
+          lastSnap = n;
+          applySnapshot(n);
+          return n;
+        }
+        throw new Error("empty");
+      })
+      .catch(function () {
+        snapshotFailed = true;
+        if (lastSnap) { setSnapTime(lastSnap.updated); return; }
+        setSnapTime(null);
+        renderTape([], 14);
+        renderWaterfall([]);
+        renderRadar([]);
+        renderPositions([], null);
+      });
+  }
+
+  /* equity.json for full curve (static); falls back to snapshot points */
+  function loadEquityCurve() {
+    return fetchJson("equity.json", 4000)
+      .then(function (eq) {
+        if (eq && typeof eq === "object") lastEq = eq;
+        var pts = eq && eq.points;
+        if (pts && pts.length && (!lastSnap || eq.updated === lastSnap.updated || parseTs(eq.updated)?.getTime() === parseTs(lastSnap.updated)?.getTime()) && renderEquity(pts)) {
+          equityFromFile = true;
+          renderSpark(pts.length > 60
+            ? pts.filter(function (_, i) { return i % Math.ceil(pts.length / 60) === 0; }).concat([pts[pts.length - 1]])
+            : pts);
+          setText("eq-sub", updatedLabel("Paper", eq.updated || eq.generated_at));
+        }
+      })
+      .catch(function () {})
+      .then(function () {
+        paintRend();
+        if (lastSnap) renderTicker(lastSnap);
+      });
+  }
+
+  Promise.all([loadEquityCurve(), loadSnapshot()]).then(function () {
+    if (!equityFromFile && !(lastSnap && lastSnap.equity_spark && lastSnap.equity_spark.length)) {
+      renderEquity([]);
+    }
+  });
+  /* Client-side polling elke 60 s (zonder reload), gepauzeerd als de tab verborgen is */
+  var POLL_MS = 60000, pollTimer = null, manualPaused = false, snapshotFailed = false, polling = false;
+  function pollOnce() {
+    if (polling) return Promise.resolve();
+    polling = true;
+    var button = document.getElementById("refresh-data"); button.disabled = true;
+    return Promise.all([loadSnapshot(), loadDigest()]).finally(function () { polling = false; button.disabled = false; });
+  }
+  function startPoll() { if (!pollTimer && !manualPaused) pollTimer = setInterval(pollOnce, POLL_MS); }
+  function stopPoll() { if (pollTimer) { clearInterval(pollTimer); pollTimer = null; } }
+  function isVisible() { return !document.visibilityState || document.visibilityState === "visible"; }
+  if (isVisible()) startPoll();
+  document.addEventListener("visibilitychange", function () {
+    if (isVisible() && !manualPaused) { pollOnce(); startPoll(); }
+    else stopPoll();
+  });
+  /* 'x min geleden' bijwerken tussen polls door (tijdstip blijft uit de data) */
+  setInterval(function () { if (isVisible() && lastUpdatedIso) setSnapTime(lastUpdatedIso); }, 30000);
+  document.getElementById("refresh-data").addEventListener("click", pollOnce);
+  document.getElementById("pause-data").addEventListener("click", function () {
+    manualPaused = !manualPaused;
+    this.setAttribute("aria-pressed", String(manualPaused));
+    var label = manualPaused ? "Automatisch verversen hervatten" : "Automatisch verversen pauzeren";
+    this.setAttribute("aria-label", label); this.title = label;
+    setText("run-state", manualPaused ? "Verversen gepauzeerd" : "Automatisch verversen");
+    document.querySelector(".ticker").style.animationPlayState = manualPaused ? "paused" : "running";
+    if (manualPaused) stopPoll(); else if (isVisible()) { pollOnce(); startPoll(); }
+  });
+  function filteredTrades(tape) {
+    var query = document.getElementById("trade-search").value.trim().toLowerCase();
+    var filter = document.getElementById("trade-filter").value;
+    return (tape || []).filter(function (r) {
+      var side = String(r.side).toUpperCase(), sell = side === "SELL" || side === "PARTIAL";
+      return (!query || (r.symbol + " " + r.reason).toLowerCase().includes(query)) &&
+        (filter === "all" || filter === "buy" && side === "BUY" || filter === "sell" && sell || filter === "profit" && sell && r.pnl_eur > 0 || filter === "loss" && sell && r.pnl_eur < 0);
+    });
+  }
+  ["trade-search", "trade-filter"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { renderWaterfall(lastSnap ? lastSnap.tape : []); }); });
+  function csvCell(value) {
+    var s = String(value == null ? "" : value);
+    if (typeof value === "string" && /^[\s]*[=+@-]/.test(s)) s = "'" + s;
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  document.getElementById("export-trades").addEventListener("click", function () {
+    if (!lastSnap) return;
+    var rows = [["tijd_utc", "actie", "munt", "bedrag_eur", "pnl_eur", "reden"]];
+    filteredTrades(lastSnap.tape).forEach(function (r) { rows.push([r.t, r.side, r.symbol, r.notional, r.pnl_eur, r.reason]); });
+    var blob = new Blob(["\ufeff" + rows.map(function (r) { return r.map(csvCell).join(";"); }).join("\r\n")], { type: "text/csv;charset=utf-8" });
+    var url = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = url; a.download = "cryptodokter-paper-snapshot.csv"; a.click(); setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  });
+
+  /* ——— Desk-digest in de hero (same-origin desk-digest.json, schema desk-digest/v1) ——— */
+  var MONTHS_LONG = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+  function fmtDigestDate(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(s || ""));
+    if (!m) return "";
+    return Number(m[3]) + " " + MONTHS_LONG[Number(m[2]) - 1] + " " + m[1];
+  }
+  function verdictCls(v) {
+    var s = String(v || "").toUpperCase();
+    if (/^(GO|AAN|PASS|OK|BUY)/.test(s)) return "verdict up";
+    if (/^(STOP|FAIL|KNOP|UIT|HALT|PAUZE)/.test(s)) return "verdict dn";
+    return "verdict";
+  }
+  function metricChip(label, value, period) {
+    var c = mk("span", "chip");
+    c.appendChild(mk("span", "k", label));
+    c.appendChild(document.createTextNode(value));
+    c.appendChild(mk("span", "sc", period));
+    return c;
+  }
+  function renderDigest(d) {
+    var valid = d && typeof d === "object" && d.schema === "desk-digest/v1" && d.paper_only !== false &&
+                typeof d.headline === "string" && d.headline.trim();
+    var top = document.getElementById("digest-top"), body = document.getElementById("digest-body");
+    var h1 = document.getElementById("digest-headline");
+    if (!valid) return false;
+    h1.textContent = d.headline.trim().slice(0, 120);
+    var vEl = document.getElementById("digest-verdict");
+    if (d.verdict) { vEl.textContent = String(d.verdict).slice(0, 24); vEl.className = verdictCls(d.verdict); vEl.hidden = false; }
+    else vEl.hidden = true;
+    var dd = fmtDigestDate(d.digest_date);
+    var measured = d.measured_at || d.updated_at;
+    setText("digest-date", (dd ? dd : "Analyse") + (measured ? " · gemeten " + fmtUpdated(measured) + " (" + agoText(measured) + ")" : ""));
+    var ul = document.getElementById("digest-sum");
+    clearEl(ul);
+    (Array.isArray(d.summary_nl) ? d.summary_nl : []).filter(function (x) { return typeof x === "string" && x.trim(); })
+      .slice(0, 3).forEach(function (line) { ul.appendChild(mk("li", null, line.trim())); });
+    ul.hidden = !ul.firstChild;
+    /* PF / WR / fees: metrics_8h, anders metrics_4h; periode per cijfer gelabeld */
+    var m8 = d.metrics_8h && typeof d.metrics_8h === "object" ? d.metrics_8h : {};
+    var m4 = d.metrics_4h && typeof d.metrics_4h === "object" ? d.metrics_4h : {};
+    function pick(key) {
+      if (numOrNull(m8[key]) != null) return { v: numOrNull(m8[key]), p: "8u" };
+      if (numOrNull(m4[key]) != null) return { v: numOrNull(m4[key]), p: "4u" };
+      return null;
+    }
+    var kp = document.getElementById("digest-kpis");
+    clearEl(kp);
+    var pf = pick("profit_factor"), wr = pick("winrate_pct"), fe = pick("fees_eur");
+    if (pf) kp.appendChild(metricChip("PF", fmtNum(pf.v, { digits: 2 }), pf.p));
+    if (wr) kp.appendChild(metricChip("WR", fmtNum(wr.v, { digits: 1, suffix: "%" }), wr.p));
+    if (fe) kp.appendChild(metricChip("Fees", fmtNum(fe.v, { prefix: "€", digits: 0 }), fe.p));
+    kp.hidden = !kp.firstChild;
+    var nx = document.getElementById("digest-next");
+    clearEl(nx);
+    if (typeof d.next_nl === "string" && d.next_nl.trim()) {
+      nx.appendChild(mk("strong", null, "Volgende: "));
+      nx.appendChild(document.createTextNode(d.next_nl.trim()));
+      nx.hidden = false;
+    } else nx.hidden = true;
+    top.hidden = false;
+    body.hidden = false;
+    return true;
+  }
+  function loadDigest() {
+    return fetchJson("desk-digest.json", 4000)
+      .then(function (d) { renderDigest(d); })
+      .catch(function () { if (document.getElementById("digest-body").hidden) setText("digest-headline", "Strategieanalyse momenteel niet beschikbaar."); });
+  }
+  loadDigest();
+})();
+
+/* —— Marktbulletin (same-origin bulletin.json) —— */
+/* schema: generated_at + items[{id,title,url,source,published_at,category:news|outlook,sentiment}] */
+(function initBulletin() {
+  "use strict";
+  var listEl = document.getElementById("bulletin-list");
+  var emptyEl = document.getElementById("bulletin-empty");
+  var metaEl = document.getElementById("bulletin-updated");
+  var seg = document.querySelector("#marktbulletin .bulletin-seg");
+  if (!listEl || !metaEl) return;
+
+  var allItems = [];
+  var filter = "all";
+  var DISPLAY_MAX = 6;
+  var ALL_NEWS = 4;
+  var ALL_OUTLOOK = 2;
+  var MSG_UNAVAILABLE = "Het bulletin verschijnt bij de volgende update.";
+  var MSG_EMPTY_FILTER = "Geen items in deze selectie.";
+
+  function relTimeNl(iso) {
+    if (!iso) return "";
+    var t = Date.parse(iso);
+    if (isNaN(t)) return "";
+    var diff = Date.now() - t;
+    if (diff < 0) diff = 0;
+    var sec = Math.floor(diff / 1000);
+    if (sec < 45) return "zojuist";
+    var min = Math.floor(sec / 60);
+    if (min < 60) return min === 1 ? "1 minuut geleden" : min + " minuten geleden";
+    var hr = Math.floor(min / 60);
+    if (hr < 24) return hr === 1 ? "1 uur geleden" : hr + " uur geleden";
+    var day = Math.floor(hr / 24);
+    if (day === 1) return "gisteren";
+    if (day < 7) return day + " dagen geleden";
+    try {
+      return new Date(t).toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Amsterdam" });
+    } catch (e) {
+      return String(iso).slice(0, 10);
+    }
+  }
+
+  function newestFirst(a, b) {
+    var ta = Date.parse(a.published_at) || 0;
+    var tb = Date.parse(b.published_at) || 0;
+    return tb - ta;
+  }
+
+  function filtered() {
+    var news = [];
+    var outlook = [];
+    allItems.forEach(function (it) {
+      if (it.category === "outlook") outlook.push(it);
+      else if (it.category === "news") news.push(it);
+    });
+    news.sort(newestFirst);
+    outlook.sort(newestFirst);
+    if (filter === "news") return news.slice(0, DISPLAY_MAX);
+    if (filter === "outlook") return outlook.slice(0, DISPLAY_MAX);
+    /* Alles: newest 4 news, then newest 2 outlook (max 6) */
+    return news.slice(0, ALL_NEWS).concat(outlook.slice(0, ALL_OUTLOOK)).slice(0, DISPLAY_MAX);
+  }
+
+  function render() {
+    var items = filtered();
+    while (listEl.firstChild) listEl.removeChild(listEl.firstChild);
+    if (!items.length) {
+      emptyEl.hidden = false;
+      emptyEl.textContent = allItems.length ? MSG_EMPTY_FILTER : MSG_UNAVAILABLE;
+      return;
+    }
+    emptyEl.hidden = true;
+    items.forEach(function (it) {
+      var cat = it.category === "outlook" ? "outlook" : "news";
+      var li = document.createElement("li");
+      li.className = "bulletin-card";
+      li.setAttribute("data-kind", cat);
+
+      var top = document.createElement("div");
+      top.className = "bulletin-card-top";
+      var chip = document.createElement("span");
+      chip.className = "b-chip cat";
+      chip.textContent = cat === "outlook" ? "Outlook" : "Nieuws";
+      top.appendChild(chip);
+      if (cat === "outlook" && typeof it.sentiment === "string" && it.sentiment) {
+        var s = it.sentiment;
+        if (s === "bullish" || s === "bearish" || s === "neutral") {
+          var sent = document.createElement("span");
+          sent.className = "b-chip sent-" + s;
+          sent.textContent = s;
+          top.appendChild(sent);
+        }
+      }
+      li.appendChild(top);
+
+      var h3 = document.createElement("h3");
+      var a = document.createElement("a");
+      a.href = it.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = it.title;
+      h3.appendChild(a);
+      li.appendChild(h3);
+
+      var meta = document.createElement("div");
+      meta.className = "bulletin-card-meta";
+      var src = document.createElement("span");
+      src.className = "src";
+      src.textContent = it.source;
+      meta.appendChild(src);
+      var tm = document.createElement("time");
+      if (it.published_at) tm.setAttribute("datetime", it.published_at);
+      tm.textContent = relTimeNl(it.published_at) || (it.published_at ? String(it.published_at).slice(0, 10) : "");
+      meta.appendChild(tm);
+      li.appendChild(meta);
+
+      listEl.appendChild(li);
+    });
+  }
+
+  if (seg) {
+    seg.addEventListener("click", function (ev) {
+      var btn = ev.target.closest("button[data-filter]");
+      if (!btn) return;
+      filter = btn.getAttribute("data-filter") || "all";
+      seg.querySelectorAll("button[data-filter]").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+      });
+      render();
+    });
+  }
+
+  function setUpdated(iso) {
+    var rel = relTimeNl(iso);
+    metaEl.textContent = rel ? ("Bijgewerkt · " + rel) : "";
+    metaEl.hidden = !rel;
+  }
+
+  fetch("bulletin.json", { credentials: "same-origin", cache: "no-cache" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("bulletin " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      var raw = Array.isArray(data && data.items) ? data.items : [];
+      allItems = [];
+      for (var i = 0; i < raw.length; i++) {
+        var it = raw[i];
+        if (!it || !it.title || !it.url || !it.source) continue;
+        if (it.category !== "news" && it.category !== "outlook") continue;
+        if (!/^https?:\/\//i.test(String(it.url))) continue;
+        allItems.push({
+          id: it.id,
+          title: String(it.title),
+          url: String(it.url),
+          source: String(it.source),
+          published_at: it.published_at || "",
+          category: it.category,
+          sentiment: it.sentiment == null ? null : it.sentiment
+        });
+      }
+      setUpdated(data && data.generated_at);
+      render();
+    })
+    .catch(function () {
+      allItems = [];
+      setUpdated(null);
+      render();
+    });
+})();
+</script>
+<script>
+/* —— Bezoekersteller (GoatCounter) — INERT zolang GC_CODE leeg is —— */
+(function initHitCounter() {
+  "use strict";
+  /* GoatCounter site-code (publiek, geen geheim), bv. "cryptodokter". Leeg = geen teller, geen netwerkverkeer. */
+  var GC_CODE = "cryptodokter";
+
+  if (!GC_CODE || !/^[a-z0-9][a-z0-9-]{0,62}$/.test(GC_CODE)) return;
+  var BASE = "https://" + GC_CODE + ".goatcounter.com";
+  var box = document.getElementById("hitc");
+  var val = document.getElementById("hitc-v");
+  var boxM = document.getElementById("hitc-m");
+  var valM = document.getElementById("hitc-m-v");
+  var KEY = "cd_gc_day";
+
+  function amsDay() {
+    try {
+      var o = {};
+      new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", year: "numeric", month: "2-digit", day: "2-digit" })
+        .formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+      return o.year + "-" + o.month + "-" + o.day;
+    } catch (e) { return null; }
+  }
+  function store() {
+    var list = [];
+    try { list.push(window.localStorage); } catch (e) {}
+    try { list.push(window.sessionStorage); } catch (e) {}
+    for (var i = 0; i < list.length; i++) {
+      try {
+        var st = list[i];
+        if (!st) continue;
+        st.setItem(KEY + "_probe", "1");
+        st.removeItem(KEY + "_probe");
+        return st;
+      } catch (e) {}
+    }
+    return null;
+  }
+  function skipCount() {
+    try {
+      if (navigator.webdriver) return true;
+      if (/bot|crawl|spider|headless|lighthouse|preview/i.test(navigator.userAgent || "")) return true;
+      if (document.prerendering || document.visibilityState === "prerender") return true;
+      if (location.protocol === "file:") return true;
+      if (/(^localhost$|\.localhost$|^127\.|^0\.0\.0\.0$|^\[?::1\]?$)/.test(location.hostname)) return true;
+      if (window.top !== window.self) return true;
+    } catch (e) { return true; }
+    return false;
+  }
+  function count() {
+    if (skipCount()) return;
+    var day = amsDay(), st = store();
+    if (!day || !st) return; /* geen betrouwbare dedupe: niet tellen */
+    try { if (st.getItem(KEY) === day) return; } catch (e) { return; }
+    var q = [
+      "p=" + encodeURIComponent("/"),
+      "t=" + encodeURIComponent(document.title || ""),
+      "r=" + encodeURIComponent(document.referrer || ""),
+      "s=" + encodeURIComponent([screen.width, screen.height, window.devicePixelRatio || 1].join(",")),
+      "rnd=" + Math.random().toString(36).slice(2, 7)
+    ].join("&");
+    var url = BASE + "/count?" + q;
+    try { st.setItem(KEY, day); } catch (e) { return; }
+    var sent = false;
+    try { if (navigator.sendBeacon) sent = navigator.sendBeacon(url); } catch (e) { sent = false; }
+    if (!sent) { var img = new Image(1, 1); img.alt = ""; img.src = url; }
+  }
+  function show() {
+    if (!box || !val || typeof fetch !== "function") return;
+    var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 4000);
+    var o = { mode: "cors", credentials: "omit", cache: "no-cache", referrerPolicy: "no-referrer" };
+    if (ctrl) o.signal = ctrl.signal;
+    function readCount(url, target) {
+      return fetch(url, o)
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (d) {
+        var raw = d && d.count;
+        if (typeof raw !== "string" && typeof raw !== "number") throw new Error("invalid count");
+        var formatted = String(raw).trim();
+        if (!/^[0-9][0-9.,\s]*$/.test(formatted)) throw new Error("invalid count");
+        var digits = formatted.replace(/[.,\s]/g, "");
+        if (!digits || digits.length > 12) throw new Error("invalid count");
+        var n = Number(digits);
+        if (!Number.isSafeInteger(n) || n < 0) throw new Error("invalid count");
+        var txt = n.toLocaleString("nl-NL", { maximumFractionDigits: 0, useGrouping: true });
+        document.getElementById(target).textContent = txt;
+        if (target === "visits-total") {
+          val.textContent = txt; box.hidden = false;
+          if (boxM && valM) { valM.textContent = txt; boxM.hidden = false; }
+        }
+      });
+    }
+    var day = amsDay();
+    Promise.allSettled([
+      readCount(BASE + "/counter/TOTAL.json", "visits-total"),
+      day ? readCount(BASE + "/counter/TOTAL.json?start=" + day + "&end=" + day, "visits-today") : Promise.reject(new Error("day unavailable"))
+    ]).then(function (results) {
+      var failed = results.some(function (r) { return r.status === "rejected"; });
+      document.getElementById("visits-status").textContent = failed ? "Teller gedeeltelijk of tijdelijk niet beschikbaar." : "Teldag " + day + " · gegevens ontvangen om " + new Date().toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Amsterdam" });
+    }).finally(function () { clearTimeout(timer); });
+  }
+  /* Prerender: nu niet tellen; pas tellen als de pagina echt geopend wordt */
+  if (document.prerendering) document.addEventListener("prerenderingchange", count, { once: true });
+  else count();
+  show();
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") { count(); show(); } });
+  setInterval(function () { if (document.visibilityState === "visible") show(); }, 300000);
+})();
+</script>
+<script>
+/* —— Steun CryptoDokter: netwerkknoppen (tablist) + kopieerknop. Zonder JS blijven alle panelen zichtbaar. —— */
+(function initDoneer() {
+  "use strict";
+  var host = document.getElementById("doneer");
+  if (!host) return;
+  var list = host.querySelector(".don-tabs");
+  var tabs = Array.prototype.slice.call(host.querySelectorAll(".don-tab"));
+  if (list && tabs.length) {
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    list.addEventListener("click", function (ev) {
+      var t = ev.target.closest(".don-tab");
+      if (t) select(t, false);
+    });
+    list.addEventListener("keydown", function (ev) {
+      var i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      var n = null;
+      if (ev.key === "ArrowRight" || ev.key === "ArrowDown") n = (i + 1) % tabs.length;
+      else if (ev.key === "ArrowLeft" || ev.key === "ArrowUp") n = (i - 1 + tabs.length) % tabs.length;
+      else if (ev.key === "Home") n = 0;
+      else if (ev.key === "End") n = tabs.length - 1;
+      if (n === null) return;
+      ev.preventDefault();
+      select(tabs[n], true);
+    });
+    tabs.forEach(function (t) {
+      var panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (!panel) return;
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", t.id);
+    });
+    var start = tabs.filter(function (t) { return t.getAttribute("aria-selected") === "true"; })[0] || tabs[0];
+    select(start, false);
+    list.hidden = false;
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.top = "0"; ta.style.left = "-9999px"; ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    var ok = false;
+    try { ta.select(); ta.setSelectionRange(0, text.length); ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext && typeof navigator.clipboard.writeText === "function") {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return fallbackCopy(text); });
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+  var LABEL = "Kopieer adres";
+  host.addEventListener("click", function (ev) {
+    var btn = ev.target.closest("button[data-copy-target]");
+    if (!btn) return;
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var st = document.getElementById(btn.getAttribute("data-status"));
+    if (!src) return;
+    copyText(src.textContent.trim()).then(function (ok) {
+      var msg = ok ? "Gekopieerd" : "Kopiëren lukte niet, selecteer het adres";
+      btn.textContent = msg;
+      btn.classList.toggle("is-done", ok);
+      if (st) st.textContent = msg;
+      clearTimeout(btn._t);
+      btn._t = setTimeout(function () {
+        btn.textContent = LABEL;
+        btn.classList.remove("is-done");
+        if (st) st.textContent = "";
+      }, 2000);
+    });
+  });
+})();
+</script>
+
+
+</body><div id="codex-agent-overlay-root" data-codex-agent-overlay-root="true"></div></html><!doctype html>
 <!-- build: spectrum-landing-7-counter-spec -->
 <html lang="nl" translate="no" data-build="spectrum-landing-7-counter-spec">
 <head>
