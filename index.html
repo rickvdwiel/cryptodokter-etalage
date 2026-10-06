@@ -28,7 +28,7 @@
 <meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0c1016; --surf:#131921; --surf2:#18212c; --line:#243041;
@@ -477,13 +477,16 @@ h1{
 .disclaimer{margin:0;max-width:78ch}
 /* Bezoekersteller (GoatCounter) — Designer-spec: desktop in de topbalk links van de pill, mobiel in de hero-metaregel */
 .hitc,.hitc-m{
-  font-family:"IBM Plex Mono",var(--mono);font-size:12px;line-height:16px;font-weight:400;letter-spacing:0;
-  font-variant-numeric:tabular-nums;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:24px;padding:0 10px;
+  border:1px solid var(--line);border-radius:999px;background:transparent;
+  font-family:"IBM Plex Mono",var(--mono);line-height:1;letter-spacing:0;
+  font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;
 }
-.hitc-n{color:var(--text-secondary)}
-.hitc-l{color:var(--text-muted)}
+.hitc-n{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--tx)}
+.hitc-l{font-size:12px;font-weight:400;color:var(--text-secondary)}
 .hitc{margin-right:4px} /* nav-gap 12px + 4px = 16px tot de pill */
-.hitc-m{font-weight:400}
+.snap-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.snap-meta>#hero-snap{min-width:0}
 .hitc[hidden],.hitc-m[hidden]{display:none!important}
 @media (max-width:767.98px){.hitc{display:none!important}}
 @media (min-width:768px){.hitc-m{display:none!important}}
@@ -657,7 +660,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
           <button class="tool" id="export-trades" type="button" disabled aria-label="Zichtbare transacties downloaden" title="Zichtbare transacties downloaden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></button>
         </div>
       </div>
-      <p class="snap-meta"><span id="hero-snap">Paper-snapshot</span><span class="hitc-m" id="hitc-m" role="group" aria-label="aantal bezoeken" hidden> · <span class="hitc-n" id="hitc-m-v"></span> <span class="hitc-l">bezoeken</span></span></p>
+      <p class="snap-meta"><span id="hero-snap">Paper-snapshot</span><span class="hitc-m" id="hitc-m" role="group" aria-label="aantal bezoeken" hidden><span class="hitc-n" id="hitc-m-v"></span> <span class="hitc-l">bezoeken</span></span></p>
       <p class="lede" id="hero-lede">
         Resultaten, open posities en transacties van de paper-bot. Alle bedragen zijn gesimuleerd.
       </p>
