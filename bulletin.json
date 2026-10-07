@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-10-06T05:40:31Z",
+  "generated_at": "2026-10-07T05:43:37Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-koers-sterk-na-nieuw-recor-62bcddd9",
-      "title": "Crypto wekker: Bitcoin koers sterk na nieuw record voor Amerikaanse beurs",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-sterk-na-nieuw-record-voor-amerikaanse-beurs/",
+      "id": "bitcoin-daalt-onder-84-000-na-verdachte-short-po-b04b183d",
+      "title": "Bitcoin daalt onder $84.000 na verdachte short-posities",
+      "url": "https://cryptonews.com/nl/news/bitcoin-daalt-onder-84000-na-verdachte-hyperliquid-short-posities/",
+      "source": "Cryptonews NL",
+      "published_at": "2026-10-07T05:24:30Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-wekker-bitcoin-koers-bijna-2-lager-door-g-b82a9106",
+      "title": "Crypto wekker: Bitcoin koers bijna 2% lager door groene olieprijs en stijgende rentes",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-bijna-2-lager-door-groene-olieprijs-en-stijgende-rentes/",
       "source": "Newsbit",
-      "published_at": "2026-10-06T05:14:16Z",
+      "published_at": "2026-10-07T05:15:14Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "amerika-schrapt-plannen-voor-extra-controles-op--b7bd0210",
-      "title": "Amerika schrapt plannen voor extra controles op cryptobetalingen",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/amerika-schrapt-plannen-voor-extra-controles-op-cryptobetalingen/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-10-06T05:02:41Z",
+      "id": "kalshi-s-15-min-gold-markets-overtake-ether-just-4e7d119c",
+      "title": "Kalshi’s 15-min gold markets overtake Ether just weeks after launch",
+      "url": "https://cointelegraph.com/news/kalshis-15-min-gold-markets-overtake-ether-just-weeks-after-launch?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-07T04:57:54Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "benjamin-cowen-verwacht-dalende-yields-na-de-mid-3196c9bf",
-      "title": "Benjamin Cowen verwacht dalende yields na de midterms: mogelijk voordeel voor Bitcoin",
-      "url": "https://nl.beincrypto.com/benjamin-cowen-treasury-rendementen-bitcoin/",
-      "source": "BeInCrypto NL",
-      "published_at": "2026-10-06T05:02:00Z",
+      "id": "bitcoin-briefly-slides-below-84-000-as-crypto-lo-2830daae",
+      "title": "Bitcoin briefly slides below $84,000 as crypto long liquidations reach $487 million",
+      "url": "https://www.theblock.co/news/markets/2026-10-06-bitcoin-slides-crypto-long-liquidations-surge-417882",
+      "source": "The Block",
+      "published_at": "2026-10-07T03:57:21Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "u-s-scraps-proposed-10-000-reporting-rule-for-fo-67fcc902",
-      "title": "U.S. scraps proposed $10,000 reporting rule for for crypto sent to private wallets",
-      "url": "https://www.coindesk.com/policy/2026/10/06/u-s-scraps-proposed-usd10-000-reporting-rule-for-for-crypto-sent-to-private-wallets",
-      "source": "CoinDesk",
-      "published_at": "2026-10-06T04:55:36Z",
+      "id": "coinbase-pro-to-return-deribit-integration-creat-ae6a7eb2",
+      "title": "Coinbase Pro to return; Deribit integration creates Coinbase Global Exchange",
+      "url": "https://www.theblock.co/news/business/2026-10-06-coinbase-pro-deribit-integration-coinbase-global-exchange-417867",
+      "source": "The Block",
+      "published_at": "2026-10-07T03:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ethereum-s-glamsterdam-test-gets-last-minute-fix-5b23c344",
-      "title": "Ethereum’s Glamsterdam test gets last-minute fix before major capacity jump",
-      "url": "https://www.coindesk.com/tech/2026/10/06/ethereum-s-glamsterdam-test-gets-last-minute-fix-before-major-capacity-jump",
-      "source": "CoinDesk",
-      "published_at": "2026-10-06T04:49:05Z",
-      "category": "news",
-      "sentiment": null
+      "id": "the-death-and-life-of-the-average-memecoin-87b70abf",
+      "title": "The Death and Life of the Average Memecoin",
+      "url": "https://coinmetrics.substack.com/p/state-of-the-network-issue-384",
+      "source": "Coin Metrics",
+      "published_at": "2026-10-06T12:45:44Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "macro-outlook-6-oktober-tienjaarsrente-houdt-200-b4c52a3e",
+      "title": "Macro outlook 6 oktober, tienjaarsrente houdt 2002-piek vast",
+      "url": "https://cryptofocus.nl/nieuws/crypto/macro-outlook-6-oktober-2026/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-06T08:33:39Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "east-asia-crypto-adoption-report-south-korea-s-a-23727505",
@@ -55,24 +73,6 @@
       "published_at": "2026-10-05T13:49:09Z",
       "category": "outlook",
       "sentiment": "bullish"
-    },
-    {
-      "id": "btc-market-pulse-week-41-74b8a67d",
-      "title": "BTC Market Pulse: Week 41",
-      "url": "https://research.glassnode.com/btc-market-pulse-week-41-2026/",
-      "source": "Glassnode",
-      "published_at": "2026-10-05T12:57:39Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "how-native-transaction-assertions-could-enforce--7bff24f7",
-      "title": "How native transaction assertions could enforce a transaction's final outcome",
-      "url": "https://blog.ethereum.org/en/2026/10/05/transaction-assertions",
-      "source": "Ethereum Foundation",
-      "published_at": "2026-10-05T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
     }
   ]
 }
