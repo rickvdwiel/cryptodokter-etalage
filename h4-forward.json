@@ -1,4 +1,4 @@
-{"schema":"strategy-line/v1","paper_only":true,"start_eur":10000.0,"start_ts":"2026-09-30T08:00:00Z","updated_at":"2026-10-08T06:07:12Z","series":[
+{"schema":"strategy-line/v1","paper_only":true,"start_eur":10000.0,"start_ts":"2026-09-30T08:00:00Z","updated_at":"2026-10-08T06:57:37Z","series":[
 {"ts":"2026-09-30T08:00:00Z","total_eur":10000.0,"bh_eur":10000.0},
 {"ts":"2026-09-30T09:00:00Z","total_eur":10000.0,"bh_eur":9979.2231},
 {"ts":"2026-09-30T10:00:00Z","total_eur":10000.0,"bh_eur":10008.8843},
