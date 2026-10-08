@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-10-07T05:43:37Z",
+  "generated_at": "2026-10-08T05:47:44Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-daalt-onder-84-000-na-verdachte-short-po-b04b183d",
-      "title": "Bitcoin daalt onder $84.000 na verdachte short-posities",
-      "url": "https://cryptonews.com/nl/news/bitcoin-daalt-onder-84000-na-verdachte-hyperliquid-short-posities/",
-      "source": "Cryptonews NL",
-      "published_at": "2026-10-07T05:24:30Z",
+      "id": "bitcoin-loans-are-paying-for-tuition-and-working-b93dfd0f",
+      "title": "Bitcoin loans are paying for tuition and working capital, not just trades, lenders say",
+      "url": "https://www.coindesk.com/markets/2026/10/08/bitcoin-loans-are-paying-for-tuition-and-working-capital-not-just-trades-lenders-say",
+      "source": "CoinDesk",
+      "published_at": "2026-10-08T05:40:41Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-koers-bijna-2-lager-door-g-b82a9106",
-      "title": "Crypto wekker: Bitcoin koers bijna 2% lager door groene olieprijs en stijgende rentes",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-bijna-2-lager-door-groene-olieprijs-en-stijgende-rentes/",
+      "id": "crypto-wekker-bitcoin-koers-daalt-flink-trump-wi-50c45dc0",
+      "title": "Crypto wekker: Bitcoin koers daalt flink, Trump wil Iran bombarderen",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-daalt-flink-trump-wil-iran-bombarderen/",
       "source": "Newsbit",
-      "published_at": "2026-10-07T05:15:14Z",
+      "published_at": "2026-10-08T05:15:08Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "kalshi-s-15-min-gold-markets-overtake-ether-just-4e7d119c",
-      "title": "Kalshi’s 15-min gold markets overtake Ether just weeks after launch",
-      "url": "https://cointelegraph.com/news/kalshis-15-min-gold-markets-overtake-ether-just-weeks-after-launch?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "id": "gaat-bitcoin-richting-81-000-dit-tonen-on-chain--39671529",
+      "title": "Gaat Bitcoin richting $81.000? Dit tonen on-chain data",
+      "url": "https://nl.beincrypto.com/bitcoin-onder-achtvijfduizend-dunne-vraag-eenentachtigduizend-steun/",
+      "source": "BeInCrypto NL",
+      "published_at": "2026-10-08T05:09:36Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-s-heavy-backing-of-republicans-alienated--414ab09c",
+      "title": "Crypto’s heavy backing of Republicans alienated Democrats: Cuomo",
+      "url": "https://cointelegraph.com/news/cryptos-republican-spending-alienated-democrats-says-andrew-cuomo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
-      "published_at": "2026-10-07T04:57:54Z",
+      "published_at": "2026-10-08T05:06:51Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-briefly-slides-below-84-000-as-crypto-lo-2830daae",
-      "title": "Bitcoin briefly slides below $84,000 as crypto long liquidations reach $487 million",
-      "url": "https://www.theblock.co/news/markets/2026-10-06-bitcoin-slides-crypto-long-liquidations-surge-417882",
-      "source": "The Block",
-      "published_at": "2026-10-07T03:57:21Z",
+      "id": "amerikaanse-politicus-wil-cryptowet-nog-dit-jaar-2ba1b44b",
+      "title": "Amerikaanse politicus wil cryptowet nog dit jaar doorzetten",
+      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/amerikaanse-politicus-wil-cryptowet-nog-dit-jaar-doorzetten/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-10-08T05:02:48Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "coinbase-pro-to-return-deribit-integration-creat-ae6a7eb2",
-      "title": "Coinbase Pro to return; Deribit integration creates Coinbase Global Exchange",
-      "url": "https://www.theblock.co/news/business/2026-10-06-coinbase-pro-deribit-integration-coinbase-global-exchange-417867",
-      "source": "The Block",
-      "published_at": "2026-10-07T03:00:00Z",
-      "category": "news",
-      "sentiment": null
+      "id": "a-rally-running-light-76da6cac",
+      "title": "A Rally Running Light",
+      "url": "https://research.glassnode.com/the-week-onchain-week-40-2026/",
+      "source": "Glassnode",
+      "published_at": "2026-10-07T12:37:37Z",
+      "category": "outlook",
+      "sentiment": "bullish"
     },
     {
       "id": "the-death-and-life-of-the-average-memecoin-87b70abf",
@@ -53,15 +62,6 @@
       "url": "https://coinmetrics.substack.com/p/state-of-the-network-issue-384",
       "source": "Coin Metrics",
       "published_at": "2026-10-06T12:45:44Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "macro-outlook-6-oktober-tienjaarsrente-houdt-200-b4c52a3e",
-      "title": "Macro outlook 6 oktober, tienjaarsrente houdt 2002-piek vast",
-      "url": "https://cryptofocus.nl/nieuws/crypto/macro-outlook-6-oktober-2026/",
-      "source": "CryptoFocus",
-      "published_at": "2026-10-06T08:33:39Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
