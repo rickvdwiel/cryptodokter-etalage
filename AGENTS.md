@@ -1,5 +1,7 @@
 # AGENTS.md: cryptodokter.nl
 
+> **Taking over from the Grok Bot agents?** Read [`docs/HANDOFF-JULES.md`](https://github.com/rickvdwiel/CRYPTODOKTER/blob/main/docs/HANDOFF-JULES.md) first: what runs where, current state, open items and the safe change procedure.
+
 > **Quick brief for Jules and other coding agents (English). The full Dutch briefing is below; follow both.**
 >
 > - **What this is:** the public showcase of a **paper-only** crypto trading bot. It uses real Bitvavo prices but places no real orders. The site shows everything honestly, including losses. The site language is **Dutch**.
