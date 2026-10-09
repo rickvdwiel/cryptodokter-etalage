@@ -1,60 +1,69 @@
 {
-  "generated_at": "2026-10-08T05:47:44Z",
+  "generated_at": "2026-10-09T05:47:34Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-loans-are-paying-for-tuition-and-working-b93dfd0f",
-      "title": "Bitcoin loans are paying for tuition and working capital, not just trades, lenders say",
-      "url": "https://www.coindesk.com/markets/2026/10/08/bitcoin-loans-are-paying-for-tuition-and-working-capital-not-just-trades-lenders-say",
-      "source": "CoinDesk",
-      "published_at": "2026-10-08T05:40:41Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-bitcoin-koers-daalt-flink-trump-wi-50c45dc0",
-      "title": "Crypto wekker: Bitcoin koers daalt flink, Trump wil Iran bombarderen",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-daalt-flink-trump-wil-iran-bombarderen/",
-      "source": "Newsbit",
-      "published_at": "2026-10-08T05:15:08Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "gaat-bitcoin-richting-81-000-dit-tonen-on-chain--39671529",
-      "title": "Gaat Bitcoin richting $81.000? Dit tonen on-chain data",
-      "url": "https://nl.beincrypto.com/bitcoin-onder-achtvijfduizend-dunne-vraag-eenentachtigduizend-steun/",
-      "source": "BeInCrypto NL",
-      "published_at": "2026-10-08T05:09:36Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-s-heavy-backing-of-republicans-alienated--414ab09c",
-      "title": "Crypto’s heavy backing of Republicans alienated Democrats: Cuomo",
-      "url": "https://cointelegraph.com/news/cryptos-republican-spending-alienated-democrats-says-andrew-cuomo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "id": "crypto-projects-apply-for-anthropic-s-new-fronti-0c8901d5",
+      "title": "Crypto projects apply for Anthropic’s new frontier AI security scanner",
+      "url": "https://cointelegraph.com/news/crypto-projects-apply-for-anthropics-new-frontier-ai-security-scanner?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
-      "published_at": "2026-10-08T05:06:51Z",
+      "published_at": "2026-10-09T05:34:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "amerikaanse-politicus-wil-cryptowet-nog-dit-jaar-2ba1b44b",
-      "title": "Amerikaanse politicus wil cryptowet nog dit jaar doorzetten",
-      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/amerikaanse-politicus-wil-cryptowet-nog-dit-jaar-doorzetten/",
+      "id": "crypto-wekker-bitcoin-koers-herstelt-na-daling-6-00e4d6e1",
+      "title": "Crypto wekker: Bitcoin koers herstelt na daling $6.000 in 4 dagen",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-herstelt-na-daling-6-000-in-4-dagen/",
+      "source": "Newsbit",
+      "published_at": "2026-10-09T05:12:20Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-verslaat-goud-en-aandelen-maar-begint-ok-075bc93d",
+      "title": "Bitcoin verslaat goud en aandelen maar begint oktober zwak",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/bitcoin-verslaat-goud-en-aandelen-maar-begint-oktober-zwak/",
       "source": "Crypto Insiders",
-      "published_at": "2026-10-08T05:02:48Z",
+      "published_at": "2026-10-09T05:04:23Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "a-rally-running-light-76da6cac",
-      "title": "A Rally Running Light",
-      "url": "https://research.glassnode.com/the-week-onchain-week-40-2026/",
-      "source": "Glassnode",
-      "published_at": "2026-10-07T12:37:37Z",
+      "id": "xrp-ledger-adds-new-controls-for-banks-stablecoi-e5615419",
+      "title": "XRP Ledger adds new controls for banks, stablecoins and tokenized funds",
+      "url": "https://www.coindesk.com/tech/2026/10/09/xrp-ledger-adds-new-controls-for-banks-stablecoins-and-tokenized-funds",
+      "source": "CoinDesk",
+      "published_at": "2026-10-09T04:21:36Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "ether-bets-were-wiped-out-at-six-times-bitcoin-s-5825a88d",
+      "title": "Ether bets were wiped out at six times bitcoin’s rate in crypto’s $1 billion flush",
+      "url": "https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush",
+      "source": "CoinDesk",
+      "published_at": "2026-10-09T04:04:36Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "uk-targets-cryptomus-heleket-tokenspot-in-new-ru-d04e71ca",
+      "title": "UK Targets Cryptomus, Heleket, TokenSpot in New Russian Sanctions",
+      "url": "https://www.chainalysis.com/blog/uk-sanctions-cryptomus-heleket-tokenspot/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-09T01:14:08Z",
       "category": "outlook",
-      "sentiment": "bullish"
+      "sentiment": "neutral"
+    },
+    {
+      "id": "compute-capital-markets-b423966a",
+      "title": "Compute Capital Markets",
+      "url": "https://multicoin.capital/2026/10/08/compute-capital-markets/",
+      "source": "Multicoin",
+      "published_at": "2026-10-08T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "the-death-and-life-of-the-average-memecoin-87b70abf",
@@ -64,15 +73,6 @@
       "published_at": "2026-10-06T12:45:44Z",
       "category": "outlook",
       "sentiment": "neutral"
-    },
-    {
-      "id": "east-asia-crypto-adoption-report-south-korea-s-a-23727505",
-      "title": "East Asia Crypto Adoption Report: South Korea’s AI Trade Comes to Crypto",
-      "url": "https://www.chainalysis.com/blog/eastern-asia-crypto-adoption-2026/",
-      "source": "Chainalysis",
-      "published_at": "2026-10-05T13:49:09Z",
-      "category": "outlook",
-      "sentiment": "bullish"
     }
   ]
 }
