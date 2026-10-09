@@ -1,30 +1,30 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-07T16:59:00+02:00",
-  "digest_date": "2026-10-07",
-  "measured_at": "2026-10-07T16:58:00+02:00",
-  "window_4h_utc": "10:58-14:58",
+  "updated_at": "2026-10-09T17:20:00+02:00",
+  "digest_date": "2026-10-09",
+  "measured_at": "2026-10-09T17:19:35+02:00",
+  "window_4h_utc": "11:19-15:19",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 1,27 over 4 uur",
+  "headline": "Desk-digest: PF 0,51 over 4 uur door stop-losses",
   "metrics_4h": {
-    "exits": 44,
-    "winrate_pct": 56.8,
-    "profit_factor": 1.266,
-    "expectancy_eur": 15.81,
-    "net_eur": 695.43,
-    "fees_eur": 393.14,
-    "fees_per_hour_eur": 98.3
+    "exits": 20,
+    "winrate_pct": 40.0,
+    "profit_factor": 0.512,
+    "expectancy_eur": -46.49,
+    "net_eur": -929.74,
+    "fees_eur": 214.51,
+    "fees_per_hour_eur": 53.6
   },
   "metrics_8h": {
-    "exits": 70,
-    "winrate_pct": 60.0,
-    "profit_factor": 1.351,
-    "expectancy_eur": 20.27,
-    "net_eur": 1418.81
+    "exits": 48,
+    "winrate_pct": 33.3,
+    "profit_factor": 0.419,
+    "expectancy_eur": -59.75,
+    "net_eur": -2867.79
   },
   "summary_nl": [
-    "Laatste 4 uur: 44 exits, winrate 57%, PF 1,27, netto +€695; fees ongeveer €98 per uur.",
-    "Take-profits (16× +€3.041) wogen zwaarder dan stop-losses (17× −€2.554); over 8 uur PF 1,35 en netto +€1.419."
+    "Laatste 4 uur: 20 exits, winrate 40%, PF 0,51, netto −€930; fees ongeveer €54 per uur.",
+    "Stop-losses (12× −€1.903) wogen veel zwaarder dan take-profits (4× +€785); over 8 uur PF 0,42 en netto −€2.868."
   ]
 }
