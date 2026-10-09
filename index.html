@@ -706,9 +706,9 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         <div class="spark-pane">
           <div class="lab">Equity curve · paper</div>
           <svg id="spark-svg" viewBox="0 0 320 78" preserveAspectRatio="none" role="img" aria-label="Paper equity spark">
-            <line x1="0" y1="39" x2="320" y2="39" stroke="#243041" stroke-width="1"></line>
-            <path id="spark-path" fill="none" stroke="#4B9CF5" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" d=""></path>
-            <circle id="spark-dot" cx="0" cy="0" r="2.5" fill="#3dd68c" opacity="0"></circle>
+            <line x1="0" y1="39" x2="320" y2="39" stroke="var(--line)" stroke-width="1"></line>
+            <path id="spark-path" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" d=""></path>
+            <circle id="spark-dot" cx="0" cy="0" r="2.5" fill="var(--up)" opacity="0"></circle>
           </svg>
           <div class="lab" style="margin-top:4px">Recent gekocht</div>
           <div class="radar-chips" id="radar-chips">
@@ -762,15 +762,15 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       <svg class="eq-svg" id="eq-svg" viewBox="0 0 640 160" preserveAspectRatio="none" role="img" aria-label="Paper equity curve">
         <defs>
           <linearGradient id="eqFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#4B9CF5" stop-opacity=".22"></stop>
-            <stop offset="100%" stop-color="#4B9CF5" stop-opacity="0"></stop>
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity=".22"></stop>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
-        <line x1="0" y1="40" x2="640" y2="40" stroke="#243041" stroke-width="1" opacity=".5"></line>
-        <line x1="0" y1="80" x2="640" y2="80" stroke="#243041" stroke-width="1" opacity=".35"></line>
-        <line x1="0" y1="120" x2="640" y2="120" stroke="#243041" stroke-width="1" opacity=".5"></line>
+        <line x1="0" y1="40" x2="640" y2="40" stroke="var(--line)" stroke-width="1" opacity=".5"></line>
+        <line x1="0" y1="80" x2="640" y2="80" stroke="var(--line)" stroke-width="1" opacity=".35"></line>
+        <line x1="0" y1="120" x2="640" y2="120" stroke="var(--line)" stroke-width="1" opacity=".5"></line>
         <path id="eq-area" fill="url(#eqFill)" d=""></path>
-        <path id="eq-line" fill="none" stroke="#4B9CF5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d=""></path>
+        <path id="eq-line" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d=""></path>
       </svg>
       <p class="eq-empty" id="eq-empty" hidden>Curve verschijnt bij de volgende snapshot.</p>
       <p class="curve-range"><span id="curve-start"></span><span id="curve-value"></span><span id="curve-end"></span></p>
@@ -1293,7 +1293,8 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     n = Number(n);
     var a = Math.abs(n);
     var sig = a >= 1 ? { minimumFractionDigits: 2, maximumFractionDigits: 4 }
-                     : { maximumSignificantDigits: 4 };
+                     : (a >= 0.0001 ? { minimumFractionDigits: 4, maximumFractionDigits: 6 }
+                                    : { maximumSignificantDigits: 4, maximumFractionDigits: 8 });
     return "€" + a.toLocaleString("nl-NL", sig);
   }
   var seenPos = null;
@@ -1675,7 +1676,22 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         (filter === "all" || filter === "buy" && side === "BUY" || filter === "sell" && sell || filter === "profit" && sell && r.pnl_eur > 0 || filter === "loss" && sell && r.pnl_eur < 0);
     });
   }
-  ["trade-search", "trade-filter"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { renderWaterfall(lastSnap ? lastSnap.tape : []); }); });
+  var tradeSearchEl = document.getElementById("trade-search");
+  if (tradeSearchEl) {
+    ["input", "search", "change"].forEach(function (evt) {
+      tradeSearchEl.addEventListener(evt, function () { renderWaterfall(lastSnap ? lastSnap.tape : []); });
+    });
+    tradeSearchEl.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && this.value) {
+        this.value = "";
+        renderWaterfall(lastSnap ? lastSnap.tape : []);
+      }
+    });
+  }
+  var tradeFilterEl = document.getElementById("trade-filter");
+  if (tradeFilterEl) {
+    tradeFilterEl.addEventListener("change", function () { renderWaterfall(lastSnap ? lastSnap.tape : []); });
+  }
   function csvCell(value) {
     var s = String(value == null ? "" : value);
     if (typeof value === "string" && /^[\s]*[=+@-]/.test(s)) s = "'" + s;
