@@ -1,4 +1,35 @@
-# AGENTS.md: cryptodokter.nl (lees dit eerst)
+# AGENTS.md: cryptodokter.nl
+
+> **Quick brief for Jules and other coding agents (English). The full Dutch briefing is below; follow both.**
+>
+> - **What this is:** the public showcase of a **paper-only** crypto trading bot. It uses real Bitvavo prices but places no real orders. The site shows everything honestly, including losses. The site language is **Dutch**.
+> - **Hosting:** static GitHub Pages (`CNAME` = cryptodokter.nl). There is no backend and no PHP. `index.html` is a single self-contained page that `fetch`es JSON files.
+> - **You may edit:** `index.html` (all UI work), plus carefully `404.html`, `assets/` and icons.
+> - **Never edit:**
+>   - `paper-live.json`, `paper-public-snapshot.json`, `equity.json` (an automated job rewrites these every 10 min)
+>   - `benchmark.json`, `h4-forward.json`, `desk-digest.json`, `bulletin.json`
+>   - `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml`
+> - **Hard rules (a PR is rejected if any fails):**
+>   1. Paper-only. No real trading, API keys, wallet connections, "invest now" or financial advice.
+>   2. The brand appears **once**, written as `cryptodokter.nl`. No emoji in the brand.
+>   3. Exactly **one** primary CTA (`btn-primary`) per view.
+>   4. Never write `loca.lt`, `trycloudflare`, `xo.je`, `hits.php` or `login.html` anywhere in `index.html`, not even in comments. If you do, publishing is blocked.
+>   5. Keep the donation section (`#doneer`) byte-identical. That covers all crypto addresses, the PayPal link and the IBAN.
+>   6. Keep the GoatCounter visitor counter working. Add no new external scripts, fonts, CDNs or trackers.
+>   7. **Never invent data.** Show only fields that exist in the JSON, with no placeholder or fake text. If a field is missing, degrade gracefully (show "—" or hide it, never `NaN`, `undefined` or `[object Object]`).
+>   8. Quality:
+>      - works at 375px wide
+>      - full keyboard support: Esc closes overlays, focus returns to the element that opened them, Enter and Space activate, visible focus
+>      - ARIA roles
+>      - respects `prefers-reduced-motion`
+>      - `rel="noopener noreferrer"` on external links
+>      - uses the existing CSS variables, no hardcoded colors
+>      - correct formatting of tiny prices (< €0.0001)
+>      - no console errors
+>   9. Small, focused PRs (one topic each). Rebase on the latest `main` before you finish.
+> - **Test locally:** `python3 -m http.server 8080` in the repo root, then open http://localhost:8080/.
+
+---
 
 Dit is de briefing voor Google Jules en andere coding-agents die aan deze repo werken. Eigenaar: Titan (GitHub `rickvdwiel`). Hij is designer, schrijft Nederlands en verwacht strak, trots werk zonder verontschuldigende demo-toon.
 
