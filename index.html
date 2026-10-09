@@ -365,6 +365,101 @@ h1{
   display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
   gap:10px 16px;margin-bottom:14px;
 }
+.bulletin-card{
+  cursor:pointer;
+  transition:border-color .15s ease, background .15s ease;
+}
+.bulletin-card:hover{
+  border-color:var(--accent);
+  background:var(--surf2);
+}
+.bulletin-card[aria-expanded="true"]{
+  border-color:var(--accent);
+  background:var(--surf2);
+}
+.bulletin-card:focus-visible,.bulletin-reader:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:10px;
+}
+.bulletin-reader{
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surf);
+  padding:16px;
+  margin-bottom:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.bulletin-reader[hidden]{display:none!important}
+.bulletin-reader-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+}
+.bulletin-reader-info{
+  flex:1 1 260px;
+  min-width:0;
+}
+.bulletin-reader-title{
+  margin:0 0 6px;
+  font:600 16px/1.3 var(--font);
+  color:var(--tx);
+}
+.bulletin-reader-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  font-size:12px;
+  color:var(--muted);
+}
+.bulletin-reader-meta .src{
+  font-weight:600;
+  color:var(--tx);
+}
+.bulletin-reader-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.btn-sm{
+  padding:7px 12px;
+  font-size:12px;
+  border-radius:6px;
+}
+.btn-secondary{
+  background:var(--surf2);
+  color:var(--tx);
+  border:1px solid var(--line);
+}
+.btn-secondary:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+.bulletin-reader-content{
+  font-size:14px;
+  color:var(--tx);
+  line-height:1.55;
+  background:var(--surf);
+  padding:14px;
+  border-radius:8px;
+  border:1px solid var(--line);
+}
+.bulletin-reader-foot{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-size:12px;
+  color:var(--muted);
+}
 .bulletin-titles{min-width:0;flex:1 1 220px}
 .bulletin-titles h2{
   margin:0 0 4px;font:700 clamp(18px,2.8vw,22px)/1.25 var(--font);
@@ -834,6 +929,28 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       <button type="button" data-filter="news" aria-pressed="false">Nieuws</button>
       <button type="button" data-filter="outlook" aria-pressed="false">Outlook</button>
       <button type="button" data-filter="all" aria-pressed="true">Alles</button>
+    </div>
+    <div class="bulletin-reader" id="bulletin-reader" role="region" aria-label="Artikel lezer" hidden tabindex="-1">
+      <div class="bulletin-reader-head">
+        <div class="bulletin-reader-info">
+          <div class="bulletin-card-top" id="bulletin-reader-tags"></div>
+          <h3 class="bulletin-reader-title" id="bulletin-reader-title"></h3>
+          <div class="bulletin-reader-meta">
+            <span class="src" id="bulletin-reader-source"></span>
+            <time id="bulletin-reader-time"></time>
+          </div>
+        </div>
+        <div class="bulletin-reader-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="bulletin-reader-close" aria-label="Lezer sluiten">Sluiten ✕</button>
+        </div>
+      </div>
+      <div class="bulletin-reader-content" id="bulletin-reader-content">
+        <p id="bulletin-reader-text" style="margin:0"></p>
+      </div>
+      <div class="bulletin-reader-foot">
+        <a class="btn btn-secondary btn-sm" id="bulletin-reader-external" href="#" target="_blank" rel="noopener noreferrer">Lees het volledige artikel op <span id="bulletin-reader-source-name"></span> ↗</a>
+        <span>Context · geen beleggingsadvies</span>
+      </div>
     </div>
     <ul class="bulletin-list" id="bulletin-list"></ul>
     <p class="bulletin-empty" id="bulletin-empty" hidden>Het bulletin verschijnt bij de volgende update.</p>
@@ -1919,10 +2036,21 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   var emptyEl = document.getElementById("bulletin-empty");
   var metaEl = document.getElementById("bulletin-updated");
   var seg = document.querySelector("#marktbulletin .bulletin-seg");
+  var readerEl = document.getElementById("bulletin-reader");
+  var readerTitleEl = document.getElementById("bulletin-reader-title");
+  var readerSourceEl = document.getElementById("bulletin-reader-source");
+  var readerSourceNameEl = document.getElementById("bulletin-reader-source-name");
+  var readerTimeEl = document.getElementById("bulletin-reader-time");
+  var readerTagsEl = document.getElementById("bulletin-reader-tags");
+  var readerTextEl = document.getElementById("bulletin-reader-text");
+  var readerExternalEl = document.getElementById("bulletin-reader-external");
+  var readerCloseBtn = document.getElementById("bulletin-reader-close");
   if (!listEl || !metaEl) return;
 
   var allItems = [];
   var filter = "all";
+  var activeItemId = null;
+  var lastOpenedCard = null;
   var DISPLAY_MAX = 6;
   var ALL_NEWS = 4;
   var ALL_OUTLOOK = 2;
@@ -1972,12 +2100,92 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     return news.slice(0, ALL_NEWS).concat(outlook.slice(0, ALL_OUTLOOK)).slice(0, DISPLAY_MAX);
   }
 
+  function closeReader(restoreFocus) {
+    if (readerEl) {
+      readerEl.hidden = true;
+    }
+    activeItemId = null;
+    var cards = listEl.querySelectorAll(".bulletin-card");
+    cards.forEach(function (c) {
+      c.setAttribute("aria-expanded", "false");
+    });
+    if (restoreFocus && lastOpenedCard) {
+      try { lastOpenedCard.focus(); } catch (e) {}
+    }
+  }
+
+  function openReader(it, cardEl) {
+    if (!it || !readerEl) return;
+    activeItemId = it.id;
+    lastOpenedCard = cardEl || null;
+
+    if (readerTitleEl) readerTitleEl.textContent = typeof it.title === "string" ? it.title : String(it.title || "");
+    if (readerSourceEl) readerSourceEl.textContent = typeof it.source === "string" ? it.source : String(it.source || "");
+    if (readerSourceNameEl) readerSourceNameEl.textContent = typeof it.source === "string" ? it.source : String(it.source || "");
+    if (readerTimeEl) {
+      if (it.published_at) readerTimeEl.setAttribute("datetime", String(it.published_at));
+      else readerTimeEl.removeAttribute("datetime");
+      readerTimeEl.textContent = relTimeNl(it.published_at) || (it.published_at ? String(it.published_at).slice(0, 10) : "");
+    }
+
+    if (readerTagsEl) {
+      while (readerTagsEl.firstChild) readerTagsEl.removeChild(readerTagsEl.firstChild);
+      var cat = it.category === "outlook" ? "outlook" : "news";
+      var chip = document.createElement("span");
+      chip.className = "b-chip cat";
+      chip.textContent = cat === "outlook" ? "Outlook" : "Nieuws";
+      readerTagsEl.appendChild(chip);
+      if (cat === "outlook" && typeof it.sentiment === "string" && it.sentiment) {
+        var s = it.sentiment;
+        if (s === "bullish" || s === "bearish" || s === "neutral") {
+          var sent = document.createElement("span");
+          sent.className = "b-chip sent-" + s;
+          sent.textContent = s;
+          readerTagsEl.appendChild(sent);
+        }
+      }
+    }
+
+    if (readerTextEl) {
+      var summaryText = (typeof it.summary === "string" && it.summary) ? it.summary : (typeof it.description === "string" && it.description) ? it.description : "";
+      readerTextEl.textContent = summaryText;
+    }
+
+    if (readerExternalEl) readerExternalEl.href = typeof it.url === "string" ? it.url : String(it.url || "#");
+
+    readerEl.hidden = false;
+
+    /* Update aria-expanded state on list cards */
+    var cards = listEl.querySelectorAll(".bulletin-card");
+    cards.forEach(function (c) {
+      if (c === cardEl || c.getAttribute("data-id") === String(it.id)) {
+        c.setAttribute("aria-expanded", "true");
+      } else {
+        c.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    var smooth = false;
+    try { smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    try {
+      readerEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "nearest" });
+    } catch (e) {
+      readerEl.scrollIntoView();
+    }
+    try {
+      readerEl.focus({ preventScroll: true });
+    } catch (e2) {
+      readerEl.focus();
+    }
+  }
+
   function render() {
     var items = filtered();
     while (listEl.firstChild) listEl.removeChild(listEl.firstChild);
     if (!items.length) {
       emptyEl.hidden = false;
       emptyEl.textContent = allItems.length ? MSG_EMPTY_FILTER : MSG_UNAVAILABLE;
+      closeReader();
       return;
     }
     emptyEl.hidden = true;
@@ -1986,6 +2194,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       var li = document.createElement("li");
       li.className = "bulletin-card";
       li.setAttribute("data-kind", cat);
+      li.setAttribute("data-id", String(it.id));
+      li.tabIndex = 0;
+      li.setAttribute("role", "button");
+      li.setAttribute("aria-controls", "bulletin-reader");
+      li.setAttribute("aria-expanded", activeItemId === it.id ? "true" : "false");
 
       var top = document.createElement("div");
       top.className = "bulletin-card-top";
@@ -2005,12 +2218,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       li.appendChild(top);
 
       var h3 = document.createElement("h3");
-      var a = document.createElement("a");
-      a.href = it.url;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.textContent = it.title;
-      h3.appendChild(a);
+      h3.textContent = it.title;
       li.appendChild(h3);
 
       var meta = document.createElement("div");
@@ -2025,9 +2233,38 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       meta.appendChild(tm);
       li.appendChild(meta);
 
+      function handleOpen(ev) {
+        var hasSummary = (typeof it.summary === "string" && it.summary.trim()) || (typeof it.description === "string" && it.description.trim());
+        if (hasSummary) {
+          ev.preventDefault();
+          openReader(it, li);
+        } else if (it.url) {
+          ev.preventDefault();
+          window.open(it.url, "_blank", "noopener,noreferrer");
+        }
+      }
+      li.addEventListener("click", handleOpen);
+      li.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") {
+          handleOpen(ev);
+        }
+      });
+
       listEl.appendChild(li);
     });
   }
+
+  if (readerCloseBtn) {
+    readerCloseBtn.addEventListener("click", function () {
+      closeReader(true);
+    });
+  }
+
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && readerEl && !readerEl.hidden) {
+      closeReader(true);
+    }
+  });
 
   if (seg) {
     seg.addEventListener("click", function (ev) {
@@ -2037,6 +2274,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       seg.querySelectorAll("button[data-filter]").forEach(function (b) {
         b.setAttribute("aria-pressed", b === btn ? "true" : "false");
       });
+      closeReader(false);
       render();
     });
   }
@@ -2067,7 +2305,8 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
           source: String(it.source),
           published_at: it.published_at || "",
           category: it.category,
-          sentiment: it.sentiment == null ? null : it.sentiment
+          sentiment: it.sentiment == null ? null : it.sentiment,
+          summary: it.summary || it.description || null
         });
       }
       setUpdated(data && data.generated_at);
