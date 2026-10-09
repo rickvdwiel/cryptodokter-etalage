@@ -375,7 +375,7 @@ h1{
 }
 .bulletin-card[aria-selected="true"]{
   border-color:var(--accent);
-  background:rgba(75,156,245,.12);
+  background:var(--surf2);
 }
 .bulletin-reader{
   border:1px solid var(--line);
@@ -796,9 +796,9 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         <div class="spark-pane">
           <div class="lab">Equity curve · paper</div>
           <svg id="spark-svg" viewBox="0 0 320 78" preserveAspectRatio="none" role="img" aria-label="Paper equity spark">
-            <line x1="0" y1="39" x2="320" y2="39" stroke="#243041" stroke-width="1"></line>
-            <path id="spark-path" fill="none" stroke="#4B9CF5" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" d=""></path>
-            <circle id="spark-dot" cx="0" cy="0" r="2.5" fill="#3dd68c" opacity="0"></circle>
+            <line x1="0" y1="39" x2="320" y2="39" stroke="var(--line)" stroke-width="1"></line>
+            <path id="spark-path" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" d=""></path>
+            <circle id="spark-dot" cx="0" cy="0" r="2.5" fill="var(--up)" opacity="0"></circle>
           </svg>
           <div class="lab" style="margin-top:4px">Recent gekocht</div>
           <div class="radar-chips" id="radar-chips">
@@ -852,15 +852,15 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       <svg class="eq-svg" id="eq-svg" viewBox="0 0 640 160" preserveAspectRatio="none" role="img" aria-label="Paper equity curve">
         <defs>
           <linearGradient id="eqFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#4B9CF5" stop-opacity=".22"></stop>
-            <stop offset="100%" stop-color="#4B9CF5" stop-opacity="0"></stop>
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity=".22"></stop>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
-        <line x1="0" y1="40" x2="640" y2="40" stroke="#243041" stroke-width="1" opacity=".5"></line>
-        <line x1="0" y1="80" x2="640" y2="80" stroke="#243041" stroke-width="1" opacity=".35"></line>
-        <line x1="0" y1="120" x2="640" y2="120" stroke="#243041" stroke-width="1" opacity=".5"></line>
+        <line x1="0" y1="40" x2="640" y2="40" stroke="var(--line)" stroke-width="1" opacity=".5"></line>
+        <line x1="0" y1="80" x2="640" y2="80" stroke="var(--line)" stroke-width="1" opacity=".35"></line>
+        <line x1="0" y1="120" x2="640" y2="120" stroke="var(--line)" stroke-width="1" opacity=".5"></line>
         <path id="eq-area" fill="url(#eqFill)" d=""></path>
-        <path id="eq-line" fill="none" stroke="#4B9CF5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d=""></path>
+        <path id="eq-line" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d=""></path>
       </svg>
       <p class="eq-empty" id="eq-empty" hidden>Curve verschijnt bij de volgende snapshot.</p>
       <p class="curve-range"><span id="curve-start"></span><span id="curve-value"></span><span id="curve-end"></span></p>
@@ -925,7 +925,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       <button type="button" data-filter="outlook" aria-pressed="false">Outlook</button>
       <button type="button" data-filter="all" aria-pressed="true">Alles</button>
     </div>
-    <div class="bulletin-reader" id="bulletin-reader" hidden tabindex="-1" aria-labelledby="bulletin-reader-title">
+    <div class="bulletin-reader" id="bulletin-reader" role="region" aria-label="Artikel lezer" hidden tabindex="-1">
       <div class="bulletin-reader-head">
         <div class="bulletin-reader-info">
           <div class="bulletin-card-top" id="bulletin-reader-tags"></div>
@@ -943,7 +943,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         <p id="bulletin-reader-text" style="margin:0"></p>
       </div>
       <div class="bulletin-reader-foot">
-        <a class="btn btn-primary btn-sm" id="bulletin-reader-external" href="#" target="_blank" rel="noopener noreferrer">Lees het volledige artikel op <span id="bulletin-reader-source-name"></span> ↗</a>
+        <a class="btn btn-secondary btn-sm" id="bulletin-reader-external" href="#" target="_blank" rel="noopener noreferrer">Lees het volledige artikel op <span id="bulletin-reader-source-name"></span> ↗</a>
         <span>Context · geen beleggingsadvies</span>
       </div>
     </div>
@@ -1787,7 +1787,22 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         (filter === "all" || filter === "buy" && side === "BUY" || filter === "sell" && sell || filter === "profit" && sell && r.pnl_eur > 0 || filter === "loss" && sell && r.pnl_eur < 0);
     });
   }
-  ["trade-search", "trade-filter"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { renderWaterfall(lastSnap ? lastSnap.tape : []); }); });
+  var tradeSearchEl = document.getElementById("trade-search");
+  if (tradeSearchEl) {
+    ["input", "search", "change"].forEach(function (evt) {
+      tradeSearchEl.addEventListener(evt, function () { renderWaterfall(lastSnap ? lastSnap.tape : []); });
+    });
+    tradeSearchEl.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && this.value) {
+        this.value = "";
+        renderWaterfall(lastSnap ? lastSnap.tape : []);
+      }
+    });
+  }
+  var tradeFilterEl = document.getElementById("trade-filter");
+  if (tradeFilterEl) {
+    tradeFilterEl.addEventListener("change", function () { renderWaterfall(lastSnap ? lastSnap.tape : []); });
+  }
   function csvCell(value) {
     var s = String(value == null ? "" : value);
     if (typeof value === "string" && /^[\s]*[=+@-]/.test(s)) s = "'" + s;
@@ -2030,6 +2045,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   var allItems = [];
   var filter = "all";
   var activeItemId = null;
+  var lastOpenedCard = null;
   var DISPLAY_MAX = 6;
   var ALL_NEWS = 4;
   var ALL_OUTLOOK = 2;
@@ -2079,7 +2095,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     return news.slice(0, ALL_NEWS).concat(outlook.slice(0, ALL_OUTLOOK)).slice(0, DISPLAY_MAX);
   }
 
-  function closeReader() {
+  function closeReader(restoreFocus) {
     if (readerEl) {
       readerEl.hidden = true;
     }
@@ -2088,17 +2104,21 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     if (prevSelected) {
       prevSelected.removeAttribute("aria-selected");
     }
+    if (restoreFocus && lastOpenedCard) {
+      try { lastOpenedCard.focus(); } catch (e) {}
+    }
   }
 
   function openReader(it, cardEl) {
     if (!it || !readerEl) return;
     activeItemId = it.id;
+    lastOpenedCard = cardEl || null;
 
-    if (readerTitleEl) readerTitleEl.textContent = it.title;
-    if (readerSourceEl) readerSourceEl.textContent = it.source;
-    if (readerSourceNameEl) readerSourceNameEl.textContent = it.source;
+    if (readerTitleEl) readerTitleEl.textContent = typeof it.title === "string" ? it.title : String(it.title || "");
+    if (readerSourceEl) readerSourceEl.textContent = typeof it.source === "string" ? it.source : String(it.source || "");
+    if (readerSourceNameEl) readerSourceNameEl.textContent = typeof it.source === "string" ? it.source : String(it.source || "");
     if (readerTimeEl) {
-      if (it.published_at) readerTimeEl.setAttribute("datetime", it.published_at);
+      if (it.published_at) readerTimeEl.setAttribute("datetime", String(it.published_at));
       else readerTimeEl.removeAttribute("datetime");
       readerTimeEl.textContent = relTimeNl(it.published_at) || (it.published_at ? String(it.published_at).slice(0, 10) : "");
     }
@@ -2122,11 +2142,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     }
 
     if (readerTextEl) {
-      var summaryText = it.summary || it.description || ("Dit marktbulletin van " + it.source + " geeft actuele context over de cryptomarkt. Bekijk de originele publicatie voor het volledige artikel en aanvullende achtergronden.");
+      var summaryText = (typeof it.summary === "string" && it.summary) ? it.summary : (typeof it.description === "string" && it.description) ? it.description : "";
       readerTextEl.textContent = summaryText;
     }
 
-    if (readerExternalEl) readerExternalEl.href = it.url;
+    if (readerExternalEl) readerExternalEl.href = typeof it.url === "string" ? it.url : String(it.url || "#");
 
     readerEl.hidden = false;
 
@@ -2140,8 +2160,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       }
     });
 
+    var smooth = false;
+    try { smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
     try {
-      readerEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      readerEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "nearest" });
     } catch (e) {
       readerEl.scrollIntoView();
     }
@@ -2167,7 +2189,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       var li = document.createElement("li");
       li.className = "bulletin-card";
       li.setAttribute("data-kind", cat);
-      li.setAttribute("data-id", it.id);
+      li.setAttribute("data-id", String(it.id));
+      li.tabIndex = 0;
+      li.setAttribute("role", "button");
+      li.setAttribute("aria-label", (it.title || "") + " — " + (it.source || ""));
       if (activeItemId === it.id) {
         li.setAttribute("aria-selected", "true");
       }
@@ -2192,6 +2217,8 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       var h3 = document.createElement("h3");
       var a = document.createElement("a");
       a.href = it.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
       a.textContent = it.title;
       h3.appendChild(a);
       li.appendChild(h3);
@@ -2209,8 +2236,26 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       li.appendChild(meta);
 
       li.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        openReader(it, li);
+        var hasSummary = (typeof it.summary === "string" && it.summary.trim()) || (typeof it.description === "string" && it.description.trim());
+        if (hasSummary) {
+          ev.preventDefault();
+          openReader(it, li);
+        } else if (it.url) {
+          ev.preventDefault();
+          window.open(it.url, "_blank", "noopener,noreferrer");
+        }
+      });
+      li.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") {
+          var hasSummary = (typeof it.summary === "string" && it.summary.trim()) || (typeof it.description === "string" && it.description.trim());
+          if (hasSummary) {
+            ev.preventDefault();
+            openReader(it, li);
+          } else if (it.url) {
+            ev.preventDefault();
+            window.open(it.url, "_blank", "noopener,noreferrer");
+          }
+        }
       });
 
       listEl.appendChild(li);
@@ -2219,9 +2264,15 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 
   if (readerCloseBtn) {
     readerCloseBtn.addEventListener("click", function () {
-      closeReader();
+      closeReader(true);
     });
   }
+
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && readerEl && !readerEl.hidden) {
+      closeReader(true);
+    }
+  });
 
   if (seg) {
     seg.addEventListener("click", function (ev) {
@@ -2231,6 +2282,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       seg.querySelectorAll("button[data-filter]").forEach(function (b) {
         b.setAttribute("aria-pressed", b === btn ? "true" : "false");
       });
+      closeReader(false);
       render();
     });
   }
