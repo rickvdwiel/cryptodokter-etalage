@@ -373,9 +373,14 @@ h1{
   border-color:var(--accent);
   background:var(--surf2);
 }
-.bulletin-card[aria-selected="true"]{
+.bulletin-card[aria-expanded="true"]{
   border-color:var(--accent);
   background:var(--surf2);
+}
+.bulletin-card:focus-visible,.bulletin-reader:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:10px;
 }
 .bulletin-reader{
   border:1px solid var(--line);
@@ -2100,10 +2105,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       readerEl.hidden = true;
     }
     activeItemId = null;
-    var prevSelected = listEl.querySelector('.bulletin-card[aria-selected="true"]');
-    if (prevSelected) {
-      prevSelected.removeAttribute("aria-selected");
-    }
+    var cards = listEl.querySelectorAll(".bulletin-card");
+    cards.forEach(function (c) {
+      c.setAttribute("aria-expanded", "false");
+    });
     if (restoreFocus && lastOpenedCard) {
       try { lastOpenedCard.focus(); } catch (e) {}
     }
@@ -2150,13 +2155,13 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 
     readerEl.hidden = false;
 
-    /* Update aria-selected state on list cards */
+    /* Update aria-expanded state on list cards */
     var cards = listEl.querySelectorAll(".bulletin-card");
     cards.forEach(function (c) {
-      if (c === cardEl || c.getAttribute("data-id") === it.id) {
-        c.setAttribute("aria-selected", "true");
+      if (c === cardEl || c.getAttribute("data-id") === String(it.id)) {
+        c.setAttribute("aria-expanded", "true");
       } else {
-        c.removeAttribute("aria-selected");
+        c.setAttribute("aria-expanded", "false");
       }
     });
 
@@ -2192,10 +2197,8 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       li.setAttribute("data-id", String(it.id));
       li.tabIndex = 0;
       li.setAttribute("role", "button");
-      li.setAttribute("aria-label", (it.title || "") + " — " + (it.source || ""));
-      if (activeItemId === it.id) {
-        li.setAttribute("aria-selected", "true");
-      }
+      li.setAttribute("aria-controls", "bulletin-reader");
+      li.setAttribute("aria-expanded", activeItemId === it.id ? "true" : "false");
 
       var top = document.createElement("div");
       top.className = "bulletin-card-top";
@@ -2215,12 +2218,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       li.appendChild(top);
 
       var h3 = document.createElement("h3");
-      var a = document.createElement("a");
-      a.href = it.url;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.textContent = it.title;
-      h3.appendChild(a);
+      h3.textContent = it.title;
       li.appendChild(h3);
 
       var meta = document.createElement("div");
@@ -2235,7 +2233,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       meta.appendChild(tm);
       li.appendChild(meta);
 
-      li.addEventListener("click", function (ev) {
+      function handleOpen(ev) {
         var hasSummary = (typeof it.summary === "string" && it.summary.trim()) || (typeof it.description === "string" && it.description.trim());
         if (hasSummary) {
           ev.preventDefault();
@@ -2244,17 +2242,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
           ev.preventDefault();
           window.open(it.url, "_blank", "noopener,noreferrer");
         }
-      });
+      }
+      li.addEventListener("click", handleOpen);
       li.addEventListener("keydown", function (ev) {
         if (ev.key === "Enter" || ev.key === " ") {
-          var hasSummary = (typeof it.summary === "string" && it.summary.trim()) || (typeof it.description === "string" && it.description.trim());
-          if (hasSummary) {
-            ev.preventDefault();
-            openReader(it, li);
-          } else if (it.url) {
-            ev.preventDefault();
-            window.open(it.url, "_blank", "noopener,noreferrer");
-          }
+          handleOpen(ev);
         }
       });
 
