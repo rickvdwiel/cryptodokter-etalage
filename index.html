@@ -1293,8 +1293,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     n = Number(n);
     var a = Math.abs(n);
     var sig = a >= 1 ? { minimumFractionDigits: 2, maximumFractionDigits: 4 }
-                     : (a >= 0.0001 ? { minimumFractionDigits: 4, maximumFractionDigits: 6 }
-                                    : { maximumSignificantDigits: 4, maximumFractionDigits: 8 });
+                     : { maximumSignificantDigits: 4 };
     return "€" + a.toLocaleString("nl-NL", sig);
   }
   var seenPos = null;
