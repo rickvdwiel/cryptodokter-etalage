@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-09T05:47:34Z",
+  "generated_at": "2026-10-10T05:47:04Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-projects-apply-for-anthropic-s-new-fronti-0c8901d5",
-      "title": "Crypto projects apply for Anthropic’s new frontier AI security scanner",
-      "url": "https://cointelegraph.com/news/crypto-projects-apply-for-anthropics-new-frontier-ai-security-scanner?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-09T05:34:33Z",
+      "id": "bitcoin-s-volatility-has-plunged-but-extreme-pri-28f2e3ed",
+      "title": "Bitcoin's volatility has plunged, but extreme price swings are more frequent than in 2018",
+      "url": "https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018",
+      "source": "CoinDesk",
+      "published_at": "2026-10-10T05:43:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-koers-herstelt-na-daling-6-00e4d6e1",
-      "title": "Crypto wekker: Bitcoin koers herstelt na daling $6.000 in 4 dagen",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-herstelt-na-daling-6-000-in-4-dagen/",
-      "source": "Newsbit",
-      "published_at": "2026-10-09T05:12:20Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-verslaat-goud-en-aandelen-maar-begint-ok-075bc93d",
-      "title": "Bitcoin verslaat goud en aandelen maar begint oktober zwak",
-      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/bitcoin-verslaat-goud-en-aandelen-maar-begint-oktober-zwak/",
+      "id": "man-die-met-satoshi-aan-bitcoin-werkte-komt-naar-ecef8a8f",
+      "title": "Man die met Satoshi aan bitcoin werkte komt naar Nederland",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/man-die-met-satoshi-aan-bitcoin-werkte-komt-naar-nederland/",
       "source": "Crypto Insiders",
-      "published_at": "2026-10-09T05:04:23Z",
+      "published_at": "2026-10-10T04:56:30Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "xrp-ledger-adds-new-controls-for-banks-stablecoi-e5615419",
-      "title": "XRP Ledger adds new controls for banks, stablecoins and tokenized funds",
-      "url": "https://www.coindesk.com/tech/2026/10/09/xrp-ledger-adds-new-controls-for-banks-stablecoins-and-tokenized-funds",
-      "source": "CoinDesk",
-      "published_at": "2026-10-09T04:21:36Z",
+      "id": "thailand-stelt-etf-regels-voor-bitcoin-en-ether--f46e54d7",
+      "title": "Thailand stelt ETF-regels voor bitcoin en ether vast; fondsstart nog niet bekend",
+      "url": "https://cryptofocus.nl/nieuws/tradfi/thailand-bitcoin-ether-etf-rules-16-october-2026/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-10T04:45:14Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ether-bets-were-wiped-out-at-six-times-bitcoin-s-5825a88d",
-      "title": "Ether bets were wiped out at six times bitcoin’s rate in crypto’s $1 billion flush",
-      "url": "https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush",
+      "id": "xrp-ledger-patched-decade-old-bug-that-could-cre-952e914a",
+      "title": "XRP Ledger patched decade-old bug that could create billions of dollars in XRP from nothing",
+      "url": "https://www.coindesk.com/tech/2026/10/10/xrp-ledger-patched-decade-old-bug-that-could-create-billions-of-dollars-in-xrp-from-nothing",
       "source": "CoinDesk",
-      "published_at": "2026-10-09T04:04:36Z",
+      "published_at": "2026-10-10T04:20:07Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "griekenland-wil-10-procent-belasting-op-crypto-w-5ede2ad0",
+      "title": "Griekenland wil 10 procent belasting op crypto-winsten: een van de laagste tarieven in de EU",
+      "url": "https://bitcoinmagazine.nl/wetgeving-regulatie/greece-10-procent-crypto-belasting-eu-ladder",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-10-10T02:35:31Z",
       "category": "news",
       "sentiment": null
     },
@@ -57,20 +57,20 @@
       "sentiment": "neutral"
     },
     {
+      "id": "bitcoin-optech-newsletter-426-2597050f",
+      "title": "Bitcoin Optech Newsletter #426",
+      "url": "https://bitcoinops.org/en/newsletters/2026/10/09/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-10-09T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
       "id": "compute-capital-markets-b423966a",
       "title": "Compute Capital Markets",
       "url": "https://multicoin.capital/2026/10/08/compute-capital-markets/",
       "source": "Multicoin",
       "published_at": "2026-10-08T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "the-death-and-life-of-the-average-memecoin-87b70abf",
-      "title": "The Death and Life of the Average Memecoin",
-      "url": "https://coinmetrics.substack.com/p/state-of-the-network-issue-384",
-      "source": "Coin Metrics",
-      "published_at": "2026-10-06T12:45:44Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
