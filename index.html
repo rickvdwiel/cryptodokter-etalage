@@ -2,6 +2,7 @@
 <!-- build: cryptodokter-cockpit-8 -->
 <html lang="nl" translate="no" data-build="cryptodokter-cockpit-8">
 <head>
+<script>document.documentElement.classList.add("cd-wait");setTimeout(function(){document.documentElement.classList.remove("cd-wait")},2500);</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0c1016">
@@ -595,15 +596,16 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 /* Beste trades (strip direct onder de topbalk). Vaste hoogte → geen layout-shift als de data binnenkomt; geen data → hidden. */
 .wins{max-width:var(--max);margin:0 auto;padding:4px var(--padr) 0 var(--pad)}
 .wins[hidden]{display:none!important}
-.wins-head{display:flex;align-items:baseline;gap:10px;height:18px;margin:0 0 8px;white-space:nowrap;overflow:hidden}
+.wins-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;margin:0 0 8px}
 .wins-head h2{margin:0;font:600 12px/18px var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--text-secondary)}
-.wins-ctx{font-size:12px;line-height:18px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+.wins-ctx{font-size:12px;line-height:18px;color:var(--muted)}
 .wins-wk:empty{display:none}
-@media (max-width:767.98px){.wins-wk{display:none}}
+@media (max-width:767.98px){.wins-head h2{flex-basis:100%}.wins-head{gap:0 6px}}
 .wins-list{list-style:none;margin:0;padding:0 0 6px;display:flex;gap:10px;height:70px;overflow-x:auto;overflow-y:hidden;
   scroll-snap-type:x mandatory;scrollbar-width:thin;overscroll-behavior-x:contain}
 .wins-list:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius)}
-.wins[data-state="pending"] .wins-list,.wins[data-state="pending"] .wins-head{visibility:hidden}
+/* Eerste load: hero + strip pas tonen als paper-live én benchmark binnen zijn (max 1,5 s) → geen verschuiving door laat ingevoegde blokken */
+html.cd-wait #wins,html.cd-wait main{visibility:hidden}
 .win{flex:0 0 auto;scroll-snap-align:start;box-sizing:border-box;height:64px;min-width:168px;padding:9px 12px;
   border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);
   display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;gap:4px 12px;align-content:center;
@@ -697,7 +699,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   </nav>
 </header>
 
-<section class="wins" id="wins" aria-labelledby="wins-title" data-state="pending">
+<section class="wins" id="wins" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
   <ul class="wins-list" id="wins-list" tabindex="0" aria-labelledby="wins-title"></ul>
 </section>
@@ -1683,7 +1685,8 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
       });
   }
 
-  Promise.all([loadEquityCurve(), loadSnapshot()]).then(function () {
+  var firstLoad = Promise.all([loadEquityCurve(), loadSnapshot()]);
+  firstLoad.then(function () {
     if (!equityFromFile && !(lastSnap && lastSnap.equity_spark && lastSnap.equity_spark.length)) {
       renderEquity([]);
     }
@@ -1958,7 +1961,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     var b = fetchJson("benchmark.json", 5000).then(function (d) { if (validBm(d)) fwdLast.bm = d; }, function () {});
     return Promise.all([a, b]).then(function () { renderForward(); renderHeroNotes(); });
   }
-  loadForward();
+  var firstBm = loadForward();
+  Promise.race([
+    Promise.allSettled([firstLoad, firstBm]),
+    new Promise(function (r) { setTimeout(r, 1500); })
+  ]).then(function () { document.documentElement.classList.remove("cd-wait"); });
 
   /* ——— Hero-notities (alleen uit gepubliceerde velden; ontbreekt een veld → blok weg, geen ruimte) ———
      (a) zie renderWins (strip boven de hero)
@@ -2027,11 +2034,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     var sec = document.getElementById("wins"), list = document.getElementById("wins-list");
     if (!sec || !list) return;
     var w = heroWins(lastRaw);
-    if (!w) { sec.hidden = true; sec.removeAttribute("data-state"); winsSig = null; return; }
+    if (!w) { sec.hidden = true; winsSig = null; return; }
     var title = w.period === "prev" ? "Beste trades vorige week" : "Beste trades deze week";
     var wk = w.period === "prev" ? "vorige week" : "deze week";
     var sig = JSON.stringify([title, w.n, w.items.map(function (x) { return [x.sym, x.pnl, x.pct, x.at.getTime(), x.exit]; })]);
-    sec.hidden = false; sec.removeAttribute("data-state");
+    sec.hidden = false;
     if (sig === winsSig) return; /* ongewijzigd: niet opnieuw animeren */
     winsSig = sig;
     setText("wins-title", title);
