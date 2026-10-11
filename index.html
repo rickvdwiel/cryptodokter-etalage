@@ -1970,7 +1970,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   /* ——— Hero-notities (alleen uit gepubliceerde velden; ontbreekt een veld → blok weg, geen ruimte) ———
      (a) zie renderWins (strip boven de hero)
      (b) benchmark.json   loss_per_trade_ratio  óf  loss_per_trade_old_eur + loss_per_trade_new_eur
-     (c) benchmark.json   regime_anchor {ts, total_eur_at_anchor, exits_since, label?}; pas vanaf 40 afgesloten trades */
+     (c) benchmark.json   regime_anchor {ts, total_eur_at_anchor, n_exits_since_anchor (of exits_since), label?}; pas vanaf 40 afgesloten trades */
   var REGIME_MIN_EXITS = 40;
   function intOrNull(v) { var n = numOrNull(v); return n != null && Number.isSafeInteger(n) && n >= 0 ? n : null; }
   function shortDate(iso) { var d = parseTs(iso); if (!d) return null; var p = amsParts(d); return Number(p.day) + " " + MONTHS[Number(p.month) - 1]; }
@@ -2070,7 +2070,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   function heroRegime(bm, snap) {
     var a = bm && bm.regime_anchor;
     if (!a || typeof a !== "object" || !snap || snap.total == null) return null;
-    var at = parseTs(a.ts), base = numOrNull(a.total_eur_at_anchor), exits = intOrNull(a.exits_since);
+    var at = parseTs(a.ts), base = numOrNull(a.total_eur_at_anchor), exits = intOrNull(a.n_exits_since_anchor != null ? a.n_exits_since_anchor : a.exits_since);
     if (!at || base == null || exits == null || exits < REGIME_MIN_EXITS) return null;
     var su = parseTs(snap.updated);
     if (su && su.getTime() < at.getTime()) return null;
