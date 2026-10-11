@@ -2051,7 +2051,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
       span("win-sym", x.sym);
       span("win-pnl", fmtEur(x.pnl, true));
       span("win-meta", shortDate(x.at.toISOString()) + (x.exit ? " · " + x.exit : ""));
-      span("win-pct", x.pct != null ? fmtPct(x.pct) : "");
+      if (x.pct != null) span("win-pct", fmtPct(x.pct));
       list.appendChild(li);
     });
   }
@@ -2092,7 +2092,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     }
     gEl.hidden = !g;
     var r = heroRatio(fwdLast.bm), rEl = document.getElementById("hn-ratio");
-    if (r) { rEl.textContent = "Verlies per trade " + fmtInt(r) + "× kleiner dan met de oude herkoopregel"; any = true; }
+    if (r) { rEl.textContent = "Verlies per trade " + fmtInt(r) + "× kleiner dan vóór de strengere selectie"; any = true; }
     rEl.hidden = !r;
     box.hidden = !any;
   }
