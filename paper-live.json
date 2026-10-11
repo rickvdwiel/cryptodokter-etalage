@@ -471,5 +471,12 @@
     }
   ],
   "open_positions": [],
-  "rendement_pct": -42.2
+  "rendement_pct": -42.2,
+  "best_trade_week": {
+    "symbol": "RUNNER",
+    "pnl_eur": 149.98,
+    "pct": 7.0,
+    "ts": "2026-10-11T22:04:32Z",
+    "n_trades_week": 1
+  }
 }
