@@ -475,19 +475,25 @@ h1{
 .foot strong{color:var(--tx);font-weight:600}
 .foot a{color:var(--muted)}.foot a:hover{color:var(--accent)}
 .disclaimer{margin:0;max-width:78ch}
-/* Bezoekersteller (GoatCounter) — Designer-spec: desktop in de topbalk links van de pill, mobiel in de hero-metaregel */
-.hitc,.hitc-m{
+/* Bezoekersteller (GoatCounter) — Designer-spec: desktop in de topbalk links van de pill, mobiel in de hero-metaregel, altijd in de footer.
+   Altijd zichtbaar (geen hidden): "Bezoekers 18", of "Bezoekers —" + uitleg als de teller geblokkeerd/niet bereikbaar is. */
+.hitc,.hitc-m,.hitc-f{
   display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:24px;padding:0 10px;
   border:1px solid var(--line);border-radius:999px;background:transparent;
   font-family:"IBM Plex Mono",var(--mono);line-height:1;letter-spacing:0;
   font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;
 }
-.hitc-n{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--tx)}
+.hitc-n{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--tx);min-width:2ch;text-align:center}
 .hitc-l{font-size:12px;font-weight:400;color:var(--text-secondary)}
+.hitc-why{font-size:12px;color:var(--muted)}
+.hitc-why[hidden]{display:none!important}
+.hitc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hitc[data-state="off"] .hitc-n,.hitc-m[data-state="off"] .hitc-n,.hitc-f[data-state="off"] .hitc-n{font-weight:400;color:var(--muted)}
+.hitc[data-state="off"],.hitc-m[data-state="off"],.hitc-f[data-state="off"]{cursor:help}
 .hitc{margin-right:4px} /* nav-gap 12px + 4px = 16px tot de pill */
 .snap-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
 .snap-meta>#hero-snap{min-width:0}
-.hitc[hidden],.hitc-m[hidden]{display:none!important}
+.hitc[hidden],.hitc-m[hidden],.hitc-f[hidden]{display:none!important}
 @media (max-width:767.98px){.hitc{display:none!important}}
 @media (min-width:768px){.hitc-m{display:none!important}}
 /* Steun CryptoDokter (doneer) — geïsoleerd blok; netwerkknoppen + één paneel (zonder JS: alle panelen) */
@@ -554,7 +560,7 @@ h1{
 .don-iban{word-break:normal;overflow-wrap:anywhere;font-size:15px;font-weight:600}
 .don-bank-meta{margin:0;font-size:13px;line-height:1.5;color:var(--tx)}
 .don-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.foot-links{display:flex;gap:14px;flex-wrap:wrap}
+.foot-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 /* Cockpit-8 */
 :root{--bg:#111113;--surf:#19191d;--surf2:#212126;--line:#35353c;--muted:#a1a1ad;--accent:#61cfc1;--up:#78d6a0;--dn:#ff929c;--max:1200px}
 body,body *{letter-spacing:0!important}
@@ -586,6 +592,37 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 .performance .dn{color:var(--dn)}.performance .up{color:var(--up)}
 .performance span{font-size:13px;color:var(--muted)}
 .data-warning{margin:0;color:var(--dn);font-size:13px}
+/* Beste trades (strip direct onder de topbalk). Vaste hoogte → geen layout-shift als de data binnenkomt; geen data → hidden. */
+.wins{max-width:var(--max);margin:0 auto;padding:4px var(--padr) 0 var(--pad)}
+.wins[hidden]{display:none!important}
+.wins-head{display:flex;align-items:baseline;gap:10px;height:18px;margin:0 0 8px;white-space:nowrap;overflow:hidden}
+.wins-head h2{margin:0;font:600 12px/18px var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--text-secondary)}
+.wins-ctx{font-size:12px;line-height:18px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+.wins-wk:empty{display:none}
+@media (max-width:767.98px){.wins-wk{display:none}}
+.wins-list{list-style:none;margin:0;padding:0 0 6px;display:flex;gap:10px;height:70px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;overscroll-behavior-x:contain}
+.wins-list:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius)}
+.wins[data-state="pending"] .wins-list,.wins[data-state="pending"] .wins-head{visibility:hidden}
+.win{flex:0 0 auto;scroll-snap-align:start;box-sizing:border-box;height:64px;min-width:168px;padding:9px 12px;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);
+  display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;gap:4px 12px;align-content:center;
+  animation:winIn .4s cubic-bezier(.2,.7,.2,1) both}
+.win-sym{font:600 13px/1.2 var(--mono);color:var(--tx)}
+.win-pnl{justify-self:end;font:600 14px/1.2 var(--mono);color:var(--up);font-variant-numeric:tabular-nums}
+.win-meta{font-size:11px;line-height:1.3;color:var(--muted);white-space:nowrap}
+.win-pct{justify-self:end;font:500 11px/1.3 var(--mono);color:var(--up);font-variant-numeric:tabular-nums}
+@keyframes winIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (min-width:768px){.wins{padding-top:6px}.win{min-width:188px}}
+/* Hero-notities: alleen zichtbaar als het gepubliceerde veld bestaat (anders hidden, geen ruimte) */
+.hero-notes{display:flex;flex-wrap:wrap;gap:10px 28px;margin:14px 0 0}
+.hero-notes[hidden],.hero-notes .hn[hidden],.hero-notes .hn-line[hidden]{display:none!important}
+.hn{border-left:2px solid var(--line);padding-left:12px;min-width:0}
+.hn-k{margin:0 0 3px;font-size:12px;color:var(--muted)}
+.hn-v{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:12px;color:var(--muted)}
+.hn-v strong{font:600 15px/1.3 var(--mono);color:var(--tx);font-variant-numeric:tabular-nums}
+.hn-v strong.up{color:var(--up)}.hn-v strong.dn{color:var(--dn)}
+.hn-line{flex-basis:100%;margin:0;font-size:13px;color:var(--text-secondary)}
 .analysis,.visitors{max-width:var(--max);margin:22px auto 0;padding:16px var(--padr) 0 var(--pad)}
 .analysis h2,.visitors h2{font-size:18px;margin:0 0 12px}
 .analysis{border-top:1px solid var(--line)}
@@ -654,11 +691,16 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     <span class="brand-name">cryptodokter.nl</span>
   </a>
   <nav class="nav" aria-label="Hoofdnavigatie">
-    <span class="hitc" id="hitc" role="group" aria-label="aantal bezoeken" hidden><span class="hitc-n" id="hitc-v"></span> <span class="hitc-l">bezoeken</span></span>
+    <span class="hitc" id="hitc" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
     <span class="pill" title="Alleen papieren simulatie — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
     <a href="#analyse" id="nav-how">Analyse</a>
   </nav>
 </header>
+
+<section class="wins" id="wins" aria-labelledby="wins-title" data-state="pending">
+  <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
+  <ul class="wins-list" id="wins-list" tabindex="0" aria-labelledby="wins-title"></ul>
+</section>
 
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker" id="ticker">
@@ -678,12 +720,16 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
           <button class="tool" id="export-trades" type="button" disabled aria-label="Zichtbare transacties downloaden" title="Zichtbare transacties downloaden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></button>
         </div>
       </div>
-      <p class="snap-meta"><span id="hero-snap">Paper-snapshot</span><span class="hitc-m" id="hitc-m" role="group" aria-label="aantal bezoeken" hidden><span class="hitc-n" id="hitc-m-v"></span> <span class="hitc-l">bezoeken</span></span></p>
+      <p class="snap-meta"><span id="hero-snap">Paper-snapshot</span><span class="hitc-m" id="hitc-m" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span></p>
       <p class="lede" id="hero-lede">
         Resultaten, open posities en transacties van de paper-bot. Alle bedragen zijn gesimuleerd.
       </p>
       <div class="performance" aria-label="Netto paper-resultaat sinds start"><strong id="net-result">—</strong><span id="performance-label">Resultaat sinds start · papier</span></div>
       <p class="data-warning" id="data-warning" role="status" hidden></p>
+      <div class="hero-notes" id="hero-notes" hidden>
+        <div class="hn" id="hn-regime" hidden><p class="hn-k" id="hn-regime-k"></p><p class="hn-v"><strong id="hn-regime-v"></strong><span id="hn-regime-sub"></span></p></div>
+        <p class="hn-line" id="hn-ratio" hidden></p>
+      </div>
       <div class="balance-row"><span>Actieve portefeuille<strong id="balance-active">—</strong></span><span>Opzij gezet<strong id="balance-banked">—</strong></span><span>Kas<strong id="balance-cash">—</strong></span></div>
       <div class="ctas">
         <a class="btn btn-primary" id="cta-primary" href="#resultaten">Bekijk equity en fills</a>
@@ -841,10 +887,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   </section>
 
   <section class="visitors" id="bezoekers" aria-labelledby="visitors-title" hidden>
-    <h2 id="visitors-title">Bezoeken</h2>
-    <dl class="visitor-values"><div><dt>Vandaag</dt><dd id="visits-today">—</dd></div><div><dt>Totaal gemeten</dt><dd id="visits-total">—</dd></div></dl>
+    <h2 id="visitors-title">Bezoekers</h2>
+    <dl class="visitor-values"><div><dt>Vandaag (UTC)</dt><dd id="visits-today">—</dd></div><div><dt>Totaal gemeten</dt><dd id="visits-total">—</dd></div></dl>
     <p id="visits-status" role="status"></p>
-    <p>GoatCounter · telling sinds inschakeling · kan tot vier uur achterlopen. Aanwezige bezoekers worden nog niet gemeten.</p>
+    <p>GoatCounter · telling sinds inschakeling · één bezoek per browser per dag · kan tot vier uur achterlopen. Aanwezige bezoekers worden nog niet gemeten.</p>
   </section>
 
   <section class="doneer" id="doneer" aria-labelledby="doneer-title">
@@ -1011,7 +1057,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   <!-- build: cryptodokter-cockpit-8 -->
   <div class="foot-row">
     <span><strong>cryptodokter.nl</strong> · paper-only</span>
-    <span class="foot-links"><a href="#doneer" id="foot-doneer">Steun CryptoDokter</a></span>
+    <span class="foot-links"><span class="hitc-f" id="hitc-f" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span><span class="hitc-why" id="hitc-why" aria-hidden="true" hidden></span><a href="#doneer" id="foot-doneer">Steun CryptoDokter</a></span>
   </div>
   <p class="disclaimer">
     Disclaimer: CryptoDokter op deze site is uitsluitend een paper-/simulatieomgeving.
@@ -1535,7 +1581,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     if (warning) { warning.textContent = problems.join(" "); warning.hidden = !problems.length; }
   }
 
-  var lastSnap = null;
+  var lastSnap = null, lastRaw = null;
   function applySnapshot(snap) {
     var eq = snap.total != null ? snap.total : snap.equity;
     var openTxt = snap.open_count != null ? fmtInt(snap.open_count) : "—";
@@ -1596,7 +1642,10 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
           if (lastSnap && parseTs(n.updated).getTime() < parseTs(lastSnap.updated).getTime()) throw new Error("older snapshot");
           snapshotFailed = false;
           lastSnap = n;
+          lastRaw = raw;
           applySnapshot(n);
+          renderHeroNotes();
+          renderWins();
           return n;
         }
         throw new Error("empty");
@@ -1605,6 +1654,7 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         snapshotFailed = true;
         if (lastSnap) { setSnapTime(lastSnap.updated); return; }
         setSnapTime(null);
+        renderWins();
         renderTape([], 14);
         renderWaterfall([]);
         renderRadar([]);
@@ -1906,9 +1956,139 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   function loadForward() {
     var a = fetchJson("h4-forward.json", 5000).then(function (d) { if (validH4(d)) fwdLast.h4 = d; }, function () {});
     var b = fetchJson("benchmark.json", 5000).then(function (d) { if (validBm(d)) fwdLast.bm = d; }, function () {});
-    return Promise.all([a, b]).then(renderForward);
+    return Promise.all([a, b]).then(function () { renderForward(); renderHeroNotes(); });
   }
   loadForward();
+
+  /* ——— Hero-notities (alleen uit gepubliceerde velden; ontbreekt een veld → blok weg, geen ruimte) ———
+     (a) zie renderWins (strip boven de hero)
+     (b) benchmark.json   loss_per_trade_ratio  óf  loss_per_trade_old_eur + loss_per_trade_new_eur
+     (c) benchmark.json   regime_anchor {ts, total_eur_at_anchor, exits_since, label?}; pas vanaf 40 afgesloten trades */
+  var REGIME_MIN_EXITS = 40;
+  function intOrNull(v) { var n = numOrNull(v); return n != null && Number.isSafeInteger(n) && n >= 0 ? n : null; }
+  function shortDate(iso) { var d = parseTs(iso); if (!d) return null; var p = amsParts(d); return Number(p.day) + " " + MONTHS[Number(p.month) - 1]; }
+  function cleanLabel(v) { if (typeof v !== "string") return null; v = v.replace(/\s+/g, " ").trim(); return v && v.length <= 60 ? v : null; }
+  function signCls(n) { return n < 0 ? "dn" : n > 0 ? "up" : ""; }
+  /* Beste trades: paper-live.json
+       best_trades_week: [{symbol, pnl_eur, pct, ts, exit_kind}] + n_trades_week + week_label   (vorm zoals Site publiceert)
+       of {period:"this"|"prev", week_label?, trades_total, items:[{symbol, pnl_eur, pnl_pct, closed_at, exit_reason}]}
+     Lege week → best_trades_prev_week (zelfde vorm) + n_trades_prev_week + prev_week_label. Legacy: best_trade_week (één trade).
+     Alleen echte, gesloten winnende trades; gesorteerd op pnl_eur, max 5; niets bruikbaars → strip weg. */
+  var EXIT_NL = {
+    take_profit: "take-profit", takeprofit: "take-profit", tp: "take-profit", "take-profit": "take-profit", "winst genomen": "winst genomen",
+    partial_tp: "deels winst genomen", partial: "deels winst genomen", "deels winst genomen": "deels winst genomen",
+    trailing_stop: "trailing stop", trailing: "trailing stop", trail: "trailing stop", tsl: "trailing stop",
+    stop_loss: "stop-loss", sl: "stop-loss", "stop-loss": "stop-loss",
+    break_even: "break-even", breakeven: "break-even", be: "break-even",
+    timeout: "tijdslimiet", time_exit: "tijdslimiet", max_hold: "tijdslimiet", time_stop: "tijdslimiet",
+    signal: "verkoopsignaal", exit_signal: "verkoopsignaal", sell_signal: "verkoopsignaal", manual: "handmatig"
+  };
+  function exitNl(v) {
+    if (typeof v !== "string") return null;
+    var raw = v.replace(/\s+/g, " ").trim();
+    if (!raw || raw.length > 32) return null;
+    var k = raw.toLowerCase().replace(/[\s-]+/g, "_");
+    return EXIT_NL[raw.toLowerCase()] || EXIT_NL[k] || raw; /* onbekend → ruwe waarde */
+  }
+  function winItem(it, maxAgeDays) {
+    if (!it || typeof it !== "object") return null;
+    var sym = typeof it.symbol === "string" && /^[A-Za-z0-9]{1,15}$/.test(it.symbol) ? it.symbol.toUpperCase() : null;
+    var pnl = numOrNull(it.pnl_eur), at = parseTs(it.closed_at != null ? it.closed_at : it.ts);
+    if (!sym || pnl == null || pnl <= 0 || !at) return null;
+    var age = Date.now() - at.getTime();
+    if (age > maxAgeDays * 864e5 || age < -36e5) return null;
+    var pct = numOrNull(it.pnl_pct != null ? it.pnl_pct : it.pct);
+    return { sym: sym, pnl: pnl, pct: pct, at: at, exit: exitNl(it.exit_kind != null ? it.exit_kind : it.exit_reason != null ? it.exit_reason : it.reason) };
+  }
+  function winSet(src, period, total, label) {
+    if (src && !Array.isArray(src) && typeof src === "object" && !Array.isArray(src.items)) return null;
+    var arr = Array.isArray(src) ? src : (src && typeof src === "object" && Array.isArray(src.items) ? src.items : null);
+    if (!arr) return null;
+    var per = src && !Array.isArray(src) && (src.period === "prev" || src.period === "this") ? src.period : period;
+    var items = arr.map(function (x) { return winItem(x, per === "prev" ? 15 : 8); }).filter(Boolean)
+      .sort(function (x, y) { return y.pnl - x.pnl; }).slice(0, 5);
+    if (!items.length) return null;
+    var n = intOrNull(src && !Array.isArray(src) && src.trades_total != null ? src.trades_total : total);
+    return { period: per, items: items, n: n != null && n >= items.length ? n : null,
+      label: cleanLabel(src && !Array.isArray(src) && src.week_label != null ? src.week_label : label) };
+  }
+  function heroWins(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    var cur = winSet(raw.best_trades_week, "this", raw.n_trades_week != null ? raw.n_trades_week : raw.trades_total_week, raw.week_label);
+    if (cur) return cur;
+    var prev = winSet(raw.best_trades_prev_week, "prev", raw.n_trades_prev_week != null ? raw.n_trades_prev_week : raw.trades_total_prev_week, raw.prev_week_label);
+    if (prev) return prev;
+    var b = raw.best_trade_week; /* legacy: één trade */
+    if (b && typeof b === "object") return winSet({ period: "this", trades_total: b.n_trades_week, items: [b] }, "this");
+    return null;
+  }
+  var winsSig = null;
+  function renderWins() {
+    var sec = document.getElementById("wins"), list = document.getElementById("wins-list");
+    if (!sec || !list) return;
+    var w = heroWins(lastRaw);
+    if (!w) { sec.hidden = true; sec.removeAttribute("data-state"); winsSig = null; return; }
+    var title = w.period === "prev" ? "Beste trades vorige week" : "Beste trades deze week";
+    var wk = w.period === "prev" ? "vorige week" : "deze week";
+    var sig = JSON.stringify([title, w.n, w.items.map(function (x) { return [x.sym, x.pnl, x.pct, x.at.getTime(), x.exit]; })]);
+    sec.hidden = false; sec.removeAttribute("data-state");
+    if (sig === winsSig) return; /* ongewijzigd: niet opnieuw animeren */
+    winsSig = sig;
+    setText("wins-title", title);
+    setText("wins-ctx", (w.n != null ? "uit " + fmtInt(w.n) + (w.n === 1 ? " trade " : " trades ") + wk + " · " : "") + "papier");
+    setText("wins-wk", w.label ? "· " + w.label : "");
+    while (list.firstChild) list.removeChild(list.firstChild);
+    w.items.forEach(function (x, i) {
+      var li = document.createElement("li"); li.className = "win"; li.style.animationDelay = (i * 70) + "ms";
+      function span(cls, txt) { var e = document.createElement("span"); e.className = cls; e.textContent = txt; li.appendChild(e); return e; }
+      span("win-sym", x.sym);
+      span("win-pnl", fmtEur(x.pnl, true));
+      span("win-meta", shortDate(x.at.toISOString()) + (x.exit ? " · " + x.exit : ""));
+      span("win-pct", x.pct != null ? fmtPct(x.pct) : "");
+      list.appendChild(li);
+    });
+  }
+  function heroRatio(bm) {
+    if (!bm) return null;
+    var r = numOrNull(bm.loss_per_trade_ratio);
+    if (r == null) {
+      var o = numOrNull(bm.loss_per_trade_old_eur), w = numOrNull(bm.loss_per_trade_new_eur);
+      if (o == null || w == null || o === 0 || w === 0 || (o < 0) !== (w < 0)) return null;
+      r = Math.abs(o) / Math.abs(w);
+    }
+    if (!isFinite(r)) return null;
+    r = Math.round(r);
+    return r >= 2 ? r : null; /* "1× kleiner" zegt niets */
+  }
+  function heroRegime(bm, snap) {
+    var a = bm && bm.regime_anchor;
+    if (!a || typeof a !== "object" || !snap || snap.total == null) return null;
+    var at = parseTs(a.ts), base = numOrNull(a.total_eur_at_anchor), exits = intOrNull(a.exits_since);
+    if (!at || base == null || exits == null || exits < REGIME_MIN_EXITS) return null;
+    var su = parseTs(snap.updated);
+    if (su && su.getTime() < at.getTime()) return null;
+    var lbl = cleanLabel(a.label), when = shortDate(a.ts);
+    var label = !lbl ? "Sinds de strengere selectie (" + when + ")" : /^sinds\b/i.test(lbl) ? lbl : "Sinds de " + lbl + " (" + when + ")";
+    return { label: label, delta: snap.total - base, exits: exits };
+  }
+  function renderHeroNotes() {
+    var box = document.getElementById("hero-notes");
+    if (!box) return;
+    var any = false;
+    var g = heroRegime(fwdLast.bm, lastSnap), gEl = document.getElementById("hn-regime");
+    if (g) {
+      setText("hn-regime-k", g.label);
+      var gv = document.getElementById("hn-regime-v");
+      gv.textContent = fmtEur(g.delta, true); gv.className = signCls(g.delta);
+      setText("hn-regime-sub", fmtInt(g.exits) + " afgesloten trades · papier");
+      any = true;
+    }
+    gEl.hidden = !g;
+    var r = heroRatio(fwdLast.bm), rEl = document.getElementById("hn-ratio");
+    if (r) { rEl.textContent = "Verlies per trade " + fmtInt(r) + "× kleiner dan met de oude herkoopregel"; any = true; }
+    rEl.hidden = !r;
+    box.hidden = !any;
+  }
 })();
 
 /* —— Marktbulletin (same-origin bulletin.json) —— */
@@ -2087,12 +2267,11 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
   /* GoatCounter site-code (publiek, geen geheim), bv. "cryptodokter". Leeg = geen teller, geen netwerkverkeer. */
   var GC_CODE = "cryptodokter";
 
-  if (!GC_CODE || !/^[a-z0-9][a-z0-9-]{0,62}$/.test(GC_CODE)) return;
+  if (!GC_CODE || !/^[a-z0-9][a-z0-9-]{0,62}$/.test(GC_CODE)) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-hitc]"), function (c) { c.hidden = true; });
+    return;
+  }
   var BASE = "https://" + GC_CODE + ".goatcounter.com";
-  var box = document.getElementById("hitc");
-  var val = document.getElementById("hitc-v");
-  var boxM = document.getElementById("hitc-m");
-  var valM = document.getElementById("hitc-m-v");
   var sect = document.getElementById("bezoekers");
   var KEY = "cd_gc_day";
 
@@ -2148,13 +2327,38 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
     try { if (navigator.sendBeacon) sent = navigator.sendBeacon(url); } catch (e) { sent = false; }
     if (!sent) { var img = new Image(1, 1); img.alt = ""; img.src = url; }
   }
+  var chips = Array.prototype.slice.call(document.querySelectorAll("[data-hitc]"));
+  var hadCount = false;
+  var MSG_BLOCKED = "teller geblokkeerd door je adblocker";
+  var MSG_DOWN = "teller tijdelijk niet beschikbaar";
+  function setChips(txt, msg) {
+    chips.forEach(function (c) {
+      var n = c.querySelector("[data-hitc-n]"), sr = c.querySelector("[data-hitc-sr]");
+      if (n) { n.textContent = txt === null ? "—" : txt; if (txt === null) n.setAttribute("aria-hidden", "true"); else n.removeAttribute("aria-hidden"); }
+      if (sr) sr.textContent = txt === null ? ": " + msg : "";
+      c.setAttribute("data-state", txt === null ? "off" : "ok");
+      c.title = txt === null ? "Bezoekers: " + msg : "Bezoekers volgens GoatCounter (één bezoek per browser per dag)";
+    });
+  }
+  var why = document.getElementById("hitc-why");
+  function setWhy(msg) { if (!why) return; why.textContent = msg ? msg.charAt(0).toUpperCase() + msg.slice(1) : ""; why.hidden = !msg; }
+  function reason(err) {
+    if (err && err.name === "AbortError") return MSG_DOWN; /* time-out */
+    if (typeof navigator !== "undefined" && navigator.onLine === false) return MSG_DOWN;
+    if (err && err.name === "TypeError") return MSG_BLOCKED; /* request geweigerd vóór een antwoord: adblocker/privacyfilter */
+    return MSG_DOWN; /* HTTP-fout of ongeldig antwoord */
+  }
+  function utcDay() {
+    var d = new Date();
+    return d.getUTCFullYear() + "-" + String(d.getUTCMonth() + 1).padStart(2, "0") + "-" + String(d.getUTCDate()).padStart(2, "0");
+  }
   function show() {
-    if (!box || !val || typeof fetch !== "function") return;
+    if (typeof fetch !== "function") { if (!hadCount) setChips(null, MSG_DOWN); return; }
     var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 4000);
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 5000);
     var o = { mode: "cors", credentials: "omit", cache: "no-cache", referrerPolicy: "no-referrer" };
     if (ctrl) o.signal = ctrl.signal;
-    function readCount(url, target) {
+    function readCount(url) {
       return fetch(url, o)
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
       .then(function (d) {
@@ -2166,24 +2370,28 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
         if (!digits || digits.length > 12) throw new Error("invalid count");
         var n = Number(digits);
         if (!Number.isSafeInteger(n) || n < 0) throw new Error("invalid count");
-        var txt = n.toLocaleString("nl-NL", { maximumFractionDigits: 0, useGrouping: true });
-        if (target === "visits-total") {
-          if (n <= 0) throw new Error("zero");
-          val.textContent = txt; box.hidden = false;
-          if (boxM && valM) { valM.textContent = txt; boxM.hidden = false; }
-          if (sect) sect.hidden = false;
-        }
-        document.getElementById(target).textContent = txt;
+        return n.toLocaleString("nl-NL", { maximumFractionDigits: 0, useGrouping: true });
       });
     }
-    var day = amsDay();
+    /* GoatCounter: datums in UTC, end is exclusief → alleen start=vandaag (UTC) geeft vandaag t/m nu */
+    var day = utcDay();
     Promise.allSettled([
-      readCount(BASE + "/counter/TOTAL.json", "visits-total"),
-      day ? readCount(BASE + "/counter/TOTAL.json?start=" + day + "&end=" + day, "visits-today") : Promise.reject(new Error("day unavailable"))
+      readCount(BASE + "/counter/TOTAL.json"),
+      readCount(BASE + "/counter/TOTAL.json?start=" + day)
     ]).then(function (results) {
-      var failed = results.some(function (r) { return r.status === "rejected"; });
-      if (results[0].status === "rejected") { box.hidden = true; if (boxM) boxM.hidden = true; if (sect) sect.hidden = true; return; }
-      document.getElementById("visits-status").textContent = failed ? "Teller gedeeltelijk of tijdelijk niet beschikbaar." : "Teldag " + day + " · gegevens ontvangen om " + new Date().toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Amsterdam" });
+      var tot = results[0], today = results[1];
+      if (tot.status === "rejected") {
+        if (!hadCount) { var msg = reason(tot.reason); setChips(null, msg); setWhy(msg); if (sect) sect.hidden = true; }
+        else document.getElementById("visits-status").textContent = "Teller tijdelijk niet bijgewerkt; laatst ontvangen stand blijft staan.";
+        return;
+      }
+      hadCount = true;
+      setChips(tot.value); setWhy("");
+      document.getElementById("visits-total").textContent = tot.value;
+      document.getElementById("visits-today").textContent = today.status === "fulfilled" ? today.value : "—";
+      document.getElementById("visits-status").textContent = (today.status === "rejected" ? "Teller gedeeltelijk niet beschikbaar · " : "") +
+        "Teldag " + day + " (UTC) · opgehaald om " + new Date().toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Amsterdam" });
+      if (sect) sect.hidden = false;
     }).finally(function () { clearTimeout(timer); });
   }
   /* Prerender: nu niet tellen; pas tellen als de pagina echt geopend wordt */
