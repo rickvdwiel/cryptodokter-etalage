@@ -616,6 +616,30 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
 .win-pct{justify-self:end;font:500 11px/1.3 var(--mono);color:var(--up);font-variant-numeric:tabular-nums}
 @keyframes winIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (min-width:768px){.wins{padding-top:6px}.win{min-width:188px}}
+/* Seizoen 2: strip in de hero-kolom (alleen in seizoensmodus verplaatst), rustige lege staat, seizoensregel */
+.hero .wins.in-hero{max-width:none;margin:4px 0 14px;padding:0}
+.hero.is-season>div:first-child{min-width:0}
+.hero.is-season .performance{row-gap:2px;margin-bottom:10px}.hero.is-season .performance span{flex-basis:100%} /* sublabel altijd eigen regel: geen herschikking bij font-swap */ /* scrollende strip mag de hero-kolom niet oprekken (375px) */
+.wins-empty{margin:0 0 6px;padding:10px 12px;border:1px dashed var(--line);border-radius:var(--radius);font-size:13px;line-height:1.4;color:var(--text-secondary)}
+.season-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin:-6px 0 12px;font-size:13px;line-height:1.5;color:var(--text-secondary)}
+.season-meta .sb-v{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--tx)}
+.season-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.season-link:hover{text-decoration-thickness:2px}
+.season-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+/* Seizoen 1 (afgesloten): rustige kaart, thema-tokens, altijd open */
+.season-prev{max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);scroll-margin-top:16px}
+.s1-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);padding:18px 20px}
+.s1-card h2{margin:0 0 4px;font:700 clamp(18px,2.8vw,22px)/1.25 var(--font);color:var(--tx)}
+.s1-card h2:focus{outline:none}
+.s1-sub{margin:0 0 14px;font-size:12px;color:var(--muted)}
+.s1-vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 18px;margin:0}
+.s1-vals div{border-left:2px solid var(--line);padding-left:12px;min-width:0}
+.s1-vals dt{font-size:12px;color:var(--muted)}
+.s1-vals dd{margin:4px 0 0;font:600 18px/1.3 var(--mono);color:var(--tx);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.s1-vals dd .up{color:var(--up)}.s1-vals dd .dn{color:var(--dn)}
+.s1-vals dd .s1-pct{margin-left:8px;font-size:13px;font-weight:500}
+.s1-lesson{margin:16px 0 0;font-size:14px;line-height:1.5;color:var(--text-secondary)}
+.s1-lesson .s1-lk{font-weight:600;color:var(--tx)}
 /* Hero-notities: alleen zichtbaar als het gepubliceerde veld bestaat (anders hidden, geen ruimte) */
 .hero-notes{display:flex;flex-wrap:wrap;gap:10px 28px;margin:14px 0 0}
 .hero-notes[hidden],.hero-notes .hn[hidden],.hero-notes .hn-line[hidden]{display:none!important}
@@ -702,6 +726,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
 <section class="wins" id="wins" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
   <ul class="wins-list" id="wins-list" tabindex="0" aria-labelledby="wins-title"></ul>
+  <p class="wins-empty" id="wins-empty" hidden>Nog geen afgesloten winsttrades in seizoen 2.</p>
 </section>
 
 <div class="ticker-wrap" aria-hidden="true">
@@ -714,7 +739,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   <section class="hero" aria-labelledby="hero-title">
     <div>
       <div class="hero-heading">
-        <div><p class="eyebrow">Paper-trading monitor</p><h1 id="hero-title">Een tradingbot die alles laat zien</h1></div>
+        <div><p class="eyebrow" id="hero-eyebrow">Paper-trading monitor</p><h1 id="hero-title">Een tradingbot die alles laat zien</h1></div>
         <div class="tools">
           <span class="run-state" id="run-state" role="status">Automatisch verversen</span>
           <button class="tool" id="refresh-data" type="button" aria-label="Gegevens verversen" title="Gegevens verversen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg></button>
@@ -726,7 +751,8 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
       <p class="lede" id="hero-lede">
         Resultaten, open posities en transacties van de paper-bot. Alle bedragen zijn gesimuleerd.
       </p>
-      <div class="performance" aria-label="Netto paper-resultaat sinds start"><strong id="net-result">—</strong><span id="performance-label">Resultaat sinds start · papier</span></div>
+      <div class="performance" id="performance" aria-label="Netto paper-resultaat sinds start"><strong id="net-result">—</strong><span id="performance-label">Resultaat sinds start · papier</span></div>
+      <p class="season-meta" id="season-meta" hidden><span id="season-bench" hidden></span><a class="season-link" id="season-link" href="#seizoen-1" hidden>Seizoen 1 bekijken</a></p>
       <p class="data-warning" id="data-warning" role="status" hidden></p>
       <div class="hero-notes" id="hero-notes" hidden>
         <div class="hn" id="hn-regime" hidden><p class="hn-k" id="hn-regime-k"></p><p class="hn-v"><strong id="hn-regime-v"></strong><span id="hn-regime-sub"></span></p></div>
@@ -849,6 +875,20 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
       <h2 id="pos-title">Open posities</h2>
       <p class="sub" id="pos-sub">Paper — geen echte orders</p>
       <ul class="waterfall pos-list" id="pos-list"></ul>
+    </div>
+  </section>
+
+  <section class="season-prev" id="seizoen-1" aria-labelledby="s1-title" hidden>
+    <div class="s1-card">
+      <h2 id="s1-title" tabindex="-1">Seizoen 1</h2>
+      <p class="s1-sub" id="s1-sub">Afgesloten seizoen · papier</p>
+      <dl class="s1-vals">
+        <div id="s1-res-w"><dt>Eindresultaat</dt><dd><span id="s1-res">—</span><span class="s1-pct" id="s1-pct"></span></dd></div>
+        <div id="s1-fees-w"><dt>Betaalde fees</dt><dd id="s1-fees">—</dd></div>
+        <div id="s1-trades-w"><dt>Trades</dt><dd id="s1-trades">—</dd></div>
+        <div id="s1-end-w"><dt>Start → eindstand</dt><dd id="s1-end">—</dd></div>
+      </dl>
+      <p class="s1-lesson" id="s1-lesson" hidden><span class="s1-lk">Les:</span> <span id="s1-lesson-t"></span></p>
     </div>
   </section>
 
@@ -1094,6 +1134,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   wireAnchor("cta-primary", "resultaten", "resultaten-title");
   wireAnchor("nav-how", "analyse", "analysis-title");
   wireAnchor("foot-doneer", "doneer", "doneer-title");
+  wireAnchor("season-link", "seizoen-1", "s1-title");
 
   /* ——— One number formatter: nl-NL, U+2212 for negatives ——— */
   var MINUS = "\u2212";
@@ -1646,8 +1687,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
           lastSnap = n;
           lastRaw = raw;
           applySnapshot(n);
-          renderHeroNotes();
-          renderWins();
+          renderSeason();
           return n;
         }
         throw new Error("empty");
@@ -1958,20 +1998,25 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   })();
   function loadForward() {
     var a = fetchJson("h4-forward.json", 5000).then(function (d) { if (validH4(d)) fwdLast.h4 = d; }, function () {});
-    var b = fetchJson("benchmark.json", 5000).then(function (d) { if (validBm(d)) fwdLast.bm = d; }, function () {});
-    return Promise.all([a, b]).then(function () { renderForward(); renderHeroNotes(); });
+    var b = fetchJson("benchmark.json", 5000).then(function (d) { bmRaw = d && typeof d === "object" && d.paper_only !== false ? d : null; if (validBm(d)) fwdLast.bm = d; }, function () {});
+    return Promise.all([a, b]).then(function () { renderForward(); renderSeason(); });
   }
   var firstBm = loadForward();
   Promise.race([
     Promise.allSettled([firstLoad, firstBm]),
     new Promise(function (r) { setTimeout(r, 1500); })
-  ]).then(function () { document.documentElement.classList.remove("cd-wait"); });
+  ]).then(function () {
+    /* Eén frame wachten: de hero (fallback → seizoen) ligt dan vast vóórdat hij zichtbaar wordt → geen layout-shift */
+    var reveal = function () { document.documentElement.classList.remove("cd-wait"); };
+    if (typeof requestAnimationFrame === "function") requestAnimationFrame(function () { requestAnimationFrame(reveal); }); else reveal();
+  });
 
   /* ——— Hero-notities (alleen uit gepubliceerde velden; ontbreekt een veld → blok weg, geen ruimte) ———
      (a) zie renderWins (strip boven de hero)
      (b) benchmark.json   loss_per_trade_ratio  óf  loss_per_trade_old_eur + loss_per_trade_new_eur
      (c) benchmark.json   regime_anchor {ts, total_eur_at_anchor, n_exits_since_anchor (of exits_since), label?}; pas vanaf 40 afgesloten trades */
   var REGIME_MIN_EXITS = 40;
+  var bmRaw = null;
   function intOrNull(v) { var n = numOrNull(v); return n != null && Number.isSafeInteger(n) && n >= 0 ? n : null; }
   function shortDate(iso) { var d = parseTs(iso); if (!d) return null; var p = amsParts(d); return Number(p.day) + " " + MONTHS[Number(p.month) - 1]; }
   function cleanLabel(v) { if (typeof v !== "string") return null; v = v.replace(/\s+/g, " ").trim(); return v && v.length <= 60 ? v : null; }
@@ -2007,33 +2052,48 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     var pct = numOrNull(it.pnl_pct != null ? it.pnl_pct : it.pct);
     return { sym: sym, pnl: pnl, pct: pct, at: at, exit: exitNl(it.exit_kind != null ? it.exit_kind : it.exit_reason != null ? it.exit_reason : it.reason) };
   }
-  function winSet(src, period, total, label) {
+  function winSet(src, period, total, label, minMs) {
     if (src && !Array.isArray(src) && typeof src === "object" && !Array.isArray(src.items)) return null;
     var arr = Array.isArray(src) ? src : (src && typeof src === "object" && Array.isArray(src.items) ? src.items : null);
     if (!arr) return null;
     var per = src && !Array.isArray(src) && (src.period === "prev" || src.period === "this") ? src.period : period;
-    var items = arr.map(function (x) { return winItem(x, per === "prev" ? 15 : 8); }).filter(Boolean)
+    var items = arr.map(function (x) { return winItem(x, per === "prev" ? 15 : 8); }).filter(function (x) { return x && (minMs == null || x.at.getTime() >= minMs); })
       .sort(function (x, y) { return y.pnl - x.pnl; }).slice(0, 5);
     if (!items.length) return null;
     var n = intOrNull(src && !Array.isArray(src) && src.trades_total != null ? src.trades_total : total);
     return { period: per, items: items, n: n != null && n >= items.length ? n : null,
       label: cleanLabel(src && !Array.isArray(src) && src.week_label != null ? src.week_label : label) };
   }
-  function heroWins(raw) {
+  function heroWins(raw, minMs) {
     if (!raw || typeof raw !== "object") return null;
-    var cur = winSet(raw.best_trades_week, "this", raw.n_trades_week != null ? raw.n_trades_week : raw.trades_total_week, raw.week_label);
+    var cur = winSet(raw.best_trades_week, "this", raw.n_trades_week != null ? raw.n_trades_week : raw.trades_total_week, raw.week_label, minMs);
     if (cur) return cur;
-    var prev = winSet(raw.best_trades_prev_week, "prev", raw.n_trades_prev_week != null ? raw.n_trades_prev_week : raw.trades_total_prev_week, raw.prev_week_label);
+    var prev = winSet(raw.best_trades_prev_week, "prev", raw.n_trades_prev_week != null ? raw.n_trades_prev_week : raw.trades_total_prev_week, raw.prev_week_label, minMs);
     if (prev) return prev;
     var b = raw.best_trade_week; /* legacy: één trade */
-    if (b && typeof b === "object") return winSet({ period: "this", trades_total: b.n_trades_week, items: [b] }, "this");
+    if (b && typeof b === "object") return winSet({ period: "this", trades_total: b.n_trades_week, items: [b] }, "this", null, null, minMs);
     return null;
   }
   var winsSig = null;
   function renderWins() {
     var sec = document.getElementById("wins"), list = document.getElementById("wins-list");
     if (!sec || !list) return;
-    var w = heroWins(lastRaw);
+    var ss = seasonOn ? seasonNow : null;
+    var w = heroWins(lastRaw, ss ? ss.startMs : null);
+    var empty = document.getElementById("wins-empty");
+    if (!w && ss && lastRaw) {
+      /* Seizoen loopt, nog geen seizoen-2-winsttrade: rustige regel i.p.v. lege strip */
+      var nw = intOrNull(lastRaw.n_trades_week != null ? lastRaw.n_trades_week : lastRaw.trades_total_week);
+      var wl = cleanLabel(lastRaw.week_label);
+      setText("wins-title", "Beste trades deze week");
+      setText("wins-ctx", (nw != null ? fmtInt(nw) + (nw === 1 ? " trade " : " trades ") + "deze week · " : "") + "papier");
+      setText("wins-wk", wl ? "· " + wl : "");
+      while (list.firstChild) list.removeChild(list.firstChild);
+      setText("wins-empty", "Nog geen afgesloten winsttrades in " + (ss.n != null ? "seizoen " + fmtInt(ss.n) : "dit seizoen") + ".");
+      list.hidden = true; if (empty) empty.hidden = false;
+      sec.hidden = false; winsSig = "empty"; return;
+    }
+    list.hidden = false; if (empty) empty.hidden = true;
     if (!w) { sec.hidden = true; winsSig = null; return; }
     var title = w.period === "prev" ? "Beste trades vorige week" : "Beste trades deze week";
     var wk = w.period === "prev" ? "vorige week" : "deze week";
@@ -2078,9 +2138,166 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     var label = !lbl ? "Sinds de strengere selectie (" + when + ")" : /^sinds\b/i.test(lbl) ? lbl : "Sinds de " + lbl + " (" + when + ")";
     return { label: label, delta: snap.total - base, exits: exits };
   }
+
+  /* ——— Seizoenen ———
+     Adapter: ALLE veldnamen voor seizoensdata staan in SEASON_FIELDS (eerste naam die bestaat wint).
+     Een veld hernoemen = één regel hieronder. Bron: benchmark.json, daarna paper-live.json.
+     Ontbreekt het seizoen → hero exact zoals vóór seizoen 2 (fallback). */
+  var SEASON_FIELDS = {
+    season:        ["season", "current_season"],                    /* object */
+    startTs:       ["start_ts", "start", "started_at", "start_at"], /* binnen season */
+    flatStartTs:   ["season_start_ts", "season_start"],             /* plat op topniveau */
+    n:             ["n", "number", "season_n"],
+    totalAtStart:  ["total_eur_at_start", "start_total_eur", "start_eur"],
+    flatTotal:     ["season_total_eur_at_start", "season_start_eur"],
+    deposits:      ["deposits_eur", "deposits_since_start_eur"],
+    flatN:         ["season_n", "season_number"],
+    bench:         ["season_benchmark"],
+    benchSymbol:   ["symbol", "asset"],
+    benchPct:      ["pct_since_start", "pct_since_season_start", "pct"],
+    prev:          ["previous_seasons", "past_seasons"],
+    pFrom:         ["from", "start", "start_date", "from_date"],
+    pTo:           ["to", "end", "end_date", "to_date"],
+    pStart:        ["start_eur", "start_total_eur"],
+    pEnd:          ["end_total_eur", "end_eur", "total_eur_at_end"],
+    pResult:       ["result_eur", "pnl_eur", "net_eur"],
+    pPct:          ["result_pct", "pnl_pct", "return_pct"],
+    pFees:         ["fees_eur", "fees"],
+    pTrades:       ["n_trades", "trades", "trades_total"],
+    pLesson:       ["lesson", "lesson_nl", "les"]
+  };
+  function sf(o, key) {
+    if (!o || typeof o !== "object" || Array.isArray(o)) return undefined;
+    var names = SEASON_FIELDS[key];
+    for (var i = 0; i < names.length; i++) if (o[names[i]] != null) return o[names[i]];
+    return undefined;
+  }
+  function sfAny(srcs, key) { for (var i = 0; i < srcs.length; i++) { var v = sf(srcs[i], key); if (v !== undefined) return v; } return undefined; }
+  function readSeasons(bm, live) {
+    var srcs = [bm, live].filter(function (x) { return x && typeof x === "object"; });
+    var out = { cur: null, bench: null, prev: [] };
+    var so = sfAny(srcs, "season"); if (!so || typeof so !== "object" || Array.isArray(so)) so = null;
+    var startAt = parseTs(so ? sf(so, "startTs") : sfAny(srcs, "flatStartTs"));
+    if (!startAt && so) startAt = parseTs(sfAny(srcs, "flatStartTs"));
+    var base = numOrNull(so ? sf(so, "totalAtStart") : sfAny(srcs, "flatTotal"));
+    if (base == null && so) base = numOrNull(sfAny(srcs, "flatTotal"));
+    if (startAt && base != null && base > 0) {
+      var dep = numOrNull(so ? sf(so, "deposits") : undefined);
+      var n = intOrNull(so ? sf(so, "n") : sfAny(srcs, "flatN"));
+      out.cur = { n: n != null && n >= 1 ? n : null, startMs: startAt.getTime(), startIso: startAt.toISOString(), base: base, deposits: dep != null && dep >= 0 ? dep : 0 };
+    }
+    var bo = sfAny(srcs, "bench");
+    if (bo && typeof bo === "object" && !Array.isArray(bo)) {
+      var sym = sf(bo, "benchSymbol"), pct = numOrNull(sf(bo, "benchPct"));
+      if (typeof sym === "string" && /^[A-Za-z0-9-]{1,12}$/.test(sym.trim()) && pct != null) out.bench = { sym: sym.trim().toUpperCase(), pct: pct };
+    }
+    var pa = sfAny(srcs, "prev");
+    if (Array.isArray(pa)) pa.forEach(function (x) {
+      if (!x || typeof x !== "object") return;
+      var start = numOrNull(sf(x, "pStart")), end = numOrNull(sf(x, "pEnd")), res = numOrNull(sf(x, "pResult")), pct = numOrNull(sf(x, "pPct"));
+      if (res == null && start != null && end != null) res = Math.round((end - start) * 100) / 100;
+      if (pct == null && res != null && start != null && start > 0) pct = res / start * 100;
+      var les = sf(x, "pLesson");
+      out.prev.push({ n: intOrNull(sf(x, "n")), from: sf(x, "pFrom"), to: sf(x, "pTo"), start: start, end: end, res: res, pct: pct,
+        fees: numOrNull(sf(x, "pFees")), trades: intOrNull(sf(x, "pTrades")),
+        lesson: typeof les === "string" && les.replace(/\s+/g, " ").trim().length <= 200 ? les.replace(/\s+/g, " ").trim() || null : null });
+    });
+    return out;
+  }
+  function dayMonth(v) { /* 'YYYY-MM-DD' (kalenderdag, geen tijdzone-omrekening) of ISO-tijdstip → 'd mmm' in Europe/Amsterdam */
+    if (typeof v !== "string") return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v.trim());
+    if (m) { var mo = Number(m[2]); return mo >= 1 && mo <= 12 ? Number(m[3]) + " " + MONTHS[mo - 1] : null; }
+    return shortDate(v);
+  }
+  function roundedSign(v) { return v == null ? 0 : (Math.round(v * 100) === 0 ? 0 : v < 0 ? -1 : 1); }
+  var seasonOn = false, seasonNow = null, heroOrig = null;
+  function heroDefaults() {
+    if (heroOrig) return heroOrig;
+    var perf = document.getElementById("performance"), eb = document.getElementById("hero-eyebrow");
+    heroOrig = { eyebrow: eb ? eb.textContent : "", aria: perf ? perf.getAttribute("aria-label") : null };
+    return heroOrig;
+  }
+  function placeWins(inHero) {
+    var sec = document.getElementById("wins");
+    if (!sec) return;
+    if (inHero) {
+      var row = document.querySelector(".hero .balance-row");
+      if (row && sec.nextElementSibling !== row) row.parentNode.insertBefore(sec, row);
+      sec.classList.add("in-hero");
+      if (row) row.closest(".hero").classList.add("is-season");
+    } else {
+      var tw = document.querySelector(".ticker-wrap");
+      if (tw && sec.nextElementSibling !== tw) tw.parentNode.insertBefore(sec, tw);
+      sec.classList.remove("in-hero");
+      var h = document.querySelector(".hero.is-season"); if (h) h.classList.remove("is-season");
+    }
+  }
+  function renderSeason() {
+    var S = readSeasons(bmRaw, lastRaw);
+    var orig = heroDefaults();
+    seasonNow = S.cur; seasonOn = !!S.cur;
+    var meta = document.getElementById("season-meta"), bEl = document.getElementById("season-bench"), link = document.getElementById("season-link");
+    var prev1 = S.prev.filter(function (p) { return p.n === 1; })[0] || null;
+    var s1Shown = renderSeasonPrev(prev1);
+    var perf = document.getElementById("performance");
+    if (seasonOn) {
+      var c = S.cur, nTxt = c.n != null ? "Seizoen " + fmtInt(c.n) : "Nieuw seizoen";
+      setText("hero-eyebrow", nTxt + " · gestart " + shortDate(c.startIso));
+      var netEl = document.getElementById("net-result"), v = null;
+      if (lastSnap && lastSnap.total != null) {
+        var su = parseTs(lastSnap.updated);
+        if (!su || su.getTime() >= c.startMs) v = Math.round((lastSnap.total - c.base - c.deposits) * 100) / 100;
+      }
+      if (netEl) { var sg = roundedSign(v); netEl.textContent = v == null ? "—" : fmtNum(v, { prefix: "€", digits: 2, plus: true }); netEl.className = sg < 0 ? "dn" : sg > 0 ? "up" : ""; }
+      var sub = "sinds de start van " + (c.n != null ? "seizoen " + fmtInt(c.n) : "het seizoen") + " · papier";
+      setText("performance-label", sub);
+      if (perf) perf.setAttribute("aria-label", "Paper-resultaat " + sub.replace(" · papier", ""));
+      if (S.bench) {
+        while (bEl.firstChild) bEl.removeChild(bEl.firstChild);
+        bEl.appendChild(document.createTextNode(S.bench.sym + " sinds start seizoen: "));
+        var bv = document.createElement("span"); bv.className = "sb-v"; bv.textContent = fmtPct(S.bench.pct); bEl.appendChild(bv);
+      }
+      bEl.hidden = !S.bench;
+      link.hidden = !s1Shown;
+      meta.hidden = !S.bench && !s1Shown;
+    } else {
+      setText("hero-eyebrow", orig.eyebrow);
+      if (perf && orig.aria != null) perf.setAttribute("aria-label", orig.aria);
+      meta.hidden = true; bEl.hidden = true; link.hidden = true;
+      if (lastSnap) { /* fallback: precies de oude hero (zelfde regels als applySnapshot) */
+        var net = lastSnap.balance.net, ne = document.getElementById("net-result");
+        if (ne) { ne.textContent = fmtNum(net, {prefix:"€",digits:2,plus:true}); ne.className = net < 0 ? "dn" : net > 0 ? "up" : ""; }
+        setText("performance-label", net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Verlies sinds start · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier");
+      }
+    }
+    placeWins(seasonOn);
+    renderHeroNotes();
+    renderWins();
+  }
+  function renderSeasonPrev(p) {
+    var sec = document.getElementById("seizoen-1");
+    if (!sec) return false;
+    if (!p || (p.res == null && p.fees == null && p.trades == null)) { sec.hidden = true; return false; }
+    var a = dayMonth(p.from), b = dayMonth(p.to);
+    setText("s1-title", "Seizoen " + fmtInt(p.n) + (a && b ? " (" + a + " – " + b + ")" : ""));
+    var r = document.getElementById("s1-res"), sg = roundedSign(p.res);
+    r.textContent = fmtEur(p.res, true); r.className = sg < 0 ? "dn" : sg > 0 ? "up" : "";
+    var pe = document.getElementById("s1-pct"), ps = p.pct == null ? 0 : (Math.round(p.pct * 10) === 0 ? 0 : p.pct < 0 ? -1 : 1);
+    pe.textContent = p.pct != null ? fmtPct(p.pct) : ""; pe.className = "s1-pct" + (ps < 0 ? " dn" : ps > 0 ? " up" : "");
+    document.getElementById("s1-res-w").hidden = p.res == null;
+    setText("s1-fees", fmtEur(p.fees)); document.getElementById("s1-fees-w").hidden = p.fees == null;
+    setText("s1-trades", fmtInt(p.trades)); document.getElementById("s1-trades-w").hidden = p.trades == null;
+    setText("s1-end", fmtEur(p.start) + " → " + fmtEur(p.end)); document.getElementById("s1-end-w").hidden = p.start == null || p.end == null;
+    setText("s1-lesson-t", p.lesson ? p.lesson.charAt(0).toUpperCase() + p.lesson.slice(1) + (/[.!?]$/.test(p.lesson) ? "" : ".") : "");
+    document.getElementById("s1-lesson").hidden = !p.lesson;
+    sec.hidden = false;
+    return true;
+  }
   function renderHeroNotes() {
     var box = document.getElementById("hero-notes");
     if (!box) return;
+    if (seasonOn) { box.hidden = true; return; } /* seizoen 1 staat in #seizoen-1, niet meer in de hero */
     var any = false;
     var g = heroRegime(fwdLast.bm, lastSnap), gEl = document.getElementById("hn-regime");
     if (g) {
