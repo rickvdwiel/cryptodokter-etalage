@@ -2436,13 +2436,16 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       label = v < 0 ? "Verlies sinds start · papier" : v > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier";
     }
     var nT = intOrNull(mf(r, "nTrades")), nW = mf(r, "nTradesWeek"), wl = mf(r, "weekLabel"), best = mf(r, "best");
+    /* Nog geen enkele afgesloten trade (n_trades 0/ontbreekt én geen best_trades_week) → strip helemaal weg, telling '0 trades' onder het getal */
+    var noTrades = (!nT) && !(Array.isArray(best) && best.length);
+    if (noTrades) nT = 0;
     var w = winSet(best, "this", nW, wl, sAt ? sAt.getTime() : null);
     var lbl = cleanLabel(mf(r, "label"));
     return { id: def.id, label: def.label, sub: lbl && lbl !== def.label ? lbl : null, updated: up.toISOString(),
       result: v, resultLabel: label,
       trades: nT != null ? { n: nT, text: nT === 1 ? " trade sinds start · papier" : " trades sinds start · papier" } : null,
       total: total != null ? { total: total, start: sAt && sBase != null ? sBase : start } : null,
-      wins: winsModel(w, nW, wl, Array.isArray(best) && !w ? "Nog geen afgesloten winsttrades deze week." : null) };
+      wins: noTrades ? { state: "none" } : winsModel(w, nW, wl, Array.isArray(best) && !w ? "Nog geen afgesloten winsttrades deze week." : null) };
   }
   var mktState = { models: {}, active: "crypto", ui: {} };
   function marketDef(id) { return MARKETS_CONFIG.markets.filter(function (d) { return d.id === id; })[0]; }
