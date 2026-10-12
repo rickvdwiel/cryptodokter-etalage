@@ -1,29 +1,163 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-11T23:52:41+00:00",
+  "updated": "2026-10-12T06:54:55+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 100000.0,
+    "cash_eur": 98089.81,
     "banked_eur": 0.0,
-    "equity_approx": 100000.0,
-    "total": 100000.0,
-    "realized_pnl_eur": 0.0,
-    "trades": 0,
-    "open_positions": 0,
-    "rendement_pct": 0.0
+    "equity_approx": 100084.81,
+    "total": 100084.81,
+    "realized_pnl_eur": 89.81,
+    "trades": 5,
+    "open_positions": 1,
+    "rendement_pct": 0.1
   },
-  "tape": [],
+  "tape": [
+    {
+      "t": "2026-10-12T06:54:09+00:00",
+      "side": "SELL",
+      "symbol": "GI",
+      "bedrag_eur": 2310.94,
+      "prijs_eur": 0.000132275,
+      "pnl_eur": 310.94,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-12T06:53:24+00:00",
+      "side": "BUY",
+      "symbol": "CAESAR",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.00025725,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-12T06:53:24+00:00",
+      "side": "BUY",
+      "symbol": "GI",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001139056,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-12T06:21:34+00:00",
+      "side": "SELL",
+      "symbol": "DOGCOIN",
+      "bedrag_eur": 1778.87,
+      "prijs_eur": 3.04608e-05,
+      "pnl_eur": -221.13,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-12T06:20:49+00:00",
+      "side": "BUY",
+      "symbol": "DOGCOIN",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 3.40764e-05,
+      "reason": "instap"
+    }
+  ],
   "equity_points": [
     {
       "t": "2026-10-11T23:52:41+00:00",
       "total": 100000.0
+    },
+    {
+      "t": "2026-10-12T06:19:17+00:00",
+      "total": 100000.0
+    },
+    {
+      "t": "2026-10-12T06:20:03+00:00",
+      "total": 100000.0
+    },
+    {
+      "t": "2026-10-12T06:20:49+00:00",
+      "total": 100000.0
+    },
+    {
+      "t": "2026-10-12T06:20:49+00:00",
+      "total": 99995.0
+    },
+    {
+      "t": "2026-10-12T06:21:34+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:21:35+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:22:20+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:23:06+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:23:51+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:24:37+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:25:23+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:26:08+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:26:54+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:53:23+00:00",
+      "total": 99778.87
+    },
+    {
+      "t": "2026-10-12T06:53:24+00:00",
+      "total": 99773.87
+    },
+    {
+      "t": "2026-10-12T06:53:24+00:00",
+      "total": 99768.87
+    },
+    {
+      "t": "2026-10-12T06:54:09+00:00",
+      "total": 100084.81
+    },
+    {
+      "t": "2026-10-12T06:54:09+00:00",
+      "total": 100003.45
+    },
+    {
+      "t": "2026-10-12T06:54:55+00:00",
+      "total": 100111.88
     }
   ],
-  "open_positions": [],
-  "rendement_pct": 0.0,
-  "best_trades_week": [],
-  "n_trades_week": 0,
-  "week_pnl_eur": 0,
-  "week_label": "vorige week: week 41 (5–11 okt)"
+  "open_positions": [
+    {
+      "symbol": "CAESAR",
+      "opened_at": "2026-10-12T06:53:24+00:00",
+      "cost_eur": 2000.0,
+      "entry_price": 0.00025725,
+      "qty": 7755102.040816327
+    }
+  ],
+  "rendement_pct": 0.1,
+  "best_trades_week": [
+    {
+      "symbol": "GI",
+      "pnl_eur": 310.94,
+      "ts": "2026-10-12T06:54:09Z",
+      "exit_kind": "take-profit"
+    }
+  ],
+  "n_trades_week": 2,
+  "week_pnl_eur": 89.81,
+  "week_label": "week 42 (12–18 okt)"
 }
