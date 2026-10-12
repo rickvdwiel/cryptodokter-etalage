@@ -2077,7 +2077,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
   }
   function winItem(it, maxAgeDays) {
     if (!it || typeof it !== "object") return null;
-    var sym = typeof it.symbol === "string" && /^[A-Za-z0-9]{1,15}$/.test(it.symbol) ? it.symbol.toUpperCase() : null;
+    var sym = typeof it.symbol === "string" && /^(?=.{1,15}$)[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*$/.test(it.symbol) ? it.symbol.toUpperCase() : null;
     var pnl = numOrNull(it.pnl_eur), at = parseTs(it.closed_at != null ? it.closed_at : it.ts);
     if (!sym || pnl == null || pnl <= 0 || !at) return null;
     var age = Date.now() - at.getTime();
@@ -2382,18 +2382,18 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
            equities:    { …zelfde vorm… } } }
        markets mag ook een array zijn: [{id:"commodities", …}].
      Regels: een markt rendert ALLEEN als paper-resultaat: mode === "paper" (ontbrekende mode = verborgen),
-     paper_only niet false, en updated (markt of bestand) niet ouder dan maxAgeMin. Backtest/onbekende mode/oud → verborgen.
+     paper_only niet false, en updated (markt of bestand) niet ouder dan maxAgeMin van die markt (anders defaultMaxAgeMin). Backtest/onbekende mode/oud → verborgen.
      Bestand ontbreekt (404) of ongeldig → stil; alleen Crypto → geen tabbalk, pagina ongewijzigd. */
   var MARKETS_CONFIG = {
     file: "markets-live.json",
     /* Alleen ophalen als paper-live.json of benchmark.json het bestand aankondigt (true of bestandsnaam).
        Zo geeft een ontbrekend bestand nooit een 404 in de console (verify_doneer eist 0 mislukte requests). */
     announce: ["markets_live", "markets_file"],
-    maxAgeMin: 180,
+    defaultMaxAgeMin: 180, /* intraday-markten; markten met eigen ritme zetten maxAgeMin per markt */
     markets: [
       { id: "crypto", hash: "crypto", label: "Crypto", source: "legacy" },
-      { id: "commodities", hash: "grondstoffen", label: "Grondstoffen", keys: ["commodities", "grondstoffen"] },
-      { id: "equities", hash: "aandelen", label: "Aandelen", keys: ["equities", "aandelen", "stocks"] }
+      { id: "commodities", hash: "grondstoffen", label: "Grondstoffen", keys: ["commodities", "grondstoffen"], maxAgeMin: 5760 } /* paper-pot draait 1× per werkdag (23:15) → 4 dagen */,
+      { id: "equities", hash: "aandelen", label: "Aandelen", keys: ["equities", "aandelen", "stocks"], maxAgeMin: 5760 }
     ],
     fields: {
       markets: ["markets"], id: ["id", "key"], updated: ["updated", "updated_at", "generated_at"],
@@ -2423,7 +2423,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     var up = parseTs(mf(r, "updated") != null ? mf(r, "updated") : mf(root, "updated"));
     if (!up) return null;
     var age = Date.now() - up.getTime();
-    if (age > MARKETS_CONFIG.maxAgeMin * 60000 || age < -5 * 60000) return null;
+    if (age > (def.maxAgeMin || MARKETS_CONFIG.defaultMaxAgeMin) * 60000 || age < -5 * 60000) return null;
     var total = numOrNull(mf(r, "total")), start = numOrNull(mf(r, "start")), res = numOrNull(mf(r, "result"));
     var sAt = parseTs(mf(r, "seasonStart")), sBase = numOrNull(mf(r, "seasonBase")), sN = intOrNull(mf(r, "seasonN"));
     var label, v = null;
