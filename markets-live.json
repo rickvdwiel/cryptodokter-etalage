@@ -1,0 +1,29 @@
+{
+ "schema": "markets-live/v1",
+ "paper_only": true,
+ "updated": "2026-10-12T20:18:06Z",
+ "markets": {
+  "commodities": {
+   "mode": "paper",
+   "updated": "2026-10-12T20:08:55Z",
+   "start_eur": 30000.0,
+   "total_eur": 30000.0,
+   "result_eur": 0.0,
+   "n_trades": 0,
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "2026-W42"
+  },
+  "equities": {
+   "mode": "paper",
+   "updated": "2026-10-12T20:08:55Z",
+   "start_eur": 70000.0,
+   "total_eur": 70000.0,
+   "result_eur": 0.0,
+   "n_trades": 0,
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "2026-W42"
+  }
+ }
+}
