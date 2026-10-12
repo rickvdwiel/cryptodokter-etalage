@@ -1,19 +1,28 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-12T22:02:39+00:00",
+  "updated": "2026-10-12T22:05:07+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 92055.55,
+    "cash_eur": 93850.82,
     "banked_eur": 1047.22,
-    "equity_approx": 96045.55,
-    "total": 97092.77,
-    "realized_pnl_eur": -2897.23,
-    "trades": 134,
-    "open_positions": 2,
-    "rendement_pct": -2.9
+    "equity_approx": 95845.82,
+    "total": 96893.04,
+    "realized_pnl_eur": -3101.96,
+    "trades": 135,
+    "open_positions": 1,
+    "rendement_pct": -3.1
   },
   "tape": [
+    {
+      "t": "2026-10-12T22:05:06+00:00",
+      "side": "SELL",
+      "symbol": "ISABELLA",
+      "bedrag_eur": 1795.27,
+      "prijs_eur": 0.0001035833,
+      "pnl_eur": -204.73,
+      "reason": "stop-loss"
+    },
     {
       "t": "2026-10-12T22:01:53+00:00",
       "side": "BUY",
@@ -218,26 +227,9 @@
       "prijs_eur": 0.0002330167,
       "pnl_eur": 118.98,
       "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-12T19:26:46+00:00",
-      "side": "PARTIAL",
-      "symbol": "MARSINU",
-      "bedrag_eur": 927.9,
-      "prijs_eur": 0.0002167917,
-      "pnl_eur": 27.9,
-      "reason": "deels winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-12T20:48:55+00:00",
-      "total": 97609.26
-    },
-    {
-      "t": "2026-10-12T20:49:41+00:00",
-      "total": 97609.26
-    },
     {
       "t": "2026-10-12T20:50:27+00:00",
       "total": 97609.26
@@ -469,16 +461,17 @@
     {
       "t": "2026-10-12T22:02:38+00:00",
       "total": 97041.21
+    },
+    {
+      "t": "2026-10-12T22:05:06+00:00",
+      "total": 96893.04
+    },
+    {
+      "t": "2026-10-12T22:05:07+00:00",
+      "total": 96893.04
     }
   ],
   "open_positions": [
-    {
-      "symbol": "ISABELLA",
-      "opened_at": "2026-10-12T22:01:53+00:00",
-      "cost_eur": 2000.0,
-      "entry_price": 0.00011481944444444444,
-      "qty": 17375105.842506353
-    },
     {
       "symbol": "MEGA",
       "opened_at": "2026-10-12T17:34:28+00:00",
@@ -487,7 +480,7 @@
       "qty": 10285714.285714285
     }
   ],
-  "rendement_pct": -2.9,
+  "rendement_pct": -3.1,
   "best_trades_week": [
     {
       "symbol": "TFDCAT",
@@ -521,7 +514,7 @@
     }
   ],
   "n_trades_week": 58,
-  "week_pnl_eur": -3190.93,
+  "week_pnl_eur": -3101.96,
   "week_label": "week 42 (12–18 okt)",
   "markets_live": true
 }
