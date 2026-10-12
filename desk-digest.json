@@ -1,30 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-09T17:20:00+02:00",
-  "digest_date": "2026-10-09",
-  "measured_at": "2026-10-09T17:19:35+02:00",
-  "window_4h_utc": "11:19-15:19",
+  "updated_at": "2026-10-12T17:12:00+02:00",
+  "digest_date": "2026-10-12",
+  "measured_at": "2026-10-12T17:10:57+02:00",
+  "window_4h_utc": "11:11-15:11",
+  "season": "s2",
+  "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 0,51 over 4 uur door stop-losses",
+  "headline": "Desk-digest: PF 0,63 over 4 uur door stop-losses",
   "metrics_4h": {
-    "exits": 20,
-    "winrate_pct": 40.0,
-    "profit_factor": 0.512,
-    "expectancy_eur": -46.49,
-    "net_eur": -929.74,
-    "fees_eur": 214.51,
-    "fees_per_hour_eur": 53.6
+    "exits": 14,
+    "winrate_pct": 35.7,
+    "profit_factor": 0.629,
+    "expectancy_eur": -64.37,
+    "net_eur": -901.24,
+    "fees_eur": 140.54,
+    "fees_per_hour_eur": 35.1
   },
   "metrics_8h": {
-    "exits": 48,
-    "winrate_pct": 33.3,
-    "profit_factor": 0.419,
-    "expectancy_eur": -59.75,
-    "net_eur": -2867.79
+    "exits": 23,
+    "winrate_pct": 39.1,
+    "profit_factor": 0.803,
+    "expectancy_eur": -32.8,
+    "net_eur": -754.45
+  },
+  "metrics_season": {
+    "exits": 27,
+    "winrate_pct": 40.7,
+    "profit_factor": 0.887,
+    "net_eur": -481.59,
+    "fees_eur": 279.13,
+    "start_eur": 100000.0,
+    "total_eur": 99508.41
   },
   "summary_nl": [
-    "Laatste 4 uur: 20 exits, winrate 40%, PF 0,51, netto −€930; fees ongeveer €54 per uur.",
-    "Stop-losses (12× −€1.903) wogen veel zwaarder dan take-profits (4× +€785); over 8 uur PF 0,42 en netto −€2.868."
+    "Laatste 4 uur: 14 exits, winrate 36%, PF 0,63, netto −€901; fees ongeveer €35 per uur.",
+    "Stop-losses (9× −€2.426) wogen zwaarder dan take-profits (4× +€1.412); over 8 uur PF 0,80 en netto −€754."
   ]
 }
