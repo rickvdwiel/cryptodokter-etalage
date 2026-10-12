@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-12T20:18:06Z",
+ "updated": "2026-10-12T20:25:37Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -12,7 +12,7 @@
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "2026-W42"
+   "week_label": "week 42 (12–18 okt)"
   },
   "equities": {
    "mode": "paper",
@@ -23,7 +23,7 @@
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "2026-W42"
+   "week_label": "week 42 (12–18 okt)"
   }
  }
 }
