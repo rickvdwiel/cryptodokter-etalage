@@ -626,6 +626,22 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
 .season-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .season-link:hover{text-decoration-thickness:2px}
 .season-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+/* Markten: segmented control (tablist) + panelen voor andere markten. Alleen zichtbaar als er naast Crypto paper-data is. */
+.mkt-tabs{max-width:var(--max);margin:0 auto;padding:12px var(--padr) 0 var(--pad)}
+.mkt-seg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--surf);max-width:100%}
+.mkt-tab{font:600 13px/1 var(--font);color:var(--muted);background:transparent;border:0;border-radius:999px;padding:9px 14px;min-height:36px;cursor:pointer;white-space:nowrap}
+.mkt-tab:hover{color:var(--tx)}
+.mkt-tab[aria-selected="true"]{background:var(--surf2);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line)}
+.mkt-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+html.cd-wait .mkt-tabs{visibility:hidden}
+html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #analyse,html.mkt-x #resultaten,html.mkt-x #forward-test,html.mkt-x #open-posities,html.mkt-x #seizoen-1{display:none!important}
+.mkt-panel{max-width:var(--max);margin:0 auto;padding:20px var(--padr) 12px var(--pad);min-width:0}
+.mkt-panel h2.mkt-h{margin:0 0 8px;font:700 30px/1.15 var(--font);color:var(--tx)}
+.mkt-panel .wins{max-width:none;margin:4px 0 14px;padding:0}
+.wins-head h3{margin:0;font:600 12px/18px var(--font);text-transform:uppercase;color:var(--text-secondary)}
+.mkt-panel .performance{row-gap:2px;margin-bottom:10px}.mkt-panel .performance span{flex-basis:100%}
+.mkt-trades,.mkt-total{margin:0 0 10px;font-size:13px;line-height:1.5;color:var(--text-secondary)}
+.mkt-total .v,.mkt-trades .v{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--tx)}
 /* Seizoen 1 (afgesloten): rustige kaart, thema-tokens, altijd open */
 .season-prev{max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);scroll-margin-top:16px}
 .s1-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);padding:18px 20px}
@@ -723,6 +739,8 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   </nav>
 </header>
 
+<nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
+
 <section class="wins" id="wins" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
   <ul class="wins-list" id="wins-list" tabindex="0" aria-labelledby="wins-title"></ul>
@@ -736,7 +754,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
 </div>
 
 <main id="hoofdinhoud">
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero" id="panel-crypto" aria-labelledby="hero-title">
     <div>
       <div class="hero-heading">
         <div><p class="eyebrow" id="hero-eyebrow">Paper-trading monitor</p><h1 id="hero-title">Een tradingbot die alles laat zien</h1></div>
@@ -1093,6 +1111,20 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     </div>
   </section>
 
+  <template id="mkt-tpl">
+    <section class="mkt-panel" role="tabpanel" tabindex="0" hidden>
+      <p class="eyebrow mkt-eyebrow"></p>
+      <h2 class="mkt-h"></h2>
+      <div class="performance"><strong class="mkt-result">—</strong><span class="mkt-label"></span></div>
+      <p class="mkt-trades" hidden></p>
+      <section class="wins" hidden>
+        <div class="wins-head"><h3 class="wins-h">Beste trades deze week</h3><span class="wins-ctx"></span><span class="wins-ctx wins-wk"></span></div>
+        <ul class="wins-list" tabindex="0"></ul>
+        <p class="wins-empty" hidden></p>
+      </section>
+      <p class="mkt-total" hidden></p>
+    </section>
+  </template>
 </main>
 
 <footer class="foot">
@@ -1737,7 +1769,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     if (polling) return Promise.resolve();
     polling = true;
     var button = document.getElementById("refresh-data"); button.disabled = true;
-    return Promise.all([loadSnapshot(), loadEquityCurve(), loadDigest(), loadForward()]).finally(function () { polling = false; button.disabled = false; });
+    return Promise.all([loadSnapshot(), loadEquityCurve(), loadDigest(), loadForward(), loadMarkets()]).finally(function () { polling = false; button.disabled = false; });
   }
   function startPoll() { if (!pollTimer && !manualPaused) pollTimer = setInterval(pollOnce, POLL_MS); }
   function stopPoll() { if (pollTimer) { clearInterval(pollTimer); pollTimer = null; } }
@@ -2002,8 +2034,9 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     return Promise.all([a, b]).then(function () { renderForward(); renderSeason(); });
   }
   var firstBm = loadForward();
+  var firstMarkets = Promise.allSettled([firstLoad, firstBm]).then(function () { return loadMarkets(); }); /* aankondiging staat in paper-live/benchmark */
   Promise.race([
-    Promise.allSettled([firstLoad, firstBm]),
+    Promise.allSettled([firstLoad, firstBm, firstMarkets]),
     new Promise(function (r) { setTimeout(r, 1500); })
   ]).then(function () {
     /* Eén frame wachten: de hero (fallback → seizoen) ligt dan vast vóórdat hij zichtbaar wordt → geen layout-shift */
@@ -2044,7 +2077,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
   }
   function winItem(it, maxAgeDays) {
     if (!it || typeof it !== "object") return null;
-    var sym = typeof it.symbol === "string" && /^[A-Za-z0-9]{1,15}$/.test(it.symbol) ? it.symbol.toUpperCase() : null;
+    var sym = typeof it.symbol === "string" && /^(?=.{1,15}$)[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*$/.test(it.symbol) ? it.symbol.toUpperCase() : null;
     var pnl = numOrNull(it.pnl_eur), at = parseTs(it.closed_at != null ? it.closed_at : it.ts);
     if (!sym || pnl == null || pnl <= 0 || !at) return null;
     var age = Date.now() - at.getTime();
@@ -2074,36 +2107,51 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     if (b && typeof b === "object") return winSet({ period: "this", trades_total: b.n_trades_week, items: [b] }, "this", null, null, minMs);
     return null;
   }
-  var winsSig = null;
-  function renderWins() {
-    var sec = document.getElementById("wins"), list = document.getElementById("wins-list");
-    if (!sec || !list) return;
+  /* Crypto-strip: model uit de bestaande bronnen; DOM via de gedeelde renderMarketWins */
+  var CRYPTO_UI = null;
+  function cryptoUi() {
+    if (CRYPTO_UI) return CRYPTO_UI;
+    var g = function (id) { return document.getElementById(id); };
+    CRYPTO_UI = { result: g("net-result"), label: g("performance-label"), winsSec: g("wins"), winsTitle: g("wins-title"), winsCtx: g("wins-ctx"),
+      winsWk: g("wins-wk"), winsList: g("wins-list"), winsEmpty: g("wins-empty"), trades: null, total: null, winsSig: null };
+    return CRYPTO_UI;
+  }
+  function winsModel(w, nWeek, weekLabel, emptyText) {
+    /* w = winSet-resultaat of null. emptyText = rustige regel als er wel een periode loopt maar nog geen winsttrade is */
+    if (!w && emptyText) {
+      var nw = intOrNull(nWeek), wl = cleanLabel(weekLabel);
+      return { state: "empty", title: "Beste trades deze week", emptyText: emptyText,
+        ctx: (nw != null ? fmtInt(nw) + (nw === 1 ? " trade " : " trades ") + "deze week · " : "") + "papier", wk: wl ? "· " + wl : "" };
+    }
+    if (!w) return { state: "none" };
+    var wk = w.period === "prev" ? "vorige week" : "deze week";
+    return { state: "items", items: w.items, title: w.period === "prev" ? "Beste trades vorige week" : "Beste trades deze week",
+      ctx: (w.n != null ? "uit " + fmtInt(w.n) + (w.n === 1 ? " trade " : " trades ") + wk + " · " : "") + "papier", wk: w.label ? "· " + w.label : "" };
+  }
+  function cryptoWins() {
     var ss = seasonOn ? seasonNow : null;
     var w = heroWins(lastRaw, ss ? ss.startMs : null);
-    var empty = document.getElementById("wins-empty");
-    if (!w && ss && lastRaw) {
-      /* Seizoen loopt, nog geen seizoen-2-winsttrade: rustige regel i.p.v. lege strip */
-      var nw = intOrNull(lastRaw.n_trades_week != null ? lastRaw.n_trades_week : lastRaw.trades_total_week);
-      var wl = cleanLabel(lastRaw.week_label);
-      setText("wins-title", "Beste trades deze week");
-      setText("wins-ctx", (nw != null ? fmtInt(nw) + (nw === 1 ? " trade " : " trades ") + "deze week · " : "") + "papier");
-      setText("wins-wk", wl ? "· " + wl : "");
+    var emptyText = !w && ss && lastRaw ? "Nog geen afgesloten winsttrades in " + (ss.n != null ? "seizoen " + fmtInt(ss.n) : "dit seizoen") + "." : null;
+    return winsModel(w, lastRaw && (lastRaw.n_trades_week != null ? lastRaw.n_trades_week : lastRaw.trades_total_week), lastRaw && lastRaw.week_label, emptyText);
+  }
+  function renderWins() { renderMarketWins(cryptoUi(), cryptoWins()); }
+  function renderMarketWins(ui, w) {
+    var sec = ui.winsSec, list = ui.winsList, empty = ui.winsEmpty;
+    if (!sec || !list) return;
+    if (w.state === "empty") {
+      ui.winsTitle.textContent = w.title; ui.winsCtx.textContent = w.ctx; ui.winsWk.textContent = w.wk;
       while (list.firstChild) list.removeChild(list.firstChild);
-      setText("wins-empty", "Nog geen afgesloten winsttrades in " + (ss.n != null ? "seizoen " + fmtInt(ss.n) : "dit seizoen") + ".");
+      if (empty) empty.textContent = w.emptyText;
       list.hidden = true; if (empty) empty.hidden = false;
-      sec.hidden = false; winsSig = "empty"; return;
+      sec.hidden = false; ui.winsSig = "empty"; return;
     }
     list.hidden = false; if (empty) empty.hidden = true;
-    if (!w) { sec.hidden = true; winsSig = null; return; }
-    var title = w.period === "prev" ? "Beste trades vorige week" : "Beste trades deze week";
-    var wk = w.period === "prev" ? "vorige week" : "deze week";
-    var sig = JSON.stringify([title, w.n, w.items.map(function (x) { return [x.sym, x.pnl, x.pct, x.at.getTime(), x.exit]; })]);
+    if (w.state !== "items") { sec.hidden = true; ui.winsSig = null; return; }
+    var sig = JSON.stringify([w.title, w.ctx, w.wk, w.items.map(function (x) { return [x.sym, x.pnl, x.pct, x.at.getTime(), x.exit]; })]);
     sec.hidden = false;
-    if (sig === winsSig) return; /* ongewijzigd: niet opnieuw animeren */
-    winsSig = sig;
-    setText("wins-title", title);
-    setText("wins-ctx", (w.n != null ? "uit " + fmtInt(w.n) + (w.n === 1 ? " trade " : " trades ") + wk + " · " : "") + "papier");
-    setText("wins-wk", w.label ? "· " + w.label : "");
+    if (sig === ui.winsSig) return; /* ongewijzigd: niet opnieuw animeren */
+    ui.winsSig = sig;
+    ui.winsTitle.textContent = w.title; ui.winsCtx.textContent = w.ctx; ui.winsWk.textContent = w.wk;
     while (list.firstChild) list.removeChild(list.firstChild);
     w.items.forEach(function (x, i) {
       var li = document.createElement("li"); li.className = "win"; li.style.animationDelay = (i * 70) + "ms";
@@ -2114,6 +2162,33 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
       if (x.pct != null) span("win-pct", fmtPct(x.pct));
       list.appendChild(li);
     });
+  }
+  /* ÉÉN render-functie per markt.
+     m = { result: number|null|undefined (undefined = niet aanraken), resultLabel, trades: {n, text}|null, total: {total, start}|null, wins: winsModel }
+     ui = elementen van het paneel (crypto: de bestaande hero; andere markten: kloon van #mkt-tpl). */
+  function renderMarket(ui, m) {
+    if (m.result !== undefined && ui.result) {
+      var sg = roundedSign(m.result);
+      ui.result.textContent = m.result == null ? "—" : fmtNum(m.result, { prefix: "€", digits: 2, plus: true });
+      ui.result.className = (ui.resultBase || "") + (sg < 0 ? "dn" : sg > 0 ? "up" : "");
+    }
+    if (m.resultLabel != null && ui.label) ui.label.textContent = m.resultLabel;
+    if (ui.trades) {
+      while (ui.trades.firstChild) ui.trades.removeChild(ui.trades.firstChild);
+      if (m.trades) { var tv = document.createElement("span"); tv.className = "v"; tv.textContent = fmtInt(m.trades.n); ui.trades.appendChild(tv); ui.trades.appendChild(document.createTextNode(m.trades.text)); }
+      ui.trades.hidden = !m.trades;
+    }
+    if (ui.total) {
+      while (ui.total.firstChild) ui.total.removeChild(ui.total.firstChild);
+      if (m.total) {
+        ui.total.appendChild(document.createTextNode("Totale paperwaarde "));
+        var v1 = document.createElement("span"); v1.className = "v"; v1.textContent = fmtEur(m.total.total); ui.total.appendChild(v1);
+        if (m.total.start != null) { ui.total.appendChild(document.createTextNode(" · start ")); var v2 = document.createElement("span"); v2.className = "v"; v2.textContent = fmtEur(m.total.start); ui.total.appendChild(v2); }
+        ui.total.appendChild(document.createTextNode(" · papier"));
+      }
+      ui.total.hidden = !m.total;
+    }
+    if (m.wins) renderMarketWins(ui, m.wins);
   }
   function heroRatio(bm) {
     if (!bm) return null;
@@ -2234,7 +2309,7 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     }
   }
   function renderSeason() {
-    var S = readSeasons(bmRaw, lastRaw);
+    var S = readSeasons(bmRaw, lastRaw), cryptoModel = null;
     var orig = heroDefaults();
     seasonNow = S.cur; seasonOn = !!S.cur;
     var meta = document.getElementById("season-meta"), bEl = document.getElementById("season-bench"), link = document.getElementById("season-link");
@@ -2244,14 +2319,13 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     if (seasonOn) {
       var c = S.cur, nTxt = c.n != null ? "Seizoen " + fmtInt(c.n) : "Nieuw seizoen";
       setText("hero-eyebrow", nTxt + " · gestart " + shortDate(c.startIso));
-      var netEl = document.getElementById("net-result"), v = null;
+      var v = null;
       if (lastSnap && lastSnap.total != null) {
         var su = parseTs(lastSnap.updated);
         if (!su || su.getTime() >= c.startMs) v = Math.round((lastSnap.total - c.base - c.deposits) * 100) / 100;
       }
-      if (netEl) { var sg = roundedSign(v); netEl.textContent = v == null ? "—" : fmtNum(v, { prefix: "€", digits: 2, plus: true }); netEl.className = sg < 0 ? "dn" : sg > 0 ? "up" : ""; }
       var sub = "sinds de start van " + (c.n != null ? "seizoen " + fmtInt(c.n) : "het seizoen") + " · papier";
-      setText("performance-label", sub);
+      cryptoModel = { result: v, resultLabel: sub, trades: null, total: null };
       if (perf) perf.setAttribute("aria-label", "Paper-resultaat " + sub.replace(" · papier", ""));
       if (S.bench) {
         while (bEl.firstChild) bEl.removeChild(bEl.firstChild);
@@ -2266,14 +2340,13 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
       if (perf && orig.aria != null) perf.setAttribute("aria-label", orig.aria);
       meta.hidden = true; bEl.hidden = true; link.hidden = true;
       if (lastSnap) { /* fallback: precies de oude hero (zelfde regels als applySnapshot) */
-        var net = lastSnap.balance.net, ne = document.getElementById("net-result");
-        if (ne) { ne.textContent = fmtNum(net, {prefix:"€",digits:2,plus:true}); ne.className = net < 0 ? "dn" : net > 0 ? "up" : ""; }
-        setText("performance-label", net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Verlies sinds start · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier");
+        var net = lastSnap.balance.net;
+        cryptoModel = { result: net, resultLabel: net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Verlies sinds start · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier", trades: null, total: null };
       }
     }
     placeWins(seasonOn);
     renderHeroNotes();
-    renderWins();
+    if (cryptoModel) { cryptoModel.wins = cryptoWins(); renderMarket(cryptoUi(), cryptoModel); } else renderWins();
   }
   function renderSeasonPrev(p) {
     var sec = document.getElementById("seizoen-1");
@@ -2293,6 +2366,203 @@ html.cd-wait #wins,html.cd-wait main{visibility:hidden}
     document.getElementById("s1-lesson").hidden = !p.lesson;
     sec.hidden = false;
     return true;
+  }
+
+  /* ——— Markten (Crypto | Grondstoffen | Aandelen) ———
+     Crypto = de bestaande bronnen (paper-live.json, equity.json, benchmark.json), ongewijzigd.
+     Andere markten komen uit één optioneel bestand. ALLE sleutels staan in MARKETS_CONFIG: past het Lab het formaat aan,
+     dan verandert alleen deze config.
+     Voorgesteld schema markets-live.json (schema "markets-live/v1"):
+       { schema: "markets-live/v1", updated: ISO, paper_only: true,
+         markets: {
+           commodities: { label?, paper_only: true, mode: "paper"|"backtest", updated: ISO,
+                          start_eur, total_eur, result_eur?, n_trades, n_trades_week,
+                          best_trades_week: [{symbol, pnl_eur, ts, exit_kind}], week_label,
+                          season_n?, season_start_ts?, season_total_eur_at_start? },
+           equities:    { …zelfde vorm… } } }
+       markets mag ook een array zijn: [{id:"commodities", …}].
+     Regels: een markt rendert ALLEEN als paper-resultaat: mode === "paper" (ontbrekende mode = verborgen),
+     paper_only niet false, en updated (markt of bestand) niet ouder dan maxAgeMin van die markt (anders defaultMaxAgeMin). Backtest/onbekende mode/oud → verborgen.
+     Bestand ontbreekt (404) of ongeldig → stil; alleen Crypto → geen tabbalk, pagina ongewijzigd. */
+  var MARKETS_CONFIG = {
+    file: "markets-live.json",
+    /* Alleen ophalen als paper-live.json of benchmark.json het bestand aankondigt (true of bestandsnaam).
+       Zo geeft een ontbrekend bestand nooit een 404 in de console (verify_doneer eist 0 mislukte requests). */
+    announce: ["markets_live", "markets_file"],
+    defaultMaxAgeMin: 180, /* intraday-markten; markten met eigen ritme zetten maxAgeMin per markt */
+    markets: [
+      { id: "crypto", hash: "crypto", label: "Crypto", source: "legacy" },
+      { id: "commodities", hash: "grondstoffen", label: "Grondstoffen", keys: ["commodities", "grondstoffen"], maxAgeMin: 5760 } /* paper-pot draait 1× per werkdag (23:15) → 4 dagen */,
+      { id: "equities", hash: "aandelen", label: "Aandelen", keys: ["equities", "aandelen", "stocks"], maxAgeMin: 5760 }
+    ],
+    fields: {
+      markets: ["markets"], id: ["id", "key"], updated: ["updated", "updated_at", "generated_at"],
+      mode: ["mode"], paperOnly: ["paper_only"], label: ["label"],
+      start: ["start_eur"], total: ["total_eur", "total"], result: ["result_eur", "net_eur"],
+      nTrades: ["n_trades", "trades_total"], nTradesWeek: ["n_trades_week"], best: ["best_trades_week"], weekLabel: ["week_label"],
+      seasonN: ["season_n"], seasonStart: ["season_start_ts"], seasonBase: ["season_total_eur_at_start"]
+    }
+  };
+  function mf(o, key) {
+    if (!o || typeof o !== "object" || Array.isArray(o)) return undefined;
+    var names = MARKETS_CONFIG.fields[key];
+    for (var i = 0; i < names.length; i++) if (o[names[i]] != null) return o[names[i]];
+    return undefined;
+  }
+  function marketRaw(root, def) {
+    var all = mf(root, "markets");
+    if (Array.isArray(all)) return all.filter(function (x) { return x && def.keys.indexOf(String(mf(x, "id")).toLowerCase()) >= 0; })[0] || null;
+    if (all && typeof all === "object") { for (var i = 0; i < def.keys.length; i++) if (all[def.keys[i]] && typeof all[def.keys[i]] === "object") return all[def.keys[i]]; }
+    return null;
+  }
+  function marketModel(root, def) {
+    var r = marketRaw(root, def);
+    if (!r || root.paper_only === false || mf(r, "paperOnly") === false) return null;
+    var mode = mf(r, "mode");
+    if (mode == null || String(mode).toLowerCase() !== "paper") return null; /* alleen mode "paper"; backtest of ontbrekende mode → nooit als live resultaat */
+    var up = parseTs(mf(r, "updated") != null ? mf(r, "updated") : mf(root, "updated"));
+    if (!up) return null;
+    var age = Date.now() - up.getTime();
+    if (age > (def.maxAgeMin || MARKETS_CONFIG.defaultMaxAgeMin) * 60000 || age < -5 * 60000) return null;
+    var total = numOrNull(mf(r, "total")), start = numOrNull(mf(r, "start")), res = numOrNull(mf(r, "result"));
+    var sAt = parseTs(mf(r, "seasonStart")), sBase = numOrNull(mf(r, "seasonBase")), sN = intOrNull(mf(r, "seasonN"));
+    var label, v = null;
+    if (sAt && sBase != null && sBase > 0 && total != null) {
+      v = Math.round((total - sBase) * 100) / 100;
+      label = "sinds de start van " + (sN ? "seizoen " + fmtInt(sN) : "het seizoen") + " · papier";
+    } else {
+      v = res != null ? res : (total != null && start != null ? Math.round((total - start) * 100) / 100 : null);
+      if (v == null) return null; /* geen resultaat → niet tonen */
+      label = v < 0 ? "Verlies sinds start · papier" : v > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier";
+    }
+    var nT = intOrNull(mf(r, "nTrades")), nW = mf(r, "nTradesWeek"), wl = mf(r, "weekLabel"), best = mf(r, "best");
+    var w = winSet(best, "this", nW, wl, sAt ? sAt.getTime() : null);
+    var lbl = cleanLabel(mf(r, "label"));
+    return { id: def.id, label: def.label, sub: lbl && lbl !== def.label ? lbl : null, updated: up.toISOString(),
+      result: v, resultLabel: label,
+      trades: nT != null ? { n: nT, text: nT === 1 ? " trade sinds start · papier" : " trades sinds start · papier" } : null,
+      total: total != null ? { total: total, start: sAt && sBase != null ? sBase : start } : null,
+      wins: winsModel(w, nW, wl, Array.isArray(best) && !w ? "Nog geen afgesloten winsttrades deze week." : null) };
+  }
+  var mktState = { models: {}, active: "crypto", ui: {} };
+  function marketDef(id) { return MARKETS_CONFIG.markets.filter(function (d) { return d.id === id; })[0]; }
+  function marketPanel(def) {
+    if (mktState.ui[def.id]) return mktState.ui[def.id];
+    var tpl = document.getElementById("mkt-tpl"), anchor = document.getElementById("panel-crypto");
+    if (!tpl || !tpl.content || !anchor) return null;
+    var el = tpl.content.firstElementChild.cloneNode(true);
+    el.id = "panel-" + def.id; el.setAttribute("aria-labelledby", "tab-" + def.id);
+    var q = function (sel) { return el.querySelector(sel); };
+    var wins = q(".wins"); wins.setAttribute("aria-label", "Beste trades " + def.label);
+    q(".wins-list").setAttribute("aria-label", "Beste trades " + def.label);
+    anchor.parentNode.insertBefore(el, anchor.nextSibling);
+    var ui = { panel: el, eyebrow: q(".mkt-eyebrow"), title: q(".mkt-h"), result: q(".mkt-result"), label: q(".mkt-label"), trades: q(".mkt-trades"), total: q(".mkt-total"),
+      winsSec: wins, winsTitle: q(".wins-h"), winsCtx: q(".wins-ctx"), winsWk: q(".wins-wk"), winsList: q(".wins-list"), winsEmpty: q(".wins-empty"), winsSig: null };
+    mktState.ui[def.id] = ui;
+    return ui;
+  }
+  function availableMarkets() { return MARKETS_CONFIG.markets.filter(function (d) { return d.source === "legacy" || mktState.models[d.id]; }); }
+  function renderMarkets() {
+    var avail = availableMarkets(), bar = document.getElementById("mkt-tabs"), list = document.getElementById("mkt-tablist");
+    if (!bar || !list) return;
+    MARKETS_CONFIG.markets.forEach(function (d) {
+      if (d.source === "legacy") return;
+      var m = mktState.models[d.id], ui = m ? marketPanel(d) : mktState.ui[d.id];
+      if (!ui) return;
+      if (m) {
+        ui.eyebrow.textContent = (m.sub ? m.sub + " · " : "") + updatedLabel("Paper", m.updated).replace(/^Paper · /, "papier · ");
+        ui.title.textContent = m.label;
+        renderMarket(ui, m);
+      }
+    });
+    if (avail.length < 2) { /* alleen Crypto: geen tabbalk, pagina exact zoals zonder markten */
+      bar.hidden = true;
+      if (mktState.active !== "crypto") selectMarket("crypto", false, false);
+      return;
+    }
+    var ids = avail.map(function (d) { return d.id; }).join(",");
+    if (list.getAttribute("data-ids") !== ids) {
+      while (list.firstChild) list.removeChild(list.firstChild);
+      avail.forEach(function (d) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "mkt-tab"; b.id = "tab-" + d.id; b.setAttribute("role", "tab");
+        b.setAttribute("aria-controls", "panel-" + d.id); b.setAttribute("data-mkt", d.id); b.textContent = d.label;
+        list.appendChild(b);
+      });
+      list.setAttribute("data-ids", ids);
+      var hero = document.getElementById("panel-crypto");
+      hero.setAttribute("role", "tabpanel"); hero.setAttribute("aria-labelledby", "tab-crypto");
+    }
+    bar.hidden = false;
+    var want = mktState.active;
+    if (!mktState.hashRead) { mktState.hashRead = true; var h = hashMarket(); if (h) want = h; }
+    selectMarket(avail.some(function (d) { return d.id === want; }) ? want : "crypto", false, false);
+  }
+  function hashMarket() {
+    var h = (location.hash || "").replace(/^#/, "").toLowerCase();
+    var d = MARKETS_CONFIG.markets.filter(function (x) { return x.hash === h; })[0];
+    return d && (d.source === "legacy" || mktState.models[d.id]) ? d.id : null;
+  }
+  function selectMarket(id, focus, writeHash) {
+    mktState.active = id;
+    var other = id !== "crypto";
+    document.documentElement.classList.toggle("mkt-x", other);
+    MARKETS_CONFIG.markets.forEach(function (d) { var ui = mktState.ui[d.id]; if (ui) ui.panel.hidden = d.id !== id || !mktState.models[d.id]; });
+    var tabs = document.querySelectorAll("#mkt-tablist [role=tab]");
+    Array.prototype.forEach.call(tabs, function (t) {
+      var on = t.getAttribute("data-mkt") === id;
+      t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+    });
+    if (writeHash) { var d = marketDef(id); try { history.replaceState(null, "", "#" + d.hash); } catch (e) {} }
+  }
+  (function wireMarketTabs() {
+    var list = document.getElementById("mkt-tablist");
+    if (!list) return;
+    list.addEventListener("click", function (ev) {
+      var t = ev.target.closest && ev.target.closest("[role=tab]");
+      if (t) selectMarket(t.getAttribute("data-mkt"), false, true);
+    });
+    list.addEventListener("keydown", function (ev) {
+      var tabs = Array.prototype.slice.call(list.querySelectorAll("[role=tab]"));
+      var i = tabs.indexOf(document.activeElement); if (i < 0) return;
+      var n = ev.key === "ArrowRight" ? (i + 1) % tabs.length : ev.key === "ArrowLeft" ? (i - 1 + tabs.length) % tabs.length : ev.key === "Home" ? 0 : ev.key === "End" ? tabs.length - 1 : -1;
+      if (n < 0) return;
+      ev.preventDefault();
+      selectMarket(tabs[n].getAttribute("data-mkt"), true, true);
+    });
+    window.addEventListener("hashchange", function () { var h = hashMarket(); if (h && !document.getElementById("mkt-tabs").hidden) selectMarket(h, false, false); });
+    /* Interne links naar crypto-inhoud (bv. 'Analyse', 'Seizoen 1 bekijken') schakelen eerst terug naar Crypto */
+    document.addEventListener("click", function (ev) {
+      if (mktState.active === "crypto") return;
+      var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+      if (!a) return;
+      var t = document.getElementById(a.getAttribute("href").slice(1));
+      if (t && !t.closest(".mkt-panel") && !t.closest("#marktbulletin,#bezoekers,#doneer,.trust,.foot")) selectMarket("crypto", false, false);
+    }, true);
+  })();
+  function marketsFile() {
+    var srcs = [lastRaw, bmRaw];
+    for (var i = 0; i < srcs.length; i++) {
+      var o = srcs[i]; if (!o || typeof o !== "object") continue;
+      for (var j = 0; j < MARKETS_CONFIG.announce.length; j++) {
+        var v = o[MARKETS_CONFIG.announce[j]];
+        if (v === true) return MARKETS_CONFIG.file;
+        if (typeof v === "string" && /^[A-Za-z0-9_-]{1,40}\.json$/.test(v)) return v; /* alleen same-origin bestandsnaam */
+      }
+    }
+    return null;
+  }
+  function loadMarkets() {
+    var file = marketsFile();
+    if (!file) { mktState.models = {}; renderMarkets(); return Promise.resolve(); }
+    return fetchJson(file, 4000)
+      .then(function (root) {
+        var models = {};
+        if (root && typeof root === "object") MARKETS_CONFIG.markets.forEach(function (d) { if (d.source !== "legacy") { var m = marketModel(root, d); if (m) models[d.id] = m; } });
+        mktState.models = models;
+      }, function () { /* optioneel bestand: 404/geblokkeerd/ongeldig → stil, laatst bekende stand blijft */ })
+      .then(renderMarkets, function () {});
   }
   function renderHeroNotes() {
     var box = document.getElementById("hero-notes");
