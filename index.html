@@ -642,6 +642,33 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
 .mkt-panel .performance{row-gap:2px;margin-bottom:10px}.mkt-panel .performance span{flex-basis:100%}
 .mkt-trades,.mkt-total{margin:0 0 10px;font-size:13px;line-height:1.5;color:var(--text-secondary)}
 .mkt-total .v,.mkt-trades .v{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--tx)}
+/* Kleine uitslag (|resultaat| < 0,5% van start): groot getal = totale paperwaarde, resultaat klein en neutraal grijs */
+.mkt-panel .performance strong.is-total{color:var(--tx)}
+.mkt-small{margin:-4px 0 10px;font-size:13px;line-height:1.5;color:var(--muted)}
+.mkt-small .v{font-family:var(--mono);font-variant-numeric:tabular-nums}
+/* Open posities en laatste transacties per markt: zelfde stijl als het crypto-positieblok (.panel + .waterfall.pos-list) */
+.mkt-block{margin:6px 0 0}
+.mkt-block .panel h3.mkt-bh{margin:0 0 4px;font:600 17px/1.3 var(--font);color:var(--tx)}
+.waterfall.mkt-pos li{grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr)) minmax(0,1.3fr)}
+.waterfall.mkt-fills li{grid-template-columns:104px 64px minmax(0,1.6fr) repeat(3,minmax(0,1fr))}
+.mkt-pos .nmw,.mkt-fills .nmw{min-width:0;display:flex;flex-direction:column;gap:2px}
+.mkt-fills .nmw{flex-direction:row;align-items:center;gap:6px}
+.mkt-pos .nm,.mkt-fills .nm{color:var(--tx);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.mkt-pos .un{font-size:10px;color:var(--muted);white-space:nowrap}
+.mkt-fills .tag{flex:0 0 auto;font:500 10px/1 var(--font);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 6px}
+.mkt-cash{margin:10px 0 0;font-size:12px;color:var(--muted)}.mkt-cash .v{font-family:var(--mono);color:var(--text-secondary)}
+.mkt-pos .num,.mkt-fills .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mkt-pos .up,.mkt-fills .up{color:var(--up)}.mkt-pos .dn,.mkt-fills .dn{color:var(--dn)}
+.mkt-fills .side.buy{color:var(--up)}.mkt-fills .side.sell{color:var(--dn)}
+.mkt-pos .cl,.mkt-fills .cl{display:none}
+.mkt-pos li.pos-head,.mkt-fills li.pos-head{padding:0 0 6px;font-size:9px;font-weight:700;text-transform:uppercase;color:var(--muted);font-family:var(--font)}
+@media (max-width:640px){
+  .mkt-pos li.pos-head,.mkt-fills li.pos-head{display:none}
+  .waterfall.mkt-pos li,.waterfall.mkt-fills li{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;padding:10px 0}
+  .mkt-pos .nmw,.mkt-fills .nmw{grid-column:1/-1}
+  .mkt-pos .num,.mkt-fills .num{text-align:left}
+  .mkt-pos .cl,.mkt-fills .cl{display:inline;margin-right:6px;font-family:var(--font);font-weight:400;color:var(--muted)}
+}
 /* Seizoen 1 (afgesloten): rustige kaart, thema-tokens, altijd open */
 .season-prev{max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);scroll-margin-top:16px}
 .s1-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);padding:18px 20px}
@@ -1116,6 +1143,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       <p class="eyebrow mkt-eyebrow"></p>
       <h2 class="mkt-h"></h2>
       <div class="performance"><strong class="mkt-result">—</strong><span class="mkt-label"></span></div>
+      <p class="mkt-small" hidden></p>
       <p class="mkt-trades" hidden></p>
       <section class="wins" hidden>
         <div class="wins-head"><h3 class="wins-h">Beste trades deze week</h3><span class="wins-ctx"></span><span class="wins-ctx wins-wk"></span></div>
@@ -1123,6 +1151,17 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
         <p class="wins-empty" hidden></p>
       </section>
       <p class="mkt-total" hidden></p>
+      <section class="mkt-block mkt-posblock" hidden><div class="panel">
+        <h3 class="mkt-bh">Open posities</h3>
+        <p class="sub mkt-pos-sub"></p>
+        <ul class="waterfall pos-list mkt-pos"></ul>
+        <p class="mkt-cash" hidden></p>
+      </div></section>
+      <section class="mkt-block mkt-fillblock" hidden><div class="panel">
+        <h3 class="mkt-bh mkt-fill-h">Laatste aankopen</h3>
+        <p class="sub">Nieuwste eerst · tijden in Nederlandse tijd · papier</p>
+        <ul class="waterfall mkt-fills"></ul>
+      </div></section>
     </section>
   </template>
 </main>
@@ -2169,13 +2208,30 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
   function renderMarket(ui, m) {
     if (m.result !== undefined && ui.result) {
       var sg = roundedSign(m.result);
-      ui.result.textContent = m.result == null ? "—" : fmtNum(m.result, { prefix: "€", digits: 2, plus: true });
-      ui.result.className = (ui.resultBase || "") + (sg < 0 ? "dn" : sg > 0 ? "up" : "");
+      ui.result.textContent = m.result == null ? "—" : fmtNum(m.result, { prefix: "€", digits: 2, plus: !m.bigIsTotal });
+      ui.result.classList.remove("is-total", "dn", "up");
+      var rc = m.bigIsTotal ? "is-total" : sg < 0 ? "dn" : sg > 0 ? "up" : "";
+      if (rc) ui.result.classList.add(rc);
+    }
+    if (ui.small) {
+      clearEl(ui.small);
+      if (m.small) {
+        var sv = mk("span", "v", fmtEur(m.small.v, true)); ui.small.appendChild(sv);
+        var since = m.small.season ? " sinds de start van het seizoen" : " sinds start";
+        /* 'kosten' alleen als cost_eur het onderbouwt; anders neutraal */
+        ui.small.appendChild(document.createTextNode(since + " (" + fmtEur(m.small.start) + ")"));
+        if (m.small.cost != null) { ui.small.appendChild(document.createTextNode(" · waarvan ")); ui.small.appendChild(mk("span", "v", fmtEur(m.small.cost))); ui.small.appendChild(document.createTextNode(" kosten tot nu toe")); }
+        ui.small.appendChild(document.createTextNode(" · papier"));
+      }
+      ui.small.hidden = !m.small;
     }
     if (m.resultLabel != null && ui.label) ui.label.textContent = m.resultLabel;
     if (ui.trades) {
       while (ui.trades.firstChild) ui.trades.removeChild(ui.trades.firstChild);
-      if (m.trades) { var tv = document.createElement("span"); tv.className = "v"; tv.textContent = fmtInt(m.trades.n); ui.trades.appendChild(tv); ui.trades.appendChild(document.createTextNode(m.trades.text)); }
+      if (m.trades) {
+        if (m.trades.n != null) { var tv = document.createElement("span"); tv.className = "v"; tv.textContent = fmtInt(m.trades.n); ui.trades.appendChild(tv); }
+        ui.trades.appendChild(document.createTextNode(m.trades.text));
+      }
       ui.trades.hidden = !m.trades;
     }
     if (ui.total) {
@@ -2189,6 +2245,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       ui.total.hidden = !m.total;
     }
     if (m.wins) renderMarketWins(ui, m.wins);
+    if (ui.posBlock) renderMarketBlocks(ui, m);
   }
   function heroRatio(bm) {
     if (!bm) return null;
@@ -2400,8 +2457,15 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       mode: ["mode"], paperOnly: ["paper_only"], label: ["label"],
       start: ["start_eur"], total: ["total_eur", "total"], result: ["result_eur", "net_eur"],
       nTrades: ["n_trades", "trades_total"], nTradesWeek: ["n_trades_week"], best: ["best_trades_week"], weekLabel: ["week_label"],
-      seasonN: ["season_n"], seasonStart: ["season_start_ts"], seasonBase: ["season_total_eur_at_start"]
-    }
+      seasonN: ["season_n"], seasonStart: ["season_start_ts"], seasonBase: ["season_total_eur_at_start"],
+      cost: ["cost_eur", "costs_eur", "fees_eur"],                       /* totale kosten sinds start (voor het woord 'kosten') */
+      positions: ["open_positions", "positions"], fills: ["recent_fills", "fills"], cash: ["cash_eur"],
+      /* velden binnen één positie / één fill */
+      pSymbol: ["symbol"], pName: ["name"], pEntryTs: ["entry_ts", "opened_at"], pEntryPx: ["entry_px", "entry_price"],
+      pLastPx: ["last_px", "current_price"], pValue: ["value_eur"], pPnl: ["pnl_eur", "unrealized_pnl_eur"], pPnlPct: ["pnl_pct"], pUnits: ["units", "qty"], pPxSource: ["last_px_source"],
+      fSymbol: ["symbol"], fName: ["name"], fSide: ["side"], fTs: ["ts", "time"], fPx: ["px", "price"], fNotional: ["notional_eur", "amount_eur"], fCost: ["cost_eur", "fee_eur"], fStatus: ["status"]
+    },
+    smallResultPct: 0.5   /* |resultaat| < 0,5% van start → resultaat klein en grijs, groot getal = totale paperwaarde */
   };
   function mf(o, key) {
     if (!o || typeof o !== "object" || Array.isArray(o)) return undefined;
@@ -2414,6 +2478,103 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     if (Array.isArray(all)) return all.filter(function (x) { return x && def.keys.indexOf(String(mf(x, "id")).toLowerCase()) >= 0; })[0] || null;
     if (all && typeof all === "object") { for (var i = 0; i < def.keys.length; i++) if (all[def.keys[i]] && typeof all[def.keys[i]] === "object") return all[def.keys[i]]; }
     return null;
+  }
+  function mfr(o, key) { return mf(o, key); }
+  var SYM_RE = /^(?=.{1,15}$)[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*$/;
+  function cleanName(v) {
+    if (typeof v !== "string") return null;
+    v = v.replace(/\s+/g, " ").trim();
+    if (!v) return null;
+    return v.length > 40 ? v.slice(0, 39).replace(/\s+$/, "") + "…" : v;
+  }
+  function nameSym(o, nk, sk) {
+    var sym = mfr(o, sk); sym = typeof sym === "string" && SYM_RE.test(sym) ? sym.toUpperCase() : null;
+    if (!sym) return null;
+    var nm = cleanName(mfr(o, nk));
+    return { sym: sym, text: nm && nm.toUpperCase() !== sym ? nm + " (" + sym + ")" : sym };
+  }
+  function marketPositions(arr) {
+    if (!Array.isArray(arr)) return null; /* veld ontbreekt → blok verborgen */
+    return arr.map(function (p) {
+      var ns = nameSym(p, "pName", "pSymbol"); if (!ns) return null;
+      return { ns: ns, at: parseTs(mfr(p, "pEntryTs")), entry: numOrNull(mfr(p, "pEntryPx")), last: numOrNull(mfr(p, "pLastPx")),
+        value: numOrNull(mfr(p, "pValue")), pnl: numOrNull(mfr(p, "pPnl")), pct: numOrNull(mfr(p, "pPnlPct")), units: numOrNull(mfr(p, "pUnits")) };
+    }).filter(Boolean);
+  }
+  function sideNl(v) {
+    var k = typeof v === "string" ? v.trim().toLowerCase() : "";
+    return k === "buy" || k === "b" || k === "koop" || k === "long" ? { t: "Koop", c: "buy" } : k === "sell" || k === "s" || k === "verkoop" ? { t: "Verkoop", c: "sell" } : null;
+  }
+  function marketFills(arr) {
+    if (!Array.isArray(arr)) return null;
+    return arr.map(function (f) {
+      var ns = nameSym(f, "fName", "fSymbol"), sd = sideNl(mfr(f, "fSide")), at = parseTs(mfr(f, "fTs"));
+      if (!ns || !sd || !at) return null;
+      var st = mfr(f, "fStatus");
+      return { ns: ns, side: sd, at: at, px: numOrNull(mfr(f, "fPx")), notional: numOrNull(mfr(f, "fNotional")), cost: numOrNull(mfr(f, "fCost")),
+        prelim: typeof st === "string" && st.trim().toLowerCase() === "voorlopig" };
+    }).filter(Boolean).sort(function (a, b) { return b.at.getTime() - a.at.getTime(); }).slice(0, 10);
+  }
+  function dayTime(d) { var p = amsParts(d); return Number(p.day) + " " + MONTHS[Number(p.month) - 1] + " " + String(p.hour).padStart(2, "0") + ":" + String(p.minute).padStart(2, "0"); }
+  function cell(cls, label, text, sign) {
+    var c = mk("span", cls + (sign ? (sign < 0 ? " dn" : sign > 0 ? " up" : "") : ""));
+    if (label) c.appendChild(mk("span", "cl", label));
+    c.appendChild(document.createTextNode(text));
+    return c;
+  }
+  function renderMarketBlocks(ui, m) {
+    /* Open posities */
+    var pb = ui.posBlock, pl = ui.posList;
+    if (pb && pl) {
+      clearEl(pl);
+      if (m.positions && m.positions.length) {
+        var h = mk("li", "pos-head");
+        ["Naam", "Instap", "Huidig", "Waarde", "Plus/min"].forEach(function (t, i) { h.appendChild(mk("span", i ? "num" : null, t)); });
+        pl.appendChild(h);
+        m.positions.forEach(function (p) {
+          var li = mk("li");
+          var nw = mk("span", "nmw"), nm = mk("span", "nm", p.ns.text); nm.title = p.ns.text; nw.appendChild(nm);
+          if (p.units != null && p.units > 0) nw.appendChild(mk("span", "un", p.units.toLocaleString("nl-NL", { maximumFractionDigits: 4 }) + (p.units === 1 ? " stuk" : " stuks")));
+          li.appendChild(nw);
+          li.appendChild(cell("num", "Instap", fmtPrice(p.entry)));
+          li.appendChild(cell("num", "Huidig", fmtPrice(p.last)));
+          li.appendChild(cell("num", "Waarde", fmtEur(p.value)));
+          var sg = p.pnl != null ? roundedSign(p.pnl) : p.pct != null ? (Math.round(p.pct * 10) === 0 ? 0 : p.pct < 0 ? -1 : 1) : 0;
+          var pm = p.pnl == null && p.pct == null ? "—" : (p.pnl != null ? fmtEur(p.pnl, true) : "") + (p.pnl != null && p.pct != null ? " · " : "") + (p.pct != null ? fmtPct(p.pct) : "");
+          li.appendChild(cell("num", "Plus/min", pm, sg));
+          pl.appendChild(li);
+        });
+        ui.posSub.textContent = fmtInt(m.positions.length) + " open · papier — geen echte orders";
+      }
+      if (ui.cash) { ui.cash.hidden = !(m.positions && m.positions.length && m.cash != null);
+        if (!ui.cash.hidden) { clearEl(ui.cash); ui.cash.appendChild(document.createTextNode("Nog niet belegd ")); ui.cash.appendChild(mk("span", "v", fmtEur(m.cash))); ui.cash.appendChild(document.createTextNode(" · papier")); } }
+      pb.hidden = !(m.positions && m.positions.length);
+    }
+    /* Laatste aankopen (max 10, nieuwste eerst) */
+    var fb = ui.fillBlock, fl = ui.fillList;
+    if (fb && fl) {
+      clearEl(fl);
+      if (m.fills && m.fills.length) {
+        var allBuy = m.fills.every(function (f) { return f.side.c === "buy"; });
+        ui.fillTitle.textContent = allBuy ? "Laatste aankopen" : "Laatste aan- en verkopen";
+        var hh = mk("li", "pos-head");
+        ["Tijd", "Soort", "Naam", "Prijs", "Bedrag", "Kosten"].forEach(function (t, i) { hh.appendChild(mk("span", i >= 3 ? "num" : null, t)); });
+        fl.appendChild(hh);
+        m.fills.forEach(function (f) {
+          var li = mk("li");
+          li.appendChild(mk("span", "t", dayTime(f.at)));
+          li.appendChild(mk("span", "side " + f.side.c, f.side.t));
+          var nw2 = mk("span", "nmw"), nm2 = mk("span", "nm", f.ns.text); nm2.title = f.ns.text; nw2.appendChild(nm2);
+          if (f.prelim) { var tg = mk("span", "tag", "voorlopig"); tg.title = "Nog niet bevestigd door de slotkoers"; nw2.appendChild(tg); }
+          li.appendChild(nw2);
+          li.appendChild(cell("num", "Prijs", fmtPrice(f.px)));
+          li.appendChild(cell("num", "Bedrag", fmtEur(f.notional)));
+          li.appendChild(cell("num", "Kosten", fmtEur(f.cost)));
+          fl.appendChild(li);
+        });
+      }
+      fb.hidden = !(m.fills && m.fills.length);
+    }
   }
   function marketModel(root, def) {
     var r = marketRaw(root, def);
@@ -2441,10 +2602,23 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     if (noTrades) nT = 0;
     var w = winSet(best, "this", nW, wl, sAt ? sAt.getTime() : null);
     var lbl = cleanLabel(mf(r, "label"));
+    var pos = marketPositions(mf(r, "positions")), fills = marketFills(mf(r, "fills"));
+    /* Statusregel naast het grote getal: nooit een kale '0 trades' */
+    var status = null;
+    if (nT > 0) status = { n: nT, text: (nT === 1 ? " afgesloten trade" : " afgesloten trades") + (pos ? " · " + fmtInt(pos.length) + (pos.length === 1 ? " positie open" : " posities open") : "") + " · papier" };
+    else if (pos && pos.length) status = { n: pos.length, text: (pos.length === 1 ? " positie open" : " posities open") + " · nog geen verkocht · papier" };
+    else if (pos && !(fills && fills.length)) status = { n: null, text: "Nog geen aankopen · papier" };
+    else status = { n: null, text: "Nog niets verkocht · papier" };
+    /* Kleine uitslag: niet de kleine (kosten)min als hoofdboodschap */
+    var base0 = sAt && sBase != null ? sBase : start, cost = numOrNull(mf(r, "cost")), small = null, big = v, bigLabel = label, totalLine = total != null ? { total: total, start: base0 } : null;
+    if (total != null && base0 > 0 && Math.abs(v) < base0 * MARKETS_CONFIG.smallResultPct / 100) {
+      small = { v: v, cost: cost != null && cost >= 0 ? cost : null, start: base0, season: !!(sAt && sBase != null) };
+      big = total; bigLabel = "Totale paperwaarde · papier"; totalLine = null;
+    }
     return { id: def.id, label: def.label, sub: lbl && lbl !== def.label ? lbl : null, updated: up.toISOString(),
-      result: v, resultLabel: label,
-      trades: nT != null ? { n: nT, text: nT === 1 ? " trade sinds start · papier" : " trades sinds start · papier" } : null,
-      total: total != null ? { total: total, start: sAt && sBase != null ? sBase : start } : null,
+      result: big, resultLabel: bigLabel, bigIsTotal: !!small, small: small, positions: pos, fills: fills, cash: (function (c) { return c != null && c >= 0 ? c : null; })(numOrNull(mf(r, "cash"))),
+      trades: status,
+      total: totalLine,
       wins: noTrades ? { state: "none" } : winsModel(w, nW, wl, Array.isArray(best) && !w ? "Nog geen afgesloten winsttrades deze week." : null) };
   }
   var mktState = { models: {}, active: "crypto", ui: {} };
@@ -2460,7 +2634,8 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     q(".wins-list").setAttribute("aria-label", "Beste trades " + def.label);
     anchor.parentNode.insertBefore(el, anchor.nextSibling);
     var ui = { panel: el, eyebrow: q(".mkt-eyebrow"), title: q(".mkt-h"), result: q(".mkt-result"), label: q(".mkt-label"), trades: q(".mkt-trades"), total: q(".mkt-total"),
-      winsSec: wins, winsTitle: q(".wins-h"), winsCtx: q(".wins-ctx"), winsWk: q(".wins-wk"), winsList: q(".wins-list"), winsEmpty: q(".wins-empty"), winsSig: null };
+      winsSec: wins, winsTitle: q(".wins-h"), winsCtx: q(".wins-ctx"), winsWk: q(".wins-wk"), winsList: q(".wins-list"), winsEmpty: q(".wins-empty"), winsSig: null,
+      small: q(".mkt-small"), posBlock: q(".mkt-posblock"), posList: q(".mkt-pos"), posSub: q(".mkt-pos-sub"), fillBlock: q(".mkt-fillblock"), fillList: q(".mkt-fills"), fillTitle: q(".mkt-fill-h"), cash: q(".mkt-cash") };
     mktState.ui[def.id] = ui;
     return ui;
   }
