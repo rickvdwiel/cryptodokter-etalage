@@ -1,11 +1,11 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-12T21:31:30Z",
+ "updated": "2026-10-13T09:27:33Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-10-12T21:31:30Z",
+   "updated": "2026-10-13T09:27:33Z",
    "start_eur": 30000.0,
    "total_eur": 30000.0,
    "result_eur": 0.0,
@@ -16,7 +16,7 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-10-12T21:31:30Z",
+   "updated": "2026-10-13T09:27:33Z",
    "start_eur": 70000.0,
    "total_eur": 70000.0,
    "result_eur": 0.0,
