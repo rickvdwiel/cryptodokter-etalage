@@ -1,14 +1,14 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-14T14:05:45Z",
+ "updated": "2026-10-14T14:38:49Z",
  "markets": {
   "commodities": {
    "mode": "paper",
    "updated": "2026-10-14T14:05:45Z",
    "start_eur": 30000.0,
-   "total_eur": 30065.38,
-   "result_eur": 65.38,
+   "total_eur": 30066.77,
+   "result_eur": 66.77,
    "n_trades": 1,
    "n_trades_week": 1,
    "best_trades_week": [
@@ -28,12 +28,12 @@
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 151.08,
-     "last_px": 153.72,
-     "last_px_source": "koers 16:02",
+     "last_px": 153.75,
+     "last_px_source": "koers 16:38",
      "units": 44.072224,
-     "value_eur": 6774.78,
-     "pnl_eur": 108.12,
-     "pnl_pct": 1.62
+     "value_eur": 6776.17,
+     "pnl_eur": 109.5,
+     "pnl_pct": 1.64
     }
    ],
    "recent_fills": [
@@ -83,8 +83,8 @@
    "mode": "paper",
    "updated": "2026-10-14T14:05:45Z",
    "start_eur": 70000.0,
-   "total_eur": 69869.11,
-   "result_eur": -130.89,
+   "total_eur": 69781.14,
+   "result_eur": -218.86,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -97,84 +97,84 @@
      "name": "S&P 500",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 777.34,
-     "last_px": 773.62,
-     "last_px_source": "koers 16:02",
+     "last_px": 772.74,
+     "last_px_source": "koers 16:38",
      "units": 6.428789,
-     "value_eur": 4973.44,
-     "pnl_eur": -29.15,
-     "pnl_pct": -0.58
+     "value_eur": 4967.78,
+     "pnl_eur": -34.81,
+     "pnl_pct": -0.7
     },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.44,
-     "last_px": 113.78,
-     "last_px_source": "koers 15:46",
+     "last_px": 113.54,
+     "last_px_source": "koers 16:11",
      "units": 58.650915,
-     "value_eur": 6673.3,
-     "pnl_eur": 6.63,
-     "pnl_pct": 0.1
+     "value_eur": 6659.22,
+     "pnl_eur": -7.44,
+     "pnl_pct": -0.11
     },
     {
      "symbol": "AAPL",
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 344.66,
-     "last_px": 345.56,
-     "last_px_source": "koers 16:02",
+     "last_px": 346.11,
+     "last_px_source": "koers 16:38",
      "units": 26.567175,
-     "value_eur": 9180.55,
-     "pnl_eur": 13.89,
-     "pnl_pct": 0.15
+     "value_eur": 9195.16,
+     "pnl_eur": 28.5,
+     "pnl_pct": 0.31
     },
     {
      "symbol": "MSFT",
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 544.64,
-     "last_px": 542.15,
-     "last_px_source": "koers 16:02",
+     "last_px": 539.59,
+     "last_px_source": "koers 16:38",
      "units": 18.340577,
-     "value_eur": 9943.34,
-     "pnl_eur": -56.66,
-     "pnl_pct": -0.57
+     "value_eur": 9896.39,
+     "pnl_eur": -103.61,
+     "pnl_pct": -1.04
     },
     {
      "symbol": "GOOGL",
      "name": "Alphabet",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 356.23,
-     "last_px": 354.84,
-     "last_px_source": "koers 16:02",
+     "last_px": 355.27,
+     "last_px_source": "koers 16:38",
      "units": 14.020453,
-     "value_eur": 4975.02,
-     "pnl_eur": -24.98,
-     "pnl_pct": -0.5
+     "value_eur": 4981.05,
+     "pnl_eur": -18.95,
+     "pnl_pct": -0.38
     },
     {
      "symbol": "AMZN",
      "name": "Amazon",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 259.23,
-     "last_px": 257.73,
-     "last_px_source": "koers 16:02",
+     "last_px": 256.85,
+     "last_px_source": "koers 16:38",
      "units": 22.478028,
-     "value_eur": 5793.26,
-     "pnl_eur": -40.07,
-     "pnl_pct": -0.69
+     "value_eur": 5773.48,
+     "pnl_eur": -59.85,
+     "pnl_pct": -1.03
     },
     {
      "symbol": "NVDA",
      "name": "Nvidia",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 224.59,
-     "last_px": 224.81,
-     "last_px_source": "koers 16:02",
+     "last_px": 223.62,
+     "last_px_source": "koers 16:38",
      "units": 18.531786,
-     "value_eur": 4166.13,
-     "pnl_eur": -0.54,
-     "pnl_pct": -0.01
+     "value_eur": 4143.99,
+     "pnl_eur": -22.68,
+     "pnl_pct": -0.54
     }
    ],
    "recent_fills": [
