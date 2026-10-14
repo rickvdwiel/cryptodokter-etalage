@@ -1,19 +1,27 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-14T14:44:24+00:00",
+  "updated": "2026-10-14T14:48:37+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 82140.08,
+    "cash_eur": 80140.08,
     "banked_eur": 3162.7,
-    "equity_approx": 82140.08,
-    "total": 85302.78,
+    "equity_approx": 82135.08,
+    "total": 85297.78,
     "realized_pnl_eur": -14697.22,
-    "trades": 489,
-    "open_positions": 0,
+    "trades": 490,
+    "open_positions": 1,
     "rendement_pct": -14.7
   },
   "tape": [
+    {
+      "t": "2026-10-14T14:48:37+00:00",
+      "side": "BUY",
+      "symbol": "CRIME",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001504028,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-14T14:18:01+00:00",
       "side": "SELL",
@@ -219,21 +227,9 @@
       "prijs_eur": 0.0001433667,
       "pnl_eur": -323.13,
       "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-14T12:09:46+00:00",
-      "side": "BUY",
-      "symbol": "币安人",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001701389,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-14T13:43:39+00:00",
-      "total": 85703.48
-    },
     {
       "t": "2026-10-14T13:53:22+00:00",
       "total": 85703.48
@@ -467,11 +463,23 @@
       "total": 85302.78
     },
     {
-      "t": "2026-10-14T14:44:24+00:00",
+      "t": "2026-10-14T14:48:36+00:00",
       "total": 85302.78
+    },
+    {
+      "t": "2026-10-14T14:48:37+00:00",
+      "total": 85297.78
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "CRIME",
+      "opened_at": "2026-10-14T14:48:37+00:00",
+      "cost_eur": 2000.0,
+      "entry_price": 0.00015040277777777778,
+      "qty": 13264382.67614738
+    }
+  ],
   "rendement_pct": -14.7,
   "best_trades_week": [
     {
