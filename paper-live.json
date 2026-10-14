@@ -1,26 +1,26 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-14T19:31:15+00:00",
+  "updated": "2026-10-14T19:32:38+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 77597.64,
+    "cash_eur": 77444.87,
     "banked_eur": 3464.41,
-    "equity_approx": 81587.64,
-    "total": 85052.05,
-    "realized_pnl_eur": -14937.95,
+    "equity_approx": 81434.87,
+    "total": 84899.28,
+    "realized_pnl_eur": -15090.71,
     "trades": 554,
     "open_positions": 2,
-    "rendement_pct": -14.9
+    "rendement_pct": -15.1
   },
   "tape": [
     {
-      "t": "2026-10-14T19:31:14+00:00",
+      "t": "2026-10-14T19:32:37+00:00",
       "side": "SELL",
       "symbol": "CONDOGE",
-      "bedrag_eur": 2546.12,
-      "prijs_eur": 0.00017875,
-      "pnl_eur": 546.12,
+      "bedrag_eur": 2393.36,
+      "prijs_eur": 0.000168025,
+      "pnl_eur": 393.36,
       "reason": "winst genomen"
     },
     {
@@ -463,12 +463,12 @@
       "total": 84386.76
     },
     {
-      "t": "2026-10-14T19:31:14+00:00",
-      "total": 84937.89
+      "t": "2026-10-14T19:32:37+00:00",
+      "total": 84785.12
     },
     {
-      "t": "2026-10-14T19:31:14+00:00",
-      "total": 84937.89
+      "t": "2026-10-14T19:32:37+00:00",
+      "total": 84785.12
     }
   ],
   "open_positions": [
@@ -487,7 +487,7 @@
       "qty": 3516181.5176078356
     }
   ],
-  "rendement_pct": -14.9,
+  "rendement_pct": -15.1,
   "best_trades_week": [
     {
       "symbol": "TEMO",
@@ -521,7 +521,7 @@
     }
   ],
   "n_trades_week": 244,
-  "week_pnl_eur": -14937.95,
+  "week_pnl_eur": -15090.71,
   "week_label": "week 42 (12–18 okt)",
   "markets_live": true
 }
