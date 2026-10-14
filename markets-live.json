@@ -1,14 +1,14 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-14T19:32:36Z",
+ "updated": "2026-10-14T20:05:11Z",
  "markets": {
   "commodities": {
    "mode": "paper",
    "updated": "2026-10-14T14:05:45Z",
    "start_eur": 30000.0,
-   "total_eur": 30055.69,
-   "result_eur": 55.69,
+   "total_eur": 30060.09,
+   "result_eur": 60.09,
    "n_trades": 1,
    "n_trades_week": 1,
    "best_trades_week": [
@@ -28,12 +28,12 @@
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 151.08,
-     "last_px": 153.5,
-     "last_px_source": "koers 21:32",
+     "last_px": 153.6,
+     "last_px_source": "koers 21:59",
      "units": 44.072224,
-     "value_eur": 6765.09,
-     "pnl_eur": 98.42,
-     "pnl_pct": 1.48
+     "value_eur": 6769.49,
+     "pnl_eur": 102.83,
+     "pnl_pct": 1.54
     }
    ],
    "recent_fills": [
@@ -83,8 +83,8 @@
    "mode": "paper",
    "updated": "2026-10-14T14:05:45Z",
    "start_eur": 70000.0,
-   "total_eur": 69369.78,
-   "result_eur": -630.22,
+   "total_eur": 69378.16,
+   "result_eur": -621.84,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -97,12 +97,12 @@
      "name": "S&P 500",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 777.34,
-     "last_px": 769.12,
-     "last_px_source": "koers 21:32",
+     "last_px": 769.61,
+     "last_px_source": "koers 21:59",
      "units": 6.428789,
-     "value_eur": 4944.52,
-     "pnl_eur": -58.07,
-     "pnl_pct": -1.16
+     "value_eur": 4947.66,
+     "pnl_eur": -54.93,
+     "pnl_pct": -1.1
     },
     {
      "symbol": "IAEX.AS",
@@ -121,60 +121,60 @@
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 344.66,
-     "last_px": 343.23,
-     "last_px_source": "koers 21:32",
+     "last_px": 343.04,
+     "last_px_source": "koers 21:59",
      "units": 26.567175,
-     "value_eur": 9118.52,
-     "pnl_eur": -48.15,
-     "pnl_pct": -0.53
+     "value_eur": 9113.6,
+     "pnl_eur": -53.06,
+     "pnl_pct": -0.58
     },
     {
      "symbol": "MSFT",
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 544.64,
-     "last_px": 534.46,
-     "last_px_source": "koers 21:32",
+     "last_px": 533.87,
+     "last_px_source": "koers 21:59",
      "units": 18.340577,
-     "value_eur": 9802.31,
-     "pnl_eur": -197.69,
-     "pnl_pct": -1.98
+     "value_eur": 9791.47,
+     "pnl_eur": -208.53,
+     "pnl_pct": -2.09
     },
     {
      "symbol": "GOOGL",
      "name": "Alphabet",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 356.23,
-     "last_px": 347.94,
-     "last_px_source": "koers 21:32",
+     "last_px": 347.87,
+     "last_px_source": "koers 21:59",
      "units": 14.020453,
-     "value_eur": 4878.26,
-     "pnl_eur": -121.74,
-     "pnl_pct": -2.43
+     "value_eur": 4877.29,
+     "pnl_eur": -122.71,
+     "pnl_pct": -2.45
     },
     {
      "symbol": "AMZN",
      "name": "Amazon",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 259.23,
-     "last_px": 253.4,
-     "last_px_source": "koers 21:32",
+     "last_px": 254.16,
+     "last_px_source": "koers 21:59",
      "units": 22.478028,
-     "value_eur": 5695.93,
-     "pnl_eur": -137.4,
-     "pnl_pct": -2.36
+     "value_eur": 5713.02,
+     "pnl_eur": -120.32,
+     "pnl_pct": -2.06
     },
     {
      "symbol": "NVDA",
      "name": "Nvidia",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 224.59,
-     "last_px": 221.24,
-     "last_px_source": "koers 21:32",
+     "last_px": 221.5,
+     "last_px_source": "koers 21:59",
      "units": 18.531786,
-     "value_eur": 4099.91,
-     "pnl_eur": -66.75,
-     "pnl_pct": -1.6
+     "value_eur": 4104.79,
+     "pnl_eur": -61.88,
+     "pnl_pct": -1.49
     }
    ],
    "recent_fills": [
