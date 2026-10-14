@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-10-13T05:49:18Z",
+  "generated_at": "2026-10-14T05:50:06Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-whale-that-sat-through-the-march-2020-cr-642b827e",
-      "title": "Bitcoin whale that sat through the March 2020 crash moves $378 million",
-      "url": "https://www.coindesk.com/markets/2026/10/13/bitcoin-whale-that-sat-through-the-march-2020-crash-moves-usd378-million",
+      "id": "coinbase-which-holds-5-of-all-bitcoin-wants-the--8a3ba8f8",
+      "title": "Coinbase, which holds 5% of all bitcoin, wants the quantum fix started now",
+      "url": "https://www.coindesk.com/tech/2026/10/14/coinbase-which-holds-5-of-all-bitcoin-wants-the-quantum-fix-started-now",
       "source": "CoinDesk",
-      "published_at": "2026-10-13T05:45:10Z",
+      "published_at": "2026-10-14T05:44:51Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "blur-is-shutting-down-its-website-so-why-are-nft-d005feb7",
-      "title": "Blur is shutting down its website, so why are NFT collectors cheering?",
-      "url": "https://cointelegraph.com/news/blur-is-shutting-down-its-website-so-why-are-nft-collectors-cheering?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "id": "bitcoin-koers-blijft-steken-onder-84-000-door-st-1a7899a8",
+      "title": "Bitcoin koers blijft steken onder $84.000 door sterke dollar",
+      "url": "https://nieuws.crypto.nl/bitcoin/bitcoin-koers-blijft-steken-onder-84-000-door-sterke-dollar/",
+      "source": "Crypto-NL",
+      "published_at": "2026-10-14T05:40:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
-      "published_at": "2026-10-13T05:38:37Z",
+      "published_at": "2026-10-14T05:35:52Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "tokenized-sandisk-bets-saw-more-liquidations-tha-cad27304",
-      "title": "Tokenized SanDisk bets saw more liquidations than XRP as Asia’s chip rout wipes out $800 million",
-      "url": "https://www.coindesk.com/markets/2026/10/13/tokenized-sandisk-bets-saw-more-liquidations-than-xrp-as-asia-s-chip-rout-wipes-out-usd800-million",
+      "id": "starknet-introduces-wallet-privacy-feature-for-d-eb9badd2",
+      "title": "Starknet introduces wallet privacy feature for DeFi activity",
+      "url": "https://cointelegraph.com/news/starknet-introduces-wallet-privacy-feature-for-defi-activity?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-14T05:32:14Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "ripple-adds-stripe-owned-wallets-to-xrp-ledger-a-0582c3ff",
+      "title": "Ripple adds Stripe-owned wallets to XRP Ledger as AI payments pass 14 million",
+      "url": "https://www.coindesk.com/tech/2026/10/14/ripple-adds-stripe-owned-wallets-to-xrp-ledger-as-ai-payments-pass-14-million",
       "source": "CoinDesk",
-      "published_at": "2026-10-13T05:27:17Z",
+      "published_at": "2026-10-14T05:24:12Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "binance-to-shut-down-crypto-mining-pool-services-0a768523",
-      "title": "Binance to shut down crypto mining pool services in November",
-      "url": "https://cointelegraph.com/news/binance-shut-down-crypto-mining-pool-november?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-13T05:23:26Z",
-      "category": "news",
-      "sentiment": null
+      "id": "chainalysis-reactor-withstands-daubert-scrutiny--04eb2c05",
+      "title": "Chainalysis Reactor Withstands Daubert Scrutiny Again on Appeal",
+      "url": "https://www.chainalysis.com/blog/chainalysis-daubert-standard-appeal/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-13T15:57:50Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
-      "id": "crypto-wekker-bitcoin-boekt-ijzersterk-herstel-c-1f751fdb",
-      "title": "Crypto wekker: Bitcoin boekt ijzersterk herstel – cruciale weken op komst",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-boekt-ijzersterk-herstel-cruciale-weken-op-komst/",
-      "source": "Newsbit",
-      "published_at": "2026-10-13T05:16:06Z",
-      "category": "news",
-      "sentiment": null
+      "id": "fed-odds-defi-yields-and-ethereum-s-glamsterdam--aeb3bcbe",
+      "title": "Fed Odds, DeFi Yields, and Ethereum’s Glamsterdam Upgrade",
+      "url": "https://coinmetrics.substack.com/p/fed-odds-defi-yields-and-ethereums",
+      "source": "Coin Metrics",
+      "published_at": "2026-10-13T13:09:21Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "how-close-is-ai-to-breaking-cryptography-0400d1de",
@@ -53,24 +71,6 @@
       "url": "https://a16zcrypto.substack.com/p/can-ai-really-break-cryptography",
       "source": "a16z crypto",
       "published_at": "2026-10-10T15:39:40Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "uk-targets-cryptomus-heleket-tokenspot-in-new-ru-d04e71ca",
-      "title": "UK Targets Cryptomus, Heleket, TokenSpot in New Russian Sanctions",
-      "url": "https://www.chainalysis.com/blog/uk-sanctions-cryptomus-heleket-tokenspot/",
-      "source": "Chainalysis",
-      "published_at": "2026-10-09T01:14:08Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-426-2597050f",
-      "title": "Bitcoin Optech Newsletter #426",
-      "url": "https://bitcoinops.org/en/newsletters/2026/10/09/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-10-09T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
