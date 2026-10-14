@@ -1,47 +1,62 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-14T13:32:34Z",
+ "updated": "2026-10-14T14:05:45Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-10-14T11:48:26Z",
+   "updated": "2026-10-14T14:05:45Z",
    "start_eur": 30000.0,
-   "total_eur": 30095.42,
-   "result_eur": 95.42,
-   "n_trades": 0,
-   "n_trades_week": 0,
-   "best_trades_week": [],
-   "week_label": "week 42 (12–18 okt)",
-   "cash_eur": 23333.33,
-   "costs_eur": 8.07,
-   "open_positions": [
+   "total_eur": 30065.38,
+   "result_eur": 65.38,
+   "n_trades": 1,
+   "n_trades_week": 1,
+   "best_trades_week": [
     {
      "symbol": "GLD",
-     "name": "Goud",
-     "entry_ts": "2026-10-13T13:30:00Z",
-     "entry_px": 383.93,
-     "last_px": 375.88,
-     "last_px_source": "koers 15:32",
-     "units": 4.336299,
-     "value_eur": 1629.93,
-     "pnl_eur": -36.74,
-     "pnl_pct": -2.2
-    },
+     "pnl_eur": -42.73,
+     "ts": "2026-10-14T00:00:00Z",
+     "exit_kind": "signal_exit"
+    }
+   ],
+   "week_label": "week 42 (12–18 okt)",
+   "cash_eur": 23290.6,
+   "costs_eur": 11.94,
+   "open_positions": [
     {
      "symbol": "USO",
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
-     "entry_px": 150.1,
-     "last_px": 154.26,
-     "last_px_source": "koers 15:32",
-     "units": 33.269538,
-     "value_eur": 5132.16,
-     "pnl_eur": 132.16,
-     "pnl_pct": 2.64
+     "entry_px": 151.08,
+     "last_px": 153.72,
+     "last_px_source": "koers 16:02",
+     "units": 44.072224,
+     "value_eur": 6774.78,
+     "pnl_eur": 108.12,
+     "pnl_pct": 1.62
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "GLD",
+     "name": "Goud",
+     "side": "SELL",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 374.91,
+     "notional_eur": 1625.72,
+     "cost_eur": 1.79,
+     "status": "voorlopig"
+    },
+    {
+     "symbol": "USO",
+     "name": "Olie",
+     "side": "BUY",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 154.09,
+     "notional_eur": 1664.59,
+     "cost_eur": 2.08,
+     "status": "voorlopig"
+    },
     {
      "symbol": "GLD",
      "name": "Goud",
@@ -66,103 +81,143 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-10-14T11:48:26Z",
+   "updated": "2026-10-14T14:05:45Z",
    "start_eur": 70000.0,
-   "total_eur": 69866.85,
-   "result_eur": -133.15,
+   "total_eur": 69869.11,
+   "result_eur": -130.89,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
    "week_label": "week 42 (12–18 okt)",
-   "cash_eur": 27500.0,
-   "costs_eur": 52.43,
+   "cash_eur": 24164.07,
+   "costs_eur": 56.1,
    "open_positions": [
     {
      "symbol": "SPY",
      "name": "S&P 500",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 777.34,
-     "last_px": 774.79,
-     "last_px_source": "koers 15:32",
-     "units": 6.425445,
-     "value_eur": 4978.37,
-     "pnl_eur": -21.63,
-     "pnl_pct": -0.43
+     "last_px": 773.62,
+     "last_px_source": "koers 16:02",
+     "units": 6.428789,
+     "value_eur": 4973.44,
+     "pnl_eur": -29.15,
+     "pnl_pct": -0.58
     },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.44,
-     "last_px": 113.3,
-     "last_px_source": "koers 15:09",
+     "last_px": 113.78,
+     "last_px_source": "koers 15:46",
      "units": 58.650915,
-     "value_eur": 6645.15,
-     "pnl_eur": -21.52,
-     "pnl_pct": -0.32
+     "value_eur": 6673.3,
+     "pnl_eur": 6.63,
+     "pnl_pct": 0.1
     },
     {
      "symbol": "AAPL",
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
-     "entry_px": 344.67,
-     "last_px": 344.52,
-     "last_px_source": "koers 15:32",
-     "units": 21.736034,
-     "value_eur": 7488.5,
-     "pnl_eur": -11.5,
-     "pnl_pct": -0.15
+     "entry_px": 344.66,
+     "last_px": 345.56,
+     "last_px_source": "koers 16:02",
+     "units": 26.567175,
+     "value_eur": 9180.55,
+     "pnl_eur": 13.89,
+     "pnl_pct": 0.15
     },
     {
      "symbol": "MSFT",
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 544.64,
-     "last_px": 543.11,
-     "last_px_source": "koers 15:32",
+     "last_px": 542.15,
+     "last_px_source": "koers 16:02",
      "units": 18.340577,
-     "value_eur": 9960.95,
-     "pnl_eur": -39.05,
-     "pnl_pct": -0.39
+     "value_eur": 9943.34,
+     "pnl_eur": -56.66,
+     "pnl_pct": -0.57
     },
     {
      "symbol": "GOOGL",
      "name": "Alphabet",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 356.23,
-     "last_px": 355.93,
-     "last_px_source": "koers 15:32",
+     "last_px": 354.84,
+     "last_px_source": "koers 16:02",
      "units": 14.020453,
-     "value_eur": 4990.3,
-     "pnl_eur": -9.7,
-     "pnl_pct": -0.19
+     "value_eur": 4975.02,
+     "pnl_eur": -24.98,
+     "pnl_pct": -0.5
     },
     {
      "symbol": "AMZN",
      "name": "Amazon",
      "entry_ts": "2026-10-13T13:30:00Z",
-     "entry_px": 259.44,
-     "last_px": 257.8,
-     "last_px_source": "koers 15:32",
-     "units": 19.251102,
-     "value_eur": 4962.93,
-     "pnl_eur": -37.07,
-     "pnl_pct": -0.74
+     "entry_px": 259.23,
+     "last_px": 257.73,
+     "last_px_source": "koers 16:02",
+     "units": 22.478028,
+     "value_eur": 5793.26,
+     "pnl_eur": -40.07,
+     "pnl_pct": -0.69
     },
     {
      "symbol": "NVDA",
      "name": "Nvidia",
      "entry_ts": "2026-10-13T13:30:00Z",
-     "entry_px": 224.34,
-     "last_px": 225.08,
-     "last_px_source": "koers 15:32",
-     "units": 14.842073,
-     "value_eur": 3340.65,
-     "pnl_eur": 7.32,
-     "pnl_pct": 0.22
+     "entry_px": 224.59,
+     "last_px": 224.81,
+     "last_px_source": "koers 16:02",
+     "units": 18.531786,
+     "value_eur": 4166.13,
+     "pnl_eur": -0.54,
+     "pnl_pct": -0.01
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "AMZN",
+     "name": "Amazon",
+     "side": "BUY",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 257.96,
+     "notional_eur": 832.42,
+     "cost_eur": 0.92,
+     "status": "voorlopig"
+    },
+    {
+     "symbol": "NVDA",
+     "name": "Nvidia",
+     "side": "BUY",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 225.6,
+     "notional_eur": 832.42,
+     "cost_eur": 0.92,
+     "status": "voorlopig"
+    },
+    {
+     "symbol": "SPY",
+     "name": "S&P 500",
+     "side": "BUY",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 774.92,
+     "notional_eur": 2.59,
+     "cost_eur": 0.0,
+     "status": "voorlopig"
+    },
+    {
+     "symbol": "AAPL",
+     "name": "Apple",
+     "side": "BUY",
+     "ts": "2026-10-14T13:30:00Z",
+     "px": 344.61,
+     "notional_eur": 1664.84,
+     "cost_eur": 1.83,
+     "status": "voorlopig"
+    },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
@@ -221,16 +276,6 @@
      "px": 259.44,
      "notional_eur": 4994.51,
      "cost_eur": 5.49,
-     "status": "bevestigd"
-    },
-    {
-     "symbol": "NVDA",
-     "name": "Nvidia",
-     "side": "BUY",
-     "ts": "2026-10-13T13:30:00Z",
-     "px": 224.34,
-     "notional_eur": 3329.67,
-     "cost_eur": 3.66,
      "status": "bevestigd"
     }
    ]
