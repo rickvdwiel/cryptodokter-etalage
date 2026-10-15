@@ -588,12 +588,13 @@ h1{font-size:30px;max-width:none;margin-bottom:8px}
 .tool:disabled{opacity:.4;cursor:wait}
 .tool svg{width:17px;height:17px}
 .run-state{font-size:12px;color:var(--muted);margin-right:8px}
-.performance{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:12px 0 4px}
+.performance{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:12px 0 6px}
 .performance strong{font:600 28px/1.3 var(--mono);overflow-wrap:anywhere}
-.performance .dn{color:var(--dn)}.performance .up{color:var(--up)}
+.performance .dn{color:var(--tx)}
+.performance .up{color:var(--up)}
 .performance span{font-size:13px;color:var(--muted)}
-.open-trades-hint{margin:0 0 12px;font-size:13px;line-height:1.5;color:var(--muted);max-width:54ch}
-.data-warning{margin:0;color:var(--dn);font-size:13px}
+.open-trades-hint{margin:8px 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);font-size:13px;line-height:1.5;color:var(--tx);max-width:58ch}
+.data-warning{margin:0;color:var(--muted);font-size:13px}
 /* Beste trades (strip direct onder de topbalk). Vaste hoogte → geen layout-shift als de data binnenkomt; geen data → hidden. */
 .wins{max-width:var(--max);margin:0 auto;padding:4px var(--padr) 0 var(--pad)}
 .wins[hidden]{display:none!important}
@@ -1701,8 +1702,10 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     var hintEl = document.getElementById("open-trades-hint");
     if (!hintEl) return;
     var openN = snap && snap.open_count != null ? snap.open_count : (snap && snap.open ? snap.open.length : 0);
-    if (openN > 0) {
-      hintEl.textContent = "Er staat momenteel een min doordat er " + openN + " trades openstaan. Dit betreft ongerealiseerd resultaat op openstaande posities, nog geen definitief verlies.";
+    var net = snap && snap.balance ? snap.balance.net : null;
+    if (openN > 0 || (net != null && net < 0)) {
+      var netText = net != null && net < 0 ? " (" + fmtEur(net, true) + ")" : "";
+      hintEl.textContent = "Let op: Het saldo/resultaat op de startpagina toont momenteel een min" + netText + " doordat er " + (openN > 0 ? openN + " " : "") + "trades openstaan. Dit is puur ongerealiseerd resultaat op lopende posities; er is tot nu toe nog geen definitief verlies genomen.";
       hintEl.hidden = false;
     } else {
       hintEl.hidden = true;
@@ -1719,7 +1722,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     setText("kpi-open", openTxt);
     setText("strip-eq", fmtEur(snap.start));
     setText("strip-rend", fmtEur(snap.realized, true));
-    document.getElementById("strip-rend").className = "v" + (snap.realized < 0 ? " dn" : snap.realized > 0 ? " up" : "");
+    document.getElementById("strip-rend").className = "v" + (snap.realized > 0 ? " up" : "");
     setText("strip-trades", fmtEur(snap.banked));
     setText("strip-open", fmtEur(snap.cash));
     paintRend();
@@ -1728,8 +1731,8 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     setText("balance-banked", fmtEur(snap.banked));
     setText("balance-cash", fmtEur(snap.cash));
     var net = snap.balance.net, netEl = document.getElementById("net-result");
-    if (netEl) { netEl.textContent = fmtNum(net, {prefix:"€",digits:2,plus:true}); netEl.className = net > 0 ? "up" : ""; }
-    setText("performance-label", net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Resultaat sinds start (open trades) · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier");
+    if (netEl) { netEl.textContent = fmtEur(eq); netEl.className = ""; }
+    setText("performance-label", "Totale paperwaarde (saldo) · papier");
     updateOpenTradesHint(snap);
     document.getElementById("export-trades").disabled = !snap.tape.length;
 
@@ -2391,14 +2394,10 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     if (seasonOn) {
       var c = S.cur, nTxt = c.n != null ? "Seizoen " + fmtInt(c.n) : "Nieuw seizoen";
       setText("hero-eyebrow", nTxt + " · gestart " + shortDate(c.startIso));
-      var v = null;
-      if (lastSnap && lastSnap.total != null) {
-        var su = parseTs(lastSnap.updated);
-        if (!su || su.getTime() >= c.startMs) v = Math.round((lastSnap.total - c.base - c.deposits) * 100) / 100;
-      }
-      var sub = "sinds de start van " + (c.n != null ? "seizoen " + fmtInt(c.n) : "het seizoen") + " · papier";
-      cryptoModel = { result: v, resultLabel: sub, trades: null, total: null };
-      if (perf) perf.setAttribute("aria-label", "Paper-resultaat " + sub.replace(" · papier", ""));
+      var eq = lastSnap && lastSnap.total != null ? lastSnap.total : (lastSnap ? lastSnap.equity : null);
+      var sub = "Totale paperwaarde (saldo) · papier";
+      cryptoModel = { result: eq, resultLabel: sub, bigIsTotal: true, trades: null, total: null };
+      if (perf) perf.setAttribute("aria-label", "Totale paperwaarde");
       if (S.bench) {
         while (bEl.firstChild) bEl.removeChild(bEl.firstChild);
         bEl.appendChild(document.createTextNode(S.bench.sym + " sinds start seizoen: "));
@@ -2411,9 +2410,9 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       setText("hero-eyebrow", orig.eyebrow);
       if (perf && orig.aria != null) perf.setAttribute("aria-label", orig.aria);
       meta.hidden = true; bEl.hidden = true; link.hidden = true;
-      if (lastSnap) { /* fallback: precies de oude hero (zelfde regels als applySnapshot) */
-        var net = lastSnap.balance.net;
-        cryptoModel = { result: net, resultLabel: net == null ? "Nettoresultaat niet vast te stellen" : net < 0 ? "Verlies sinds start · papier" : net > 0 ? "Winst sinds start · papier" : "Resultaat sinds start · papier", trades: null, total: null };
+      if (lastSnap) {
+        var eq = lastSnap.total != null ? lastSnap.total : lastSnap.equity;
+        cryptoModel = { result: eq, resultLabel: "Totale paperwaarde (saldo) · papier", bigIsTotal: true, trades: null, total: null };
       }
     }
     placeWins(seasonOn);
