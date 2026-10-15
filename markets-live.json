@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-15T08:31:00Z",
+ "updated": "2026-10-15T09:01:40Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -83,8 +83,8 @@
    "mode": "paper",
    "updated": "2026-10-15T07:43:18Z",
    "start_eur": 70000.0,
-   "total_eur": 69294.17,
-   "result_eur": -705.83,
+   "total_eur": 69286.09,
+   "result_eur": -713.91,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -109,12 +109,12 @@
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.18,
-     "last_px": 112.54,
-     "last_px_source": "koers 10:13",
+     "last_px": 112.44,
+     "last_px_source": "koers 10:46",
      "units": 80.828782,
-     "value_eur": 9096.47,
-     "pnl_eur": -70.2,
-     "pnl_pct": -0.77
+     "value_eur": 9088.39,
+     "pnl_eur": -78.28,
+     "pnl_pct": -0.85
     },
     {
      "symbol": "AAPL",
