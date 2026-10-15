@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-10-14T05:50:06Z",
+  "generated_at": "2026-10-15T05:45:01Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "coinbase-which-holds-5-of-all-bitcoin-wants-the--8a3ba8f8",
-      "title": "Coinbase, which holds 5% of all bitcoin, wants the quantum fix started now",
-      "url": "https://www.coindesk.com/tech/2026/10/14/coinbase-which-holds-5-of-all-bitcoin-wants-the-quantum-fix-started-now",
-      "source": "CoinDesk",
-      "published_at": "2026-10-14T05:44:51Z",
+      "id": "crypto-wekker-angstaanjagende-daling-voor-bitcoi-f0981b52",
+      "title": "Crypto wekker: angstaanjagende daling voor Bitcoin na tegenvallende Amerikaanse inflatie",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-onderuit-na-tegenvallende-amerikaanse-inflatie/",
+      "source": "Newsbit",
+      "published_at": "2026-10-15T05:17:06Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-koers-blijft-steken-onder-84-000-door-st-1a7899a8",
-      "title": "Bitcoin koers blijft steken onder $84.000 door sterke dollar",
-      "url": "https://nieuws.crypto.nl/bitcoin/bitcoin-koers-blijft-steken-onder-84-000-door-sterke-dollar/",
+      "id": "van-de-poppe-verwacht-nieuw-bitcoinrecord-binnen-73201070",
+      "title": "Van de Poppe verwacht nieuw bitcoinrecord binnen drie tot vijf maanden",
+      "url": "https://www.crypto-insiders.nl/nieuws/analyses/van-de-poppe-verwacht-nieuw-bitcoinrecord-binnen-drie-tot-vijf-maanden/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-10-15T05:07:39Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "australia-seeks-feedback-on-crypto-platform-rule-1e2fcec4",
+      "title": "Australia seeks feedback on crypto platform rules ahead of 2027 rollout",
+      "url": "https://cointelegraph.com/news/australia-seeks-feedback-on-crypto-platform-rules-ahead-of-2027-rollout?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-15T05:00:40Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "vaneck-schrapt-plannen-voor-ethereum-etf-met-sta-26cd2a8f",
+      "title": "VanEck schrapt plannen voor Ethereum ETF met staking",
+      "url": "https://nieuws.crypto.nl/ethereum/vaneck-schrapt-plannen-voor-ethereum-etf-met-staking/",
       "source": "Crypto-NL",
-      "published_at": "2026-10-14T05:40:00Z",
+      "published_at": "2026-10-15T05:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-14T05:35:52Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "starknet-introduces-wallet-privacy-feature-for-d-eb9badd2",
-      "title": "Starknet introduces wallet privacy feature for DeFi activity",
-      "url": "https://cointelegraph.com/news/starknet-introduces-wallet-privacy-feature-for-defi-activity?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-14T05:32:14Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "ripple-adds-stripe-owned-wallets-to-xrp-ledger-a-0582c3ff",
-      "title": "Ripple adds Stripe-owned wallets to XRP Ledger as AI payments pass 14 million",
-      "url": "https://www.coindesk.com/tech/2026/10/14/ripple-adds-stripe-owned-wallets-to-xrp-ledger-as-ai-payments-pass-14-million",
+      "id": "nearly-1-billion-in-crypto-bets-liquidated-as-bi-0b75e33e",
+      "title": "Nearly $1 billion in crypto bets liquidated as bitcoin, ether and XRP slide",
+      "url": "https://www.coindesk.com/markets/2026/10/15/nearly-usd1-billion-in-crypto-bets-liquidated-as-bitcoin-ether-and-xrp-slide",
       "source": "CoinDesk",
-      "published_at": "2026-10-14T05:24:12Z",
+      "published_at": "2026-10-15T04:25:15Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "how-far-crypto-has-come-and-what-comes-next-1d70d281",
+      "title": "How far crypto has come, and what comes next",
+      "url": "https://a16zcrypto.substack.com/p/the-hard-work-of-making-change-happen",
+      "source": "a16z crypto",
+      "published_at": "2026-10-14T18:14:36Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "north-america-inside-the-growth-of-agentic-comme-db020d45",
+      "title": "North America: Inside the Growth of Agentic Commerce",
+      "url": "https://www.chainalysis.com/blog/north-america-crypto-adoption-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-14T12:48:32Z",
+      "category": "outlook",
+      "sentiment": "bullish"
     },
     {
       "id": "chainalysis-reactor-withstands-daubert-scrutiny--04eb2c05",
@@ -53,24 +71,6 @@
       "url": "https://www.chainalysis.com/blog/chainalysis-daubert-standard-appeal/",
       "source": "Chainalysis",
       "published_at": "2026-10-13T15:57:50Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "fed-odds-defi-yields-and-ethereum-s-glamsterdam--aeb3bcbe",
-      "title": "Fed Odds, DeFi Yields, and Ethereum’s Glamsterdam Upgrade",
-      "url": "https://coinmetrics.substack.com/p/fed-odds-defi-yields-and-ethereums",
-      "source": "Coin Metrics",
-      "published_at": "2026-10-13T13:09:21Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "how-close-is-ai-to-breaking-cryptography-0400d1de",
-      "title": "How close is AI to breaking cryptography?",
-      "url": "https://a16zcrypto.substack.com/p/can-ai-really-break-cryptography",
-      "source": "a16z crypto",
-      "published_at": "2026-10-10T15:39:40Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
