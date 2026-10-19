@@ -669,6 +669,32 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
   .mkt-pos .num,.mkt-fills .num{text-align:left}
   .mkt-pos .cl,.mkt-fills .cl{display:inline;margin-right:6px;font-family:var(--font);font-weight:400;color:var(--muted)}
 }
+/* Gekoppelde selectie: klik/Enter/Spatie op een rij of tegel selecteert dat symbool in dit tabblad */
+:root{--sel-bg:rgba(84,142,240,.14);--sel-edge:#6f9ff0}
+[data-sym]{cursor:pointer}
+li[data-sym]{padding-left:8px;padding-right:8px;border-radius:4px}
+@media (max-width:640px){.waterfall.mkt-pos li[data-sym],.waterfall.mkt-fills li[data-sym]{padding:10px 8px}}
+[data-sym]:focus{outline:none}
+[data-sym]:focus-visible{outline:2px solid var(--sel-edge);outline-offset:-2px;border-radius:4px}
+li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-edge)}
+.why{grid-column:1/-1;margin:2px 0 0;font:400 11px/1.4 var(--font);color:var(--muted);overflow-wrap:anywhere}
+/* Heatmap: vaste hoogte (geen CLS), tegelgrootte naar value_eur, kleur naar pnl_pct */
+.heat{display:flex;gap:3px;height:64px;margin:6px 0 12px;overflow:hidden}
+.heat-t{flex:1 1 0;min-width:52px;border-radius:4px;background:var(--surf2);color:var(--tx);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:4px 8px;font-family:var(--mono);overflow:hidden;border:1px solid transparent}
+.heat-t .hs{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.heat-t .hp{font-size:11px;color:var(--text-secondary);font-variant-numeric:tabular-nums;white-space:nowrap}
+.heat-t.is-sel{border-color:var(--sel-edge);box-shadow:inset 0 0 0 1px var(--sel-edge)}
+@media (max-width:640px){
+  .heat{display:grid;grid-template-columns:repeat(var(--hc,3),minmax(0,1fr));grid-auto-rows:1fr;height:var(--hh,96px)}
+  .heat-t{min-width:0;padding:4px 6px}
+}
+/* Koersgrafiek per symbool: alleen als price_series voor het gekozen symbool bestaat */
+.sel-chart{margin:4px 0 12px}
+.sel-chart[hidden]{display:none}
+.sel-chart h4{margin:0 0 4px;font:600 12px/1.4 var(--font);color:var(--text-secondary)}
+.sel-chart svg{display:block;width:100%;height:150px}
+.sel-chart .lg{margin:4px 0 0;font-size:11px;color:var(--muted)}
+.sel-chart .lg .b{color:var(--up)}.sel-chart .lg .s{color:var(--dn)}
 /* Seizoen 1 (afgesloten): rustige kaart, thema-tokens, altijd open */
 .season-prev{max-width:var(--max);margin:36px auto 0;padding:0 var(--padr) 0 var(--pad);scroll-margin-top:16px}
 .s1-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surf);padding:18px 20px}
@@ -919,6 +945,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     <div class="panel">
       <h2 id="pos-title">Open posities</h2>
       <p class="sub" id="pos-sub">Paper — geen echte orders</p>
+      <div class="heat" id="pos-heat" role="group" aria-label="Heatmap open posities" hidden></div>
       <ul class="waterfall pos-list" id="pos-list"></ul>
     </div>
   </section>
@@ -1154,6 +1181,8 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       <section class="mkt-block mkt-posblock" hidden><div class="panel">
         <h3 class="mkt-bh">Open posities</h3>
         <p class="sub mkt-pos-sub"></p>
+        <div class="heat mkt-heat" role="group" aria-label="Heatmap open posities" hidden></div>
+        <div class="sel-chart mkt-chart" hidden><h4 class="sel-chart-h"></h4><svg viewBox="0 0 640 150" preserveAspectRatio="none" role="img"></svg><p class="lg"></p></div>
         <ul class="waterfall pos-list mkt-pos"></ul>
         <p class="mkt-cash" hidden></p>
       </div></section>
@@ -1378,6 +1407,46 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     seenKeys = cur;
   }
 
+  /* —— Gekoppelde selectie + heatmap (gedeeld door alle tabbladen) —— */
+  var SEL_SYM_RE = /^(?=.{1,15}$)[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*$/;
+  var selState = { tab: null, sym: null, pending: null };
+  function selRow(el, sym) {
+    sym = typeof sym === "string" ? sym.trim().toUpperCase() : "";
+    if (!SEL_SYM_RE.test(sym)) return;
+    el.setAttribute("data-sym", sym); el.tabIndex = 0; el.setAttribute("role", "button");
+    el.setAttribute("aria-pressed", "false");
+  }
+  function selScope(tab) {
+    if (tab === "crypto") return Array.prototype.filter.call(document.querySelectorAll("[data-sym]"), function (e) { return !e.closest(".mkt-panel"); });
+    var p = document.getElementById("panel-" + tab);
+    return p ? Array.prototype.slice.call(p.querySelectorAll("[data-sym]")) : [];
+  }
+  function heatTint(pct) {
+    if (pct == null || Math.abs(pct) < 0.25) return null;
+    var a = Math.min(0.42, 0.14 + Math.abs(pct) / 5 * 0.28);
+    return pct > 0 ? "rgba(120,214,160," + a.toFixed(2) + ")" : "rgba(255,146,156," + a.toFixed(2) + ")";
+  }
+  function renderHeat(host, tiles) {
+    if (!host) return;
+    while (host.firstChild) host.removeChild(host.firstChild);
+    tiles = (tiles || []).filter(function (t) { return t && t.sym && t.value != null && t.value > 0; });
+    host.hidden = tiles.length < 2;
+    if (host.hidden) return;
+    tiles.sort(function (a, b) { return b.value - a.value; });
+    var cols = tiles.length <= 4 ? 2 : 3, rows = Math.ceil(tiles.length / cols);
+    host.style.setProperty("--hc", cols);
+    host.style.setProperty("--hh", (rows * 46 + (rows - 1) * 3) + "px");
+    tiles.forEach(function (t) {
+      var d = document.createElement("div");
+      d.className = "heat-t"; d.style.flexGrow = String(Math.max(1, Math.round(t.value)));
+      var bg = heatTint(t.pct); if (bg) d.style.background = bg;
+      var a = document.createElement("span"); a.className = "hs"; a.textContent = t.sym; d.appendChild(a);
+      var b = document.createElement("span"); b.className = "hp"; b.textContent = t.pct == null ? "—" : fmtPct(t.pct); d.appendChild(b);
+      d.title = t.sym + (t.pct == null ? "" : " " + fmtPct(t.pct));
+      selRow(d, t.sym);
+      host.appendChild(d);
+    });
+  }
   function renderTape(tape, limit) {
     var ul = document.getElementById("tape-list");
     if (!ul) return;
@@ -1406,8 +1475,10 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       li.appendChild(mk("span", "sym", row.symbol || "—"));
       li.appendChild(mk("span", amtClass, amt));
       if (newKeys[rowKey(row)]) li.className = "is-new";
+      selRow(li, row.symbol);
       ul.appendChild(li);
     });
+    reapplySel("crypto");
   }
 
   function renderWaterfall(tape) {
@@ -1429,6 +1500,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       li.appendChild(result);
       li.title = row.reason || row.note || "";
       if (newKeys[rowKey(row)]) li.className = "is-new";
+      selRow(li, row.symbol);
       ul.appendChild(li);
     });
   }
@@ -1464,6 +1536,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     var rows = Array.isArray(list) ? list.filter(function (p) { return p && p.symbol; }) : [];
     var sub = document.getElementById("pos-sub");
     if (!rows.length) {
+      renderHeat(document.getElementById("pos-heat"), []);
       ul.appendChild(mk("li", "row-empty", countHint ? "Open posities zonder details in deze snapshot." : "Geen open paper-posities in deze snapshot."));
       if (sub) sub.textContent = "Paper — geen echte orders";
       seenPos = {};
@@ -1498,9 +1571,17 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       }
       li.appendChild(last);
       if (seenPos && !seenPos[k]) li.className = "is-new";
+      selRow(li, p.symbol);
       ul.appendChild(li);
     });
     seenPos = cur;
+    /* Heatmap crypto alleen als de data open posities met waarde heeft */
+    renderHeat(document.getElementById("pos-heat"), rows.map(function (p) {
+      var c = numOrNull(p.cost_eur), u = numOrNull(p.unrealized_pnl_eur), v = numOrNull(p.value_eur);
+      var pct = numOrNull(p.pnl_pct); if (pct == null && u != null && c > 0) pct = u / c * 100;
+      return { sym: String(p.symbol).toUpperCase(), value: v != null ? v : (c != null ? c + (u || 0) : null), pct: pct };
+    }));
+    reapplySel("crypto");
   }
 
   /* Headline rendement = equity.json rendement_pct as given (never recomputed).
@@ -2463,7 +2544,10 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       /* velden binnen één positie / één fill */
       pSymbol: ["symbol"], pName: ["name"], pEntryTs: ["entry_ts", "opened_at"], pEntryPx: ["entry_px", "entry_price"],
       pLastPx: ["last_px", "current_price"], pValue: ["value_eur"], pPnl: ["pnl_eur", "unrealized_pnl_eur"], pPnlPct: ["pnl_pct"], pUnits: ["units", "qty"], pPxSource: ["last_px_source"],
-      fSymbol: ["symbol"], fName: ["name"], fSide: ["side"], fTs: ["ts", "time"], fPx: ["px", "price"], fNotional: ["notional_eur", "amount_eur"], fCost: ["cost_eur", "fee_eur"], fStatus: ["status"]
+      fSymbol: ["symbol"], fName: ["name"], fSide: ["side"], fTs: ["ts", "time"], fPx: ["px", "price"], fNotional: ["notional_eur", "amount_eur"], fCost: ["cost_eur", "fee_eur"], fStatus: ["status"],
+      reason: ["reason_nl"],                                            /* 'Waarom gekocht/verkocht' per positie of fill (max 120 tekens) */
+      series: ["price_series"],                                        /* optioneel: markets[x].price_series[SYMBOOL] = [{t, px}] */
+      sT: ["t", "ts"], sPx: ["px", "price"]
     },
     smallResultPct: 0.5   /* |resultaat| < 0,5% van start → resultaat klein en grijs, groot getal = totale paperwaarde */
   };
@@ -2493,27 +2577,45 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     var nm = cleanName(mfr(o, nk));
     return { sym: sym, text: nm && nm.toUpperCase() !== sym ? nm + " (" + sym + ")" : sym };
   }
+  function reasonNl(o) {
+    var r = mfr(o, "reason");
+    if (typeof r !== "string") return null;
+    r = r.replace(/\s+/g, " ").trim();
+    if (!r) return null;
+    return r.length > 120 ? r.slice(0, 119).replace(/\s+$/, "") + "…" : r;
+  }
+  function marketSeries(obj) {
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) return null;
+    var out = {}, n = 0;
+    Object.keys(obj).forEach(function (k) {
+      var sym = String(k).trim().toUpperCase(); if (!SYM_RE.test(sym) || !Array.isArray(obj[k])) return;
+      var pts = obj[k].map(function (p) { var t = parseTs(mfr(p, "sT")), px = numOrNull(mfr(p, "sPx")); return t && px != null && px > 0 ? { t: t.getTime(), px: px } : null; })
+        .filter(Boolean).sort(function (a, b) { return a.t - b.t; });
+      if (pts.length >= 2) { out[sym] = pts; n++; }
+    });
+    return n ? out : null;
+  }
   function marketPositions(arr) {
     if (!Array.isArray(arr)) return null; /* veld ontbreekt → blok verborgen */
     return arr.map(function (p) {
       var ns = nameSym(p, "pName", "pSymbol"); if (!ns) return null;
       return { ns: ns, at: parseTs(mfr(p, "pEntryTs")), entry: numOrNull(mfr(p, "pEntryPx")), last: numOrNull(mfr(p, "pLastPx")),
-        value: numOrNull(mfr(p, "pValue")), pnl: numOrNull(mfr(p, "pPnl")), pct: numOrNull(mfr(p, "pPnlPct")), units: numOrNull(mfr(p, "pUnits")) };
+        value: numOrNull(mfr(p, "pValue")), pnl: numOrNull(mfr(p, "pPnl")), pct: numOrNull(mfr(p, "pPnlPct")), units: numOrNull(mfr(p, "pUnits")), reason: reasonNl(p) };
     }).filter(Boolean);
   }
   function sideNl(v) {
     var k = typeof v === "string" ? v.trim().toLowerCase() : "";
     return k === "buy" || k === "b" || k === "koop" || k === "long" ? { t: "Koop", c: "buy" } : k === "sell" || k === "s" || k === "verkoop" ? { t: "Verkoop", c: "sell" } : null;
   }
-  function marketFills(arr) {
+  function marketFills(arr, all) {
     if (!Array.isArray(arr)) return null;
     return arr.map(function (f) {
       var ns = nameSym(f, "fName", "fSymbol"), sd = sideNl(mfr(f, "fSide")), at = parseTs(mfr(f, "fTs"));
       if (!ns || !sd || !at) return null;
       var st = mfr(f, "fStatus");
       return { ns: ns, side: sd, at: at, px: numOrNull(mfr(f, "fPx")), notional: numOrNull(mfr(f, "fNotional")), cost: numOrNull(mfr(f, "fCost")),
-        prelim: typeof st === "string" && st.trim().toLowerCase() === "voorlopig" };
-    }).filter(Boolean).sort(function (a, b) { return b.at.getTime() - a.at.getTime(); }).slice(0, 10);
+        prelim: typeof st === "string" && st.trim().toLowerCase() === "voorlopig", reason: reasonNl(f) };
+    }).filter(Boolean).sort(function (a, b) { return b.at.getTime() - a.at.getTime(); }).slice(0, all ? 500 : 10);
   }
   function dayTime(d) { var p = amsParts(d); return Number(p.day) + " " + MONTHS[Number(p.month) - 1] + " " + String(p.hour).padStart(2, "0") + ":" + String(p.minute).padStart(2, "0"); }
   function cell(cls, label, text, sign) {
@@ -2542,6 +2644,8 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
           var sg = p.pnl != null ? roundedSign(p.pnl) : p.pct != null ? (Math.round(p.pct * 10) === 0 ? 0 : p.pct < 0 ? -1 : 1) : 0;
           var pm = p.pnl == null && p.pct == null ? "—" : (p.pnl != null ? fmtEur(p.pnl, true) : "") + (p.pnl != null && p.pct != null ? " · " : "") + (p.pct != null ? fmtPct(p.pct) : "");
           li.appendChild(cell("num", "Plus/min", pm, sg));
+          if (p.reason) li.appendChild(mk("span", "why", "Waarom gekocht: " + p.reason));
+          selRow(li, p.ns.sym);
           pl.appendChild(li);
         });
         ui.posSub.textContent = fmtInt(m.positions.length) + " open · papier — geen echte orders";
@@ -2570,11 +2674,15 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
           li.appendChild(cell("num", "Prijs", fmtPrice(f.px)));
           li.appendChild(cell("num", "Bedrag", fmtEur(f.notional)));
           li.appendChild(cell("num", "Kosten", fmtEur(f.cost)));
+          if (f.reason) li.appendChild(mk("span", "why", (f.side.c === "sell" ? "Waarom verkocht: " : "Waarom gekocht: ") + f.reason));
+          selRow(li, f.ns.sym);
           fl.appendChild(li);
         });
       }
       fb.hidden = !(m.fills && m.fills.length);
     }
+    renderHeat(ui.heat, (m.positions || []).map(function (p) { return { sym: p.ns.sym, value: p.value, pct: p.pct }; }));
+    reapplySel(m.id);
   }
   function marketModel(root, def) {
     var r = marketRaw(root, def);
@@ -2602,7 +2710,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     if (noTrades) nT = 0;
     var w = winSet(best, "this", nW, wl, sAt ? sAt.getTime() : null);
     var lbl = cleanLabel(mf(r, "label"));
-    var pos = marketPositions(mf(r, "positions")), fills = marketFills(mf(r, "fills"));
+    var pos = marketPositions(mf(r, "positions")), fills = marketFills(mf(r, "fills")), allFills = marketFills(mf(r, "fills"), true), series = marketSeries(mf(r, "series"));
     /* Statusregel naast het grote getal: nooit een kale '0 trades' */
     var status = null;
     if (nT > 0) status = { n: nT, text: (nT === 1 ? " afgesloten trade" : " afgesloten trades") + (pos ? " · " + fmtInt(pos.length) + (pos.length === 1 ? " positie open" : " posities open") : "") + " · papier" };
@@ -2616,7 +2724,7 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       big = total; bigLabel = "Totale paperwaarde · papier"; totalLine = null;
     }
     return { id: def.id, label: def.label, sub: lbl && lbl !== def.label ? lbl : null, updated: up.toISOString(),
-      result: big, resultLabel: bigLabel, bigIsTotal: !!small, small: small, positions: pos, fills: fills, cash: (function (c) { return c != null && c >= 0 ? c : null; })(numOrNull(mf(r, "cash"))),
+      result: big, resultLabel: bigLabel, bigIsTotal: !!small, small: small, positions: pos, fills: fills, allFills: allFills, series: series, cash: (function (c) { return c != null && c >= 0 ? c : null; })(numOrNull(mf(r, "cash"))),
       trades: status,
       total: totalLine,
       wins: noTrades ? { state: "none" } : winsModel(w, nW, wl, Array.isArray(best) && !w ? "Nog geen afgesloten winsttrades deze week." : null) };
@@ -2635,7 +2743,8 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     anchor.parentNode.insertBefore(el, anchor.nextSibling);
     var ui = { panel: el, eyebrow: q(".mkt-eyebrow"), title: q(".mkt-h"), result: q(".mkt-result"), label: q(".mkt-label"), trades: q(".mkt-trades"), total: q(".mkt-total"),
       winsSec: wins, winsTitle: q(".wins-h"), winsCtx: q(".wins-ctx"), winsWk: q(".wins-wk"), winsList: q(".wins-list"), winsEmpty: q(".wins-empty"), winsSig: null,
-      small: q(".mkt-small"), posBlock: q(".mkt-posblock"), posList: q(".mkt-pos"), posSub: q(".mkt-pos-sub"), fillBlock: q(".mkt-fillblock"), fillList: q(".mkt-fills"), fillTitle: q(".mkt-fill-h"), cash: q(".mkt-cash") };
+      small: q(".mkt-small"), posBlock: q(".mkt-posblock"), posList: q(".mkt-pos"), posSub: q(".mkt-pos-sub"), fillBlock: q(".mkt-fillblock"), fillList: q(".mkt-fills"), fillTitle: q(".mkt-fill-h"), cash: q(".mkt-cash"),
+      heat: q(".mkt-heat"), chart: q(".mkt-chart") };
     mktState.ui[def.id] = ui;
     return ui;
   }
@@ -2673,15 +2782,86 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
     }
     bar.hidden = false;
     var want = mktState.active;
-    if (!mktState.hashRead) { mktState.hashRead = true; var h = hashMarket(); if (h) want = h; }
+    if (!mktState.hashRead) { mktState.hashRead = true; var h = hashMarket(); if (h) { want = h; var hs = hashSym(); if (hs) selState.pending = { tab: h, sym: hs }; } }
     selectMarket(avail.some(function (d) { return d.id === want; }) ? want : "crypto", false, false);
+    reapplySel(mktState.active);
+  }
+  function hashSym() {
+    var parts = (location.hash || "").replace(/^#/, "").split("/");
+    if (parts.length !== 2) return null;
+    var s0 = decodeURIComponent(parts[1] || "").trim().toUpperCase();
+    return SEL_SYM_RE.test(s0) ? s0 : null;
+  }
+  function writeSelHash() {
+    var d = marketDef(mktState.active) || marketDef("crypto");
+    try { history.replaceState(null, "", "#" + d.hash + (selState.sym ? "/" + selState.sym : "")); } catch (e) {}
+  }
+  function paintSel(tab) {
+    selScope(tab).forEach(function (e) {
+      var on = selState.tab === tab && e.getAttribute("data-sym") === selState.sym;
+      e.classList.toggle("is-sel", on); e.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var ui = mktState.ui[tab], m = mktState.models[tab];
+    if (ui && ui.chart) drawSelChart(ui.chart, m, selState.tab === tab ? selState.sym : null);
+  }
+  function clearSel(writeHash) {
+    var t = selState.tab; selState.tab = null; selState.sym = null;
+    if (t) paintSel(t);
+    if (writeHash) writeSelHash();
+  }
+  function setSel(tab, sym, writeHash) {
+    if (selState.tab && selState.tab !== tab) clearSel(false);
+    selState.tab = tab; selState.sym = sym;
+    paintSel(tab);
+    if (writeHash) writeSelHash();
+  }
+  function reapplySel(tab) {
+    if (typeof mktState === "undefined" || !mktState) return;
+    var p = selState.pending;
+    if (p && p.tab === tab && tab === mktState.active && selScope(tab).some(function (e) { return e.getAttribute("data-sym") === p.sym; })) {
+      selState.pending = null; setSel(tab, p.sym, false); return;
+    }
+    if (selState.tab === tab) paintSel(tab);
+  }
+  function svgEl(n, a) { var e = document.createElementNS("http://www.w3.org/2000/svg", n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function drawSelChart(box, m, sym) {
+    var pts = sym && m && m.series ? m.series[sym] : null;
+    var svg = box.querySelector("svg");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    if (!pts) { box.hidden = true; return; } /* geen reeks → geen grafiek, alleen markering */
+    var W = 640, H = 150, P = 8;
+    var fills = (m.allFills || []).filter(function (f) { return f.ns.sym === sym && f.px != null; });
+    var t0 = pts[0].t, t1 = pts[pts.length - 1].t;
+    fills = fills.filter(function (f) { var t = f.at.getTime(); return t >= t0 && t <= t1; });
+    var lo = Infinity, hi = -Infinity;
+    pts.concat(fills.map(function (f) { return { px: f.px }; })).forEach(function (p) { lo = Math.min(lo, p.px); hi = Math.max(hi, p.px); });
+    if (hi === lo) { hi += 1; lo -= 1; }
+    var x = function (t) { return t1 === t0 ? W / 2 : P + (t - t0) / (t1 - t0) * (W - 2 * P); };
+    var y = function (v) { return P + (hi - v) / (hi - lo) * (H - 2 * P); };
+    svg.appendChild(svgEl("path", { d: pts.map(function (p, i) { return (i ? "L" : "M") + x(p.t).toFixed(1) + " " + y(p.px).toFixed(1); }).join(" "), fill: "none", stroke: "var(--sel-edge)", "stroke-width": "1.5", "vector-effect": "non-scaling-stroke" }));
+    var nb = 0, ns = 0;
+    fills.forEach(function (f) {
+      var cx = x(f.at.getTime()), cy = y(f.px), buy = f.side.c === "buy"; if (buy) nb++; else ns++;
+      var d = buy ? "M" + cx + " " + (cy - 6) + " L" + (cx - 5) + " " + (cy + 4) + " L" + (cx + 5) + " " + (cy + 4) + "Z"
+                  : "M" + cx + " " + (cy + 6) + " L" + (cx - 5) + " " + (cy - 4) + " L" + (cx + 5) + " " + (cy - 4) + "Z";
+      var mkr = svgEl("path", { d: d, fill: buy ? "var(--up)" : "var(--dn)" });
+      var tt = svgEl("title", {}); tt.textContent = f.side.t + " " + fmtPrice(f.px) + " · " + dayTime(f.at); mkr.appendChild(tt);
+      svg.appendChild(mkr);
+    });
+    svg.setAttribute("aria-label", "Koers " + sym + " met " + nb + " koop- en " + ns + " verkoopmarkeringen · papier");
+    box.querySelector(".sel-chart-h").textContent = "Koers " + sym + " · papier";
+    var lg = box.querySelector(".lg"); while (lg.firstChild) lg.removeChild(lg.firstChild);
+    lg.appendChild(mk("span", "b", "▲ koop")); lg.appendChild(document.createTextNode("  ")); lg.appendChild(mk("span", "s", "▼ verkoop"));
+    lg.appendChild(document.createTextNode(" · markeringen uit de echte fills"));
+    box.hidden = false;
   }
   function hashMarket() {
-    var h = (location.hash || "").replace(/^#/, "").toLowerCase();
+    var h = (location.hash || "").replace(/^#/, "").split("/")[0].toLowerCase();
     var d = MARKETS_CONFIG.markets.filter(function (x) { return x.hash === h; })[0];
     return d && (d.source === "legacy" || mktState.models[d.id]) ? d.id : null;
   }
   function selectMarket(id, focus, writeHash) {
+    if (selState.tab && selState.tab !== id) clearSel(false);
     mktState.active = id;
     var other = id !== "crypto";
     document.documentElement.classList.toggle("mkt-x", other);
@@ -2709,7 +2889,29 @@ html.mkt-x #wins,html.mkt-x main>.hero,html.mkt-x main>.kpi-strip,html.mkt-x #an
       ev.preventDefault();
       selectMarket(tabs[n].getAttribute("data-mkt"), true, true);
     });
-    window.addEventListener("hashchange", function () { var h = hashMarket(); if (h && !document.getElementById("mkt-tabs").hidden) selectMarket(h, false, false); });
+    window.addEventListener("hashchange", function () {
+      var h = hashMarket(); if (!h || document.getElementById("mkt-tabs").hidden) return;
+      selectMarket(h, false, false);
+      var hs = hashSym(); if (hs) { selState.pending = { tab: h, sym: hs }; reapplySel(h); } else clearSel(false);
+    });
+    /* Gekoppelde selectie: klik, Enter of Spatie; nogmaals of Esc = wissen */
+    function selTab(el) { var p = el.closest(".mkt-panel"); return p ? p.id.replace(/^panel-/, "") : "crypto"; }
+    function toggleSel(el) {
+      var tab = selTab(el), sym = el.getAttribute("data-sym");
+      if (tab !== mktState.active && tab !== "crypto") return;
+      if (selState.tab === tab && selState.sym === sym) clearSel(true); else setSel(tab, sym, true);
+    }
+    document.addEventListener("click", function (ev) {
+      var el = ev.target.closest && ev.target.closest("[data-sym]");
+      if (el) toggleSel(el);
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && selState.sym) { clearSel(true); return; }
+      if (ev.key !== "Enter" && ev.key !== " " && ev.key !== "Spacebar") return;
+      var el = ev.target && ev.target.getAttribute && ev.target.hasAttribute("data-sym") ? ev.target : null;
+      if (!el) return;
+      ev.preventDefault(); toggleSel(el);
+    });
     /* Interne links naar crypto-inhoud (bv. 'Analyse', 'Seizoen 1 bekijken') schakelen eerst terug naar Crypto */
     document.addEventListener("click", function (ev) {
       if (mktState.active === "crypto") return;
