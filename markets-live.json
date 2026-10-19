@@ -1,25 +1,18 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-16T21:31:10Z",
+ "updated": "2026-10-19T07:02:54Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-10-16T21:31:10Z",
+   "updated": "2026-10-19T07:01:24Z",
    "start_eur": 30000.0,
    "total_eur": 30444.62,
    "result_eur": 444.62,
    "n_trades": 1,
-   "n_trades_week": 1,
-   "best_trades_week": [
-    {
-     "symbol": "GLD",
-     "pnl_eur": -42.73,
-     "ts": "2026-10-14T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 42 (12–18 okt)",
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 43 (19–25 okt)",
    "cash_eur": 21623.93,
    "costs_eur": 13.9,
    "open_positions": [
@@ -113,14 +106,14 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-10-16T21:31:10Z",
+   "updated": "2026-10-19T07:01:24Z",
    "start_eur": 70000.0,
    "total_eur": 69026.17,
    "result_eur": -973.83,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "week 42 (12–18 okt)",
+   "week_label": "week 43 (19–25 okt)",
    "cash_eur": 28080.59,
    "costs_eur": 68.15,
    "open_positions": [
