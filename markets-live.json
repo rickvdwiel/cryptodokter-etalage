@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-19T10:30:21Z",
+ "updated": "2026-10-19T11:12:16Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -1564,8 +1564,8 @@
    "mode": "paper",
    "updated": "2026-10-19T08:15:46Z",
    "start_eur": 70000.0,
-   "total_eur": 69019.71,
-   "result_eur": -980.29,
+   "total_eur": 69024.56,
+   "result_eur": -975.44,
    "n_trades": 0,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -1591,12 +1591,12 @@
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.18,
-     "last_px": 113.96,
-     "last_px_source": "koers 12:12",
+     "last_px": 114.02,
+     "last_px_source": "koers 12:44",
      "units": 80.828782,
-     "value_eur": 9211.25,
-     "pnl_eur": 44.58,
-     "pnl_pct": 0.49,
+     "value_eur": 9216.1,
+     "pnl_eur": 49.43,
+     "pnl_pct": 0.54,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -3702,8 +3702,8 @@
       "px": 114.04
      },
      {
-      "t": "2026-10-19T10:12:00Z",
-      "px": 113.96
+      "t": "2026-10-19T10:44:00Z",
+      "px": 114.02
      }
     ],
     "MSFT": [
