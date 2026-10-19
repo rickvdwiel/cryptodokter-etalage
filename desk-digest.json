@@ -1,41 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-14T16:51:53+02:00",
-  "digest_date": "2026-10-14",
-  "measured_at": "2026-10-14T16:50:49+02:00",
-  "window_4h_utc": "10:50-14:50",
+  "updated_at": "2026-10-19T17:01:54+02:00",
+  "digest_date": "2026-10-19",
+  "measured_at": "2026-10-19T17:01:14+02:00",
+  "window_4h_utc": "11:01-15:01",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 0,262 over 4 uur; seizoen s2 −€14.880,35 / DD €16.037",
+  "headline": "Desk-digest: PF 0,253 over 4 uur (8 exits); seizoen s2 −€14.570,62 / DD €15.728 vanaf piek",
   "metrics_4h": {
-    "exits": 15,
-    "winrate_pct": 20.0,
-    "profit_factor": 0.262,
-    "expectancy_eur": -142.71,
-    "net_eur": -2140.67,
-    "fees_eur": 144.82,
-    "fees_per_hour_eur": 36.2
+    "exits": 8,
+    "winrate_pct": 12.5,
+    "profit_factor": 0.253,
+    "expectancy_eur": -107.69,
+    "net_eur": -861.5,
+    "fees_eur": 77.94,
+    "fees_per_hour_eur": 19.5
   },
   "metrics_8h": {
-    "exits": 23,
-    "winrate_pct": 26.1,
-    "profit_factor": 0.291,
-    "expectancy_eur": -140.69,
-    "net_eur": -3235.98
+    "exits": 14,
+    "winrate_pct": 21.4,
+    "profit_factor": 0.362,
+    "expectancy_eur": -84.73,
+    "net_eur": -1186.28
   },
   "metrics_season": {
-    "exits": 216,
-    "winrate_pct": 36.1,
-    "profit_factor": 0.629,
-    "net_eur": -14880.35,
-    "fees_eur": 2125.41,
+    "exits": 390,
+    "winrate_pct": 35.4,
+    "profit_factor": 0.779,
+    "net_eur": -14570.62,
+    "fees_eur": 3868.37,
     "start_eur": 100000.0,
-    "total_eur": 85119.65
+    "total_eur": 85429.38
   },
   "summary_nl": [
-    "Laatste 4 uur: 15 exits, winrate 20%, PF 0,262, netto −€2.140,67; fees ongeveer €36 per uur.",
-    "Stop-losses (12× −€2.901,83) wogen zwaarder dan take-profits (3× +€761,15); over 8 uur PF 0,291 en netto −€3.235,98."
+    "Laatste 4 uur: 8 exits, winrate 12,5%, PF 0,253, netto −€861,50; fees ongeveer €20 per uur.",
+    "Stop-losses (6× −€1.122,88) wogen zwaarder dan de ene take-profit (+€291,27); over 8 uur PF 0,362 en netto −€1.186,28."
   ]
 }
