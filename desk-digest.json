@@ -1,41 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-19T17:01:54+02:00",
-  "digest_date": "2026-10-19",
-  "measured_at": "2026-10-19T17:01:14+02:00",
-  "window_4h_utc": "11:01-15:01",
+  "updated_at": "2026-10-20T16:58:00+02:00",
+  "digest_date": "2026-10-20",
+  "measured_at": "2026-10-20T16:55:00+02:00",
+  "window_4h_utc": "10:55-14:55",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 0,253 over 4 uur (8 exits); seizoen s2 −€14.570,62 / DD €15.728 vanaf piek",
+  "headline": "Desk-digest: PF 1,089 over 4 uur (4 exits); seizoen s2 −€18.053,07 / DD €19.210 vanaf piek, waarvan ~€3.873 boekingsfout in maxhold-exits",
   "metrics_4h": {
-    "exits": 8,
-    "winrate_pct": 12.5,
-    "profit_factor": 0.253,
-    "expectancy_eur": -107.69,
-    "net_eur": -861.5,
-    "fees_eur": 77.94,
-    "fees_per_hour_eur": 19.5
+    "exits": 4,
+    "winrate_pct": 50.0,
+    "profit_factor": 1.089,
+    "expectancy_eur": 9.1,
+    "net_eur": 36.42,
+    "fees_eur": 40.14,
+    "fees_per_hour_eur": 10.0
   },
   "metrics_8h": {
-    "exits": 14,
-    "winrate_pct": 21.4,
-    "profit_factor": 0.362,
-    "expectancy_eur": -84.73,
-    "net_eur": -1186.28
+    "exits": 12,
+    "winrate_pct": 33.3,
+    "profit_factor": 0.272,
+    "expectancy_eur": -214.3,
+    "net_eur": -2571.59
   },
   "metrics_season": {
-    "exits": 390,
-    "winrate_pct": 35.4,
-    "profit_factor": 0.779,
-    "net_eur": -14570.62,
-    "fees_eur": 3868.37,
+    "exits": 454,
+    "winrate_pct": 37.0,
+    "profit_factor": 0.775,
+    "net_eur": -18053.07,
+    "fees_eur": 4500.44,
     "start_eur": 100000.0,
-    "total_eur": 85429.38
+    "total_eur": 81946.93
   },
   "summary_nl": [
-    "Laatste 4 uur: 8 exits, winrate 12,5%, PF 0,253, netto −€861,50; fees ongeveer €20 per uur.",
-    "Stop-losses (6× −€1.122,88) wogen zwaarder dan de ene take-profit (+€291,27); over 8 uur PF 0,362 en netto −€1.186,28."
+    "Laatste 4 uur: 4 exits, winrate 50%, PF 1,089, netto +€36,42; fees ongeveer €10 per uur. Twee take-profits (+€447,79) tegen twee stop-losses (−€411,37).",
+    "Over 8 uur: 12 exits, PF 0,272, netto −€2.571,59. Daarvan is −€1.977,09 één maxhold-exit (SI) die is geboekt tegen een basisprijs die ongeveer 86 keer lager ligt dan de koopprijs; gisteravond gebeurde hetzelfde bij OPPS (−€1.955,36). Zonder die twee boekingen: 8 uur PF 0,606, netto −€624."
   ]
 }
