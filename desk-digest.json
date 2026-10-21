@@ -1,41 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-20T16:58:00+02:00",
-  "digest_date": "2026-10-20",
-  "measured_at": "2026-10-20T16:55:00+02:00",
-  "window_4h_utc": "10:55-14:55",
+  "updated_at": "2026-10-21T17:00:00+02:00",
+  "digest_date": "2026-10-21",
+  "measured_at": "2026-10-21T16:57:00+02:00",
+  "window_4h_utc": "10:57-14:57",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 1,089 over 4 uur (4 exits); seizoen s2 −€18.053,07 / DD €19.210 vanaf piek, waarvan ~€3.873 boekingsfout in maxhold-exits",
+  "headline": "Desk-digest: PF 0,377 over 4 uur (8 exits); seizoen s2 −€24.975 / DD €26.137 vanaf piek, waarvan ~€6.700 boekingsfout in maxhold-exits (gisteravond opnieuw PUNCHDOG en MEMECOIN)",
   "metrics_4h": {
-    "exits": 4,
-    "winrate_pct": 50.0,
-    "profit_factor": 1.089,
-    "expectancy_eur": 9.1,
-    "net_eur": 36.42,
-    "fees_eur": 40.14,
-    "fees_per_hour_eur": 10.0
+    "exits": 8,
+    "winrate_pct": 25.0,
+    "profit_factor": 0.377,
+    "expectancy_eur": -101.15,
+    "net_eur": -809.2,
+    "fees_eur": 83.07,
+    "fees_per_hour_eur": 20.8
   },
   "metrics_8h": {
-    "exits": 12,
-    "winrate_pct": 33.3,
-    "profit_factor": 0.272,
-    "expectancy_eur": -214.3,
-    "net_eur": -2571.59
+    "exits": 13,
+    "winrate_pct": 38.5,
+    "profit_factor": 0.702,
+    "expectancy_eur": -37.95,
+    "net_eur": -493.29
   },
   "metrics_season": {
-    "exits": 454,
-    "winrate_pct": 37.0,
-    "profit_factor": 0.775,
-    "net_eur": -18053.07,
-    "fees_eur": 4500.44,
+    "exits": 507,
+    "winrate_pct": 36.7,
+    "profit_factor": 0.731,
+    "net_eur": -24975.32,
+    "fees_eur": 5018.76,
     "start_eur": 100000.0,
-    "total_eur": 81946.93
+    "total_eur": 75019.68
   },
   "summary_nl": [
-    "Laatste 4 uur: 4 exits, winrate 50%, PF 1,089, netto +€36,42; fees ongeveer €10 per uur. Twee take-profits (+€447,79) tegen twee stop-losses (−€411,37).",
-    "Over 8 uur: 12 exits, PF 0,272, netto −€2.571,59. Daarvan is −€1.977,09 één maxhold-exit (SI) die is geboekt tegen een basisprijs die ongeveer 86 keer lager ligt dan de koopprijs; gisteravond gebeurde hetzelfde bij OPPS (−€1.955,36). Zonder die twee boekingen: 8 uur PF 0,606, netto −€624."
+    "Laatste 4 uur: 8 exits, winrate 25%, PF 0,377, netto −€809,20; fees €83 (ongeveer €21 per uur). Vijf stop-losses (−€1.268,54) tegen twee take-profits (+€489,23) en één maxhold-exit (−€29,89, nu wel tegen de juiste basis).",
+    "Over 8 uur: 13 exits, PF 0,702, netto −€493,29. Over 24 uur: 53 exits, PF 0,464, netto −€6.922. Daarin zitten twee nieuwe foute maxhold-boekingen van gisteravond 21:14 UTC: PUNCHDOG (basis ~91x te laag, −€1.088) en MEMECOIN (basis ~6x te laag, −€1.681), plus een stop-loss van −68% op DACITY binnen 45 seconden."
   ]
 }
