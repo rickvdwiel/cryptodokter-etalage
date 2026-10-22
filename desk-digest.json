@@ -1,41 +1,38 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-21T17:00:00+02:00",
-  "digest_date": "2026-10-21",
-  "measured_at": "2026-10-21T16:57:00+02:00",
+  "updated_at": "2026-10-22T17:00:00+02:00",
+  "digest_date": "2026-10-22",
+  "measured_at": "2026-10-22T16:57:00+02:00",
   "window_4h_utc": "10:57-14:57",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 0,377 over 4 uur (8 exits); seizoen s2 −€24.975 / DD €26.137 vanaf piek",
+  "headline": "Desk-digest: PF 1,31 over 4 uur (12 exits, +€573); seizoen s2 −€33.600 / DD €34.757 vanaf piek",
   "metrics_4h": {
-    "exits": 8,
-    "winrate_pct": 25.0,
-    "profit_factor": 0.377,
-    "expectancy_eur": -101.15,
-    "net_eur": -809.2,
-    "fees_eur": 83.07,
-    "fees_per_hour_eur": 20.8
+    "exits": 12,
+    "winrate_pct": 33.3,
+    "profit_factor": 1.31,
+    "expectancy_eur": 47.71,
+    "net_eur": 572.52,
+    "fees_eur": 121.59,
+    "fees_per_hour_eur": 30.4
   },
   "metrics_8h": {
-    "exits": 13,
-    "winrate_pct": 38.5,
-    "profit_factor": 0.702,
-    "expectancy_eur": -37.95,
-    "net_eur": -493.29
+    "exits": 21,
+    "winrate_pct": 28.6,
+    "profit_factor": 0.89,
+    "expectancy_eur": -17.23,
+    "net_eur": -361.75
   },
   "metrics_season": {
-    "exits": 507,
-    "winrate_pct": 36.7,
-    "profit_factor": 0.731,
-    "net_eur": -24975.32,
-    "fees_eur": 5018.76,
+    "exits": 567,
+    "winrate_pct": 36.2,
+    "profit_factor": 0.691,
+    "net_eur": -33599.88,
+    "fees_eur": 5597.89,
     "start_eur": 100000.0,
-    "total_eur": 75019.68
+    "total_eur": 66400.12
   },
-  "summary_nl": [
-    "Laatste 4 uur: 8 exits, winrate 25%, PF 0,377, netto −€809,20; fees €83 (ongeveer €21 per uur). Vijf stop-losses (−€1.268,54) tegen twee take-profits (+€489,23) en één maxhold-exit (−€29,89, nu wel tegen de juiste basis).",
-    "Over 8 uur: 13 exits, PF 0,702, netto −€493,29. Over 24 uur: 53 exits, PF 0,464, netto −€6.922. Daarin zitten twee nieuwe foute maxhold-boekingen van gisteravond 21:14 UTC: PUNCHDOG (basis ~91x te laag, −€1.088) en MEMECOIN (basis ~6x te laag, −€1.681), plus een stop-loss van −68% op DACITY binnen 45 seconden."
-  ]
+  "summary_nl": []
 }
