@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-21T05:48:17Z",
+  "generated_at": "2026-10-22T05:45:04Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "ripple-brings-wall-street-into-24-7-stock-bets-b-d35e83f4",
-      "title": "Ripple brings Wall Street into 24/7 stock bets, but HSBC warns markets are still thin",
-      "url": "https://www.coindesk.com/markets/2026/10/21/ripple-brings-wall-street-into-24-7-stock-bets-but-hsbc-warns-markets-are-still-thin",
-      "source": "CoinDesk",
-      "published_at": "2026-10-21T05:25:57Z",
+      "id": "move-over-memecoins-crypto-meme-games-coming-bag-941c71d1",
+      "title": "Move over memecoins: Crypto ‘meme games’ coming, bagholders and all",
+      "url": "https://cointelegraph.com/news/move-over-memecoins-crypto-meme-games-coming-bagholders-and-all?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-22T05:35:38Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-koers-klimt-waar-goud-en-z-2aa02dd4",
-      "title": "Crypto wekker: Bitcoin-koers klimt waar goud en zilver dalen",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-omhoog-terwijl-goud-sputtert/",
+      "id": "solana-s-biggest-network-change-since-2020-is-li-6490ebb3",
+      "title": "Solana’s biggest network change since 2020 is live. Here’s how users benefit",
+      "url": "https://www.coindesk.com/tech/2026/10/22/solana-completes-alpenglow-upgrade-here-s-what-it-means-for-users",
+      "source": "CoinDesk",
+      "published_at": "2026-10-22T05:24:58Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-wekker-bitcoin-onder-druk-door-nieuwe-sti-d37f3f69",
+      "title": "Crypto wekker: Bitcoin onder druk door nieuwe stijging olieprijs",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-onder-druk-door-nieuwe-stijging-olieprijs/",
       "source": "Newsbit",
-      "published_at": "2026-10-21T05:15:16Z",
+      "published_at": "2026-10-22T05:15:12Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitwise-en-hyperliquid-eisen-duidelijkheid-over--678db0a6",
-      "title": "Bitwise en Hyperliquid eisen duidelijkheid over Amerikaanse cryptoregels",
-      "url": "https://nieuws.crypto.nl/altcoin-nieuws/bitwise-en-hyperliquid-eisen-duidelijkheid-over-amerikaanse-cryptoregels/",
-      "source": "Crypto-NL",
-      "published_at": "2026-10-21T05:00:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "solana-s-alpenglow-its-biggest-network-overhaul--9c72e299",
-      "title": "Solana’s Alpenglow, its biggest network overhaul since 2020, goes live Wednesday",
-      "url": "https://www.coindesk.com/tech/2026/10/21/solana-s-alpenglow-its-biggest-network-overhaul-since-2020-goes-live-wednesday",
+      "id": "bitcoin-etfs-attract-1-08-billion-in-3-days-but--2444d287",
+      "title": "Bitcoin ETFs attract $1.08 billion in 3 days but it may not be enough for a steep rally",
+      "url": "https://www.coindesk.com/markets/2026/10/22/bitcoin-etfs-attract-usd1-08-billion-in-3-days-but-it-may-not-be-enough-for-a-steep-rally",
       "source": "CoinDesk",
-      "published_at": "2026-10-21T04:35:52Z",
+      "published_at": "2026-10-22T04:41:59Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "compacte-bitcoin-blokfilters-de-wallet-zoekt-de--71804778",
-      "title": "Compacte Bitcoin-blokfilters: de wallet zoekt, de node levert",
-      "url": "https://cryptofocus.nl/nieuws/crypto/bitcoin-compacte-blokfilters-lokaal-zoeken-controle/",
-      "source": "CryptoFocus",
-      "published_at": "2026-10-21T04:00:05Z",
+      "id": "bitmine-houdt-bijna-5-procent-van-alle-ethereum--a8d37f8c",
+      "title": "Bitmine houdt bijna 5 procent van alle Ethereum vast met schatkist van 6,04 miljoen ETH",
+      "url": "https://bitcoinmagazine.nl/ethereum-nieuws/bitmine-ethereum-schatkis-6-04-miljoen-eth",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-10-22T04:10:40Z",
       "category": "news",
       "sentiment": null
     },
@@ -66,9 +66,9 @@
       "sentiment": "neutral"
     },
     {
-      "id": "money-for-machines-bf4e302c",
+      "id": "money-for-machines-f528bfbd",
       "title": "Money for machines",
-      "url": "https://a16zcrypto.substack.com/p/money-for-machines-circle-ceo-jeremy",
+      "url": "https://a16zfrontier.substack.com/p/money-for-machines-circle-ceo-jeremy",
       "source": "a16z crypto",
       "published_at": "2026-10-17T15:47:19Z",
       "category": "outlook",
