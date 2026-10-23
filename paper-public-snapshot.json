@@ -1,19 +1,53 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-23T17:20:10+00:00",
+  "updated": "2026-10-23T18:18:16+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 55690.26,
+    "cash_eur": 56205.89,
     "banked_eur": 8335.41,
-    "equity_approx": 57685.26,
-    "total": 66020.67,
-    "realized_pnl_eur": -33974.32,
-    "trades": 1429,
-    "open_positions": 1,
-    "rendement_pct": -34.0
+    "equity_approx": 56205.89,
+    "total": 64541.3,
+    "realized_pnl_eur": -35458.69,
+    "trades": 1434,
+    "open_positions": 0,
+    "rendement_pct": -35.5
   },
   "tape": [
+    {
+      "t": "2026-10-23T18:15:13+00:00",
+      "side": "SELL",
+      "symbol": "CI",
+      "bedrag_eur": 1812.5,
+      "prijs_eur": 0.0003982,
+      "pnl_eur": -187.5,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-23T18:14:28+00:00",
+      "side": "BUY",
+      "symbol": "CI",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0004371991,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T18:14:27+00:00",
+      "side": "SELL",
+      "symbol": "SHEKEL",
+      "bedrag_eur": 977.3,
+      "prijs_eur": 8.71842e-05,
+      "pnl_eur": -1022.7,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-23T17:28:50+00:00",
+      "side": "BUY",
+      "symbol": "SHEKEL",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001775278,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-23T17:28:49+00:00",
       "side": "SELL",
@@ -193,88 +227,9 @@
       "prijs_eur": 0.0006853,
       "pnl_eur": 457.68,
       "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-23T15:01:06+00:00",
-      "side": "PARTIAL",
-      "symbol": "MCSAUCE",
-      "bedrag_eur": 978.86,
-      "prijs_eur": 0.00052635,
-      "pnl_eur": 78.86,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-23T15:01:05+00:00",
-      "side": "PARTIAL",
-      "symbol": "MCSAUCE",
-      "bedrag_eur": 978.86,
-      "prijs_eur": 0.00052635,
-      "pnl_eur": 78.86,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-23T15:00:20+00:00",
-      "side": "BUY",
-      "symbol": "MCSAUCE",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0004815269,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T14:58:01+00:00",
-      "side": "SELL",
-      "symbol": "富途牛牛&币安",
-      "bedrag_eur": 2213.48,
-      "prijs_eur": 0.0001065167,
-      "pnl_eur": 213.48,
-      "reason": "winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-23T15:01:52+00:00",
-      "total": 66033.69
-    },
-    {
-      "t": "2026-10-23T15:01:53+00:00",
-      "total": 66028.69
-    },
-    {
-      "t": "2026-10-23T15:02:38+00:00",
-      "total": 66180.73
-    },
-    {
-      "t": "2026-10-23T15:02:38+00:00",
-      "total": 66180.73
-    },
-    {
-      "t": "2026-10-23T15:02:38+00:00",
-      "total": 66192.67
-    },
-    {
-      "t": "2026-10-23T15:03:23+00:00",
-      "total": 66088.41
-    },
-    {
-      "t": "2026-10-23T15:03:24+00:00",
-      "total": 66088.41
-    },
-    {
-      "t": "2026-10-23T15:04:09+00:00",
-      "total": 66088.41
-    },
-    {
-      "t": "2026-10-23T15:04:55+00:00",
-      "total": 66088.41
-    },
-    {
-      "t": "2026-10-23T15:05:40+00:00",
-      "total": 66088.41
-    },
-    {
-      "t": "2026-10-23T15:06:26+00:00",
-      "total": 66088.41
-    },
     {
       "t": "2026-10-23T15:07:11+00:00",
       "total": 66088.41
@@ -470,18 +425,54 @@
     {
       "t": "2026-10-23T17:28:49+00:00",
       "total": 65751.51
-    }
-  ],
-  "open_positions": [
+    },
     {
-      "symbol": "LOUD",
-      "opened_at": "2026-10-23T17:16:21+00:00",
-      "cost_eur": 2000.0,
-      "entry_price": 9.576296296296295e-05,
-      "qty": 20832688.737623766
+      "t": "2026-10-23T17:28:49+00:00",
+      "total": 65751.51
+    },
+    {
+      "t": "2026-10-23T17:28:50+00:00",
+      "total": 65746.51
+    },
+    {
+      "t": "2026-10-23T18:14:27+00:00",
+      "total": 64728.81
+    },
+    {
+      "t": "2026-10-23T18:14:27+00:00",
+      "total": 64728.81
+    },
+    {
+      "t": "2026-10-23T18:14:28+00:00",
+      "total": 64723.81
+    },
+    {
+      "t": "2026-10-23T18:15:13+00:00",
+      "total": 64541.31
+    },
+    {
+      "t": "2026-10-23T18:15:13+00:00",
+      "total": 64541.31
+    },
+    {
+      "t": "2026-10-23T18:15:59+00:00",
+      "total": 64541.31
+    },
+    {
+      "t": "2026-10-23T18:16:45+00:00",
+      "total": 64541.31
+    },
+    {
+      "t": "2026-10-23T18:17:30+00:00",
+      "total": 64541.31
+    },
+    {
+      "t": "2026-10-23T18:18:16+00:00",
+      "total": 64541.31
     }
   ],
-  "rendement_pct": -34.0,
+  "open_positions": [],
+  "rendement_pct": -35.5,
   "best_trades_week": [
     {
       "symbol": "LASTCALL",
@@ -514,8 +505,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 295,
-  "week_pnl_eur": -23692.52,
+  "n_trades_week": 297,
+  "week_pnl_eur": -24902.72,
   "week_label": "week 43 (19–25 okt)",
   "markets_live": true
 }
