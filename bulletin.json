@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-10-22T05:45:04Z",
+  "generated_at": "2026-10-23T05:42:24Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "move-over-memecoins-crypto-meme-games-coming-bag-941c71d1",
-      "title": "Move over memecoins: Crypto ‘meme games’ coming, bagholders and all",
-      "url": "https://cointelegraph.com/news/move-over-memecoins-crypto-meme-games-coming-bagholders-and-all?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-22T05:35:38Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "solana-s-biggest-network-change-since-2020-is-li-6490ebb3",
-      "title": "Solana’s biggest network change since 2020 is live. Here’s how users benefit",
-      "url": "https://www.coindesk.com/tech/2026/10/22/solana-completes-alpenglow-upgrade-here-s-what-it-means-for-users",
-      "source": "CoinDesk",
-      "published_at": "2026-10-22T05:24:58Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-bitcoin-onder-druk-door-nieuwe-sti-d37f3f69",
-      "title": "Crypto wekker: Bitcoin onder druk door nieuwe stijging olieprijs",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-onder-druk-door-nieuwe-stijging-olieprijs/",
+      "id": "crypto-wekker-bitcoin-onderuit-olie-en-obligatie-dd85a0a5",
+      "title": "Crypto wekker: Bitcoin onderuit, olie en obligaties zorgen voor angst",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-onderuit-olie-en-rentes-stijgen-opnieuw/",
       "source": "Newsbit",
-      "published_at": "2026-10-22T05:15:12Z",
+      "published_at": "2026-10-23T05:15:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-etfs-attract-1-08-billion-in-3-days-but--2444d287",
-      "title": "Bitcoin ETFs attract $1.08 billion in 3 days but it may not be enough for a steep rally",
-      "url": "https://www.coindesk.com/markets/2026/10/22/bitcoin-etfs-attract-usd1-08-billion-in-3-days-but-it-may-not-be-enough-for-a-steep-rally",
+      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-23T05:15:14Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "polymarket-has-reportedly-fired-its-marketing-ch-986056c3",
+      "title": "Polymarket has reportedly fired its marketing chief, also a close friend of the CEO",
+      "url": "https://www.coindesk.com/markets/2026/10/23/polymarket-has-reportedly-fired-its-marketing-chief-also-a-close-friend-of-the-ceo",
       "source": "CoinDesk",
-      "published_at": "2026-10-22T04:41:59Z",
+      "published_at": "2026-10-23T05:01:19Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitmine-houdt-bijna-5-procent-van-alle-ethereum--a8d37f8c",
-      "title": "Bitmine houdt bijna 5 procent van alle Ethereum vast met schatkist van 6,04 miljoen ETH",
-      "url": "https://bitcoinmagazine.nl/ethereum-nieuws/bitmine-ethereum-schatkis-6-04-miljoen-eth",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-10-22T04:10:40Z",
+      "id": "ethereum-delays-glamsterdam-test-after-security--e6fe37d2",
+      "title": "Ethereum delays Glamsterdam test after security devs flag risk to existing contracts",
+      "url": "https://www.coindesk.com/tech/2026/10/23/ethereum-delays-glamsterdam-test-after-security-devs-flag-risk-to-existing-contracts",
+      "source": "CoinDesk",
+      "published_at": "2026-10-23T04:59:34Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "bitcoin-core-changes-security-policy-as-ai-makes-3eacb059",
+      "title": "Bitcoin Core changes security policy as AI makes bugs easier to find",
+      "url": "https://cointelegraph.com/news/bitcoin-core-changes-security-policy-as-ai-makes-bugs-easier-to-find?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-23T04:34:14Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "macro-outlook-22-oktober-meer-investeringen-maar-b8790978",
+      "title": "Macro Outlook 22 oktober: meer investeringen, maar geen actuele groeimeter",
+      "url": "https://cryptofocus.nl/nieuws/crypto/macro-outlook-2026-10-22/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-22T14:04:26Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "what-drives-stablecoin-supply-growth-1ea37a48",
@@ -62,15 +71,6 @@
       "url": "https://bitcoinops.org/en/podcast/2026/10/20/",
       "source": "Bitcoin Optech",
       "published_at": "2026-10-20T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "money-for-machines-f528bfbd",
-      "title": "Money for machines",
-      "url": "https://a16zfrontier.substack.com/p/money-for-machines-circle-ceo-jeremy",
-      "source": "a16z crypto",
-      "published_at": "2026-10-17T15:47:19Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
