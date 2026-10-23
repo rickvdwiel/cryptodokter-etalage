@@ -1,19 +1,28 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-23T14:30:46+00:00",
+  "updated": "2026-10-23T14:31:31+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 55710.88,
+    "cash_eur": 57166.18,
     "banked_eur": 8117.48,
-    "equity_approx": 56808.13,
-    "total": 64925.61,
-    "realized_pnl_eur": -35071.64,
-    "trades": 1404,
-    "open_positions": 1,
-    "rendement_pct": -35.1
+    "equity_approx": 57166.18,
+    "total": 65283.66,
+    "realized_pnl_eur": -34716.33,
+    "trades": 1405,
+    "open_positions": 0,
+    "rendement_pct": -34.7
   },
   "tape": [
+    {
+      "t": "2026-10-23T14:31:31+00:00",
+      "side": "SELL",
+      "symbol": "BATCAT",
+      "bedrag_eur": 1455.31,
+      "prijs_eur": 5.10492e-05,
+      "pnl_eur": 355.31,
+      "reason": "winst genomen"
+    },
     {
       "t": "2026-10-23T14:30:45+00:00",
       "side": "PARTIAL",
@@ -219,25 +228,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.0001340694,
       "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T12:14:24+00:00",
-      "side": "BUY",
-      "symbol": "PMTD",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001633769,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-23T11:22:30+00:00",
-      "total": 65866.7
-    },
-    {
-      "t": "2026-10-23T11:23:15+00:00",
-      "total": 65866.7
-    },
     {
       "t": "2026-10-23T11:27:23+00:00",
       "total": 65866.7
@@ -469,18 +462,18 @@
     {
       "t": "2026-10-23T14:30:45+00:00",
       "total": 65006.2
-    }
-  ],
-  "open_positions": [
+    },
     {
-      "symbol": "BATCAT",
-      "opened_at": "2026-10-23T14:30:00+00:00",
-      "cost_eur": 1100.0,
-      "entry_price": 3.8393055555555554e-05,
-      "qty": 28579387.186629526
+      "t": "2026-10-23T14:31:31+00:00",
+      "total": 65283.67
+    },
+    {
+      "t": "2026-10-23T14:31:31+00:00",
+      "total": 65283.67
     }
   ],
-  "rendement_pct": -35.1,
+  "open_positions": [],
+  "rendement_pct": -34.7,
   "best_trades_week": [
     {
       "symbol": "LASTCALL",
@@ -513,8 +506,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 283,
-  "week_pnl_eur": -24646.2,
+  "n_trades_week": 284,
+  "week_pnl_eur": -24239.23,
   "week_label": "week 43 (19–25 okt)",
   "markets_live": true
 }
