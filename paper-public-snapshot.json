@@ -1,19 +1,28 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-23T12:15:11+00:00",
+  "updated": "2026-10-23T12:18:14+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 53554.71,
+    "cash_eur": 54826.24,
     "banked_eur": 7946.6,
-    "equity_approx": 56646.96,
-    "total": 64593.56,
-    "realized_pnl_eur": -35398.69,
-    "trades": 1384,
-    "open_positions": 2,
-    "rendement_pct": -35.4
+    "equity_approx": 56821.24,
+    "total": 64767.84,
+    "realized_pnl_eur": -35227.16,
+    "trades": 1385,
+    "open_positions": 1,
+    "rendement_pct": -35.2
   },
   "tape": [
+    {
+      "t": "2026-10-23T12:18:14+00:00",
+      "side": "SELL",
+      "symbol": "YUMI",
+      "bedrag_eur": 1271.53,
+      "prijs_eur": 8.9815e-05,
+      "pnl_eur": 171.53,
+      "reason": "winst genomen"
+    },
     {
       "t": "2026-10-23T12:15:11+00:00",
       "side": "PARTIAL",
@@ -218,38 +227,9 @@
       "prijs_eur": 9.36833e-05,
       "pnl_eur": -217.43,
       "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T08:23:58+00:00",
-      "side": "PARTIAL",
-      "symbol": "MICHIKO",
-      "bedrag_eur": 947.49,
-      "prijs_eur": 0.000122925,
-      "pnl_eur": 47.49,
-      "reason": "deels winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-23T08:26:16+00:00",
-      "total": 65224.56
-    },
-    {
-      "t": "2026-10-23T08:26:16+00:00",
-      "total": 65074.56
-    },
-    {
-      "t": "2026-10-23T08:26:16+00:00",
-      "total": 65074.56
-    },
-    {
-      "t": "2026-10-23T08:27:02+00:00",
-      "total": 65074.56
-    },
-    {
-      "t": "2026-10-23T08:27:48+00:00",
-      "total": 65074.56
-    },
     {
       "t": "2026-10-23T08:28:33+00:00",
       "total": 65074.56
@@ -469,6 +449,26 @@
     {
       "t": "2026-10-23T12:15:11+00:00",
       "total": 64599.03
+    },
+    {
+      "t": "2026-10-23T12:15:57+00:00",
+      "total": 64671.43
+    },
+    {
+      "t": "2026-10-23T12:16:42+00:00",
+      "total": 64669.98
+    },
+    {
+      "t": "2026-10-23T12:17:28+00:00",
+      "total": 64709.72
+    },
+    {
+      "t": "2026-10-23T12:18:14+00:00",
+      "total": 64767.91
+    },
+    {
+      "t": "2026-10-23T12:18:14+00:00",
+      "total": 64767.91
     }
   ],
   "open_positions": [
@@ -478,16 +478,9 @@
       "cost_eur": 2000.0,
       "entry_price": 0.00013406944444444442,
       "qty": 14880348.078317625
-    },
-    {
-      "symbol": "YUMI",
-      "opened_at": "2026-10-23T12:14:25+00:00",
-      "cost_eur": 1100.0,
-      "entry_price": 7.731111111111111e-05,
-      "qty": 14192655.935613682
     }
   ],
-  "rendement_pct": -35.4,
+  "rendement_pct": -35.2,
   "best_trades_week": [
     {
       "symbol": "LASTCALL",
@@ -520,8 +513,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 274,
-  "week_pnl_eur": -24961.47,
+  "n_trades_week": 275,
+  "week_pnl_eur": -24750.05,
   "week_label": "week 43 (19–25 okt)",
   "markets_live": true
 }
