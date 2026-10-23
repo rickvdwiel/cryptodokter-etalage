@@ -1,19 +1,139 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-23T12:18:14+00:00",
+  "updated": "2026-10-23T13:21:50+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 54826.24,
-    "banked_eur": 7946.6,
-    "equity_approx": 56821.24,
-    "total": 64767.84,
-    "realized_pnl_eur": -35227.16,
-    "trades": 1385,
-    "open_positions": 1,
-    "rendement_pct": -35.2
+    "cash_eur": 51289.73,
+    "banked_eur": 8010.18,
+    "equity_approx": 57274.73,
+    "total": 65284.91,
+    "realized_pnl_eur": -34700.09,
+    "trades": 1396,
+    "open_positions": 3,
+    "rendement_pct": -34.7
   },
   "tape": [
+    {
+      "t": "2026-10-23T13:30:41+00:00",
+      "side": "PARTIAL",
+      "symbol": "TC67",
+      "bedrag_eur": 955.64,
+      "prijs_eur": 0.0001463917,
+      "pnl_eur": 55.64,
+      "reason": "deels winst genomen"
+    },
+    {
+      "t": "2026-10-23T13:30:41+00:00",
+      "side": "SELL",
+      "symbol": "MCNUGGET",
+      "bedrag_eur": 1382.0,
+      "prijs_eur": 0.0007644083,
+      "pnl_eur": -618.0,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-23T13:30:41+00:00",
+      "side": "SELL",
+      "symbol": "PEPE6900",
+      "bedrag_eur": 2368.99,
+      "prijs_eur": 0.0002137667,
+      "pnl_eur": 368.99,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-23T13:21:50+00:00",
+      "side": "SELL",
+      "symbol": "ECAT",
+      "bedrag_eur": 1236.59,
+      "prijs_eur": 0.000154,
+      "pnl_eur": 136.59,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "side": "BUY",
+      "symbol": "TC67",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001371806,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "side": "PARTIAL",
+      "symbol": "ECAT",
+      "bedrag_eur": 963.58,
+      "prijs_eur": 0.0001466667,
+      "pnl_eur": 63.58,
+      "reason": "deels winst genomen"
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "side": "SELL",
+      "symbol": "ODIE",
+      "bedrag_eur": 2511.53,
+      "prijs_eur": 0.0007839333,
+      "pnl_eur": 511.53,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-23T13:20:18+00:00",
+      "side": "BUY",
+      "symbol": "ECAT",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001363056,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:20:18+00:00",
+      "side": "BUY",
+      "symbol": "ODIE",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.00062115,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:19:32+00:00",
+      "side": "BUY",
+      "symbol": "MCNUGGET",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.001100713,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:19:31+00:00",
+      "side": "SELL",
+      "symbol": "牛币",
+      "bedrag_eur": 1809.82,
+      "prijs_eur": 0.0004301,
+      "pnl_eur": -190.18,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-23T13:18:45+00:00",
+      "side": "BUY",
+      "symbol": "PEPE6900",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001795694,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:17:57+00:00",
+      "side": "BUY",
+      "symbol": "牛币",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0004729231,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-23T13:17:56+00:00",
+      "side": "SELL",
+      "symbol": "DRAGONS",
+      "bedrag_eur": 2005.56,
+      "prijs_eur": 0.0001351167,
+      "pnl_eur": 5.56,
+      "reason": "tijd-exit"
+    },
     {
       "t": "2026-10-23T12:18:14+00:00",
       "side": "SELL",
@@ -107,213 +227,9 @@
       "prijs_eur": 0.0001376833,
       "pnl_eur": 548.1,
       "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-23T10:23:26+00:00",
-      "side": "BUY",
-      "symbol": "DAZE",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001075278,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T10:21:05+00:00",
-      "side": "SELL",
-      "symbol": "CYBER",
-      "bedrag_eur": 1663.5,
-      "prijs_eur": 0.0001411667,
-      "pnl_eur": -336.5,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T10:20:20+00:00",
-      "side": "BUY",
-      "symbol": "CYBER",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.000168875,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T09:16:33+00:00",
-      "side": "SELL",
-      "symbol": "KIMCHI",
-      "bedrag_eur": 980.54,
-      "prijs_eur": 0.0001276,
-      "pnl_eur": -119.46,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "side": "PARTIAL",
-      "symbol": "KIMCHI",
-      "bedrag_eur": 927.9,
-      "prijs_eur": 0.0001475833,
-      "pnl_eur": 27.9,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "side": "SELL",
-      "symbol": "GAINZY",
-      "bedrag_eur": 1308.84,
-      "prijs_eur": 0.0001220083,
-      "pnl_eur": 208.84,
-      "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-23T09:15:01+00:00",
-      "side": "PARTIAL",
-      "symbol": "GAINZY",
-      "bedrag_eur": 978.34,
-      "prijs_eur": 0.0001114667,
-      "pnl_eur": 78.34,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-23T09:14:16+00:00",
-      "side": "BUY",
-      "symbol": "KIMCHI",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001424306,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T09:14:15+00:00",
-      "side": "BUY",
-      "symbol": "GAINZY",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001020287,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T08:26:16+00:00",
-      "side": "SELL",
-      "symbol": "GUST",
-      "bedrag_eur": 1845.0,
-      "prijs_eur": 0.0001188917,
-      "pnl_eur": -155.0,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T08:26:16+00:00",
-      "side": "SELL",
-      "symbol": "MEOWE",
-      "bedrag_eur": 1818.17,
-      "prijs_eur": 0.000190025,
-      "pnl_eur": -181.83,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T08:25:31+00:00",
-      "side": "BUY",
-      "symbol": "GUST",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001282361,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T08:25:30+00:00",
-      "side": "BUY",
-      "symbol": "MEOWE",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0002079852,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T08:25:29+00:00",
-      "side": "SELL",
-      "symbol": "MICHIKO",
-      "bedrag_eur": 882.57,
-      "prijs_eur": 9.36833e-05,
-      "pnl_eur": -217.43,
-      "reason": "stop-loss"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-23T08:28:33+00:00",
-      "total": 65074.56
-    },
-    {
-      "t": "2026-10-23T09:14:14+00:00",
-      "total": 65074.56
-    },
-    {
-      "t": "2026-10-23T09:14:15+00:00",
-      "total": 65069.56
-    },
-    {
-      "t": "2026-10-23T09:14:16+00:00",
-      "total": 65064.56
-    },
-    {
-      "t": "2026-10-23T09:15:01+00:00",
-      "total": 65246.65
-    },
-    {
-      "t": "2026-10-23T09:15:01+00:00",
-      "total": 65246.65
-    },
-    {
-      "t": "2026-10-23T09:15:01+00:00",
-      "total": 65250.66
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "total": 65348.64
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "total": 65426.59
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "total": 65426.59
-    },
-    {
-      "t": "2026-10-23T09:15:47+00:00",
-      "total": 65438.08
-    },
-    {
-      "t": "2026-10-23T09:16:33+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:16:33+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:17:18+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:18:04+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:18:49+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:19:35+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:20:20+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:21:06+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:21:51+00:00",
-      "total": 65270.19
-    },
-    {
-      "t": "2026-10-23T09:22:37+00:00",
-      "total": 65270.19
-    },
     {
       "t": "2026-10-23T09:23:22+00:00",
       "total": 65270.19
@@ -469,18 +385,116 @@
     {
       "t": "2026-10-23T12:18:14+00:00",
       "total": 64767.91
+    },
+    {
+      "t": "2026-10-23T12:27:01+00:00",
+      "total": 64708.66
+    },
+    {
+      "t": "2026-10-23T13:17:56+00:00",
+      "total": 64778.4
+    },
+    {
+      "t": "2026-10-23T13:17:56+00:00",
+      "total": 64778.4
+    },
+    {
+      "t": "2026-10-23T13:17:57+00:00",
+      "total": 64773.4
+    },
+    {
+      "t": "2026-10-23T13:18:44+00:00",
+      "total": 64707.94
+    },
+    {
+      "t": "2026-10-23T13:18:45+00:00",
+      "total": 64702.94
+    },
+    {
+      "t": "2026-10-23T13:19:31+00:00",
+      "total": 64583.21
+    },
+    {
+      "t": "2026-10-23T13:19:31+00:00",
+      "total": 64510.85
+    },
+    {
+      "t": "2026-10-23T13:19:32+00:00",
+      "total": 64505.85
+    },
+    {
+      "t": "2026-10-23T13:20:17+00:00",
+      "total": 64491.23
+    },
+    {
+      "t": "2026-10-23T13:20:18+00:00",
+      "total": 64486.23
+    },
+    {
+      "t": "2026-10-23T13:20:18+00:00",
+      "total": 64481.23
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "total": 65189.64
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "total": 65338.87
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "total": 65338.87
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "total": 65350.8
+    },
+    {
+      "t": "2026-10-23T13:21:04+00:00",
+      "total": 65345.8
+    },
+    {
+      "t": "2026-10-23T13:21:50+00:00",
+      "total": 65418.06
+    },
+    {
+      "t": "2026-10-23T13:21:50+00:00",
+      "total": 65345.95
+    },
+    {
+      "t": "2026-10-23T13:30:41+00:00",
+      "total": 65662.7
+    },
+    {
+      "t": "2026-10-23T13:30:41+00:00",
+      "total": 64973.79
     }
   ],
   "open_positions": [
     {
-      "symbol": "DRAGONS",
-      "opened_at": "2026-10-23T12:14:25+00:00",
+      "symbol": "TC67",
+      "opened_at": "2026-10-23T13:21:04+00:00",
       "cost_eur": 2000.0,
-      "entry_price": 0.00013406944444444442,
-      "qty": 14880348.078317625
+      "entry_price": 0.00013718055555555554,
+      "qty": 14542877.391920626
+    },
+    {
+      "symbol": "MCNUGGET",
+      "opened_at": "2026-10-23T13:19:32+00:00",
+      "cost_eur": 2000.0,
+      "entry_price": 0.0011007129629629628,
+      "qty": 1812461.6199937754
+    },
+    {
+      "symbol": "PEPE6900",
+      "opened_at": "2026-10-23T13:18:45+00:00",
+      "cost_eur": 2000.0,
+      "entry_price": 0.00017956944444444444,
+      "qty": 11109907.958852192
     }
   ],
-  "rendement_pct": -35.2,
+  "rendement_pct": -34.7,
   "best_trades_week": [
     {
       "symbol": "LASTCALL",
@@ -513,8 +527,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 275,
-  "week_pnl_eur": -24750.05,
+  "n_trades_week": 281,
+  "week_pnl_eur": -24471.99,
   "week_label": "week 43 (19–25 okt)",
   "markets_live": true
 }
