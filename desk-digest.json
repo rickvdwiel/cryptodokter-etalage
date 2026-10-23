@@ -1,38 +1,40 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-22T17:00:00+02:00",
-  "digest_date": "2026-10-22",
-  "measured_at": "2026-10-22T16:57:00+02:00",
-  "window_4h_utc": "10:57-14:57",
+  "updated_at": "2026-10-23T16:55:00+02:00",
+  "digest_date": "2026-10-23",
+  "measured_at": "2026-10-23T16:52:46+02:00",
+  "window_4h_utc": "10:52-14:52",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 1,31 over 4 uur (12 exits, +€573); seizoen s2 −€33.600 / DD €34.757 vanaf piek",
+  "headline": "Desk-digest: PF 0,93 over 4 uur (13 exits, −€198), gedrukt door één rug-exit op PUMP (−€1.892); seizoen s2 −€34.716 / DD €35.873 vanaf piek; week −€24.149",
   "metrics_4h": {
-    "exits": 12,
-    "winrate_pct": 33.3,
-    "profit_factor": 1.31,
-    "expectancy_eur": 47.71,
-    "net_eur": 572.52,
-    "fees_eur": 121.59,
-    "fees_per_hour_eur": 30.4
+    "exits": 13,
+    "winrate_pct": 69.2,
+    "profit_factor": 0.932,
+    "expectancy_eur": -15.24,
+    "net_eur": -198.12,
+    "fees_eur": 124.67,
+    "fees_per_hour_eur": 31.2
   },
   "metrics_8h": {
     "exits": 21,
-    "winrate_pct": 28.6,
-    "profit_factor": 0.89,
-    "expectancy_eur": -17.23,
-    "net_eur": -361.75
+    "winrate_pct": 52.4,
+    "profit_factor": 0.874,
+    "expectancy_eur": -24.44,
+    "net_eur": -513.18
   },
   "metrics_season": {
-    "exits": 567,
-    "winrate_pct": 36.2,
-    "profit_factor": 0.691,
-    "net_eur": -33599.88,
-    "fees_eur": 5597.89,
+    "exits": 626,
+    "winrate_pct": 37.4,
+    "profit_factor": 0.708,
+    "net_eur": -34716.33,
+    "fees_eur": 6180.83,
     "start_eur": 100000.0,
-    "total_eur": 66400.12
+    "total_eur": 65283.67
   },
-  "summary_nl": []
+  "summary_nl": [
+    "Sinds de seizoensstart (s2, €100.000): 626 exits, PF 0,708, netto −€34.716,33, fees €6.180,83; totaal nu €65.283,67. Drawdown vanaf de piek (€101.157) €35.873, diepste punt €37.198. Bot tikt (laatste tick 16:52 NL, laatste trade 16:31 NL), precies één web.server."
+  ]
 }
