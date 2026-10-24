@@ -1,58 +1,58 @@
 {
-  "generated_at": "2026-10-23T05:42:24Z",
+  "generated_at": "2026-10-24T05:47:03Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-onderuit-olie-en-obligatie-dd85a0a5",
-      "title": "Crypto wekker: Bitcoin onderuit, olie en obligaties zorgen voor angst",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-onderuit-olie-en-rentes-stijgen-opnieuw/",
-      "source": "Newsbit",
-      "published_at": "2026-10-23T05:15:33Z",
+      "id": "occ-rondt-regelgeving-genius-act-af-voor-payment-d9c9b3e0",
+      "title": "OCC rondt regelgeving GENIUS Act af voor payment stablecoins",
+      "url": "https://bitcoinmagazine.nl/stablecoins/occ-rondt-regelgeving-genius-act-af",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-10-24T05:06:11Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-23T05:15:14Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "polymarket-has-reportedly-fired-its-marketing-ch-986056c3",
-      "title": "Polymarket has reportedly fired its marketing chief, also a close friend of the CEO",
-      "url": "https://www.coindesk.com/markets/2026/10/23/polymarket-has-reportedly-fired-its-marketing-chief-also-a-close-friend-of-the-ceo",
+      "id": "franklin-templeton-adds-150-million-in-fund-shar-a2d9cd2d",
+      "title": "Franklin Templeton adds $150 million in fund shares to XRP Ledger, all in one wallet",
+      "url": "https://www.coindesk.com/markets/2026/10/24/franklin-templeton-adds-usd150-million-in-fund-shares-to-xrp-ledger-all-in-one-wallet",
       "source": "CoinDesk",
-      "published_at": "2026-10-23T05:01:19Z",
+      "published_at": "2026-10-24T04:45:43Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ethereum-delays-glamsterdam-test-after-security--e6fe37d2",
-      "title": "Ethereum delays Glamsterdam test after security devs flag risk to existing contracts",
-      "url": "https://www.coindesk.com/tech/2026/10/23/ethereum-delays-glamsterdam-test-after-security-devs-flag-risk-to-existing-contracts",
-      "source": "CoinDesk",
-      "published_at": "2026-10-23T04:59:34Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-core-changes-security-policy-as-ai-makes-3eacb059",
-      "title": "Bitcoin Core changes security policy as AI makes bugs easier to find",
-      "url": "https://cointelegraph.com/news/bitcoin-core-changes-security-policy-as-ai-makes-bugs-easier-to-find?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-23T04:34:14Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "macro-outlook-22-oktober-meer-investeringen-maar-b8790978",
-      "title": "Macro Outlook 22 oktober: meer investeringen, maar geen actuele groeimeter",
-      "url": "https://cryptofocus.nl/nieuws/crypto/macro-outlook-2026-10-22/",
+      "id": "a-crypto-limit-order-can-still-execute-as-a-take-ec43aa69",
+      "title": "A crypto limit order can still execute as a taker",
+      "url": "https://cryptofocus.nl/english/crypto-limit-order-maker-taker-post-only-partial-fill/",
       "source": "CryptoFocus",
-      "published_at": "2026-10-22T14:04:26Z",
+      "published_at": "2026-10-24T04:00:29Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "singapore-s-bloom-adds-malaysian-and-thai-centra-c831b5c5",
+      "title": "Singapore’s BLOOM Adds Malaysian and Thai Central Banks, but MAS Names No Token",
+      "url": "https://unchainedcrypto.com/singapores-bloom-adds-malaysian-and-thai-central-banks-but-mas-names-no-token/",
+      "source": "Unchained",
+      "published_at": "2026-10-24T03:35:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "judge-shuts-libra-case-against-javier-milei-ruli-ad18a7b9",
+      "title": "Judge Shuts LIBRA Case Against Javier Milei, Ruling the Memecoin Facts Fit No Crime",
+      "url": "https://unchainedcrypto.com/judge-shuts-libra-case-against-javier-milei-ruling-the-memecoin-facts-fit-no-crime/",
+      "source": "Unchained",
+      "published_at": "2026-10-24T03:05:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-optech-newsletter-428-806ff68d",
+      "title": "Bitcoin Optech Newsletter #428",
+      "url": "https://bitcoinops.org/en/newsletters/2026/10/23/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-10-23T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
@@ -63,7 +63,7 @@
       "source": "Coin Metrics",
       "published_at": "2026-10-20T13:03:46Z",
       "category": "outlook",
-      "sentiment": "bullish"
+      "sentiment": "neutral"
     },
     {
       "id": "bitcoin-optech-newsletter-427-recap-podcast-a8cdbd45",
