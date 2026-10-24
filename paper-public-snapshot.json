@@ -1,19 +1,79 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-24T00:15:02+00:00",
+  "updated": "2026-10-24T00:19:38+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 55502.91,
-    "banked_eur": 8457.82,
-    "equity_approx": 55502.91,
-    "total": 63960.73,
-    "realized_pnl_eur": -36039.28,
-    "trades": 1462,
-    "open_positions": 0,
-    "rendement_pct": -36.0
+    "cash_eur": 53990.18,
+    "banked_eur": 8514.26,
+    "equity_approx": 55087.43,
+    "total": 63601.69,
+    "realized_pnl_eur": -36395.55,
+    "trades": 1468,
+    "open_positions": 1,
+    "rendement_pct": -36.4
   },
   "tape": [
+    {
+      "t": "2026-10-24T00:25:28+00:00",
+      "side": "SELL",
+      "symbol": "IC",
+      "bedrag_eur": 1232.86,
+      "prijs_eur": 0.0004795083,
+      "pnl_eur": 132.86,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-24T00:19:38+00:00",
+      "side": "PARTIAL",
+      "symbol": "IC",
+      "bedrag_eur": 956.45,
+      "prijs_eur": 0.0004546667,
+      "pnl_eur": 56.45,
+      "reason": "deels winst genomen"
+    },
+    {
+      "t": "2026-10-24T00:17:21+00:00",
+      "side": "SELL",
+      "symbol": "KURIBO",
+      "bedrag_eur": 1763.99,
+      "prijs_eur": 0.000201575,
+      "pnl_eur": -236.01,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-24T00:16:35+00:00",
+      "side": "SELL",
+      "symbol": "REMUS",
+      "bedrag_eur": 1823.28,
+      "prijs_eur": 0.00017655,
+      "pnl_eur": -176.72,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-24T00:15:04+00:00",
+      "side": "BUY",
+      "symbol": "REMUS",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001926944,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-24T00:15:04+00:00",
+      "side": "BUY",
+      "symbol": "KURIBO",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0002274028,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-10-24T00:15:03+00:00",
+      "side": "BUY",
+      "symbol": "IC",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0004256963,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-23T23:15:39+00:00",
       "side": "SELL",
@@ -168,125 +228,9 @@
       "prijs_eur": 0.0001967167,
       "pnl_eur": 62.26,
       "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-23T20:17:47+00:00",
-      "side": "BUY",
-      "symbol": "KIMCHICITY",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001830694,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T20:17:47+00:00",
-      "side": "BUY",
-      "symbol": "FOCO",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0002052361,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "side": "SELL",
-      "symbol": "BENJAMIN",
-      "bedrag_eur": 2303.7,
-      "prijs_eur": 0.000148225,
-      "pnl_eur": 303.7,
-      "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "side": "SELL",
-      "symbol": "KILTR",
-      "bedrag_eur": 1810.65,
-      "prijs_eur": 0.0001087167,
-      "pnl_eur": -189.35,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "side": "SELL",
-      "symbol": "SQUADS",
-      "bedrag_eur": 1721.96,
-      "prijs_eur": 0.00018205,
-      "pnl_eur": -278.04,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "side": "SELL",
-      "symbol": "YMB",
-      "bedrag_eur": 1786.68,
-      "prijs_eur": 0.0011889167,
-      "pnl_eur": -213.32,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-23T19:17:32+00:00",
-      "side": "BUY",
-      "symbol": "BENJAMIN",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001280417,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:18:17+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:19:03+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:19:48+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:20:34+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:21:19+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T19:25:50+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:13:56+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:14:41+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:15:27+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:16:14+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:17:00+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:17:46+00:00",
-      "total": 64164.3
-    },
-    {
-      "t": "2026-10-23T20:17:47+00:00",
-      "total": 64159.3
-    },
     {
       "t": "2026-10-23T20:17:47+00:00",
       "total": 64154.3
@@ -470,10 +414,74 @@
     {
       "t": "2026-10-24T00:15:02+00:00",
       "total": 63960.72
+    },
+    {
+      "t": "2026-10-24T00:15:03+00:00",
+      "total": 63955.72
+    },
+    {
+      "t": "2026-10-24T00:15:04+00:00",
+      "total": 63950.72
+    },
+    {
+      "t": "2026-10-24T00:15:04+00:00",
+      "total": 63945.72
+    },
+    {
+      "t": "2026-10-24T00:15:49+00:00",
+      "total": 63772.88
+    },
+    {
+      "t": "2026-10-24T00:16:35+00:00",
+      "total": 63605.95
+    },
+    {
+      "t": "2026-10-24T00:16:35+00:00",
+      "total": 63605.95
+    },
+    {
+      "t": "2026-10-24T00:17:21+00:00",
+      "total": 63482.89
+    },
+    {
+      "t": "2026-10-24T00:17:21+00:00",
+      "total": 63482.89
+    },
+    {
+      "t": "2026-10-24T00:18:07+00:00",
+      "total": 63446.87
+    },
+    {
+      "t": "2026-10-24T00:18:52+00:00",
+      "total": 63477.68
+    },
+    {
+      "t": "2026-10-24T00:19:38+00:00",
+      "total": 63676.37
+    },
+    {
+      "t": "2026-10-24T00:19:38+00:00",
+      "total": 63676.37
+    },
+    {
+      "t": "2026-10-24T00:19:38+00:00",
+      "total": 63688.21
+    },
+    {
+      "t": "2026-10-24T00:25:28+00:00",
+      "total": 63737.31
     }
   ],
-  "open_positions": [],
-  "rendement_pct": -36.0,
+  "open_positions": [
+    {
+      "symbol": "IC",
+      "opened_at": "2026-10-24T00:15:03+00:00",
+      "cost_eur": 1100.0,
+      "entry_price": 0.00042569629629629624,
+      "qty": 2577541.805147123
+    }
+  ],
+  "rendement_pct": -36.4,
   "best_trades_week": [
     {
       "symbol": "LASTCALL",
@@ -506,8 +514,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 310,
-  "week_pnl_eur": -25483.31,
+  "n_trades_week": 313,
+  "week_pnl_eur": -25706.72,
   "week_label": "week 43 (19–25 okt)",
   "markets_live": true
 }
