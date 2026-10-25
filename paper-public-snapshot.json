@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-25T22:23:58+00:00",
+  "updated": "2026-10-25T23:16:25+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 39670.07,
+    "cash_eur": 39513.91,
     "banked_eur": 9095.13,
-    "equity_approx": 39670.07,
-    "total": 48765.2,
-    "realized_pnl_eur": -51234.79,
-    "trades": 1584,
+    "equity_approx": 39513.91,
+    "total": 48609.04,
+    "realized_pnl_eur": -51390.96,
+    "trades": 1586,
     "open_positions": 0,
-    "rendement_pct": -51.2
+    "rendement_pct": -51.4
   },
   "tape": [
+    {
+      "t": "2026-10-25T23:16:24+00:00",
+      "side": "SELL",
+      "symbol": "RUMP",
+      "bedrag_eur": 1843.84,
+      "prijs_eur": 0.0002057917,
+      "pnl_eur": -156.16,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-10-25T23:14:08+00:00",
+      "side": "BUY",
+      "symbol": "RUMP",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0002221065,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-25T22:23:12+00:00",
       "side": "SELL",
@@ -209,63 +226,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.0002473565,
       "reason": "instap"
-    },
-    {
-      "t": "2026-10-24T22:26:56+00:00",
-      "side": "SELL",
-      "symbol": "SWORDVLAD",
-      "bedrag_eur": 865.83,
-      "prijs_eur": 0.0001280583,
-      "pnl_eur": -234.17,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-10-24T22:25:25+00:00",
-      "side": "PARTIAL",
-      "symbol": "SWORDVLAD",
-      "bedrag_eur": 931.02,
-      "prijs_eur": 0.0001683,
-      "pnl_eur": 31.02,
-      "reason": "deels winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-25T16:20:26+00:00",
-      "total": 52182.49
-    },
-    {
-      "t": "2026-10-25T16:21:12+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:21:12+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:21:58+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:22:43+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:23:29+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:37:42+00:00",
-      "total": 52085.92
-    },
-    {
-      "t": "2026-10-25T16:37:43+00:00",
-      "total": 52080.92
-    },
-    {
-      "t": "2026-10-25T17:19:21+00:00",
-      "total": 51396.55
-    },
     {
       "t": "2026-10-25T17:19:21+00:00",
       "total": 51396.55
@@ -469,44 +432,49 @@
     {
       "t": "2026-10-25T22:23:58+00:00",
       "total": 48765.21
+    },
+    {
+      "t": "2026-10-25T22:24:43+00:00",
+      "total": 48765.21
+    },
+    {
+      "t": "2026-10-25T22:25:29+00:00",
+      "total": 48765.21
+    },
+    {
+      "t": "2026-10-25T22:31:03+00:00",
+      "total": 48765.21
+    },
+    {
+      "t": "2026-10-25T23:14:06+00:00",
+      "total": 48765.21
+    },
+    {
+      "t": "2026-10-25T23:14:08+00:00",
+      "total": 48760.21
+    },
+    {
+      "t": "2026-10-25T23:14:53+00:00",
+      "total": 48763.74
+    },
+    {
+      "t": "2026-10-25T23:15:39+00:00",
+      "total": 48696.37
+    },
+    {
+      "t": "2026-10-25T23:16:24+00:00",
+      "total": 48609.04
+    },
+    {
+      "t": "2026-10-25T23:16:25+00:00",
+      "total": 48609.04
     }
   ],
   "open_positions": [],
-  "rendement_pct": -51.2,
-  "best_trades_week": [
-    {
-      "symbol": "LASTCALL",
-      "pnl_eur": 1454.07,
-      "ts": "2026-10-22T13:18:28Z",
-      "exit_kind": "take-profit"
-    },
-    {
-      "symbol": "NA",
-      "pnl_eur": 1370.93,
-      "ts": "2026-10-19T21:14:03Z",
-      "exit_kind": "take-profit"
-    },
-    {
-      "symbol": "OA",
-      "pnl_eur": 1239.06,
-      "ts": "2026-10-22T03:14:47Z",
-      "exit_kind": "take-profit"
-    },
-    {
-      "symbol": "VIRTUAL",
-      "pnl_eur": 1058.32,
-      "ts": "2026-10-22T17:14:32Z",
-      "exit_kind": "take-profit"
-    },
-    {
-      "symbol": "GM",
-      "pnl_eur": 948.75,
-      "ts": "2026-10-20T01:19:34Z",
-      "exit_kind": "take-profit"
-    }
-  ],
-  "n_trades_week": 366,
-  "week_pnl_eur": -40678.82,
-  "week_label": "week 43 (19–25 okt)",
+  "rendement_pct": -51.4,
+  "best_trades_week": [],
+  "n_trades_week": 1,
+  "week_pnl_eur": -156.16,
+  "week_label": "week 44 (26 okt–1 nov)",
   "markets_live": true
 }
