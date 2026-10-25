@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-24T05:47:03Z",
+  "generated_at": "2026-10-25T06:42:00Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "occ-rondt-regelgeving-genius-act-af-voor-payment-d9c9b3e0",
-      "title": "OCC rondt regelgeving GENIUS Act af voor payment stablecoins",
-      "url": "https://bitcoinmagazine.nl/stablecoins/occ-rondt-regelgeving-genius-act-af",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-10-24T05:06:11Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "franklin-templeton-adds-150-million-in-fund-shar-a2d9cd2d",
-      "title": "Franklin Templeton adds $150 million in fund shares to XRP Ledger, all in one wallet",
-      "url": "https://www.coindesk.com/markets/2026/10/24/franklin-templeton-adds-usd150-million-in-fund-shares-to-xrp-ledger-all-in-one-wallet",
-      "source": "CoinDesk",
-      "published_at": "2026-10-24T04:45:43Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "a-crypto-limit-order-can-still-execute-as-a-take-ec43aa69",
-      "title": "A crypto limit order can still execute as a taker",
-      "url": "https://cryptofocus.nl/english/crypto-limit-order-maker-taker-post-only-partial-fill/",
+      "id": "ethereum-access-lists-charge-for-entries-before--9890240f",
+      "title": "Ethereum access lists charge for entries before they are used",
+      "url": "https://cryptofocus.nl/english/ethereum-access-list-upfront-gas-duplicate-entries/",
       "source": "CryptoFocus",
-      "published_at": "2026-10-24T04:00:29Z",
+      "published_at": "2026-10-24T22:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "singapore-s-bloom-adds-malaysian-and-thai-centra-c831b5c5",
-      "title": "Singapore’s BLOOM Adds Malaysian and Thai Central Banks, but MAS Names No Token",
-      "url": "https://unchainedcrypto.com/singapores-bloom-adds-malaysian-and-thai-central-banks-but-mas-names-no-token/",
-      "source": "Unchained",
-      "published_at": "2026-10-24T03:35:00Z",
+      "id": "cardano-oogst-succes-in-india-met-100-000-boerde-b14695f5",
+      "title": "Cardano oogst succes in India met 100.000 boerderijen op de blockchain",
+      "url": "https://newsbit.nl/cardano-oogst-succes-in-india-met-100-000-boerderijen-op-de-blockchain/",
+      "source": "Newsbit",
+      "published_at": "2026-10-24T20:05:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "judge-shuts-libra-case-against-javier-milei-ruli-ad18a7b9",
-      "title": "Judge Shuts LIBRA Case Against Javier Milei, Ruling the Memecoin Facts Fit No Crime",
-      "url": "https://unchainedcrypto.com/judge-shuts-libra-case-against-javier-milei-ruling-the-memecoin-facts-fit-no-crime/",
-      "source": "Unchained",
-      "published_at": "2026-10-24T03:05:00Z",
+      "id": "grote-bitcoinbezitters-kopen-nu-sneller-dan-ooit-cb2ec47d",
+      "title": "Grote bitcoinbezitters kopen nu sneller dan ooit in 2026",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/grote-bitcoinbezitters-kopen-nu-sneller-dan-ooit-in-2026/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-10-24T20:02:07Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "strategy-strive-face-balancing-act-between-bitco-8c957420",
+      "title": "Strategy, Strive face balancing act between bitcoin buying and preferred stock dividends",
+      "url": "https://www.coindesk.com/business/2026/10/24/strategy-strive-face-balancing-act-between-bitcoin-buying-and-preferred-stock-dividends",
+      "source": "CoinDesk",
+      "published_at": "2026-10-24T16:00:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-under-weekend-pressure-bitcoin-slides-bel-a8442d04",
+      "title": "Crypto under weekend pressure, bitcoin slides below $80,000 on U.S. Middle East evacuations",
+      "url": "https://www.coindesk.com/markets/2026/10/24/crypto-under-weekend-pressure-bitcoin-slides-below-usd80-000-on-u-s-middle-east-evacuations",
+      "source": "CoinDesk",
+      "published_at": "2026-10-24T15:11:24Z",
       "category": "news",
       "sentiment": null
     },
@@ -57,20 +57,20 @@
       "sentiment": "neutral"
     },
     {
+      "id": "glamsterdam-on-hoodi-postponed-f099ebc0",
+      "title": "Glamsterdam on Hoodi Postponed",
+      "url": "https://blog.ethereum.org/en/2026/10/22/glamsterdam-hoodi-delay",
+      "source": "Ethereum Foundation",
+      "published_at": "2026-10-22T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
       "id": "what-drives-stablecoin-supply-growth-1ea37a48",
       "title": "What Drives Stablecoin Supply Growth?",
       "url": "https://coinmetrics.substack.com/p/what-drives-stablecoin-supply-growth",
       "source": "Coin Metrics",
       "published_at": "2026-10-20T13:03:46Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-427-recap-podcast-a8cdbd45",
-      "title": "Bitcoin Optech Newsletter #427 Recap Podcast",
-      "url": "https://bitcoinops.org/en/podcast/2026/10/20/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-10-20T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
