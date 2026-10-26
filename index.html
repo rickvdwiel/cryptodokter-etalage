@@ -44,7 +44,15 @@ Promise.all([document.fonts.load('400 22px "Suez One"',t("alp-motto")),document.
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cryptodokter.nl/">
 <meta property="og:site_name" content="CryptoDokter">
-<meta property="og:locale" content="nl_NL">
+<meta property="og:locale" content="nl_NL" id="og-locale">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:title" content="cryptodokter.nl, paper-trading in het openbaar">
 <meta property="og:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta property="og:image" content="https://cryptodokter.nl/og-image.png">
@@ -1055,14 +1063,14 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
 <a class="skip" href="#hoofdinhoud" lang="nl">Ga naar inhoud</a>
 
 
-<header class="top">
+<header lang="nl" class="top">
   <a class="brand" href="/" aria-label="cryptodokter.nl home">
     <span class="brand-mark" aria-hidden="true"></span>
     <span class="brand-name">cryptodokter.nl</span>
   </a>
   <nav class="nav" aria-label="Hoofdnavigatie">
     <span class="hitc" id="hitc" lang="nl" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
-    <span class="pill" title="Alleen papieren simulatie lang="nl" — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
+    <span class="pill" title="Alleen papieren simulatie — geen live orders" lang="nl"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
     <a href="#analyse" id="nav-how" lang="nl">Analyse</a>
     <a href="#team" id="nav-team" lang="nl" class="nav-quiet">Team</a>
     <div class="lang-wrap"><button type="button" class="toeg-btn lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="NL · Taal: Nederlands"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.4 5.2 3.4 8.5s-1 6.1-3.4 8.5c-2.4-2.4-3.4-5.2-3.4-8.5s1-6.1 3.4-8.5z"/></svg><span id="lang-code" aria-hidden="true">NL</span></button>
@@ -1080,7 +1088,7 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   </div>
 </header>
 
-<div class="alp-stage" id="alp-stage">
+<div class="alp-stage" id="alp-stage" lang="nl">
   <picture>
     <source type="image/avif" srcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" sizes="100vw">
     <source type="image/webp" srcset="img/bernard-alpen-640.webp 640w, img/bernard-alpen-1280.webp 1280w, img/bernard-alpen-1408.webp 1408w" sizes="100vw">
@@ -1088,21 +1096,21 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   </picture>
   <div class="alp-scrim" aria-hidden="true"></div>
   <div class="alp-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="alp-inner"><div class="alp-copy" id="alp-copy"><p class="alp-tag" id="alp-motto" lang="nl">We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.</p><p class="alp-sub" id="alp-sub" lang="nl">Leer van onze paper-bot, zonder echt geld te riskeren.</p><p class="alp-free" id="alp-free" lang="nl">Gratis · paper-trading · geen echt geld</p></div></div>
-  <script type="application/json" id="i18n">{"nl": {"name": "Nederlands", "label": "Taal", "motto": "We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.", "sub": "Leer van onze paper-bot, zonder echt geld te riskeren.", "free": "Gratis · paper-trading · geen echt geld"}, "en": {"name": "English", "label": "Language", "motto": "We're here to help you. Lost money on crypto? We're here for you.", "sub": "Learn from our paper bot, without risking real money.", "free": "Free · paper trading · no real money"}, "de": {"name": "Deutsch", "label": "Sprache", "motto": "Wir sind da, um dir zu helfen. Geld mit Krypto verloren? Wir sind für dich da.", "sub": "Lerne von unserem Paper-Bot, ohne echtes Geld zu riskieren.", "free": "Kostenlos · Paper-Trading · kein echtes Geld"}, "fr": {"name": "Français", "label": "Langue", "motto": "Nous sommes là pour vous aider. Vous avez perdu de l'argent avec la crypto ? Nous sommes là pour vous.", "sub": "Apprenez avec notre bot de paper trading, sans risquer d'argent réel.", "free": "Gratuit · paper trading · pas d'argent réel"}, "es": {"name": "Español", "label": "Idioma", "motto": "Estamos aquí para ayudarte. ¿Has perdido dinero con las criptomonedas? Estamos contigo.", "sub": "Aprende de nuestro bot de paper trading, sin arriesgar dinero real.", "free": "Gratis · paper trading · sin dinero real"}, "it": {"name": "Italiano", "label": "Lingua", "motto": "Siamo qui per aiutarti. Hai perso soldi con le criptovalute? Siamo qui per te.", "sub": "Impara dal nostro bot di paper trading, senza rischiare denaro reale.", "free": "Gratis · paper trading · niente denaro reale"}, "pt": {"name": "Português", "label": "Idioma", "motto": "Estamos aqui para ajudar. Perdeu dinheiro com criptomoedas? Estamos do seu lado.", "sub": "Aprenda com o nosso bot de paper trading, sem arriscar dinheiro real.", "free": "Grátis · paper trading · sem dinheiro real"}, "pl": {"name": "Polski", "label": "Język", "motto": "Jesteśmy tu, aby Ci pomóc. Stracone pieniądze na kryptowalutach? Jesteśmy przy Tobie.", "sub": "Ucz się od naszego bota paper tradingu, bez ryzykowania prawdziwych pieniędzy.", "free": "Za darmo · paper trading · bez prawdziwych pieniędzy"}, "tr": {"name": "Türkçe", "label": "Dil", "motto": "Size yardım etmek için buradayız. Kriptoda para mı kaybettiniz? Yanınızdayız.", "sub": "Paper trading botumuzdan, gerçek para riske atmadan öğrenin.", "free": "Ücretsiz · paper trading · gerçek para yok"}}</script>
+  <div class="alp-inner"><div class="alp-copy" id="alp-copy"><p class="alp-tag" id="alp-motto" lang="nl">Hulp en uitleg bij crypto. Geld verloren? We leggen rustig uit wat er gebeurde.</p><p class="alp-sub" id="alp-sub" lang="nl">Leer mee met onze paper-bot: oefenen zonder echt geld.</p><p class="alp-free" id="alp-free" lang="nl">Gratis · paper-trading · geen echt geld</p></div></div>
+  <script type="application/json" id="i18n">{"nl": {"name": "Nederlands", "label": "Taal", "motto": "Hulp en uitleg bij crypto. Geld verloren? We leggen rustig uit wat er gebeurde.", "sub": "Leer mee met onze paper-bot: oefenen zonder echt geld.", "free": "Gratis · paper-trading · geen echt geld"}, "en": {"name": "English", "label": "Language", "motto": "Help and plain explanations about crypto. Lost money? We’ll explain what happened.", "sub": "Learn alongside our paper bot: practise without real money.", "free": "Free · paper trading · no real money"}, "de": {"name": "Deutsch", "label": "Sprache", "motto": "Hilfe und Erklärungen rund um Krypto. Geld verloren? Wir erklären dir, was passiert ist.", "sub": "Lerne mit unserem Paper-Bot – üben ganz ohne echtes Geld.", "free": "Kostenlos · Paper-Trading · kein echtes Geld"}, "fr": {"name": "Français", "label": "Langue", "motto": "De l’aide et des explications sur la crypto. Vous avez perdu de l’argent ? Nous vous expliquons ce qui s’est passé.", "sub": "Apprenez avec notre bot de trading fictif : on s’entraîne sans argent réel.", "free": "Gratuit · trading fictif · aucun argent réel"}, "es": {"name": "Español", "label": "Idioma", "motto": "Ayuda y explicaciones sobre cripto. ¿Has perdido dinero? Te explicamos qué ha pasado.", "sub": "Aprende con nuestro bot de trading simulado: practica sin dinero real.", "free": "Gratis · trading simulado · sin dinero real"}, "it": {"name": "Italiano", "label": "Lingua", "motto": "Aiuto e spiegazioni sulle criptovalute. Hai perso dei soldi? Ti spieghiamo cos’è successo.", "sub": "Impara con il nostro bot di trading simulato: ti eserciti senza soldi veri.", "free": "Gratis · trading simulato · niente soldi veri"}, "pt": {"name": "Português", "label": "Idioma", "motto": "Ajuda e explicações sobre cripto. Perdeu dinheiro? Explicamos o que aconteceu.", "sub": "Aprenda com o nosso bot de trading simulado: pratique sem dinheiro real.", "free": "Grátis · trading simulado · sem dinheiro real"}, "pl": {"name": "Polski", "label": "Język", "motto": "Pomoc i wyjaśnienia w świecie kryptowalut. Masz straty? Wyjaśnimy, co się stało.", "sub": "Ucz się z naszym botem symulowanego tradingu – bez prawdziwych pieniędzy.", "free": "Za darmo · symulowany trading · bez prawdziwych pieniędzy"}, "tr": {"name": "Türkçe", "label": "Dil", "motto": "Kripto hakkında yardım ve açıklama. Para mı kaybettiniz? Ne olduğunu size açıklayalım.", "sub": "Sanal işlem yapan botumuzla öğrenin: gerçek para olmadan pratik yapın.", "free": "Ücretsiz · sanal işlem · gerçek para yok"}}</script>
   <script>/* motto direct in de juiste taal zetten (textContent, synchroon: geen flits/verschuiving) */
   (function(){try{var D=JSON.parse(document.getElementById("i18n").textContent),c=document.documentElement.lang,t=D[c]||D.en;if(!D[c])c="en";
   [["alp-motto","motto"],["alp-sub","sub"],["alp-free","free"]].forEach(function(p){var e=document.getElementById(p[0]);e.textContent=t[p[1]];e.setAttribute("lang",c)});var k=document.getElementById("lang-code");if(k)k.textContent=c.toUpperCase();var b=document.getElementById("lang-btn");if(b)b.setAttribute("aria-label",c.toUpperCase()+" \u00b7 "+t.label+": "+t.name);}catch(e){}})();</script>
   <nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
 </div>
 
-<section class="wins" id="wins" aria-labelledby="wins-title" hidden>
+<section class="wins" id="wins" lang="nl" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
   <ul class="wins-list" id="wins-list" tabindex="0" aria-labelledby="wins-title"></ul>
   <p class="wins-empty" id="wins-empty" hidden>Nog geen afgesloten winsttrades in seizoen 2.</p>
 </section>
 
-<div class="ticker-wrap" aria-hidden="true">
+<div class="ticker-wrap" lang="nl" aria-hidden="true">
   <div class="ticker" id="ticker">
     <span>PAPER SNAPSHOT</span>
   </div>
@@ -3944,6 +3952,7 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
     [["alp-motto", "motto"], ["alp-sub", "sub"], ["alp-free", "free"]].forEach(function (p) { var e = document.getElementById(p[0]); if (e) { e.textContent = t[p[1]]; e.setAttribute("lang", c); } });
     document.getElementById("lang-code").textContent = c.toUpperCase();
     btn.setAttribute("aria-label", c.toUpperCase() + " \u00b7 " + t.label + ": " + t.name); btn.setAttribute("lang", c);
+    var og = document.getElementById("og-locale"); if (og) og.setAttribute("content", {nl:"nl_NL",en:"en_GB",de:"de_DE",fr:"fr_FR",es:"es_ES",it:"it_IT",pt:"pt_PT",pl:"pl_PL",tr:"tr_TR"}[c]);
     menu.setAttribute("aria-label", t.label);
     links.forEach(function (a) { if (a.getAttribute("data-lang") === c) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
   }
