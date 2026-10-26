@@ -2,6 +2,24 @@
 <!-- build: cryptodokter-cockpit-8 -->
 <html lang="nl" translate="no" data-build="cryptodokter-cockpit-8">
 <head>
+<script>/* Taal voor het motto: ?lang= → localStorage cd-lang → navigator.languages → en (vóór de eerste paint) */
+(function(){var L=["nl","en","de","fr","es","it","pt","pl","tr"],d=document.documentElement,c=null;function ok(x){x=String(x||"").toLowerCase().slice(0,2);return L.indexOf(x)>-1?x:null}
+try{var m=/[?&]lang=([a-zA-Z-]{2,8})/.exec(location.search);if(m)c=ok(m[1])}catch(e){}
+if(!c){try{c=ok(localStorage.getItem("cd-lang"))}catch(e){}}
+if(!c){try{var n=navigator.languages||[navigator.language];for(var i=0;i<n.length&&!c;i++)c=ok(n[i])}catch(e){}}
+c=c||"en";d.lang=c;d.setAttribute("data-lang",c)})();</script>
+<script>/* Toegankelijkheid: keuzes vóór de eerste paint toepassen (localStorage optioneel; ?thema= gaat voor) */
+(function(){var d=document.documentElement,o={};try{o=JSON.parse(localStorage.getItem("cd-toeg")||"{}")||{}}catch(e){o={}}
+try{var m=/[?&]thema=(licht|donker)\b/.exec(location.search);if(m)o.t=m[1]}catch(e){}
+if(o.t==="licht")d.setAttribute("data-theme","licht");if(o.g)d.classList.add("cd-groot");if(o.h)d.classList.add("cd-hc");
+var rm=false;try{rm=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(o.m===true||(o.m!==false&&rm))d.classList.add("cd-still")})();</script>
+<script>(function(){var d=document.documentElement,n=0,go=false;d.classList.add("alp-wait");function ok(){d.classList.remove("alp-wait")}
+/* motto pas tonen als Suez One en IBM Plex Sans (incl. latin-ext voor PL/TR) er zijn: geen verspringing door font-swap */
+function ready(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.test(f.family))r=true})}catch(e){}return r&&document.getElementById("alp-free")}
+(function tick(){if(go)return;if(++n>30)return ok();if(!ready())return setTimeout(tick,100);go=true;
+try{var t=function(id){return document.getElementById(id).textContent||"a"};
+Promise.all([document.fonts.load('400 22px "Suez One"',t("alp-motto")),document.fonts.load('500 15px "IBM Plex Sans"',t("alp-sub")),document.fonts.load('600 12px "IBM Plex Sans"',t("alp-free"))]).then(ok,ok);setTimeout(ok,3000)}catch(e){ok()}})();})();</script>
 <script>document.documentElement.classList.add("cd-wait");setTimeout(function(){document.documentElement.classList.remove("cd-wait")},2500);</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -9,6 +27,16 @@
 <meta name="description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cryptodokter.nl/">
+<link rel="alternate" hreflang="nl" href="https://cryptodokter.nl/?lang=nl">
+<link rel="alternate" hreflang="en" href="https://cryptodokter.nl/?lang=en">
+<link rel="alternate" hreflang="de" href="https://cryptodokter.nl/?lang=de">
+<link rel="alternate" hreflang="fr" href="https://cryptodokter.nl/?lang=fr">
+<link rel="alternate" hreflang="es" href="https://cryptodokter.nl/?lang=es">
+<link rel="alternate" hreflang="it" href="https://cryptodokter.nl/?lang=it">
+<link rel="alternate" hreflang="pt" href="https://cryptodokter.nl/?lang=pt">
+<link rel="alternate" hreflang="pl" href="https://cryptodokter.nl/?lang=pl">
+<link rel="alternate" hreflang="tr" href="https://cryptodokter.nl/?lang=tr">
+<link rel="alternate" hreflang="x-default" href="https://cryptodokter.nl/">
 <title>cryptodokter.nl, paper-trading in het openbaar</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -27,6 +55,7 @@
 <meta name="twitter:title" content="cryptodokter.nl, paper-trading in het openbaar">
 <meta name="twitter:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
+<link rel="preload" as="image" href="img/bernard-alpen-1280.avif" type="image/avif" imagesrcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Suez+One&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -872,10 +901,158 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
 .hero .ctas{margin:14px 0 0}
 @media(max-width:620px){.cock-body{grid-template-columns:1fr}.hero-heading{gap:4px}.hero-heading .tools{width:100%}.cock-kpis .kpi .v{font-size:18px}.kpi-card .v{font-size:19px}.nav .pill{display:none}.waterfall li{grid-template-columns:43px 45px minmax(0,1fr) minmax(0,1.1fr);gap:6px}.performance strong{font-size:24px}.analysis,.visitors{margin-top:16px}.balance-row{gap:8px 16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+/* ===== Alpine Bernard: rustig herontwerp rond de foto (Spectrum-kalm, geen neon) ===== */
+:root{
+  --bg:#0f151c;--surf:#16202a;--surf2:#1d2834;--line:#2b3946;--tx:#eef2f6;--muted:#9fadba;--text-secondary:#c5ced8;
+  --accent:#9cc3e6;--up:#7fd6a4;--dn:#ff9aa2;--brown:#c08a5b;--swiss:#d52b1e;--snow:#f4f6f8;
+  --card:rgba(18,26,35,.78);--card-line:rgba(244,246,248,.14);--scrim-top:rgba(9,14,20,.62);
+  --sel-bg:rgba(156,195,230,.14);--sel-edge:#9cc3e6
+}
+html[data-theme="licht"]{
+  --bg:#f3f5f7;--surf:#ffffff;--surf2:#eaeff3;--line:#d3dbe3;--tx:#16212b;--muted:#566472;--text-secondary:#33414e;
+  --accent:#36628b;--up:#1b7443;--dn:#b8322a;--brown:#8a5a33;--card:rgba(255,255,255,.84);--card-line:rgba(22,33,43,.12);--scrim-top:rgba(9,14,20,.5);
+  --sel-bg:rgba(54,98,139,.12);--sel-edge:#36628b;color-scheme:light
+}
+html[data-theme="licht"] body{background:var(--bg);color:var(--tx)}
+.brand-mark{background:var(--swiss)!important;border-radius:3px}
+.hero h1,main h2,.s1-card h2{font-family:"Suez One",Georgia,serif;font-weight:400;letter-spacing:0}
+/* Volle-breedte beeld; vaste hoogte per viewport → geen layout shift */
+.alp-stage{position:relative;width:100%;height:clamp(300px,44vw,600px);overflow:hidden;background:#cfd8e0}
+.alp-stage picture,.alp-img{position:absolute;inset:0;width:100%;height:100%}
+.alp-img{object-fit:cover;object-position:50% 34%}
+.alp-scrim{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 14% 12%,rgba(9,14,20,.7),rgba(9,14,20,.2) 55%,rgba(9,14,20,0) 75%),linear-gradient(180deg,var(--scrim-top) 0%,rgba(9,14,20,.18) 38%,rgba(9,14,20,0) 58%),linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 14%,transparent 34%)}
+.alp-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:clamp(18px,3.4vw,40px) var(--padr) 0 var(--pad)}
+@media (min-width:641px) and (max-width:1023.98px){.alp-tag{display:inline-block;padding:8px 12px;border-radius:10px;background:rgba(9,14,20,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+.alp-tag{margin:0;max-width:20ch;font:400 clamp(22px,3.6vw,40px)/1.15 "Suez One",Georgia,serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 18px rgba(0,0,0,.25)}
+html.alp-wait .alp-tag,html.alp-wait .alp-copy{visibility:hidden} /* tagline pas tonen als Suez One er is: geen verspringing door font-swap */
+.alp-snow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.alp-snow i{position:absolute;top:-8px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.85);opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .alp-snow i{animation:alpSnow 14s linear infinite}
+  .alp-stage.is-off .alp-snow i{animation-play-state:paused}
+}
+@keyframes alpSnow{0%{opacity:0;transform:translate3d(0,0,0)}8%{opacity:.8}85%{opacity:.6}100%{opacity:0;transform:translate3d(-24px,620px,0)}}
+.alp-snow i:nth-child(1){left:4%;animation-delay:-1s;animation-duration:13s;width:3px;height:3px}.alp-snow i:nth-child(2){left:11%;animation-delay:-7s;animation-duration:16s;width:4px;height:4px}.alp-snow i:nth-child(3){left:19%;animation-delay:-3s;animation-duration:12s;width:2px;height:2px}.alp-snow i:nth-child(4){left:26%;animation-delay:-10s;animation-duration:15s;width:3px;height:3px}.alp-snow i:nth-child(5){left:33%;animation-delay:-5s;animation-duration:17s;width:4px;height:4px}.alp-snow i:nth-child(6){left:41%;animation-delay:-12s;animation-duration:14s;width:2px;height:2px}.alp-snow i:nth-child(7){left:48%;animation-delay:-2s;animation-duration:16s;width:3px;height:3px}.alp-snow i:nth-child(8){left:56%;animation-delay:-8s;animation-duration:13s;width:4px;height:4px}.alp-snow i:nth-child(9){left:63%;animation-delay:-4s;animation-duration:15s;width:2px;height:2px}.alp-snow i:nth-child(10){left:70%;animation-delay:-11s;animation-duration:18s;width:3px;height:3px}.alp-snow i:nth-child(11){left:77%;animation-delay:-6s;animation-duration:14s;width:4px;height:4px}.alp-snow i:nth-child(12){left:84%;animation-delay:-9s;animation-duration:16s;width:2px;height:2px}.alp-snow i:nth-child(13){left:91%;animation-delay:-0s;animation-duration:13s;width:3px;height:3px}.alp-snow i:nth-child(14){left:97%;animation-delay:-13s;animation-duration:17s;width:2px;height:2px}
+/* Hero-inhoud in een rustige matglazen kaart over de onderkant van het beeld (alleen op het Crypto-tabblad) */
+html:not(.mkt-x) main>.hero{margin-top:calc(-1 * clamp(70px,12vw,190px));position:relative;z-index:3}
+main>.hero>div:first-child{background:var(--card);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);border:1px solid var(--card-line);border-radius:14px;padding:20px 22px;box-shadow:0 10px 30px -18px rgba(0,0,0,.6);min-width:0}
+@media (max-width:640px){
+  .alp-stage{height:clamp(280px,86vw,360px)}
+  .alp-img{object-position:63% 38%}
+  main>.hero>div:first-child{padding:16px 14px;border-radius:12px}
+  .alp-tag{max-width:none;display:inline-block;font-size:24px;padding:8px 12px;border-radius:10px;background:rgba(9,14,20,.58);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .alp-scrim{background:radial-gradient(ellipse 85% 62% at 18% 12%,rgba(9,14,20,.74),rgba(9,14,20,.25) 60%,rgba(9,14,20,0) 80%),linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 14%,transparent 34%)}
+}
+/* Markttabs liggen over de onderkant van het beeld (absoluut → geen verschuiving als ze verschijnen) */
+.alp-stage .mkt-tabs{position:absolute;left:0;right:0;bottom:calc(clamp(70px,12vw,190px) + 14px);z-index:4;margin:0 auto}
+html.mkt-x .alp-stage .mkt-tabs{bottom:14px}
+/* Vaste kophoogte: font-swap mag het beeld eronder niet laten verspringen */
+header.top{height:calc(max(14px, env(safe-area-inset-top)) + 36px);box-sizing:border-box}
+@media (max-width:767.98px){header.top{height:calc(max(14px, env(safe-area-inset-top)) + 32px)}}
+/* Bergkam-silhouet als sectiescheiding */
+#marktbulletin::before,#team::before,#doneer::before{content:"";display:block;height:26px;margin:0 0 18px;background:var(--line);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40 L0 32 L40 26 L70 30 L110 14 L140 22 L170 18 L205 4 L235 16 L270 12 L300 24 L330 20 L365 8 L395 18 L430 15 L465 26 L500 19 L530 28 L565 22 L600 30 L600 40Z'/%3E%3C/svg%3E") bottom/100% 26px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40 L0 32 L40 26 L70 30 L110 14 L140 22 L170 18 L205 4 L235 16 L270 12 L300 24 L330 20 L365 8 L395 18 L430 15 L465 26 L500 19 L530 28 L565 22 L600 30 L600 40Z'/%3E%3C/svg%3E") bottom/100% 26px no-repeat;opacity:.9}
+/* Bernard als bewaker bij de stap Controle */
+.team-guard{display:flex;align-items:center;gap:10px;margin:10px 0 0;font:500 12.5px/1.35 var(--font);color:var(--text-secondary)}
+.team-guard img{display:block;width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--brown);flex:0 0 auto}
+/* Licht thema: vaste donkere details neutraliseren */
+html[data-theme="licht"] .cockpit::before{opacity:.25}
+html[data-theme="licht"] .alp-tag{color:#fff}
+/* ===== Toegankelijkheid ===== */
+header.top{position:relative}
+.toeg-btn{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--tx);cursor:pointer;flex:0 0 auto}
+.toeg-btn:hover{border-color:var(--muted)}
+.toeg-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.toeg-btn[aria-expanded="true"]{background:var(--surf2);border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.toeg-panel{position:absolute;right:var(--padr);top:calc(100% + 6px);z-index:60;width:300px;box-sizing:border-box;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surf);color:var(--tx);box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}
+.toeg-panel[hidden]{display:none}
+.toeg-panel h2{margin:0 0 12px;font:400 17px/1.2 "Suez One",Georgia,serif;color:var(--tx)}
+.toeg-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.toeg-row>span{font:500 13px/1.35 var(--font);color:var(--tx)}
+.toeg-row small{display:block;font-size:11.5px;color:var(--muted);font-weight:400}
+.toeg-seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.toeg-seg button{border:0;background:transparent;color:var(--muted);font:600 12px/1 var(--font);padding:8px 11px;cursor:pointer}
+.toeg-seg button+button{border-left:1px solid var(--line)}
+.toeg-seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.toeg-sw{position:relative;width:42px;height:24px;flex:0 0 auto;border:1px solid var(--muted);border-radius:999px;background:var(--surf2);cursor:pointer;padding:0}
+.toeg-sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--muted);transition:transform .15s ease}
+.toeg-sw[aria-checked="true"]{background:var(--accent);border-color:var(--accent)}
+.toeg-sw[aria-checked="true"]::after{transform:translateX(18px);background:var(--bg)}
+.toeg-reset{margin-top:6px;width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--tx);font:600 12.5px/1 var(--font);cursor:pointer}
+.toeg-reset:hover{border-color:var(--muted)}
+.toeg-note{margin:8px 0 0;font-size:11.5px;color:var(--muted);min-height:1.3em}
+@media (max-width:520px){
+  .toeg-btn{width:30px;height:30px}
+  .toeg-panel{position:fixed;left:0;right:0;top:auto;bottom:0;width:auto;border-radius:16px 16px 0 0;padding:18px var(--padr) max(18px,env(safe-area-inset-bottom)) var(--pad);max-height:85vh;overflow:auto}
+}
+/* Grotere tekst: de pagina gebruikt px, dus schalen we de inhoud (niet kop/beeld) */
+html.cd-groot{font-size:118%}
+html.cd-groot main,html.cd-groot .foot{zoom:1.18}
+/* Beweging uit */
+html.cd-still *,html.cd-still *::before,html.cd-still *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.cd-still .alp-snow{display:none}
+/* Hoog contrast */
+html.cd-hc{--muted:#d5dde5;--text-secondary:#e6ebf0;--line:#7d8c9b;--tx:#ffffff;--up:#8fe6b4;--dn:#ffb3b9;--accent:#b9d8f4;--card:var(--surf);--card-line:#7d8c9b;--scrim-top:rgba(9,14,20,.8)}
+html.cd-hc[data-theme="licht"]{--muted:#2c3742;--text-secondary:#1c2630;--line:#5d6b78;--tx:#05090d;--up:#125a32;--dn:#93231c;--accent:#204a70;--card:#fff;--card-line:#5d6b78}
+html.cd-hc main>.hero>div:first-child,html.cd-hc .alp-tag{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html.cd-hc .alp-tag{background:rgba(9,14,20,.88)!important;display:inline-block;padding:8px 12px;border-radius:10px}
+html.cd-hc .alp-scrim{background:linear-gradient(180deg,rgba(9,14,20,.72),rgba(9,14,20,.35) 60%,var(--bg) 100%)!important}
+html.cd-hc .toeg-panel{border-width:2px}
+html[data-theme="licht"] .btn-primary{color:#fff}
+html[data-theme="licht"] .cock-head{background:rgba(22,33,43,.04)}
+/* ===== Gezicht vrij: hond links-midden, tekst rechts (desktop) / onder het beeld (mobiel) ===== */
+.alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.62) 0%,rgba(9,14,20,.38) 30%,rgba(9,14,20,0) 44%),linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 14%,transparent 34%)!important}
+html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgba(9,14,20,.6) 32%,rgba(9,14,20,0) 44%),linear-gradient(0deg,var(--bg) 0%,transparent 34%)!important}
+@media (min-width:768px){
+  .alp-img{object-position:50% 34%}
+  .alp-inner{display:flex;justify-content:flex-end}
+  .alp-tag{max-width:min(46%,15ch);text-align:right;display:block;padding:0;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  html.cd-hc .alp-tag{padding:8px 12px;background:rgba(9,14,20,.88)!important}
+}
+@media (max-width:767.98px){
+  .alp-stage{height:auto;overflow:visible;background:none}
+  .alp-stage picture{position:relative;display:block;height:clamp(210px,62vw,300px);overflow:hidden;background:#cfd8e0}
+  .alp-img{object-position:45% 0}
+  .alp-scrim{bottom:auto;height:clamp(210px,62vw,300px);background:linear-gradient(0deg,rgba(9,14,20,.35) 0%,transparent 30%)!important}
+  .alp-snow{bottom:auto;height:clamp(210px,62vw,300px)}
+  .alp-inner{padding:14px var(--padr) 4px var(--pad)}
+  .alp-tag,html.cd-hc .alp-tag{display:block;height:2.3em;max-width:none;font-size:22px;line-height:1.15;padding:0;color:var(--tx)!important;text-shadow:none;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .alp-stage .mkt-tabs{top:calc(clamp(210px,62vw,300px) - 58px);bottom:auto!important}
+  html:not(.mkt-x) main>.hero{margin-top:8px}
+}
+/* ===== Meertalig motto + taalkiezer ===== */
+.alp-copy{margin:0}
+.alp-sub{margin:10px 0 0;font:500 15px/1.45 var(--font);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.alp-free{margin:6px 0 0;font:600 12px/1.4 var(--font);letter-spacing:.02em;color:#e6edf3;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+@media (min-width:768px){
+  .alp-copy{max-width:min(44%,520px);text-align:right}
+  .alp-copy .alp-tag{max-width:none;font-size:clamp(20px,2.3vw,32px)}
+  html.cd-hc .alp-copy{padding:10px 14px;border-radius:10px;background:rgba(9,14,20,.88)}
+  html.cd-hc .alp-copy .alp-tag{padding:0;background:none!important}
+}
+@media (min-width:768px) and (max-width:1023.98px){.alp-sub{font-size:13px}.alp-free{font-size:11px}}
+@media (max-width:767.98px){
+  .alp-inner{height:140px;box-sizing:border-box} /* vaste hoogte: past de langste taal (PL/FR), geen verschuiving bij font-swap */
+}
+@media (max-width:400px){.alp-inner{height:184px}}
+@media (max-width:767.98px){
+  .alp-copy .alp-tag{height:auto;font-size:20px;line-height:1.2}
+  .alp-sub{margin-top:6px;font-size:13.5px;color:var(--text-secondary);text-shadow:none}
+  .alp-free{margin-top:4px;font-size:11.5px;color:var(--muted);text-shadow:none}
+}
+.lang-wrap{position:relative;flex:0 0 auto}
+.lang-btn{width:auto;gap:5px;padding:0 8px;display:inline-flex;align-items:center;font:600 12px/1 var(--font);letter-spacing:.03em}
+.lang-btn svg{width:16px;height:16px}
+.lang-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:61;margin:0;padding:6px;list-style:none;min-width:160px;border:1px solid var(--line);border-radius:10px;background:var(--surf);box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}
+.lang-menu[hidden]{display:none}
+.lang-menu a{display:block;padding:8px 10px;border-radius:6px;color:var(--tx);font:500 13px/1.2 var(--font);text-decoration:none}
+.lang-menu a:hover{background:var(--surf2);text-decoration:none}
+.lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
+@media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
 </style>
 </head>
 <body>
-<a class="skip" href="#hoofdinhoud">Ga naar inhoud</a>
+<a class="skip" href="#hoofdinhoud" lang="nl">Ga naar inhoud</a>
 
 
 <header class="top">
@@ -884,14 +1061,40 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     <span class="brand-name">cryptodokter.nl</span>
   </a>
   <nav class="nav" aria-label="Hoofdnavigatie">
-    <span class="hitc" id="hitc" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
-    <span class="pill" title="Alleen papieren simulatie — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
-    <a href="#analyse" id="nav-how">Analyse</a>
-    <a href="#team" id="nav-team" class="nav-quiet">Team</a>
+    <span class="hitc" id="hitc" lang="nl" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
+    <span class="pill" title="Alleen papieren simulatie lang="nl" — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
+    <a href="#analyse" id="nav-how" lang="nl">Analyse</a>
+    <a href="#team" id="nav-team" lang="nl" class="nav-quiet">Team</a>
+    <div class="lang-wrap"><button type="button" class="toeg-btn lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="NL · Taal: Nederlands"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.4 5.2 3.4 8.5s-1 6.1-3.4 8.5c-2.4-2.4-3.4-5.2-3.4-8.5s1-6.1 3.4-8.5z"/></svg><span id="lang-code" aria-hidden="true">NL</span></button>
+    <ul class="lang-menu" id="lang-menu" aria-label="Taal" hidden><li><a href="?lang=nl" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li><li><a href="?lang=en" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="?lang=de" hreflang="de" lang="de" data-lang="de">Deutsch</a></li><li><a href="?lang=fr" hreflang="fr" lang="fr" data-lang="fr">Français</a></li><li><a href="?lang=es" hreflang="es" lang="es" data-lang="es">Español</a></li><li><a href="?lang=it" hreflang="it" lang="it" data-lang="it">Italiano</a></li><li><a href="?lang=pt" hreflang="pt" lang="pt" data-lang="pt">Português</a></li><li><a href="?lang=pl" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li><li><a href="?lang=tr" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li></ul></div>
+    <button type="button" class="toeg-btn" id="toeg-btn" lang="nl" aria-label="Toegankelijkheid" aria-expanded="false" aria-controls="toeg-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M4.5 8.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2"/><path d="M12 9.7v4.6"/><path d="M8.5 21l3.5-6.7 3.5 6.7"/></svg></button>
   </nav>
+  <div class="toeg-panel" id="toeg-panel" lang="nl" role="dialog" aria-modal="false" aria-labelledby="toeg-h" hidden>
+    <h2 id="toeg-h">Toegankelijkheid</h2>
+    <div class="toeg-row"><span id="toeg-l-t">Thema</span><span class="toeg-seg" role="group" aria-labelledby="toeg-l-t"><button type="button" data-toeg-t="donker" aria-pressed="true">Donker</button><button type="button" data-toeg-t="licht" aria-pressed="false">Licht</button></span></div>
+    <div class="toeg-row"><span id="toeg-l-g">Grotere tekst<small>Tekst ongeveer 18% groter</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-g" data-toeg="g"></button></div>
+    <div class="toeg-row"><span id="toeg-l-h">Hoog contrast<small>Sterkere tekst en randen</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-h" data-toeg="h"></button></div>
+    <div class="toeg-row"><span id="toeg-l-m">Beweging uit<small>Geen sneeuw, stroom of pulsen</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-m" data-toeg="m"></button></div>
+    <button type="button" class="toeg-reset" id="toeg-reset">Herstel standaard</button>
+    <p class="toeg-note" id="toeg-note" aria-live="polite"></p>
+  </div>
 </header>
 
-<nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
+<div class="alp-stage" id="alp-stage">
+  <picture>
+    <source type="image/avif" srcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" sizes="100vw">
+    <source type="image/webp" srcset="img/bernard-alpen-640.webp 640w, img/bernard-alpen-1280.webp 1280w, img/bernard-alpen-1408.webp 1408w" sizes="100vw">
+    <img class="alp-img" src="img/bernard-alpen-1280.jpg" srcset="img/bernard-alpen-640.jpg 640w, img/bernard-alpen-1280.jpg 1280w, img/bernard-alpen-1408.jpg 1408w" sizes="100vw" width="1408" height="768" fetchpriority="high" alt="Een sint-bernardshond met een vaatje om de hals staat in de sneeuw, met besneeuwde bergen en een chalet op de achtergrond">
+  </picture>
+  <div class="alp-scrim" aria-hidden="true"></div>
+  <div class="alp-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="alp-inner"><div class="alp-copy" id="alp-copy"><p class="alp-tag" id="alp-motto" lang="nl">We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.</p><p class="alp-sub" id="alp-sub" lang="nl">Leer van onze paper-bot, zonder echt geld te riskeren.</p><p class="alp-free" id="alp-free" lang="nl">Gratis · paper-trading · geen echt geld</p></div></div>
+  <script type="application/json" id="i18n">{"nl": {"name": "Nederlands", "label": "Taal", "motto": "We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.", "sub": "Leer van onze paper-bot, zonder echt geld te riskeren.", "free": "Gratis · paper-trading · geen echt geld"}, "en": {"name": "English", "label": "Language", "motto": "We're here to help you. Lost money on crypto? We're here for you.", "sub": "Learn from our paper bot, without risking real money.", "free": "Free · paper trading · no real money"}, "de": {"name": "Deutsch", "label": "Sprache", "motto": "Wir sind da, um dir zu helfen. Geld mit Krypto verloren? Wir sind für dich da.", "sub": "Lerne von unserem Paper-Bot, ohne echtes Geld zu riskieren.", "free": "Kostenlos · Paper-Trading · kein echtes Geld"}, "fr": {"name": "Français", "label": "Langue", "motto": "Nous sommes là pour vous aider. Vous avez perdu de l'argent avec la crypto ? Nous sommes là pour vous.", "sub": "Apprenez avec notre bot de paper trading, sans risquer d'argent réel.", "free": "Gratuit · paper trading · pas d'argent réel"}, "es": {"name": "Español", "label": "Idioma", "motto": "Estamos aquí para ayudarte. ¿Has perdido dinero con las criptomonedas? Estamos contigo.", "sub": "Aprende de nuestro bot de paper trading, sin arriesgar dinero real.", "free": "Gratis · paper trading · sin dinero real"}, "it": {"name": "Italiano", "label": "Lingua", "motto": "Siamo qui per aiutarti. Hai perso soldi con le criptovalute? Siamo qui per te.", "sub": "Impara dal nostro bot di paper trading, senza rischiare denaro reale.", "free": "Gratis · paper trading · niente denaro reale"}, "pt": {"name": "Português", "label": "Idioma", "motto": "Estamos aqui para ajudar. Perdeu dinheiro com criptomoedas? Estamos do seu lado.", "sub": "Aprenda com o nosso bot de paper trading, sem arriscar dinheiro real.", "free": "Grátis · paper trading · sem dinheiro real"}, "pl": {"name": "Polski", "label": "Język", "motto": "Jesteśmy tu, aby Ci pomóc. Stracone pieniądze na kryptowalutach? Jesteśmy przy Tobie.", "sub": "Ucz się od naszego bota paper tradingu, bez ryzykowania prawdziwych pieniędzy.", "free": "Za darmo · paper trading · bez prawdziwych pieniędzy"}, "tr": {"name": "Türkçe", "label": "Dil", "motto": "Size yardım etmek için buradayız. Kriptoda para mı kaybettiniz? Yanınızdayız.", "sub": "Paper trading botumuzdan, gerçek para riske atmadan öğrenin.", "free": "Ücretsiz · paper trading · gerçek para yok"}}</script>
+  <script>/* motto direct in de juiste taal zetten (textContent, synchroon: geen flits/verschuiving) */
+  (function(){try{var D=JSON.parse(document.getElementById("i18n").textContent),c=document.documentElement.lang,t=D[c]||D.en;if(!D[c])c="en";
+  [["alp-motto","motto"],["alp-sub","sub"],["alp-free","free"]].forEach(function(p){var e=document.getElementById(p[0]);e.textContent=t[p[1]];e.setAttribute("lang",c)});var k=document.getElementById("lang-code");if(k)k.textContent=c.toUpperCase();var b=document.getElementById("lang-btn");if(b)b.setAttribute("aria-label",c.toUpperCase()+" \u00b7 "+t.label+": "+t.name);}catch(e){}})();</script>
+  <nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
+</div>
 
 <section class="wins" id="wins" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
@@ -905,7 +1108,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   </div>
 </div>
 
-<main id="hoofdinhoud">
+<main id="hoofdinhoud" lang="nl">
   <section class="hero" id="panel-crypto" aria-labelledby="hero-title">
     <div>
       <div class="hero-heading">
@@ -962,7 +1165,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
         <div class="tape-pane">
           <div class="lab">Paper tape</div>
           <div class="tape" aria-live="polite">
-            <ul class="tape-list" id="tape-list"></ul>
+            <ul class="tape-list" id="tape-list" role="group" aria-label="Laatste transacties"></ul>
           </div>
         </div>
       </div>
@@ -1023,7 +1226,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
       <h2>Laatste paper-acties</h2>
       <div class="trade-controls"><input type="search" id="trade-search" aria-label="Zoek munt of transactiereden" placeholder="Zoek munt of reden"><select id="trade-filter" aria-label="Filter transacties"><option value="all">Alle transacties</option><option value="buy">Aankopen</option><option value="sell">Verkopen</option><option value="profit">Met winst</option><option value="loss">Met verlies</option></select></div>
       <p class="trade-meta" id="trade-meta"></p>
-      <ul class="waterfall" id="waterfall"></ul>
+      <ul class="waterfall" id="waterfall" role="group" aria-label="Resultaat per munt"></ul>
     </div>
   </section>
 
@@ -1113,7 +1316,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     <ol class="team-flow">
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">1</span><span class="team-t">Idee</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/></svg><div><h4>Trading Desk</h4><p>bedenkt het idee</p></div></li><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg><div><h4>Strategie Lab</h4><p>test het eerst op papier</p></div></li></ul></li>
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">2</span><span class="team-t">Bouw</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><div><h4>Optimizer</h4><p>bouwt de verbetering</p></div></li></ul></li>
-      <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">3</span><span class="team-t">Controle</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h4>Bernard</h4><p>controleert elke wijziging</p></div></li></ul></li>
+      <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">3</span><span class="team-t">Controle</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h4>Bernard</h4><p>controleert elke wijziging</p></div></li></ul><p class="team-guard"><picture><source type="image/avif" srcset="img/bernard-kop-96.avif 1x, img/bernard-kop-192.avif 2x"><source type="image/webp" srcset="img/bernard-kop-96.webp 1x, img/bernard-kop-192.webp 2x"><img src="img/bernard-kop-96.jpg" srcset="img/bernard-kop-96.jpg 1x, img/bernard-kop-192.jpg 2x" width="40" height="40" alt="" loading="lazy" decoding="async"></picture><span>Bernard waakt over elke wijziging</span></p></li>
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">4</span><span class="team-t">Live</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c2-5 6-9 13-9 0 7-4 11-9 13z"/><circle cx="15" cy="9" r="1.5"/></svg><div><h4>Ops</h4><p>zet het live</p></div></li></ul></li>
     </ol></div>
     <section class="team-feed" id="team-feed" aria-labelledby="team-feed-h" hidden>
@@ -1315,10 +1518,10 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   </template>
 </main>
 
-<footer class="foot">
+<footer class="foot" lang="nl">
   <!-- build: cryptodokter-cockpit-8 -->
   <div class="foot-row">
-    <span><strong>cryptodokter.nl</strong> · paper-only</span>
+    <span><strong>CryptoDokter</strong> · paper-only</span>
     <span class="foot-links"><span class="hitc-f" id="hitc-f" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span><span class="hitc-why" id="hitc-why" aria-hidden="true" hidden></span><a href="#doneer" id="foot-doneer">Steun CryptoDokter</a></span>
   </div>
   <p class="disclaimer">
@@ -1334,7 +1537,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
 (function () {
   "use strict";
   var reduceMotion = false;
-  try { reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) {}
+  try { reduceMotion = document.documentElement.classList.contains("cd-still"); } catch (e) {}
 
   /* ——— In-page anchors: smooth scroll (respects reduced motion) + focus heading ——— */
   function wireAnchor(linkId, targetId, focusId) {
@@ -3435,7 +3638,8 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   var wrap = sec.querySelector(".team-flowwrap"), runner = sec.querySelector(".team-runner");
   var steps = Array.prototype.slice.call(sec.querySelectorAll(".team-step"));
   if (!wrap || !runner || steps.length !== 4) return;
-  var mq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  var mq0 = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  var mq = { get matches() { return document.documentElement.classList.contains("cd-still"); } };
   var visible = false, running = false;
   function measure() {
     var wb = wrap.getBoundingClientRect();
@@ -3459,7 +3663,8 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; update(); }, { threshold: 0.15 }).observe(sec);
   } else { visible = true; }
   document.addEventListener("visibilitychange", update);
-  if (mq) { if (mq.addEventListener) mq.addEventListener("change", update); else if (mq.addListener) mq.addListener(update); }
+  if (mq0) { if (mq0.addEventListener) mq0.addEventListener("change", update); else if (mq0.addListener) mq0.addListener(update); }
+  document.addEventListener("cd-toeg", update);
   var rt = null;
   window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { if (wrap.classList.contains("is-run")) measure(); }, 200); });
   update();
@@ -3578,6 +3783,16 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
 })();
 </script>
 <script>
+/* —— Sneeuw in het beeld: pauzeren buiten beeld of in een verborgen tabblad —— */
+(function () {
+  var st = document.getElementById("alp-stage"); if (!st) return;
+  var vis = true;
+  function upd() { st.classList.toggle("is-off", !vis || document.hidden); }
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { vis = es[es.length - 1].isIntersecting; upd(); }).observe(st);
+  document.addEventListener("visibilitychange", upd);
+})();
+</script>
+<script>
 /* —— Steun CryptoDokter: netwerkknoppen (tablist) + kopieerknop. Zonder JS blijven alle panelen zichtbaar. —— */
 (function initDoneer() {
   "use strict";
@@ -3663,6 +3878,93 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
       }, 2000);
     });
   });
+})();
+</script>
+<script>
+/* —— Toegankelijkheid: paneel + keuzes (localStorage optioneel) —— */
+(function initToeg() {
+  "use strict";
+  var d = document.documentElement, btn = document.getElementById("toeg-btn"), pn = document.getElementById("toeg-panel");
+  if (!btn || !pn) return;
+  var note = document.getElementById("toeg-note");
+  var rm = false; try { rm = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  var o = {}; try { o = JSON.parse(localStorage.getItem("cd-toeg") || "{}") || {}; } catch (e) { o = {}; }
+  function save() { try { localStorage.setItem("cd-toeg", JSON.stringify(o)); return true; } catch (e) { return false; } }
+  function state() { return { t: d.getAttribute("data-theme") === "licht" ? "licht" : "donker", g: d.classList.contains("cd-groot"), h: d.classList.contains("cd-hc"), m: d.classList.contains("cd-still") }; }
+  function sync() {
+    var st = state();
+    pn.querySelectorAll("[data-toeg-t]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-toeg-t") === st.t)); });
+    pn.querySelectorAll("[data-toeg]").forEach(function (b) { b.setAttribute("aria-checked", String(!!st[b.getAttribute("data-toeg")])); });
+  }
+  function apply(st) {
+    if (st.t === "licht") d.setAttribute("data-theme", "licht"); else d.removeAttribute("data-theme");
+    d.classList.toggle("cd-groot", !!st.g); d.classList.toggle("cd-hc", !!st.h); d.classList.toggle("cd-still", !!st.m);
+    sync();
+    try { document.dispatchEvent(new Event("cd-toeg")); } catch (e) {}
+  }
+  function set(k, v) { var st = state(); st[k] = v; o[k] = v; apply(st); note.textContent = save() ? "" : "Opslaan kan niet in deze browser; de keuze geldt voor deze pagina."; }
+  pn.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-toeg-t],[data-toeg],#toeg-reset"); if (!t) return;
+    if (t.id === "toeg-reset") { o = {}; try { localStorage.removeItem("cd-toeg"); } catch (er) {} apply({ t: "donker", g: false, h: false, m: rm }); note.textContent = "Standaardinstellingen hersteld."; return; }
+    if (t.hasAttribute("data-toeg-t")) set("t", t.getAttribute("data-toeg-t"));
+    else { var k = t.getAttribute("data-toeg"); set(k, t.getAttribute("aria-checked") !== "true"); }
+  });
+  function focusables() { return Array.prototype.slice.call(pn.querySelectorAll("button")); }
+  function open() { pn.hidden = false; btn.setAttribute("aria-expanded", "true"); sync(); var f = pn.querySelector('[aria-pressed="true"]') || focusables()[0]; if (f) f.focus(); }
+  function close(ret) { if (pn.hidden) return; pn.hidden = true; btn.setAttribute("aria-expanded", "false"); if (ret) btn.focus(); }
+  btn.addEventListener("click", function () { if (pn.hidden) open(); else close(true); });
+  pn.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); close(true); return; }
+    if (e.key === "Tab") { var f = focusables(), a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pn.hidden && !pn.contains(document.activeElement)) close(true); });
+  document.addEventListener("click", function (e) { if (!pn.hidden && !pn.contains(e.target) && !btn.contains(e.target)) close(false); });
+  sync();
+  /* Rijen in tape/waterval zijn schakelknoppen: lijst is een groep, overige rijen neutraal (geldige ARIA) */
+  ["tape-list", "waterfall"].forEach(function (id) {
+    var ul = document.getElementById(id); if (!ul || !("MutationObserver" in window)) return;
+    function fix() { Array.prototype.forEach.call(ul.children, function (c) { if (!c.hasAttribute("role")) c.setAttribute("role", c.hasAttribute("data-sym") ? "button" : "presentation"); }); }
+    new MutationObserver(fix).observe(ul, { childList: true }); fix();
+  });
+})();
+</script>
+<script>
+/* —— Taalkiezer (alleen het motto is vertaald; rest van de pagina blijft Nederlands) —— */
+(function initLang() {
+  "use strict";
+  var d = document.documentElement, btn = document.getElementById("lang-btn"), menu = document.getElementById("lang-menu"), D = {};
+  try { D = JSON.parse(document.getElementById("i18n").textContent); } catch (e) { return; }
+  if (!btn || !menu) return;
+  var links = Array.prototype.slice.call(menu.querySelectorAll("a"));
+  function apply(c) {
+    if (!D[c]) c = "en"; var t = D[c];
+    d.lang = c; d.setAttribute("data-lang", c);
+    [["alp-motto", "motto"], ["alp-sub", "sub"], ["alp-free", "free"]].forEach(function (p) { var e = document.getElementById(p[0]); if (e) { e.textContent = t[p[1]]; e.setAttribute("lang", c); } });
+    document.getElementById("lang-code").textContent = c.toUpperCase();
+    btn.setAttribute("aria-label", c.toUpperCase() + " \u00b7 " + t.label + ": " + t.name); btn.setAttribute("lang", c);
+    menu.setAttribute("aria-label", t.label);
+    links.forEach(function (a) { if (a.getAttribute("data-lang") === c) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  }
+  function open() { menu.hidden = false; btn.setAttribute("aria-expanded", "true"); (menu.querySelector('[aria-current="true"]') || links[0]).focus(); }
+  function close(ret) { if (menu.hidden) return; menu.hidden = true; btn.setAttribute("aria-expanded", "false"); if (ret) btn.focus(); }
+  btn.addEventListener("click", function () { if (menu.hidden) open(); else close(true); });
+  menu.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-lang]"); if (!a) return; e.preventDefault();
+    var c = a.getAttribute("data-lang"); try { localStorage.setItem("cd-lang", c); } catch (er) {}
+    try { var u = new URL(location.href); if (u.searchParams.has("lang")) { u.searchParams.set("lang", c); history.replaceState(null, "", u.toString()); } } catch (er) {}
+    apply(c); close(true);
+  });
+  menu.addEventListener("keydown", function (e) {
+    var i = links.indexOf(document.activeElement);
+    if (e.key === "Escape") { e.preventDefault(); close(true); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); links[(i + 1) % links.length].focus(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
+    else if (e.key === "Tab") close(false);
+  });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target) && !btn.contains(e.target)) close(false); });
+  apply(d.lang);
 })();
 </script>
 </body>
