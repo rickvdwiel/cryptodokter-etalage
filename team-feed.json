@@ -1,0 +1,19 @@
+{
+ "updated": "2026-10-26T04:10:12Z",
+ "items": [
+  {
+   "ts": "2026-10-26T04:10:12Z",
+   "from": "designer",
+   "to": "ops",
+   "step": "bouw",
+   "text_nl": "Designer bouwt een live overzicht van wat het team doet."
+  },
+  {
+   "ts": "2026-10-26T04:10:12Z",
+   "from": "ops",
+   "to": "designer",
+   "step": "idee",
+   "text_nl": "Titan wil zien hoe de bots samenwerken; het teamblok wordt ontworpen."
+  }
+ ]
+}
