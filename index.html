@@ -1049,6 +1049,17 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
 .lang-menu a:hover{background:var(--surf2);text-decoration:none}
 .lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
 @media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
+/* ===== Grondstoffen-tab: studeerkamer-hero (pas geladen bij eerste activatie; zelfde kader → CLS 0) ===== */
+.alp-stage .sk-pic{position:absolute!important;inset:0!important;display:block;width:100%;height:100%!important;z-index:1;opacity:0;transition:opacity .18s ease;pointer-events:none;overflow:hidden;background:none}
+.alp-stage .sk-pic .alp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+html.hero-sk .alp-stage .sk-pic{opacity:1}
+.alp-scrim,.alp-snow,.alp-inner{z-index:2}
+html.hero-sk .alp-snow{display:none}
+@media (min-width:768px){html.hero-sk .alp-stage .mkt-tabs{text-align:right}} /* tabbalk rechts: notitieboek links-onder blijft vrij */
+@media (max-width:767.98px){
+  .alp-stage .sk-pic{bottom:auto!important;height:clamp(210px,62vw,300px)!important}
+  .alp-stage .sk-pic .alp-img{object-position:28% 22%}
+}
 </style>
 </head>
 <body>
@@ -3183,11 +3194,37 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
     var d = MARKETS_CONFIG.markets.filter(function (x) { return x.hash === h; })[0];
     return d && (d.source === "legacy" || mktState.models[d.id]) ? d.id : null;
   }
+  /* Studeerkamer-hero alleen bij Grondstoffen: <picture> pas bij eerste activatie (of hover/focus op de tab) invoegen */
+  var SK = { tab: "commodities", el: null, alt: "Een sint-bernardshond met leesbril zit onder een Zwitserse deken aan een houten bureau in een chalet, met een notitieboek vol koersgrafieken, een mok cacao en een stethoscoop; door het raam rechts besneeuwde bergen" };
+  function skPicture() {
+    if (SK.el) return SK.el;
+    var stage = document.getElementById("alp-stage"), first = stage && stage.querySelector("picture");
+    if (!first) return null;
+    var pic = document.createElement("picture"), set = function (ext) { return ["640", "1024", "1280"].map(function (w) { return "img/studeerkamer-" + w + "." + ext + " " + w + "w"; }).join(", "); };
+    pic.className = "sk-pic"; pic.setAttribute("aria-hidden", "true");
+    ["avif", "webp"].forEach(function (ext) { var so = document.createElement("source"); so.type = "image/" + ext; so.setAttribute("sizes", "100vw"); so.setAttribute("srcset", set(ext)); pic.appendChild(so); });
+    var im = document.createElement("img"); im.className = "alp-img"; im.width = 1280; im.height = 720; im.decoding = "async";
+    im.setAttribute("sizes", "100vw"); im.setAttribute("srcset", set("jpg")); im.src = "img/studeerkamer-1024.jpg"; im.alt = SK.alt;
+    pic.appendChild(im); first.parentNode.insertBefore(pic, first.nextSibling);
+    SK.el = pic; return pic;
+  }
+  function setHeroFor(id) {
+    var on = id === SK.tab, root = document.documentElement, stage = document.getElementById("alp-stage");
+    var alp = stage && stage.querySelector("picture:not(.sk-pic)");
+    if (!on) { root.classList.remove("hero-sk"); if (SK.el) SK.el.setAttribute("aria-hidden", "true"); if (alp) alp.removeAttribute("aria-hidden"); return; }
+    var pic = skPicture(); if (!pic) return;
+    var im = pic.querySelector("img"), show = function () {
+      if (mktState.active !== SK.tab) return;
+      root.classList.add("hero-sk"); pic.removeAttribute("aria-hidden"); if (alp) alp.setAttribute("aria-hidden", "true");
+    };
+    if (im.complete && im.naturalWidth) show(); else if (im.decode) im.decode().then(show, show); else im.addEventListener("load", show);
+  }
   function selectMarket(id, focus, writeHash) {
     if (selState.tab && selState.tab !== id) clearSel(false);
     mktState.active = id;
     var other = id !== "crypto";
     document.documentElement.classList.toggle("mkt-x", other);
+    setHeroFor(id);
     MARKETS_CONFIG.markets.forEach(function (d) { var ui = mktState.ui[d.id]; if (ui) ui.panel.hidden = d.id !== id || !mktState.models[d.id]; });
     var tabs = document.querySelectorAll("#mkt-tablist [role=tab]");
     Array.prototype.forEach.call(tabs, function (t) {
@@ -3204,6 +3241,8 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
       var t = ev.target.closest && ev.target.closest("[role=tab]");
       if (t) selectMarket(t.getAttribute("data-mkt"), false, true);
     });
+    var pre = function (ev) { var t = ev.target.closest && ev.target.closest("[data-mkt]"); if (t && t.getAttribute("data-mkt") === SK.tab) skPicture(); };
+    list.addEventListener("pointerover", pre); list.addEventListener("focusin", pre);
     list.addEventListener("keydown", function (ev) {
       var tabs = Array.prototype.slice.call(list.querySelectorAll("[role=tab]"));
       var i = tabs.indexOf(document.activeElement); if (i < 0) return;
