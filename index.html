@@ -1165,10 +1165,10 @@ html.i18n-wait body,html.i18n-swap body{visibility:hidden}
 .lang-menu a:hover{background:var(--surf2);text-decoration:none}
 .lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
 @media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
-/* ===== Newsbronnen-ballon uit de mond van Bernard (alleen in DOM bij geldige data) ===== */
-.alp-stage{--mond-x:43.6;--mond-y:36.4;--staart:9;--ballon-w:300px;--ballon-dy:34px}
-@media (min-width:768px) and (max-width:1023.98px){.alp-stage{--staart:10;--ballon-w:230px;--ballon-dy:0px}}
-@media (max-width:767.98px){.alp-stage{--mond-x:43.6;--mond-y:36.4;--staart:12.5;--ballon-w:auto;--ballon-dy:-6px}}
+/* ===== Newsbronnen-ballon uit het oor van Bernard (alleen in DOM bij geldige data) ===== */
+.alp-stage{--oor-x:36.2;--oor-y:25.4;--staart:3.2;--ballon-w:300px;--ballon-dy:30px} /* oor links (kijkersperspectief), buitenrand; % van 1408x768 */
+@media (min-width:768px) and (max-width:1023.98px){.alp-stage{--staart:3.2;--ballon-w:230px;--ballon-dy:24px}}
+@media (max-width:767.98px){.alp-stage{--oor-x:53.8;--oor-y:24.7;--staart:2.6;--ballon-w:auto;--ballon-dy:18px}} /* mobiel: ballon rechts -> rechteroor (linkeroor zou over ogen/snuit lopen) */
 .ballon{position:absolute;z-index:5;box-sizing:border-box;width:var(--ballon-w);padding:10px 12px 9px;border-radius:12px;background:#f8f9fa;color:#1f2933;border:1px solid rgba(22,33,43,.10);box-shadow:0 1px 2px rgba(0,0,0,.14),0 6px 18px rgba(0,0,0,.18);font:500 13.5px/1.4 var(--font);transform-origin:var(--ox,100%) var(--oy,50%)}
 html[data-theme="licht"] .ballon{background:#fff;border-color:rgba(22,33,43,.14)}
 html.cd-hc .ballon{background:#fff;color:#000;border:2px solid #000}
@@ -4187,7 +4187,7 @@ html[data-theme="licht"] .ballon-staart,html.cd-hc .ballon-staart{background:#ff
     function place() {
       var r = img.getBoundingClientRect(), so = st.getBoundingClientRect(), cs = getComputedStyle(st), op = getComputedStyle(img).objectPosition.split(" ").map(function (v) { return parseFloat(v) / 100; });
       var sc = Math.max(r.width / IW, r.height / IH), w = IW * sc, h = IH * sc, ox = r.left - so.left + (r.width - w) * op[0], oy = r.top - so.top + (r.height - h) * op[1];
-      var mx = ox + w * parseFloat(cs.getPropertyValue("--mond-x")) / 100, my = oy + h * parseFloat(cs.getPropertyValue("--mond-y")) / 100;
+      var mx = ox + w * parseFloat(cs.getPropertyValue("--oor-x")) / 100, my = oy + h * parseFloat(cs.getPropertyValue("--oor-y")) / 100;
       var gap = w * parseFloat(cs.getPropertyValue("--staart")) / 100, dy = parseFloat(cs.getPropertyValue("--ballon-dy")) || 0, sw = so.width, pad = 12, mob = sw < 768;
       var ph = pic.getBoundingClientRect().height, x0, y0, ex, bw;
       if (mob) { b.style.left = (mx + gap) + "px"; b.style.right = pad + "px"; b.style.width = "auto"; }
@@ -4196,7 +4196,7 @@ html[data-theme="licht"] .ballon-staart,html.cd-hc .ballon-staart{background:#ff
       if (tb && !tb.hidden) { var tr = tb.getBoundingClientRect(), tbs = tb.querySelector(".mkt-seg"), q = tbs ? tbs.getBoundingClientRect() : tr; if (q.width) lim = Math.min(lim, q.top - so.top - 8); }
       var bh = b.offsetHeight, top = Math.max(pad, Math.min(my + dy - bh / 2, lim - bh)); b.style.top = top + "px";
       bw = b.offsetWidth; var bl = parseFloat(b.style.left);
-      x0 = mob ? bl + 1 : bl + bw - 1; y0 = Math.min(top + bh - 14, Math.max(top + 14, my + 4));
+      x0 = mob ? bl + 1 : bl + bw - 1; y0 = Math.min(top + bh - 14, Math.max(top + 14, my));
       var dx = mx - x0, dyy = my - y0, len = Math.sqrt(dx * dx + dyy * dyy), ang = Math.atan2(dyy, dx) * 180 / Math.PI;
       tail.style.left = x0 + "px"; tail.style.top = y0 + "px"; tail.style.width = len + "px"; tail.style.transform = "rotate(" + ang + "deg)";
       b.style.setProperty("--ox", (x0 - bl) + "px"); b.style.setProperty("--oy", (y0 - top) + "px");
