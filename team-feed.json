@@ -1,6 +1,12 @@
 {
- "updated": "2026-10-26T04:10:12Z",
+ "updated": "2026-10-26T21:30:52Z",
  "items": [
+  {
+   "ts": "2026-10-26T21:30:52Z",
+   "from": "ops",
+   "to": "newsbronnen",
+   "text_nl": "Ops gaf het nieuwsoverzicht van deze week door aan Newsbronnen, als achtergrond en niet als koopsignaal."
+  },
   {
    "ts": "2026-10-26T04:10:12Z",
    "from": "designer",
