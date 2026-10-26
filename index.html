@@ -2,6 +2,10 @@
 <!-- build: cryptodokter-cockpit-8 -->
 <html lang="nl" translate="no" data-build="cryptodokter-cockpit-8">
 <head>
+<script>try{if(/[?&]thema=licht\b/.test(location.search))document.documentElement.setAttribute("data-theme","licht")}catch(e){}</script>
+<script>(function(){var d=document.documentElement,n=0;d.classList.add("alp-wait");function ok(){d.classList.remove("alp-wait")}
+function has(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.test(f.family)&&f.status==="loaded")r=true})}catch(e){r=true}return r}
+(function tick(){if(has()||++n>30)return ok();try{document.fonts.load('400 1em "Suez One"','Meer dan een beeld')}catch(e){}setTimeout(tick,100)})();})();</script>
 <script>document.documentElement.classList.add("cd-wait");setTimeout(function(){document.documentElement.classList.remove("cd-wait")},2500);</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -27,6 +31,7 @@
 <meta name="twitter:title" content="cryptodokter.nl, paper-trading in het openbaar">
 <meta name="twitter:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
+<link rel="preload" as="image" href="img/bernard-alpen-1280.avif" type="image/avif" imagesrcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Suez+One&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -872,6 +877,62 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
 .hero .ctas{margin:14px 0 0}
 @media(max-width:620px){.cock-body{grid-template-columns:1fr}.hero-heading{gap:4px}.hero-heading .tools{width:100%}.cock-kpis .kpi .v{font-size:18px}.kpi-card .v{font-size:19px}.nav .pill{display:none}.waterfall li{grid-template-columns:43px 45px minmax(0,1fr) minmax(0,1.1fr);gap:6px}.performance strong{font-size:24px}.analysis,.visitors{margin-top:16px}.balance-row{gap:8px 16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+/* ===== Alpine Bernard: rustig herontwerp rond de foto (Spectrum-kalm, geen neon) ===== */
+:root{
+  --bg:#0f151c;--surf:#16202a;--surf2:#1d2834;--line:#2b3946;--tx:#eef2f6;--muted:#9fadba;--text-secondary:#c5ced8;
+  --accent:#9cc3e6;--up:#7fd6a4;--dn:#ff9aa2;--brown:#c08a5b;--swiss:#d52b1e;--snow:#f4f6f8;
+  --card:rgba(18,26,35,.78);--card-line:rgba(244,246,248,.14);--scrim-top:rgba(9,14,20,.62);
+  --sel-bg:rgba(156,195,230,.14);--sel-edge:#9cc3e6
+}
+html[data-theme="licht"]{
+  --bg:#f3f5f7;--surf:#ffffff;--surf2:#eaeff3;--line:#d3dbe3;--tx:#16212b;--muted:#566472;--text-secondary:#33414e;
+  --accent:#36628b;--up:#1b7443;--dn:#b8322a;--brown:#8a5a33;--card:rgba(255,255,255,.84);--card-line:rgba(22,33,43,.12);--scrim-top:rgba(9,14,20,.5);
+  --sel-bg:rgba(54,98,139,.12);--sel-edge:#36628b;color-scheme:light
+}
+html[data-theme="licht"] body{background:var(--bg);color:var(--tx)}
+.brand-mark{background:var(--swiss)!important;border-radius:3px}
+.hero h1,main h2,.s1-card h2{font-family:"Suez One",Georgia,serif;font-weight:400;letter-spacing:0}
+/* Volle-breedte beeld; vaste hoogte per viewport → geen layout shift */
+.alp-stage{position:relative;width:100%;height:clamp(300px,44vw,600px);overflow:hidden;background:#cfd8e0}
+.alp-stage picture,.alp-img{position:absolute;inset:0;width:100%;height:100%}
+.alp-img{object-fit:cover;object-position:50% 34%}
+.alp-scrim{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 14% 12%,rgba(9,14,20,.7),rgba(9,14,20,.2) 55%,rgba(9,14,20,0) 75%),linear-gradient(180deg,var(--scrim-top) 0%,rgba(9,14,20,.18) 38%,rgba(9,14,20,0) 58%),linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 14%,transparent 34%)}
+.alp-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:clamp(18px,3.4vw,40px) var(--padr) 0 var(--pad)}
+@media (min-width:641px) and (max-width:1023.98px){.alp-tag{display:inline-block;padding:8px 12px;border-radius:10px;background:rgba(9,14,20,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+.alp-tag{margin:0;max-width:20ch;font:400 clamp(22px,3.6vw,40px)/1.15 "Suez One",Georgia,serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 18px rgba(0,0,0,.25)}
+html.alp-wait .alp-tag{visibility:hidden} /* tagline pas tonen als Suez One er is: geen verspringing door font-swap */
+.alp-snow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.alp-snow i{position:absolute;top:-8px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.85);opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .alp-snow i{animation:alpSnow 14s linear infinite}
+  .alp-stage.is-off .alp-snow i{animation-play-state:paused}
+}
+@keyframes alpSnow{0%{opacity:0;transform:translate3d(0,0,0)}8%{opacity:.8}85%{opacity:.6}100%{opacity:0;transform:translate3d(-24px,620px,0)}}
+.alp-snow i:nth-child(1){left:4%;animation-delay:-1s;animation-duration:13s;width:3px;height:3px}.alp-snow i:nth-child(2){left:11%;animation-delay:-7s;animation-duration:16s;width:4px;height:4px}.alp-snow i:nth-child(3){left:19%;animation-delay:-3s;animation-duration:12s;width:2px;height:2px}.alp-snow i:nth-child(4){left:26%;animation-delay:-10s;animation-duration:15s;width:3px;height:3px}.alp-snow i:nth-child(5){left:33%;animation-delay:-5s;animation-duration:17s;width:4px;height:4px}.alp-snow i:nth-child(6){left:41%;animation-delay:-12s;animation-duration:14s;width:2px;height:2px}.alp-snow i:nth-child(7){left:48%;animation-delay:-2s;animation-duration:16s;width:3px;height:3px}.alp-snow i:nth-child(8){left:56%;animation-delay:-8s;animation-duration:13s;width:4px;height:4px}.alp-snow i:nth-child(9){left:63%;animation-delay:-4s;animation-duration:15s;width:2px;height:2px}.alp-snow i:nth-child(10){left:70%;animation-delay:-11s;animation-duration:18s;width:3px;height:3px}.alp-snow i:nth-child(11){left:77%;animation-delay:-6s;animation-duration:14s;width:4px;height:4px}.alp-snow i:nth-child(12){left:84%;animation-delay:-9s;animation-duration:16s;width:2px;height:2px}.alp-snow i:nth-child(13){left:91%;animation-delay:-0s;animation-duration:13s;width:3px;height:3px}.alp-snow i:nth-child(14){left:97%;animation-delay:-13s;animation-duration:17s;width:2px;height:2px}
+/* Hero-inhoud in een rustige matglazen kaart over de onderkant van het beeld (alleen op het Crypto-tabblad) */
+html:not(.mkt-x) main>.hero{margin-top:calc(-1 * clamp(70px,12vw,190px));position:relative;z-index:3}
+main>.hero>div:first-child{background:var(--card);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);border:1px solid var(--card-line);border-radius:14px;padding:20px 22px;box-shadow:0 10px 30px -18px rgba(0,0,0,.6);min-width:0}
+@media (max-width:640px){
+  .alp-stage{height:clamp(280px,86vw,360px)}
+  .alp-img{object-position:63% 38%}
+  main>.hero>div:first-child{padding:16px 14px;border-radius:12px}
+  .alp-tag{max-width:none;display:inline-block;font-size:24px;padding:8px 12px;border-radius:10px;background:rgba(9,14,20,.58);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .alp-scrim{background:radial-gradient(ellipse 85% 62% at 18% 12%,rgba(9,14,20,.74),rgba(9,14,20,.25) 60%,rgba(9,14,20,0) 80%),linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 14%,transparent 34%)}
+}
+/* Markttabs liggen over de onderkant van het beeld (absoluut → geen verschuiving als ze verschijnen) */
+.alp-stage .mkt-tabs{position:absolute;left:0;right:0;bottom:calc(clamp(70px,12vw,190px) + 14px);z-index:4;margin:0 auto}
+html.mkt-x .alp-stage .mkt-tabs{bottom:14px}
+/* Vaste kophoogte: font-swap mag het beeld eronder niet laten verspringen */
+header.top{height:calc(max(14px, env(safe-area-inset-top)) + 36px);box-sizing:border-box}
+@media (max-width:767.98px){header.top{height:calc(max(14px, env(safe-area-inset-top)) + 32px)}}
+/* Bergkam-silhouet als sectiescheiding */
+#marktbulletin::before,#team::before,#doneer::before{content:"";display:block;height:26px;margin:0 0 18px;background:var(--line);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40 L0 32 L40 26 L70 30 L110 14 L140 22 L170 18 L205 4 L235 16 L270 12 L300 24 L330 20 L365 8 L395 18 L430 15 L465 26 L500 19 L530 28 L565 22 L600 30 L600 40Z'/%3E%3C/svg%3E") bottom/100% 26px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40 L0 32 L40 26 L70 30 L110 14 L140 22 L170 18 L205 4 L235 16 L270 12 L300 24 L330 20 L365 8 L395 18 L430 15 L465 26 L500 19 L530 28 L565 22 L600 30 L600 40Z'/%3E%3C/svg%3E") bottom/100% 26px no-repeat;opacity:.9}
+/* Bernard als bewaker bij de stap Controle */
+.team-guard{display:flex;align-items:center;gap:10px;margin:10px 0 0;font:500 12.5px/1.35 var(--font);color:var(--text-secondary)}
+.team-guard img{display:block;width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--brown);flex:0 0 auto}
+/* Licht thema: vaste donkere details neutraliseren */
+html[data-theme="licht"] .cockpit::before{opacity:.25}
+html[data-theme="licht"] .alp-tag{color:#fff}
 </style>
 </head>
 <body>
@@ -891,7 +952,17 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   </nav>
 </header>
 
-<nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
+<div class="alp-stage" id="alp-stage">
+  <picture>
+    <source type="image/avif" srcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" sizes="100vw">
+    <source type="image/webp" srcset="img/bernard-alpen-640.webp 640w, img/bernard-alpen-1280.webp 1280w, img/bernard-alpen-1408.webp 1408w" sizes="100vw">
+    <img class="alp-img" src="img/bernard-alpen-1280.jpg" srcset="img/bernard-alpen-640.jpg 640w, img/bernard-alpen-1280.jpg 1280w, img/bernard-alpen-1408.jpg 1408w" sizes="100vw" width="1408" height="768" fetchpriority="high" alt="Een sint-bernardshond met een vaatje om de hals staat in de sneeuw, met besneeuwde bergen en een chalet op de achtergrond">
+  </picture>
+  <div class="alp-scrim" aria-hidden="true"></div>
+  <div class="alp-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="alp-inner"><p class="alp-tag">Meer dan een beeld, een blik op de toekomst</p></div>
+  <nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
+</div>
 
 <section class="wins" id="wins" aria-labelledby="wins-title" hidden>
   <div class="wins-head"><h2 id="wins-title">Beste trades deze week</h2><span class="wins-ctx" id="wins-ctx"></span><span class="wins-ctx wins-wk" id="wins-wk"></span></div>
@@ -1113,7 +1184,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     <ol class="team-flow">
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">1</span><span class="team-t">Idee</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/></svg><div><h4>Trading Desk</h4><p>bedenkt het idee</p></div></li><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg><div><h4>Strategie Lab</h4><p>test het eerst op papier</p></div></li></ul></li>
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">2</span><span class="team-t">Bouw</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><div><h4>Optimizer</h4><p>bouwt de verbetering</p></div></li></ul></li>
-      <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">3</span><span class="team-t">Controle</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h4>Bernard</h4><p>controleert elke wijziging</p></div></li></ul></li>
+      <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">3</span><span class="team-t">Controle</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h4>Bernard</h4><p>controleert elke wijziging</p></div></li></ul><p class="team-guard"><picture><source type="image/avif" srcset="img/bernard-kop-96.avif 1x, img/bernard-kop-192.avif 2x"><source type="image/webp" srcset="img/bernard-kop-96.webp 1x, img/bernard-kop-192.webp 2x"><img src="img/bernard-kop-96.jpg" srcset="img/bernard-kop-96.jpg 1x, img/bernard-kop-192.jpg 2x" width="40" height="40" alt="" loading="lazy" decoding="async"></picture><span>Bernard waakt over elke wijziging</span></p></li>
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">4</span><span class="team-t">Live</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c2-5 6-9 13-9 0 7-4 11-9 13z"/><circle cx="15" cy="9" r="1.5"/></svg><div><h4>Ops</h4><p>zet het live</p></div></li></ul></li>
     </ol></div>
     <section class="team-feed" id="team-feed" aria-labelledby="team-feed-h" hidden>
@@ -1318,7 +1389,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
 <footer class="foot">
   <!-- build: cryptodokter-cockpit-8 -->
   <div class="foot-row">
-    <span><strong>cryptodokter.nl</strong> · paper-only</span>
+    <span><strong>CryptoDokter</strong> · paper-only</span>
     <span class="foot-links"><span class="hitc-f" id="hitc-f" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span><span class="hitc-why" id="hitc-why" aria-hidden="true" hidden></span><a href="#doneer" id="foot-doneer">Steun CryptoDokter</a></span>
   </div>
   <p class="disclaimer">
@@ -3575,6 +3646,16 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   document.addEventListener("cd:teamfeed", setFile);
   document.addEventListener("visibilitychange", function () { if (!document.hidden && file) load(); });
   setFile();
+})();
+</script>
+<script>
+/* —— Sneeuw in het beeld: pauzeren buiten beeld of in een verborgen tabblad —— */
+(function () {
+  var st = document.getElementById("alp-stage"); if (!st) return;
+  var vis = true;
+  function upd() { st.classList.toggle("is-off", !vis || document.hidden); }
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { vis = es[es.length - 1].isIntersecting; upd(); }).observe(st);
+  document.addEventListener("visibilitychange", upd);
 })();
 </script>
 <script>
