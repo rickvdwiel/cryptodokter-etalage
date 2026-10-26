@@ -55,7 +55,7 @@ Promise.all([document.fonts.load('400 22px "Suez One"',t("alp-motto")),document.
 <meta name="twitter:title" content="cryptodokter.nl, paper-trading in het openbaar">
 <meta name="twitter:description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
-<link rel="preload" as="image" href="img/bernard-alpen-1280.avif" type="image/avif" imagesrcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="img/studeerkamer-1024.avif" type="image/avif" imagesrcset="img/studeerkamer-640.avif 640w, img/studeerkamer-1024.avif 1024w, img/studeerkamer-1280.avif 1280w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Suez+One&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -1034,7 +1034,8 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
 @media (max-width:767.98px){
   .alp-inner{height:140px;box-sizing:border-box} /* vaste hoogte: past de langste taal (PL/FR), geen verschuiving bij font-swap */
 }
-@media (max-width:400px){.alp-inner{height:184px}}
+@media (max-width:400px){.alp-inner{height:160px}}
+@media (max-width:380px){.alp-inner{height:184px}}
 @media (max-width:767.98px){
   .alp-copy .alp-tag{height:auto;font-size:20px;line-height:1.2}
   .alp-sub{margin-top:6px;font-size:13.5px;color:var(--text-secondary);text-shadow:none}
@@ -1049,6 +1050,28 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
 .lang-menu a:hover{background:var(--surf2);text-decoration:none}
 .lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
 @media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
+/* ===== Studeerkamer-hero: beeld als band, motto in het raam, cockpit eronder ===== */
+:root{--band:min(52vw,832px);--brown:#b5835a}
+.alp-stage{height:auto!important;overflow:visible!important;background:none!important}
+.alp-stage picture{position:relative!important;inset:auto!important;display:block;height:var(--band)!important;max-width:1600px;margin:0 auto;overflow:hidden;background:#3a2a1e}
+.alp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%!important}
+.alp-scrim{position:absolute!important;left:0;right:0;top:0;bottom:auto!important;height:var(--band)!important;max-width:1600px;margin:0 auto;background:radial-gradient(ellipse 42% 58% at 84% 20%,rgba(12,10,8,.62),rgba(12,10,8,.34) 55%,rgba(12,10,8,0) 80%),linear-gradient(0deg,rgba(12,10,8,.28),transparent 18%)!important}
+html.cd-hc .alp-scrim{background:radial-gradient(ellipse 44% 60% at 84% 20%,rgba(9,8,6,.82),rgba(9,8,6,.55) 55%,rgba(9,8,6,0) 82%)!important}
+/* sneeuw alleen buiten het raam */
+.alp-snow{position:absolute!important;inset:auto!important;top:0!important;height:calc(var(--band) * .5)!important;left:max(60%,calc(50% + 160px))!important;right:2%!important;width:auto}
+.alp-stage .mkt-tabs{position:static!important;min-height:56px;box-sizing:border-box}
+.alp-stage .mkt-tabs[hidden]{display:block;visibility:hidden}
+html:not(.mkt-x) main>.hero{margin-top:6px!important}
+@media (min-width:768px){
+  .alp-inner{position:absolute!important;top:0;left:0;right:0;margin:0 auto;padding-top:clamp(18px,3vw,44px)!important}
+}
+@media (max-width:767.98px){
+  :root{--band:clamp(240px,92vw,420px)}
+  .alp-img{object-position:30% 50%!important}
+  .alp-snow{display:none}
+  .alp-scrim{background:linear-gradient(0deg,rgba(12,10,8,.25),transparent 25%)!important}
+}
+#marktbulletin::before,#team::before,#doneer::before{background:color-mix(in srgb,var(--brown) 55%,var(--line))}
 </style>
 </head>
 <body>
@@ -1082,9 +1105,9 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
 
 <div class="alp-stage" id="alp-stage">
   <picture>
-    <source type="image/avif" srcset="img/bernard-alpen-640.avif 640w, img/bernard-alpen-1280.avif 1280w, img/bernard-alpen-1408.avif 1408w" sizes="100vw">
-    <source type="image/webp" srcset="img/bernard-alpen-640.webp 640w, img/bernard-alpen-1280.webp 1280w, img/bernard-alpen-1408.webp 1408w" sizes="100vw">
-    <img class="alp-img" src="img/bernard-alpen-1280.jpg" srcset="img/bernard-alpen-640.jpg 640w, img/bernard-alpen-1280.jpg 1280w, img/bernard-alpen-1408.jpg 1408w" sizes="100vw" width="1408" height="768" fetchpriority="high" alt="Een sint-bernardshond met een vaatje om de hals staat in de sneeuw, met besneeuwde bergen en een chalet op de achtergrond">
+    <source type="image/avif" srcset="img/studeerkamer-640.avif 640w, img/studeerkamer-1024.avif 1024w, img/studeerkamer-1280.avif 1280w" sizes="100vw">
+    <source type="image/webp" srcset="img/studeerkamer-640.webp 640w, img/studeerkamer-1024.webp 1024w, img/studeerkamer-1280.webp 1280w" sizes="100vw">
+    <img class="alp-img" src="img/studeerkamer-1024.jpg" srcset="img/studeerkamer-640.jpg 640w, img/studeerkamer-1024.jpg 1024w, img/studeerkamer-1280.jpg 1280w" sizes="100vw" width="1280" height="720" fetchpriority="high" alt="Een sint-bernardshond met leesbril zit onder een Zwitserse deken aan een houten bureau in een chalet, met een notitieboek vol koersgrafieken, een mok cacao en een stethoscoop; door het raam rechts besneeuwde bergen">
   </picture>
   <div class="alp-scrim" aria-hidden="true"></div>
   <div class="alp-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
