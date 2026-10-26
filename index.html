@@ -2,15 +2,24 @@
 <!-- build: cryptodokter-cockpit-8 -->
 <html lang="nl" translate="no" data-build="cryptodokter-cockpit-8">
 <head>
+<script>/* Taal voor het motto: ?lang= → localStorage cd-lang → navigator.languages → en (vóór de eerste paint) */
+(function(){var L=["nl","en","de","fr","es","it","pt","pl","tr"],d=document.documentElement,c=null;function ok(x){x=String(x||"").toLowerCase().slice(0,2);return L.indexOf(x)>-1?x:null}
+try{var m=/[?&]lang=([a-zA-Z-]{2,8})/.exec(location.search);if(m)c=ok(m[1])}catch(e){}
+if(!c){try{c=ok(localStorage.getItem("cd-lang"))}catch(e){}}
+if(!c){try{var n=navigator.languages||[navigator.language];for(var i=0;i<n.length&&!c;i++)c=ok(n[i])}catch(e){}}
+c=c||"en";d.lang=c;d.setAttribute("data-lang",c)})();</script>
 <script>/* Toegankelijkheid: keuzes vóór de eerste paint toepassen (localStorage optioneel; ?thema= gaat voor) */
 (function(){var d=document.documentElement,o={};try{o=JSON.parse(localStorage.getItem("cd-toeg")||"{}")||{}}catch(e){o={}}
 try{var m=/[?&]thema=(licht|donker)\b/.exec(location.search);if(m)o.t=m[1]}catch(e){}
 if(o.t==="licht")d.setAttribute("data-theme","licht");if(o.g)d.classList.add("cd-groot");if(o.h)d.classList.add("cd-hc");
 var rm=false;try{rm=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
 if(o.m===true||(o.m!==false&&rm))d.classList.add("cd-still")})();</script>
-<script>(function(){var d=document.documentElement,n=0;d.classList.add("alp-wait");function ok(){d.classList.remove("alp-wait")}
-function has(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.test(f.family)&&f.status==="loaded")r=true})}catch(e){r=true}return r}
-(function tick(){if(has()||++n>30)return ok();try{document.fonts.load('400 1em "Suez One"','Meer dan een beeld')}catch(e){}setTimeout(tick,100)})();})();</script>
+<script>(function(){var d=document.documentElement,n=0,go=false;d.classList.add("alp-wait");function ok(){d.classList.remove("alp-wait")}
+/* motto pas tonen als Suez One en IBM Plex Sans (incl. latin-ext voor PL/TR) er zijn: geen verspringing door font-swap */
+function ready(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.test(f.family))r=true})}catch(e){}return r&&document.getElementById("alp-free")}
+(function tick(){if(go)return;if(++n>30)return ok();if(!ready())return setTimeout(tick,100);go=true;
+try{var t=function(id){return document.getElementById(id).textContent||"a"};
+Promise.all([document.fonts.load('400 22px "Suez One"',t("alp-motto")),document.fonts.load('500 15px "IBM Plex Sans"',t("alp-sub")),document.fonts.load('600 12px "IBM Plex Sans"',t("alp-free"))]).then(ok,ok);setTimeout(ok,3000)}catch(e){ok()}})();})();</script>
 <script>document.documentElement.classList.add("cd-wait");setTimeout(function(){document.documentElement.classList.remove("cd-wait")},2500);</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -18,6 +27,16 @@ function has(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.
 <meta name="description" content="Paper-fills, equity en radar van de CryptoDokter paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cryptodokter.nl/">
+<link rel="alternate" hreflang="nl" href="https://cryptodokter.nl/?lang=nl">
+<link rel="alternate" hreflang="en" href="https://cryptodokter.nl/?lang=en">
+<link rel="alternate" hreflang="de" href="https://cryptodokter.nl/?lang=de">
+<link rel="alternate" hreflang="fr" href="https://cryptodokter.nl/?lang=fr">
+<link rel="alternate" hreflang="es" href="https://cryptodokter.nl/?lang=es">
+<link rel="alternate" hreflang="it" href="https://cryptodokter.nl/?lang=it">
+<link rel="alternate" hreflang="pt" href="https://cryptodokter.nl/?lang=pt">
+<link rel="alternate" hreflang="pl" href="https://cryptodokter.nl/?lang=pl">
+<link rel="alternate" hreflang="tr" href="https://cryptodokter.nl/?lang=tr">
+<link rel="alternate" hreflang="x-default" href="https://cryptodokter.nl/">
 <title>cryptodokter.nl, paper-trading in het openbaar</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -905,7 +924,7 @@ html[data-theme="licht"] body{background:var(--bg);color:var(--tx)}
 .alp-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:clamp(18px,3.4vw,40px) var(--padr) 0 var(--pad)}
 @media (min-width:641px) and (max-width:1023.98px){.alp-tag{display:inline-block;padding:8px 12px;border-radius:10px;background:rgba(9,14,20,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
 .alp-tag{margin:0;max-width:20ch;font:400 clamp(22px,3.6vw,40px)/1.15 "Suez One",Georgia,serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 18px rgba(0,0,0,.25)}
-html.alp-wait .alp-tag{visibility:hidden} /* tagline pas tonen als Suez One er is: geen verspringing door font-swap */
+html.alp-wait .alp-tag,html.alp-wait .alp-copy{visibility:hidden} /* tagline pas tonen als Suez One er is: geen verspringing door font-swap */
 .alp-snow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
 .alp-snow i{position:absolute;top:-8px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.85);opacity:0}
 @media (prefers-reduced-motion:no-preference){
@@ -1001,10 +1020,39 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   .alp-stage .mkt-tabs{top:calc(clamp(210px,62vw,300px) - 58px);bottom:auto!important}
   html:not(.mkt-x) main>.hero{margin-top:8px}
 }
+/* ===== Meertalig motto + taalkiezer ===== */
+.alp-copy{margin:0}
+.alp-sub{margin:10px 0 0;font:500 15px/1.45 var(--font);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.alp-free{margin:6px 0 0;font:600 12px/1.4 var(--font);letter-spacing:.02em;color:#e6edf3;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+@media (min-width:768px){
+  .alp-copy{max-width:min(44%,520px);text-align:right}
+  .alp-copy .alp-tag{max-width:none;font-size:clamp(20px,2.3vw,32px)}
+  html.cd-hc .alp-copy{padding:10px 14px;border-radius:10px;background:rgba(9,14,20,.88)}
+  html.cd-hc .alp-copy .alp-tag{padding:0;background:none!important}
+}
+@media (min-width:768px) and (max-width:1023.98px){.alp-sub{font-size:13px}.alp-free{font-size:11px}}
+@media (max-width:767.98px){
+  .alp-inner{height:140px;box-sizing:border-box} /* vaste hoogte: past de langste taal (PL/FR), geen verschuiving bij font-swap */
+}
+@media (max-width:400px){.alp-inner{height:184px}}
+@media (max-width:767.98px){
+  .alp-copy .alp-tag{height:auto;font-size:20px;line-height:1.2}
+  .alp-sub{margin-top:6px;font-size:13.5px;color:var(--text-secondary);text-shadow:none}
+  .alp-free{margin-top:4px;font-size:11.5px;color:var(--muted);text-shadow:none}
+}
+.lang-wrap{position:relative;flex:0 0 auto}
+.lang-btn{width:auto;gap:5px;padding:0 8px;display:inline-flex;align-items:center;font:600 12px/1 var(--font);letter-spacing:.03em}
+.lang-btn svg{width:16px;height:16px}
+.lang-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:61;margin:0;padding:6px;list-style:none;min-width:160px;border:1px solid var(--line);border-radius:10px;background:var(--surf);box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}
+.lang-menu[hidden]{display:none}
+.lang-menu a{display:block;padding:8px 10px;border-radius:6px;color:var(--tx);font:500 13px/1.2 var(--font);text-decoration:none}
+.lang-menu a:hover{background:var(--surf2);text-decoration:none}
+.lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
+@media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
 </style>
 </head>
 <body>
-<a class="skip" href="#hoofdinhoud">Ga naar inhoud</a>
+<a class="skip" href="#hoofdinhoud" lang="nl">Ga naar inhoud</a>
 
 
 <header class="top">
@@ -1013,13 +1061,15 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
     <span class="brand-name">cryptodokter.nl</span>
   </a>
   <nav class="nav" aria-label="Hoofdnavigatie">
-    <span class="hitc" id="hitc" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
-    <span class="pill" title="Alleen papieren simulatie — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
-    <a href="#analyse" id="nav-how">Analyse</a>
-    <a href="#team" id="nav-team" class="nav-quiet">Team</a>
-    <button type="button" class="toeg-btn" id="toeg-btn" aria-label="Toegankelijkheid" aria-expanded="false" aria-controls="toeg-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M4.5 8.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2"/><path d="M12 9.7v4.6"/><path d="M8.5 21l3.5-6.7 3.5 6.7"/></svg></button>
+    <span class="hitc" id="hitc" lang="nl" data-hitc data-state="loading" title="Bezoekers volgens GoatCounter"><span class="hitc-l">Bezoekers</span> <span class="hitc-n" data-hitc-n>—</span><span class="hitc-sr" data-hitc-sr>: teller laden</span></span>
+    <span class="pill" title="Alleen papieren simulatie lang="nl" — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
+    <a href="#analyse" id="nav-how" lang="nl">Analyse</a>
+    <a href="#team" id="nav-team" lang="nl" class="nav-quiet">Team</a>
+    <div class="lang-wrap"><button type="button" class="toeg-btn lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="NL · Taal: Nederlands"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.4 5.2 3.4 8.5s-1 6.1-3.4 8.5c-2.4-2.4-3.4-5.2-3.4-8.5s1-6.1 3.4-8.5z"/></svg><span id="lang-code" aria-hidden="true">NL</span></button>
+    <ul class="lang-menu" id="lang-menu" aria-label="Taal" hidden><li><a href="?lang=nl" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li><li><a href="?lang=en" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="?lang=de" hreflang="de" lang="de" data-lang="de">Deutsch</a></li><li><a href="?lang=fr" hreflang="fr" lang="fr" data-lang="fr">Français</a></li><li><a href="?lang=es" hreflang="es" lang="es" data-lang="es">Español</a></li><li><a href="?lang=it" hreflang="it" lang="it" data-lang="it">Italiano</a></li><li><a href="?lang=pt" hreflang="pt" lang="pt" data-lang="pt">Português</a></li><li><a href="?lang=pl" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li><li><a href="?lang=tr" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li></ul></div>
+    <button type="button" class="toeg-btn" id="toeg-btn" lang="nl" aria-label="Toegankelijkheid" aria-expanded="false" aria-controls="toeg-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M4.5 8.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2"/><path d="M12 9.7v4.6"/><path d="M8.5 21l3.5-6.7 3.5 6.7"/></svg></button>
   </nav>
-  <div class="toeg-panel" id="toeg-panel" role="dialog" aria-modal="false" aria-labelledby="toeg-h" hidden>
+  <div class="toeg-panel" id="toeg-panel" lang="nl" role="dialog" aria-modal="false" aria-labelledby="toeg-h" hidden>
     <h2 id="toeg-h">Toegankelijkheid</h2>
     <div class="toeg-row"><span id="toeg-l-t">Thema</span><span class="toeg-seg" role="group" aria-labelledby="toeg-l-t"><button type="button" data-toeg-t="donker" aria-pressed="true">Donker</button><button type="button" data-toeg-t="licht" aria-pressed="false">Licht</button></span></div>
     <div class="toeg-row"><span id="toeg-l-g">Grotere tekst<small>Tekst ongeveer 18% groter</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-g" data-toeg="g"></button></div>
@@ -1038,7 +1088,11 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   </picture>
   <div class="alp-scrim" aria-hidden="true"></div>
   <div class="alp-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="alp-inner"><p class="alp-tag">Meer dan een beeld, een blik op de toekomst</p></div>
+  <div class="alp-inner"><div class="alp-copy" id="alp-copy"><p class="alp-tag" id="alp-motto" lang="nl">We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.</p><p class="alp-sub" id="alp-sub" lang="nl">Leer van onze paper-bot, zonder echt geld te riskeren.</p><p class="alp-free" id="alp-free" lang="nl">Gratis · paper-trading · geen echt geld</p></div></div>
+  <script type="application/json" id="i18n">{"nl": {"name": "Nederlands", "label": "Taal", "motto": "We zijn er om je te helpen. Geld verloren met crypto? We zijn er voor je.", "sub": "Leer van onze paper-bot, zonder echt geld te riskeren.", "free": "Gratis · paper-trading · geen echt geld"}, "en": {"name": "English", "label": "Language", "motto": "We're here to help you. Lost money on crypto? We're here for you.", "sub": "Learn from our paper bot, without risking real money.", "free": "Free · paper trading · no real money"}, "de": {"name": "Deutsch", "label": "Sprache", "motto": "Wir sind da, um dir zu helfen. Geld mit Krypto verloren? Wir sind für dich da.", "sub": "Lerne von unserem Paper-Bot, ohne echtes Geld zu riskieren.", "free": "Kostenlos · Paper-Trading · kein echtes Geld"}, "fr": {"name": "Français", "label": "Langue", "motto": "Nous sommes là pour vous aider. Vous avez perdu de l'argent avec la crypto ? Nous sommes là pour vous.", "sub": "Apprenez avec notre bot de paper trading, sans risquer d'argent réel.", "free": "Gratuit · paper trading · pas d'argent réel"}, "es": {"name": "Español", "label": "Idioma", "motto": "Estamos aquí para ayudarte. ¿Has perdido dinero con las criptomonedas? Estamos contigo.", "sub": "Aprende de nuestro bot de paper trading, sin arriesgar dinero real.", "free": "Gratis · paper trading · sin dinero real"}, "it": {"name": "Italiano", "label": "Lingua", "motto": "Siamo qui per aiutarti. Hai perso soldi con le criptovalute? Siamo qui per te.", "sub": "Impara dal nostro bot di paper trading, senza rischiare denaro reale.", "free": "Gratis · paper trading · niente denaro reale"}, "pt": {"name": "Português", "label": "Idioma", "motto": "Estamos aqui para ajudar. Perdeu dinheiro com criptomoedas? Estamos do seu lado.", "sub": "Aprenda com o nosso bot de paper trading, sem arriscar dinheiro real.", "free": "Grátis · paper trading · sem dinheiro real"}, "pl": {"name": "Polski", "label": "Język", "motto": "Jesteśmy tu, aby Ci pomóc. Stracone pieniądze na kryptowalutach? Jesteśmy przy Tobie.", "sub": "Ucz się od naszego bota paper tradingu, bez ryzykowania prawdziwych pieniędzy.", "free": "Za darmo · paper trading · bez prawdziwych pieniędzy"}, "tr": {"name": "Türkçe", "label": "Dil", "motto": "Size yardım etmek için buradayız. Kriptoda para mı kaybettiniz? Yanınızdayız.", "sub": "Paper trading botumuzdan, gerçek para riske atmadan öğrenin.", "free": "Ücretsiz · paper trading · gerçek para yok"}}</script>
+  <script>/* motto direct in de juiste taal zetten (textContent, synchroon: geen flits/verschuiving) */
+  (function(){try{var D=JSON.parse(document.getElementById("i18n").textContent),c=document.documentElement.lang,t=D[c]||D.en;if(!D[c])c="en";
+  [["alp-motto","motto"],["alp-sub","sub"],["alp-free","free"]].forEach(function(p){var e=document.getElementById(p[0]);e.textContent=t[p[1]];e.setAttribute("lang",c)});var k=document.getElementById("lang-code");if(k)k.textContent=c.toUpperCase();var b=document.getElementById("lang-btn");if(b)b.setAttribute("aria-label",c.toUpperCase()+" \u00b7 "+t.label+": "+t.name);}catch(e){}})();</script>
   <nav class="mkt-tabs" id="mkt-tabs" aria-label="Markten" hidden><div class="mkt-seg" role="tablist" aria-label="Kies een markt" id="mkt-tablist"></div></nav>
 </div>
 
@@ -1054,7 +1108,7 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   </div>
 </div>
 
-<main id="hoofdinhoud">
+<main id="hoofdinhoud" lang="nl">
   <section class="hero" id="panel-crypto" aria-labelledby="hero-title">
     <div>
       <div class="hero-heading">
@@ -1464,7 +1518,7 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
   </template>
 </main>
 
-<footer class="foot">
+<footer class="foot" lang="nl">
   <!-- build: cryptodokter-cockpit-8 -->
   <div class="foot-row">
     <span><strong>CryptoDokter</strong> · paper-only</span>
@@ -3874,6 +3928,43 @@ html.cd-hc .alp-scrim{background:linear-gradient(270deg,rgba(9,14,20,.82) 0%,rgb
     function fix() { Array.prototype.forEach.call(ul.children, function (c) { if (!c.hasAttribute("role")) c.setAttribute("role", c.hasAttribute("data-sym") ? "button" : "presentation"); }); }
     new MutationObserver(fix).observe(ul, { childList: true }); fix();
   });
+})();
+</script>
+<script>
+/* —— Taalkiezer (alleen het motto is vertaald; rest van de pagina blijft Nederlands) —— */
+(function initLang() {
+  "use strict";
+  var d = document.documentElement, btn = document.getElementById("lang-btn"), menu = document.getElementById("lang-menu"), D = {};
+  try { D = JSON.parse(document.getElementById("i18n").textContent); } catch (e) { return; }
+  if (!btn || !menu) return;
+  var links = Array.prototype.slice.call(menu.querySelectorAll("a"));
+  function apply(c) {
+    if (!D[c]) c = "en"; var t = D[c];
+    d.lang = c; d.setAttribute("data-lang", c);
+    [["alp-motto", "motto"], ["alp-sub", "sub"], ["alp-free", "free"]].forEach(function (p) { var e = document.getElementById(p[0]); if (e) { e.textContent = t[p[1]]; e.setAttribute("lang", c); } });
+    document.getElementById("lang-code").textContent = c.toUpperCase();
+    btn.setAttribute("aria-label", c.toUpperCase() + " \u00b7 " + t.label + ": " + t.name); btn.setAttribute("lang", c);
+    menu.setAttribute("aria-label", t.label);
+    links.forEach(function (a) { if (a.getAttribute("data-lang") === c) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  }
+  function open() { menu.hidden = false; btn.setAttribute("aria-expanded", "true"); (menu.querySelector('[aria-current="true"]') || links[0]).focus(); }
+  function close(ret) { if (menu.hidden) return; menu.hidden = true; btn.setAttribute("aria-expanded", "false"); if (ret) btn.focus(); }
+  btn.addEventListener("click", function () { if (menu.hidden) open(); else close(true); });
+  menu.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-lang]"); if (!a) return; e.preventDefault();
+    var c = a.getAttribute("data-lang"); try { localStorage.setItem("cd-lang", c); } catch (er) {}
+    try { var u = new URL(location.href); if (u.searchParams.has("lang")) { u.searchParams.set("lang", c); history.replaceState(null, "", u.toString()); } } catch (er) {}
+    apply(c); close(true);
+  });
+  menu.addEventListener("keydown", function (e) {
+    var i = links.indexOf(document.activeElement);
+    if (e.key === "Escape") { e.preventDefault(); close(true); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); links[(i + 1) % links.length].focus(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
+    else if (e.key === "Tab") close(false);
+  });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target) && !btn.contains(e.target)) close(false); });
+  apply(d.lang);
 })();
 </script>
 </body>
