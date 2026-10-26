@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="https://cryptodokter.nl/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Suez+One&family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Suez+One&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0c1016; --surf:#131921; --surf2:#18212c; --line:#243041;
@@ -976,7 +976,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
       <p class="s" id="strip-eq-sub">Referentie sinds start · paper</p>
     </div>
     <div class="kpi-card">
-      <p class="k">Gerealiseerde P&L</p>
+      <p class="k">Gerealiseerde P&amp;L</p>
       <p class="v" id="strip-rend">—</p>
       <p class="s" id="strip-rend-sub">Netto uit gesloten posities</p>
     </div>
@@ -1434,7 +1434,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" }[c];
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': """, "'": "&#39;" }[c];
     });
   }
 
