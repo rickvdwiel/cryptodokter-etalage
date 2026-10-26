@@ -2,7 +2,12 @@
 <!-- build: cryptodokter-cockpit-8 -->
 <html lang="nl" translate="no" data-build="cryptodokter-cockpit-8">
 <head>
-<script>try{if(/[?&]thema=licht\b/.test(location.search))document.documentElement.setAttribute("data-theme","licht")}catch(e){}</script>
+<script>/* Toegankelijkheid: keuzes vóór de eerste paint toepassen (localStorage optioneel; ?thema= gaat voor) */
+(function(){var d=document.documentElement,o={};try{o=JSON.parse(localStorage.getItem("cd-toeg")||"{}")||{}}catch(e){o={}}
+try{var m=/[?&]thema=(licht|donker)\b/.exec(location.search);if(m)o.t=m[1]}catch(e){}
+if(o.t==="licht")d.setAttribute("data-theme","licht");if(o.g)d.classList.add("cd-groot");if(o.h)d.classList.add("cd-hc");
+var rm=false;try{rm=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(o.m===true||(o.m!==false&&rm))d.classList.add("cd-still")})();</script>
 <script>(function(){var d=document.documentElement,n=0;d.classList.add("alp-wait");function ok(){d.classList.remove("alp-wait")}
 function has(){var r=false;try{document.fonts.forEach(function(f){if(/Suez One/.test(f.family)&&f.status==="loaded")r=true})}catch(e){r=true}return r}
 (function tick(){if(has()||++n>30)return ok();try{document.fonts.load('400 1em "Suez One"','Meer dan een beeld')}catch(e){}setTimeout(tick,100)})();})();</script>
@@ -933,6 +938,49 @@ header.top{height:calc(max(14px, env(safe-area-inset-top)) + 36px);box-sizing:bo
 /* Licht thema: vaste donkere details neutraliseren */
 html[data-theme="licht"] .cockpit::before{opacity:.25}
 html[data-theme="licht"] .alp-tag{color:#fff}
+/* ===== Toegankelijkheid ===== */
+header.top{position:relative}
+.toeg-btn{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--tx);cursor:pointer;flex:0 0 auto}
+.toeg-btn:hover{border-color:var(--muted)}
+.toeg-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.toeg-btn[aria-expanded="true"]{background:var(--surf2);border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.toeg-panel{position:absolute;right:var(--padr);top:calc(100% + 6px);z-index:60;width:300px;box-sizing:border-box;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surf);color:var(--tx);box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}
+.toeg-panel[hidden]{display:none}
+.toeg-panel h2{margin:0 0 12px;font:400 17px/1.2 "Suez One",Georgia,serif;color:var(--tx)}
+.toeg-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.toeg-row>span{font:500 13px/1.35 var(--font);color:var(--tx)}
+.toeg-row small{display:block;font-size:11.5px;color:var(--muted);font-weight:400}
+.toeg-seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.toeg-seg button{border:0;background:transparent;color:var(--muted);font:600 12px/1 var(--font);padding:8px 11px;cursor:pointer}
+.toeg-seg button+button{border-left:1px solid var(--line)}
+.toeg-seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.toeg-sw{position:relative;width:42px;height:24px;flex:0 0 auto;border:1px solid var(--muted);border-radius:999px;background:var(--surf2);cursor:pointer;padding:0}
+.toeg-sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--muted);transition:transform .15s ease}
+.toeg-sw[aria-checked="true"]{background:var(--accent);border-color:var(--accent)}
+.toeg-sw[aria-checked="true"]::after{transform:translateX(18px);background:var(--bg)}
+.toeg-reset{margin-top:6px;width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--tx);font:600 12.5px/1 var(--font);cursor:pointer}
+.toeg-reset:hover{border-color:var(--muted)}
+.toeg-note{margin:8px 0 0;font-size:11.5px;color:var(--muted);min-height:1.3em}
+@media (max-width:520px){
+  .toeg-btn{width:30px;height:30px}
+  .toeg-panel{position:fixed;left:0;right:0;top:auto;bottom:0;width:auto;border-radius:16px 16px 0 0;padding:18px var(--padr) max(18px,env(safe-area-inset-bottom)) var(--pad);max-height:85vh;overflow:auto}
+}
+/* Grotere tekst: de pagina gebruikt px, dus schalen we de inhoud (niet kop/beeld) */
+html.cd-groot{font-size:118%}
+html.cd-groot main,html.cd-groot .foot{zoom:1.18}
+/* Beweging uit */
+html.cd-still *,html.cd-still *::before,html.cd-still *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.cd-still .alp-snow{display:none}
+/* Hoog contrast */
+html.cd-hc{--muted:#d5dde5;--text-secondary:#e6ebf0;--line:#7d8c9b;--tx:#ffffff;--up:#8fe6b4;--dn:#ffb3b9;--accent:#b9d8f4;--card:var(--surf);--card-line:#7d8c9b;--scrim-top:rgba(9,14,20,.8)}
+html.cd-hc[data-theme="licht"]{--muted:#2c3742;--text-secondary:#1c2630;--line:#5d6b78;--tx:#05090d;--up:#125a32;--dn:#93231c;--accent:#204a70;--card:#fff;--card-line:#5d6b78}
+html.cd-hc main>.hero>div:first-child,html.cd-hc .alp-tag{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html.cd-hc .alp-tag{background:rgba(9,14,20,.88)!important;display:inline-block;padding:8px 12px;border-radius:10px}
+html.cd-hc .alp-scrim{background:linear-gradient(180deg,rgba(9,14,20,.72),rgba(9,14,20,.35) 60%,var(--bg) 100%)!important}
+html.cd-hc .toeg-panel{border-width:2px}
+html[data-theme="licht"] .btn-primary{color:#fff}
+html[data-theme="licht"] .cock-head{background:rgba(22,33,43,.04)}
 </style>
 </head>
 <body>
@@ -949,7 +997,17 @@ html[data-theme="licht"] .alp-tag{color:#fff}
     <span class="pill" title="Alleen papieren simulatie — geen live orders"><span class="dot" aria-hidden="true"></span>Paper · geen live orders</span>
     <a href="#analyse" id="nav-how">Analyse</a>
     <a href="#team" id="nav-team" class="nav-quiet">Team</a>
+    <button type="button" class="toeg-btn" id="toeg-btn" aria-label="Toegankelijkheid" aria-expanded="false" aria-controls="toeg-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M4.5 8.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2"/><path d="M12 9.7v4.6"/><path d="M8.5 21l3.5-6.7 3.5 6.7"/></svg></button>
   </nav>
+  <div class="toeg-panel" id="toeg-panel" role="dialog" aria-modal="false" aria-labelledby="toeg-h" hidden>
+    <h2 id="toeg-h">Toegankelijkheid</h2>
+    <div class="toeg-row"><span id="toeg-l-t">Thema</span><span class="toeg-seg" role="group" aria-labelledby="toeg-l-t"><button type="button" data-toeg-t="donker" aria-pressed="true">Donker</button><button type="button" data-toeg-t="licht" aria-pressed="false">Licht</button></span></div>
+    <div class="toeg-row"><span id="toeg-l-g">Grotere tekst<small>Tekst ongeveer 18% groter</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-g" data-toeg="g"></button></div>
+    <div class="toeg-row"><span id="toeg-l-h">Hoog contrast<small>Sterkere tekst en randen</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-h" data-toeg="h"></button></div>
+    <div class="toeg-row"><span id="toeg-l-m">Beweging uit<small>Geen sneeuw, stroom of pulsen</small></span><button type="button" class="toeg-sw" role="switch" aria-checked="false" aria-labelledby="toeg-l-m" data-toeg="m"></button></div>
+    <button type="button" class="toeg-reset" id="toeg-reset">Herstel standaard</button>
+    <p class="toeg-note" id="toeg-note" aria-live="polite"></p>
+  </div>
 </header>
 
 <div class="alp-stage" id="alp-stage">
@@ -1033,7 +1091,7 @@ html[data-theme="licht"] .alp-tag{color:#fff}
         <div class="tape-pane">
           <div class="lab">Paper tape</div>
           <div class="tape" aria-live="polite">
-            <ul class="tape-list" id="tape-list"></ul>
+            <ul class="tape-list" id="tape-list" role="group" aria-label="Laatste transacties"></ul>
           </div>
         </div>
       </div>
@@ -1094,7 +1152,7 @@ html[data-theme="licht"] .alp-tag{color:#fff}
       <h2>Laatste paper-acties</h2>
       <div class="trade-controls"><input type="search" id="trade-search" aria-label="Zoek munt of transactiereden" placeholder="Zoek munt of reden"><select id="trade-filter" aria-label="Filter transacties"><option value="all">Alle transacties</option><option value="buy">Aankopen</option><option value="sell">Verkopen</option><option value="profit">Met winst</option><option value="loss">Met verlies</option></select></div>
       <p class="trade-meta" id="trade-meta"></p>
-      <ul class="waterfall" id="waterfall"></ul>
+      <ul class="waterfall" id="waterfall" role="group" aria-label="Resultaat per munt"></ul>
     </div>
   </section>
 
@@ -1405,7 +1463,7 @@ html[data-theme="licht"] .alp-tag{color:#fff}
 (function () {
   "use strict";
   var reduceMotion = false;
-  try { reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) {}
+  try { reduceMotion = document.documentElement.classList.contains("cd-still"); } catch (e) {}
 
   /* ——— In-page anchors: smooth scroll (respects reduced motion) + focus heading ——— */
   function wireAnchor(linkId, targetId, focusId) {
@@ -3506,7 +3564,8 @@ html[data-theme="licht"] .alp-tag{color:#fff}
   var wrap = sec.querySelector(".team-flowwrap"), runner = sec.querySelector(".team-runner");
   var steps = Array.prototype.slice.call(sec.querySelectorAll(".team-step"));
   if (!wrap || !runner || steps.length !== 4) return;
-  var mq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  var mq0 = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  var mq = { get matches() { return document.documentElement.classList.contains("cd-still"); } };
   var visible = false, running = false;
   function measure() {
     var wb = wrap.getBoundingClientRect();
@@ -3530,7 +3589,8 @@ html[data-theme="licht"] .alp-tag{color:#fff}
     new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; update(); }, { threshold: 0.15 }).observe(sec);
   } else { visible = true; }
   document.addEventListener("visibilitychange", update);
-  if (mq) { if (mq.addEventListener) mq.addEventListener("change", update); else if (mq.addListener) mq.addListener(update); }
+  if (mq0) { if (mq0.addEventListener) mq0.addEventListener("change", update); else if (mq0.addListener) mq0.addListener(update); }
+  document.addEventListener("cd-toeg", update);
   var rt = null;
   window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { if (wrap.classList.contains("is-run")) measure(); }, 200); });
   update();
@@ -3743,6 +3803,56 @@ html[data-theme="licht"] .alp-tag{color:#fff}
         if (st) st.textContent = "";
       }, 2000);
     });
+  });
+})();
+</script>
+<script>
+/* —— Toegankelijkheid: paneel + keuzes (localStorage optioneel) —— */
+(function initToeg() {
+  "use strict";
+  var d = document.documentElement, btn = document.getElementById("toeg-btn"), pn = document.getElementById("toeg-panel");
+  if (!btn || !pn) return;
+  var note = document.getElementById("toeg-note");
+  var rm = false; try { rm = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  var o = {}; try { o = JSON.parse(localStorage.getItem("cd-toeg") || "{}") || {}; } catch (e) { o = {}; }
+  function save() { try { localStorage.setItem("cd-toeg", JSON.stringify(o)); return true; } catch (e) { return false; } }
+  function state() { return { t: d.getAttribute("data-theme") === "licht" ? "licht" : "donker", g: d.classList.contains("cd-groot"), h: d.classList.contains("cd-hc"), m: d.classList.contains("cd-still") }; }
+  function sync() {
+    var st = state();
+    pn.querySelectorAll("[data-toeg-t]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-toeg-t") === st.t)); });
+    pn.querySelectorAll("[data-toeg]").forEach(function (b) { b.setAttribute("aria-checked", String(!!st[b.getAttribute("data-toeg")])); });
+  }
+  function apply(st) {
+    if (st.t === "licht") d.setAttribute("data-theme", "licht"); else d.removeAttribute("data-theme");
+    d.classList.toggle("cd-groot", !!st.g); d.classList.toggle("cd-hc", !!st.h); d.classList.toggle("cd-still", !!st.m);
+    sync();
+    try { document.dispatchEvent(new Event("cd-toeg")); } catch (e) {}
+  }
+  function set(k, v) { var st = state(); st[k] = v; o[k] = v; apply(st); note.textContent = save() ? "" : "Opslaan kan niet in deze browser; de keuze geldt voor deze pagina."; }
+  pn.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-toeg-t],[data-toeg],#toeg-reset"); if (!t) return;
+    if (t.id === "toeg-reset") { o = {}; try { localStorage.removeItem("cd-toeg"); } catch (er) {} apply({ t: "donker", g: false, h: false, m: rm }); note.textContent = "Standaardinstellingen hersteld."; return; }
+    if (t.hasAttribute("data-toeg-t")) set("t", t.getAttribute("data-toeg-t"));
+    else { var k = t.getAttribute("data-toeg"); set(k, t.getAttribute("aria-checked") !== "true"); }
+  });
+  function focusables() { return Array.prototype.slice.call(pn.querySelectorAll("button")); }
+  function open() { pn.hidden = false; btn.setAttribute("aria-expanded", "true"); sync(); var f = pn.querySelector('[aria-pressed="true"]') || focusables()[0]; if (f) f.focus(); }
+  function close(ret) { if (pn.hidden) return; pn.hidden = true; btn.setAttribute("aria-expanded", "false"); if (ret) btn.focus(); }
+  btn.addEventListener("click", function () { if (pn.hidden) open(); else close(true); });
+  pn.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); close(true); return; }
+    if (e.key === "Tab") { var f = focusables(), a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pn.hidden && !pn.contains(document.activeElement)) close(true); });
+  document.addEventListener("click", function (e) { if (!pn.hidden && !pn.contains(e.target) && !btn.contains(e.target)) close(false); });
+  sync();
+  /* Rijen in tape/waterval zijn schakelknoppen: lijst is een groep, overige rijen neutraal (geldige ARIA) */
+  ["tape-list", "waterfall"].forEach(function (id) {
+    var ul = document.getElementById(id); if (!ul || !("MutationObserver" in window)) return;
+    function fix() { Array.prototype.forEach.call(ul.children, function (c) { if (!c.hasAttribute("role")) c.setAttribute("role", c.hasAttribute("data-sym") ? "button" : "presentation"); }); }
+    new MutationObserver(fix).observe(ul, { childList: true }); fix();
   });
 })();
 </script>
