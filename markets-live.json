@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-23T21:16:44Z",
+ "updated": "2026-10-26T08:00:28Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -10,28 +10,9 @@
    "total_eur": 30877.6,
    "result_eur": 877.6,
    "n_trades": 4,
-   "n_trades_week": 3,
-   "best_trades_week": [
-    {
-     "symbol": "GLD",
-     "pnl_eur": -6.56,
-     "ts": "2026-10-21T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "GLD",
-     "pnl_eur": -24.1,
-     "ts": "2026-10-23T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "SLV",
-     "pnl_eur": -59.24,
-     "ts": "2026-10-23T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 43 (19–25 okt)",
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 44 (26 okt–1 nov)",
    "cash_eur": 19867.37,
    "costs_eur": 25.66,
    "open_positions": [
@@ -1617,28 +1598,9 @@
    "total_eur": 68582.91,
    "result_eur": -1417.09,
    "n_trades": 6,
-   "n_trades_week": 6,
-   "best_trades_week": [
-    {
-     "symbol": "SPY",
-     "pnl_eur": -26.32,
-     "ts": "2026-10-23T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "NVDA",
-     "pnl_eur": -47.14,
-     "ts": "2026-10-23T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "SPY",
-     "pnl_eur": -79.81,
-     "ts": "2026-10-20T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 43 (19–25 okt)",
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 44 (26 okt–1 nov)",
    "cash_eur": 47189.07,
    "costs_eur": 120.28,
    "open_positions": [
