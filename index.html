@@ -1165,6 +1165,29 @@ html.i18n-wait body,html.i18n-swap body{visibility:hidden}
 .lang-menu a:hover{background:var(--surf2);text-decoration:none}
 .lang-menu a[aria-current="true"]{background:var(--sel-bg);font-weight:700}
 @media (max-width:520px){.lang-btn{padding:0 6px}.lang-btn svg{display:none}.nav .pill{display:none}}
+/* ===== Newsbronnen-ballon uit de mond van Bernard (alleen in DOM bij geldige data) ===== */
+.alp-stage{--mond-x:43.6;--mond-y:36.4;--staart:9;--ballon-w:300px;--ballon-dy:34px}
+@media (min-width:768px) and (max-width:1023.98px){.alp-stage{--staart:10;--ballon-w:230px;--ballon-dy:0px}}
+@media (max-width:767.98px){.alp-stage{--mond-x:43.6;--mond-y:36.4;--staart:12.5;--ballon-w:auto;--ballon-dy:-6px}}
+.ballon{position:absolute;z-index:5;box-sizing:border-box;width:var(--ballon-w);padding:10px 12px 9px;border-radius:12px;background:#f8f9fa;color:#1f2933;border:1px solid rgba(22,33,43,.10);box-shadow:0 1px 2px rgba(0,0,0,.14),0 6px 18px rgba(0,0,0,.18);font:500 13.5px/1.4 var(--font);transform-origin:var(--ox,100%) var(--oy,50%)}
+html[data-theme="licht"] .ballon{background:#fff;border-color:rgba(22,33,43,.14)}
+html.cd-hc .ballon{background:#fff;color:#000;border:2px solid #000}
+.ballon-t{margin:0;overflow-wrap:anywhere}
+.ballon-bron{margin:5px 0 0;font:600 11px/1.35 var(--font);letter-spacing:.01em;color:#5a6672}
+html.cd-hc .ballon-bron{color:#222}
+.ballon-staart{position:absolute;z-index:5;height:16px;margin-top:-8px;background:#f8f9fa;clip-path:polygon(0 0,100% 50%,0 100%);transform-origin:0 50%;pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.12))}
+html[data-theme="licht"] .ballon-staart,html.cd-hc .ballon-staart{background:#fff}
+.ballon-nav{display:flex;align-items:center;gap:6px;margin-top:7px}
+.ballon-nav button{min-width:32px;height:28px;padding:0 8px;border-radius:7px;border:1px solid rgba(22,33,43,.22);background:#fff;color:#1f2933;font:600 15px/1 var(--font);cursor:pointer}
+.ballon-nav button:focus-visible{outline:2px solid #1473e6;outline-offset:2px}
+.ballon-n{font:600 11px/1 var(--font);color:#5a6672}
+.ballon-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ballon.is-pop{animation:ballonPop .36s cubic-bezier(.2,.8,.3,1.2) both}.ballon-staart.is-pop{animation:ballonFade .36s ease-out both}
+@keyframes ballonFade{from{opacity:0}to{opacity:1}}
+.ballon.is-uit,.ballon-staart.is-uit{transition:opacity .3s ease;opacity:0}
+@media (max-width:767.98px){.ballon{padding:8px 10px 7px;font-size:12.5px;line-height:1.35}.ballon-bron{font-size:10.5px;margin-top:4px}.ballon-nav{margin-top:5px}.ballon-nav button{height:24px;min-width:28px}}
+@keyframes ballonPop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.ballon.is-pop,.ballon-staart.is-pop{animation:none}}
 </style>
 </head>
 <body>
@@ -4122,6 +4145,73 @@ html.i18n-wait body,html.i18n-swap body{visibility:hidden}
 })();
 </script>
 
+<script>
+/* —— Newsbronnen-ballon: publieke, gefilterde koppen; fail-closed (geen data = geen element), alleen textContent —— */
+(function initBallon() {
+  "use strict";
+  var st = document.getElementById("alp-stage"), img = st && st.querySelector(".alp-img"), pic = st && st.querySelector("picture");
+  if (!st || !img || !window.fetch) return;
+  var IW = 1408, IH = 768, MAX = 120, MAXAGE = 7 * 864e5, ROT = 7000;
+  var BAD = [/[€$%]/, /\d[\d.,]*\s*(eur|euro|usd|usdt|usdc|dollar|btc|eth|sol)\b/i,
+    /\b(koop|koopt|kopen|gekocht|aankoop|aankopen|verkoop|verkoopt|verkopen|verkocht|bijkopen|instappen|uitstappen|buy|buys|buying|bought|sell|sells|selling|sold|long|longs|short|shorts|shorten|signaal|signalen|signal|signals|target|targets|koersdoel|koersdoelen|pump|dump|moon|advies|advice|tip|tips|kans|kansen|winst|profit|rendement|garantie|guaranteed)\b/i];
+  function ok(t) { if (typeof t !== "string") return false; t = t.trim(); if (!t || t.length > MAX) return false; for (var i = 0; i < BAD.length; i++) if (BAD[i].test(t)) return false; return true; }
+  function src(s) { return typeof s === "string" && /^[\w .&'’-]{2,40}$/.test(s.trim()) ? s.trim() : null; }
+  function when(ts) { var d = new Date(ts); if (isNaN(d)) return null; if (Date.now() - d > MAXAGE || d - Date.now() > 36e5) return false;
+    try { return d.toLocaleString("nl-NL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Amsterdam" }); } catch (e) { return null; } }
+  function get(u) { return fetch(u + "?t=" + Math.floor(Date.now() / 60000), { cache: "no-cache", credentials: "omit" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+  function pick(list, map) { var out = []; (Array.isArray(list) ? list : []).forEach(function (x) { var m = x && map(x); if (m && ok(m.t)) { var w = when(m.ts); if (w !== false) out.push({ t: m.t.trim(), s: m.s, w: w, ts: +new Date(m.ts) || 0 }); } });
+    out.sort(function (a, b) { return b.ts - a.ts; }); return out.slice(0, 6); }
+  function fromFeed() { return get("paper-live.json").then(function (p) { if (!p || p.team_feed !== true) throw 0; return get("team-feed.json"); })
+    .then(function (f) { return pick(f && f.items, function (x) { return x.from === "newsbronnen" && typeof x.ts === "string" ? { t: x.text_nl, s: src(x.source) || src(x.bron), ts: x.ts } : null; }); }); }
+  function fromBulletin() { return get("bulletin.json").then(function (b) { return pick(b && b.items, function (x) { return x.category === "news" && src(x.source) && typeof x.published_at === "string" ? { t: x.title, s: src(x.source), ts: x.published_at } : null; }); }); }
+  fromFeed().catch(function () { return []; }).then(function (a) { return a.length ? a : fromBulletin(); }).catch(function () { return []; }).then(function (a) { if (a.length) build(a); });
+
+  function build(items) {
+    var d = document.documentElement, i = 0, timer = null, hold = false;
+    var b = document.createElement("div"), t = document.createElement("p"), s = document.createElement("p"), tail = document.createElement("div"), sr = document.createElement("span");
+    b.className = "ballon"; b.id = "ballon"; b.setAttribute("role", "group"); b.setAttribute("aria-roledescription", "nieuwsballon"); b.setAttribute("aria-label", "Nieuws via Newsbronnen"); b.setAttribute("lang", "nl"); b.tabIndex = -1;
+    t.className = "ballon-t"; s.className = "ballon-bron"; tail.className = "ballon-staart"; tail.setAttribute("aria-hidden", "true"); sr.className = "ballon-sr"; sr.setAttribute("aria-live", "polite");
+    b.appendChild(t); b.appendChild(s);
+    var nav = null, cnt = null;
+    function still() { return d.classList.contains("cd-still"); }
+    function mkNav() {
+      if (nav || items.length < 2) return; nav = document.createElement("div"); nav.className = "ballon-nav";
+      var p = document.createElement("button"), n = document.createElement("button"); cnt = document.createElement("span"); cnt.className = "ballon-n";
+      p.type = n.type = "button"; p.textContent = "\u2039"; n.textContent = "\u203a"; p.setAttribute("aria-label", "Vorig bericht"); n.setAttribute("aria-label", "Volgend bericht");
+      p.addEventListener("click", function () { go(i - 1, true); }); n.addEventListener("click", function () { go(i + 1, true); });
+      nav.appendChild(p); nav.appendChild(cnt); nav.appendChild(n); b.appendChild(nav);
+    }
+    function fill() { var it = items[i]; t.textContent = it.t; s.textContent = "via Newsbronnen \u00b7 bron: " + it.s + (it.w ? " \u00b7 " + it.w : ""); if (cnt) cnt.textContent = (i + 1) + " / " + items.length; }
+    function pop() { [b, tail].forEach(function (e) { e.classList.remove("is-pop", "is-uit"); void e.offsetWidth; e.classList.add("is-pop"); }); }
+    function go(k, manual) { i = (k + items.length) % items.length; fill(); place(); if (manual) sr.textContent = items[i].t + ". " + s.textContent; else pop(); }
+    function place() {
+      var r = img.getBoundingClientRect(), so = st.getBoundingClientRect(), cs = getComputedStyle(st), op = getComputedStyle(img).objectPosition.split(" ").map(function (v) { return parseFloat(v) / 100; });
+      var sc = Math.max(r.width / IW, r.height / IH), w = IW * sc, h = IH * sc, ox = r.left - so.left + (r.width - w) * op[0], oy = r.top - so.top + (r.height - h) * op[1];
+      var mx = ox + w * parseFloat(cs.getPropertyValue("--mond-x")) / 100, my = oy + h * parseFloat(cs.getPropertyValue("--mond-y")) / 100;
+      var gap = w * parseFloat(cs.getPropertyValue("--staart")) / 100, dy = parseFloat(cs.getPropertyValue("--ballon-dy")) || 0, sw = so.width, pad = 12, mob = sw < 768;
+      var ph = pic.getBoundingClientRect().height, x0, y0, ex, bw;
+      if (mob) { b.style.left = (mx + gap) + "px"; b.style.right = pad + "px"; b.style.width = "auto"; }
+      else { b.style.left = Math.max(pad, mx - gap - b.offsetWidth) + "px"; b.style.right = "auto"; b.style.width = ""; }
+      var tb = document.getElementById("mkt-tabs"), lim = ph - pad;
+      if (tb && !tb.hidden) { var tr = tb.getBoundingClientRect(), tbs = tb.querySelector(".mkt-seg"), q = tbs ? tbs.getBoundingClientRect() : tr; if (q.width) lim = Math.min(lim, q.top - so.top - 8); }
+      var bh = b.offsetHeight, top = Math.max(pad, Math.min(my + dy - bh / 2, lim - bh)); b.style.top = top + "px";
+      bw = b.offsetWidth; var bl = parseFloat(b.style.left);
+      x0 = mob ? bl + 1 : bl + bw - 1; y0 = Math.min(top + bh - 14, Math.max(top + 14, my + 4));
+      var dx = mx - x0, dyy = my - y0, len = Math.sqrt(dx * dx + dyy * dyy), ang = Math.atan2(dyy, dx) * 180 / Math.PI;
+      tail.style.left = x0 + "px"; tail.style.top = y0 + "px"; tail.style.width = len + "px"; tail.style.transform = "rotate(" + ang + "deg)";
+      b.style.setProperty("--ox", (x0 - bl) + "px"); b.style.setProperty("--oy", (y0 - top) + "px");
+    }
+    function tick() { clearInterval(timer); timer = null; if (still() || items.length < 2) { mkNav(); fill(); return; }
+      if (nav) { nav.remove(); nav = null; cnt = null; } timer = setInterval(function () { if (!hold && !document.hidden) { [b, tail].forEach(function (e) { e.classList.add("is-uit"); }); setTimeout(function () { go(i + 1, false); }, 300); } }, ROT); }
+    b.addEventListener("mouseenter", function () { hold = true; }); b.addEventListener("mouseleave", function () { hold = false; });
+    b.addEventListener("focusin", function () { hold = true; }); b.addEventListener("focusout", function () { hold = false; });
+    fill(); st.appendChild(tail); st.appendChild(b); st.appendChild(sr); tick(); place(); if (!still()) pop();
+    var rq = 0; window.addEventListener("resize", function () { cancelAnimationFrame(rq); rq = requestAnimationFrame(place); });
+    try { new MutationObserver(function () { tick(); place(); }).observe(d, { attributes: true, attributeFilter: ["class", "data-theme"] }); } catch (e) {}
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+  }
+})();
+</script>
 </body>
 </html>
 
