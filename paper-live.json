@@ -1,19 +1,45 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-26T14:30:05+00:00",
+  "updated": "2026-10-26T15:29:36+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 39820.36,
-    "banked_eur": 9342.41,
-    "equity_approx": 39820.36,
-    "total": 49162.77,
-    "realized_pnl_eur": -50837.22,
-    "trades": 1613,
-    "open_positions": 0,
+    "cash_eur": 38720.36,
+    "banked_eur": 9394.91,
+    "equity_approx": 39817.61,
+    "total": 49212.52,
+    "realized_pnl_eur": -50784.72,
+    "trades": 1615,
+    "open_positions": 1,
     "rendement_pct": -50.8
   },
   "tape": [
+    {
+      "t": "2026-10-26T15:51:57+00:00",
+      "side": "SELL",
+      "symbol": "ANT",
+      "bedrag_eur": 1282.23,
+      "prijs_eur": 0.0005366167,
+      "pnl_eur": 182.23,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-26T15:25:46+00:00",
+      "side": "PARTIAL",
+      "symbol": "ANT",
+      "bedrag_eur": 952.5,
+      "prijs_eur": 0.0004872083,
+      "pnl_eur": 52.5,
+      "reason": "deels winst genomen"
+    },
+    {
+      "t": "2026-10-26T14:51:32+00:00",
+      "side": "BUY",
+      "symbol": "ANT",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0004580537,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-26T12:19:44+00:00",
       "side": "SELL",
@@ -202,75 +228,9 @@
       "prijs_eur": 0.0002636333,
       "pnl_eur": 363.69,
       "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-26T00:22:36+00:00",
-      "side": "PARTIAL",
-      "symbol": "OLIVIA",
-      "bedrag_eur": 944.4,
-      "prijs_eur": 0.0002079,
-      "pnl_eur": 44.4,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-10-26T00:21:05+00:00",
-      "side": "SELL",
-      "symbol": "ZERO",
-      "bedrag_eur": 1192.79,
-      "prijs_eur": 0.0009725833,
-      "pnl_eur": 92.79,
-      "reason": "tijd-exit"
-    },
-    {
-      "t": "2026-10-26T00:20:19+00:00",
-      "side": "BUY",
-      "symbol": "OLIVIA",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.000197137,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-26T09:22:27+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:23:13+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:23:59+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:26:57+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:27:43+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:28:28+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:29:14+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:30:00+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:30:45+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T09:31:31+00:00",
-      "total": 49315.95
-    },
     {
       "t": "2026-10-26T09:37:04+00:00",
       "total": 49315.95
@@ -470,9 +430,57 @@
     {
       "t": "2026-10-26T14:30:04+00:00",
       "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T14:51:30+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T14:51:32+00:00",
+      "total": 49157.78
+    },
+    {
+      "t": "2026-10-26T15:25:46+00:00",
+      "total": 49282.37
+    },
+    {
+      "t": "2026-10-26T15:25:46+00:00",
+      "total": 49282.37
+    },
+    {
+      "t": "2026-10-26T15:25:46+00:00",
+      "total": 49294.16
+    },
+    {
+      "t": "2026-10-26T15:26:32+00:00",
+      "total": 49249.13
+    },
+    {
+      "t": "2026-10-26T15:27:18+00:00",
+      "total": 49291.27
+    },
+    {
+      "t": "2026-10-26T15:28:04+00:00",
+      "total": 49305.47
+    },
+    {
+      "t": "2026-10-26T15:28:50+00:00",
+      "total": 49316.34
+    },
+    {
+      "t": "2026-10-26T15:29:36+00:00",
+      "total": 49319.22
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "ANT",
+      "opened_at": "2026-10-26T14:51:32+00:00",
+      "cost_eur": 1100.0,
+      "entry_price": 0.00045805370370370364,
+      "qty": 2395461.4734646194
+    }
+  ],
   "rendement_pct": -50.8,
   "best_trades_week": [
     {
@@ -488,6 +496,12 @@
       "exit_kind": "take-profit"
     },
     {
+      "symbol": "ANT",
+      "pnl_eur": 234.73,
+      "ts": "2026-10-26T15:51:57Z",
+      "exit_kind": "take-profit"
+    },
+    {
       "symbol": "4AGENT",
       "pnl_eur": 174.9,
       "ts": "2026-10-26T03:20:27Z",
@@ -498,16 +512,10 @@
       "pnl_eur": 168.7,
       "ts": "2026-10-26T00:21:05Z",
       "exit_kind": "overig"
-    },
-    {
-      "symbol": "GIGATITS",
-      "pnl_eur": 41.57,
-      "ts": "2026-10-26T03:20:27Z",
-      "exit_kind": "trailing"
     }
   ],
-  "n_trades_week": 12,
-  "week_pnl_eur": 397.57,
+  "n_trades_week": 13,
+  "week_pnl_eur": 632.3,
   "week_label": "week 44 (26 okt–1 nov)",
   "markets_live": true,
   "team_feed": true
