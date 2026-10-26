@@ -1188,6 +1188,11 @@ html[data-theme="licht"] .ballon-staart,html.cd-hc .ballon-staart{background:#ff
 @media (max-width:767.98px){.ballon{padding:8px 10px 7px;font-size:12.5px;line-height:1.35}.ballon-bron{font-size:10.5px;margin-top:4px}.ballon-nav{margin-top:5px}.ballon-nav button{height:24px;min-width:28px}}
 @keyframes ballonPop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.ballon.is-pop,.ballon-staart.is-pop{animation:none}}
+@media (max-width:767.98px){ /* mobiel: tabbalk onder de foto (ruimte vooraf gereserveerd → CLS 0), notitieboek en gezichten vrij */
+  .alp-stage .mkt-tabs{position:static!important;top:auto!important;bottom:auto!important;min-height:56px;box-sizing:border-box}
+  .alp-stage .mkt-tabs[hidden]{display:block;visibility:hidden}
+}
+@media (max-width:400px){html.cd-groot .mkt-pos li>.num{white-space:normal;overflow-wrap:anywhere;min-width:0}html.cd-groot .mkt-pos li{min-width:0}} /* grote tekst op 375: plus/min-kolom mag afbreken (bestond al op main) */
 /* ===== Grondstoffen-tab: studeerkamer-hero (pas geladen bij eerste activatie; zelfde kader → CLS 0) ===== */
 .alp-stage .sk-pic{position:absolute!important;inset:0!important;display:block;width:100%;height:100%!important;z-index:1;opacity:0;transition:opacity .18s ease;pointer-events:none;overflow:hidden;background:none}
 .alp-stage .sk-pic .alp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
