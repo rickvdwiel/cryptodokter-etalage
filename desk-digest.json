@@ -1,40 +1,40 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-23T16:55:00+02:00",
-  "digest_date": "2026-10-23",
-  "measured_at": "2026-10-23T16:52:46+02:00",
-  "window_4h_utc": "10:52-14:52",
+  "updated_at": "2026-10-26T16:55:00+01:00",
+  "digest_date": "2026-10-26",
+  "measured_at": "2026-10-26T16:52:10+01:00",
+  "window_4h_utc": "11:52-15:52",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: PF 0,93 over 4 uur (13 exits, −€198), gedrukt door één rug-exit op PUMP (−€1.892); seizoen s2 −€34.716 / DD €35.873 vanaf piek; week −€24.149",
+  "headline": "Desk-digest: 4 uur klein en positief (3 exits, +€140); weekend zwaar: 72 uur −€16.691 (PF 0,36); seizoen s2 −€50.602, totaal €49.398; MIN_LIQ 75k na 31 exits PF 0,45, nog te vroeg",
   "metrics_4h": {
-    "exits": 13,
-    "winrate_pct": 69.2,
-    "profit_factor": 0.932,
-    "expectancy_eur": -15.24,
-    "net_eur": -198.12,
-    "fees_eur": 124.67,
-    "fees_per_hour_eur": 31.2
+    "exits": 3,
+    "winrate_pct": 66.7,
+    "profit_factor": 2.466,
+    "expectancy_eur": 46.52,
+    "net_eur": 139.55,
+    "fees_eur": 15.37,
+    "fees_per_hour_eur": 3.8
   },
   "metrics_8h": {
-    "exits": 21,
-    "winrate_pct": 52.4,
-    "profit_factor": 0.874,
-    "expectancy_eur": -24.44,
-    "net_eur": -513.18
+    "exits": 5,
+    "winrate_pct": 60.0,
+    "profit_factor": 1.428,
+    "expectancy_eur": 16.31,
+    "net_eur": 81.56
   },
   "metrics_season": {
-    "exits": 626,
-    "winrate_pct": 37.4,
-    "profit_factor": 0.708,
-    "net_eur": -34716.33,
-    "fees_eur": 6180.83,
+    "exits": 896,
+    "winrate_pct": 48.3,
+    "profit_factor": 0.658,
+    "net_eur": -50602.49,
+    "fees_eur": 7094.66,
     "start_eur": 100000.0,
-    "total_eur": 65283.67
+    "total_eur": 49397.51
   },
   "summary_nl": [
-    "Sinds de seizoensstart (s2, €100.000): 626 exits, PF 0,708, netto −€34.716,33, fees €6.180,83; totaal nu €65.283,67. Drawdown vanaf de piek (€101.157) €35.873, diepste punt €37.198. Bot tikt (laatste tick 16:52 NL, laatste trade 16:31 NL), precies één web.server."
+    "Over 8 uur: 5 exits, PF 1,43, netto +€81,56. Over 24 uur: 25 exits, PF 0,43, netto −€2.886 (12 stop-losses −€4.932 tegen 4 take-profits +€1.740). Over 72 uur: 111 exits, PF 0,36, netto −€16.691, waarvan 4 rug-exits −€7.000 (allemaal vóór de liquiditeitsdrempel) en 54 stop-losses −€18.964."
   ]
 }
