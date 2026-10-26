@@ -1434,7 +1434,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': """, "'": "&#39;" }[c];
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&#34;", "'": "&#39;" }[c];
     });
   }
 
