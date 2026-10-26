@@ -1170,6 +1170,13 @@ html.i18n-wait body,html.i18n-swap body{visibility:hidden}
   .alp-stage .mkt-tabs[hidden]{display:block;visibility:hidden}
 }
 @media (max-width:400px){html.cd-groot .mkt-pos li>.num{white-space:normal;overflow-wrap:anywhere;min-width:0}html.cd-groot .mkt-pos li{min-width:0}} /* grote tekst op 375: plus/min-kolom mag afbreken (bestond al op main) */
+@media (max-width:767.98px){ /* motto-blok op natuurlijke hoogte (geen lege ruimte in korte talen); zolang de fonts laden blijft alles eronder onzichtbaar → CLS 0 */
+  .alp-inner{height:auto!important;padding-bottom:12px!important}
+  html.alp-wait main,html.alp-wait #wins,html.alp-wait .alp-stage .mkt-tabs{visibility:hidden}
+}
+/* Motto-hoogte per taal vooraf (gemeten met Suez One/IBM Plex): komt het font pas na de 3 s-fallback, dan verschuift er niets */
+@media (max-width:400px){.alp-copy{min-height:137px}html[lang=en] .alp-copy{min-height:94px}html[lang=nl] .alp-copy{min-height:118px}}
+@media (max-width:380px){html[lang=nl] .alp-copy{min-height:137px}html[lang=pl] .alp-copy{min-height:161px}}
 /* ===== Grondstoffen-tab: studeerkamer-hero (pas geladen bij eerste activatie; zelfde kader → CLS 0) ===== */
 .alp-stage .sk-pic{position:absolute!important;inset:0!important;display:block;width:100%;height:100%!important;z-index:1;opacity:0;transition:opacity .18s ease;pointer-events:none;overflow:hidden;background:none}
 .alp-stage .sk-pic .alp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
