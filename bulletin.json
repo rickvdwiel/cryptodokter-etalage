@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-25T06:42:00Z",
+  "generated_at": "2026-10-26T06:41:24Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "ethereum-access-lists-charge-for-entries-before--9890240f",
-      "title": "Ethereum access lists charge for entries before they are used",
-      "url": "https://cryptofocus.nl/english/ethereum-access-list-upfront-gas-duplicate-entries/",
-      "source": "CryptoFocus",
-      "published_at": "2026-10-24T22:00:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "cardano-oogst-succes-in-india-met-100-000-boerde-b14695f5",
-      "title": "Cardano oogst succes in India met 100.000 boerderijen op de blockchain",
-      "url": "https://newsbit.nl/cardano-oogst-succes-in-india-met-100-000-boerderijen-op-de-blockchain/",
+      "id": "crypto-wekker-bitcoin-daalt-terwijl-trump-iran-a-92cfde52",
+      "title": "Crypto wekker: Bitcoin daalt, terwijl Trump Iran-aanval afblaast",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-daalt-terwijl-trump-iran-aanval-afblaast/",
       "source": "Newsbit",
-      "published_at": "2026-10-24T20:05:00Z",
+      "published_at": "2026-10-26T06:30:41Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "grote-bitcoinbezitters-kopen-nu-sneller-dan-ooit-cb2ec47d",
-      "title": "Grote bitcoinbezitters kopen nu sneller dan ooit in 2026",
-      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/grote-bitcoinbezitters-kopen-nu-sneller-dan-ooit-in-2026/",
+      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-26T05:44:44Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "india-s-largest-crypto-exchange-absorbs-16-milli-204fe85c",
+      "title": "India's largest crypto exchange absorbs $16 million loss from internal process failure tied to retired wallet",
+      "url": "https://www.coindesk.com/markets/2026/10/26/coindcx-absorbs-usd16-million-loss-from-internal-process-failure-tied-to-retired-wallet",
+      "source": "CoinDesk",
+      "published_at": "2026-10-26T05:39:17Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-wallet-bug-let-rogue-servers-steal-funds-5b758755",
+      "title": "Bitcoin wallet bug let rogue servers steal funds when users tried to speed up payments",
+      "url": "https://www.coindesk.com/tech/2026/10/26/bitcoin-wallet-bug-let-rogue-servers-steal-funds-when-users-tried-to-speed-up-payments",
+      "source": "CoinDesk",
+      "published_at": "2026-10-26T05:15:20Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "britse-banken-beperken-crypto-en-campagne-telt-1-592a4b80",
+      "title": "Britse banken beperken crypto en campagne telt 10.000 klachten",
+      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/britse-banken-beperken-crypto-en-campagne-telt-10-000-klachten/",
       "source": "Crypto Insiders",
-      "published_at": "2026-10-24T20:02:07Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "strategy-strive-face-balancing-act-between-bitco-8c957420",
-      "title": "Strategy, Strive face balancing act between bitcoin buying and preferred stock dividends",
-      "url": "https://www.coindesk.com/business/2026/10/24/strategy-strive-face-balancing-act-between-bitcoin-buying-and-preferred-stock-dividends",
-      "source": "CoinDesk",
-      "published_at": "2026-10-24T16:00:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-under-weekend-pressure-bitcoin-slides-bel-a8442d04",
-      "title": "Crypto under weekend pressure, bitcoin slides below $80,000 on U.S. Middle East evacuations",
-      "url": "https://www.coindesk.com/markets/2026/10/24/crypto-under-weekend-pressure-bitcoin-slides-below-usd80-000-on-u-s-middle-east-evacuations",
-      "source": "CoinDesk",
-      "published_at": "2026-10-24T15:11:24Z",
+      "published_at": "2026-10-26T05:02:37Z",
       "category": "news",
       "sentiment": null
     },
@@ -57,11 +57,11 @@
       "sentiment": "neutral"
     },
     {
-      "id": "glamsterdam-on-hoodi-postponed-f099ebc0",
-      "title": "Glamsterdam on Hoodi Postponed",
-      "url": "https://blog.ethereum.org/en/2026/10/22/glamsterdam-hoodi-delay",
-      "source": "Ethereum Foundation",
-      "published_at": "2026-10-22T00:00:00Z",
+      "id": "re-and-the-case-for-reinsurance-yield-onchain-856a0b48",
+      "title": "Re and the Case for Reinsurance Yield Onchain",
+      "url": "https://research.castlelabs.io/p/re-and-the-case-for-reinsurance-yield",
+      "source": "Castle Labs",
+      "published_at": "2026-10-21T14:56:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
