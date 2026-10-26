@@ -1,19 +1,28 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-26T11:20:26+00:00",
+  "updated": "2026-10-26T12:23:33+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 37915.55,
+    "cash_eur": 39820.36,
     "banked_eur": 9342.41,
-    "equity_approx": 39910.55,
-    "total": 49252.96,
-    "realized_pnl_eur": -50742.04,
-    "trades": 1612,
-    "open_positions": 1,
-    "rendement_pct": -50.7
+    "equity_approx": 39820.36,
+    "total": 49162.77,
+    "realized_pnl_eur": -50837.22,
+    "trades": 1613,
+    "open_positions": 0,
+    "rendement_pct": -50.8
   },
   "tape": [
+    {
+      "t": "2026-10-26T12:19:44+00:00",
+      "side": "SELL",
+      "symbol": "TRUMPDOLLAR",
+      "bedrag_eur": 1904.81,
+      "prijs_eur": 0.0006977667,
+      "pnl_eur": -95.19,
+      "reason": "tijd-exit"
+    },
     {
       "t": "2026-10-26T11:16:37+00:00",
       "side": "BUY",
@@ -219,50 +228,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.000197137,
       "reason": "instap"
-    },
-    {
-      "t": "2026-10-26T00:20:18+00:00",
-      "side": "PARTIAL",
-      "symbol": "ZERO",
-      "bedrag_eur": 975.92,
-      "prijs_eur": 0.0009725833,
-      "pnl_eur": 75.92,
-      "reason": "deels winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-26T07:52:59+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:53:45+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:54:31+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:55:16+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:56:02+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:56:48+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:57:33+00:00",
-      "total": 49315.95
-    },
-    {
-      "t": "2026-10-26T07:58:19+00:00",
-      "total": 49315.95
-    },
     {
       "t": "2026-10-26T07:59:05+00:00",
       "total": 49315.95
@@ -470,18 +438,42 @@
     {
       "t": "2026-10-26T11:20:26+00:00",
       "total": 49228.65
-    }
-  ],
-  "open_positions": [
+    },
     {
-      "symbol": "TRUMPDOLLAR",
-      "opened_at": "2026-10-26T11:16:37+00:00",
-      "cost_eur": 2000.0,
-      "entry_price": 0.0007289768518518519,
-      "qty": 2736712.4140252382
+      "t": "2026-10-26T11:32:05+00:00",
+      "total": 49211.67
+    },
+    {
+      "t": "2026-10-26T12:19:44+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:19:45+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:20:30+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:21:16+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:22:02+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:22:47+00:00",
+      "total": 49162.78
+    },
+    {
+      "t": "2026-10-26T12:23:33+00:00",
+      "total": 49162.78
     }
   ],
-  "rendement_pct": -50.7,
+  "open_positions": [],
+  "rendement_pct": -50.8,
   "best_trades_week": [
     {
       "symbol": "BOW",
@@ -514,8 +506,8 @@
       "exit_kind": "trailing"
     }
   ],
-  "n_trades_week": 11,
-  "week_pnl_eur": 492.76,
+  "n_trades_week": 12,
+  "week_pnl_eur": 397.57,
   "week_label": "week 44 (26 okt–1 nov)",
   "markets_live": true,
   "team_feed": true
