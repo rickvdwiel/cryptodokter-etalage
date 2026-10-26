@@ -768,6 +768,29 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   75%{opacity:1;transform:translate(var(--x3),var(--y3))}
   90%,100%{opacity:0;transform:translate(var(--x3),var(--y3))}
 }
+/* Teamfeed: vaste slothoogte, items absoluut gepositioneerd en verplaatst met transform → nieuwe items geven geen layout shift */
+.team-feed{margin:22px 0 0}
+.team-feed h3{margin:0 0 10px;font:600 11px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.team-feed-list{--fh:62px;list-style:none;margin:0;padding:0;position:relative;height:calc(var(--fh) * 8);overflow:hidden;border-top:1px solid var(--line)}
+.team-feed-list li{position:absolute;left:0;right:0;top:0;height:var(--fh);padding:9px 2px 0;border-bottom:1px solid var(--line);box-sizing:border-box;min-width:0;transition:transform .45s ease}
+.tf-head{display:flex;align-items:baseline;gap:6px;min-width:0;font:400 12px/18px var(--font);color:var(--muted)}
+.tf-from{color:var(--tx);font-weight:600;white-space:nowrap}
+.tf-to{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tf-time{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tf-text{margin:2px 0 0;font:400 13px/18px var(--font);color:var(--text-secondary);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+@media (max-width:640px){.team-feed-list{--fh:84px}.tf-text{-webkit-line-clamp:3}}
+.team-status.is-calm .team-hb{background:var(--muted)}
+.team-status.is-calm .team-hb::after{animation:none!important;opacity:0}
+/* Echte data: geen vaste cyclus, de stap van het nieuwste bericht licht op */
+.team-flowwrap.is-data .team-runner{animation:none!important;opacity:0}
+.team-flowwrap.is-data .team-card::after{animation:none!important;transition:opacity .6s ease}
+.team-flowwrap.is-data .team-step.is-hot .team-card::after{opacity:1}
+.team-flowwrap.is-data .team-step.is-hot .team-n{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+@media (prefers-reduced-motion:no-preference){
+  .team-feed-list li.is-in{animation:tfIn .5s ease-out backwards}
+  @keyframes tfIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+}
+@media (prefers-reduced-motion:reduce){.team-feed-list li{transition:none}.team-flowwrap.is-data .team-card::after{transition:none}}
 @keyframes teamGlow{0%{opacity:0}4%,18%{opacity:1}28%,100%{opacity:0}}
 @keyframes teamBeat{0%{opacity:.55;transform:scale(1)}70%,100%{opacity:0;transform:scale(2.6)}}
 /* Seizoen 1 (afgesloten): rustige kaart, thema-tokens, altijd open */
@@ -1084,7 +1107,7 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   </section>
 
   <section class="team is-paused" id="team" aria-labelledby="team-title">
-    <div class="team-head"><h2 id="team-title">Het team achter de site</h2><p class="team-status"><span class="team-hb" aria-hidden="true"></span>Team aan het werk</p></div>
+    <div class="team-head"><h2 id="team-title">Het team achter de site</h2><p class="team-status"><span class="team-hb" aria-hidden="true"></span><span class="team-status-t">Team aan het werk</span></p></div>
     <p class="team-lede">Elke verbetering gaat langs vaste handen: van idee tot live, zorgvuldig en in het openbaar.</p>
     <div class="team-flowwrap"><span class="team-runner" aria-hidden="true"><span class="team-dot"></span></span>
     <ol class="team-flow">
@@ -1093,6 +1116,10 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">3</span><span class="team-t">Controle</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h4>Bernard</h4><p>controleert elke wijziging</p></div></li></ul></li>
       <li class="team-step"><p class="team-step-h"><span class="team-n" aria-hidden="true">4</span><span class="team-t">Live</span></p><ul class="team-cards"><li class="team-card"><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c2-5 6-9 13-9 0 7-4 11-9 13z"/><circle cx="15" cy="9" r="1.5"/></svg><div><h4>Ops</h4><p>zet het live</p></div></li></ul></li>
     </ol></div>
+    <section class="team-feed" id="team-feed" aria-labelledby="team-feed-h" hidden>
+      <h3 id="team-feed-h">Wat het team nu bespreekt</h3>
+      <ol class="team-feed-list" aria-live="off" aria-relevant="additions"></ol>
+    </section>
     <div class="team-always">
       <h3>Altijd aan</h3>
       <ul><li><span class="team-hb team-hb1" aria-hidden="true"></span><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M7 9h7M7 12h7M7 15h4"/></svg><span><strong>Newsbronnen</strong> leest het nieuws</span></li><li><span class="team-hb team-hb2" aria-hidden="true"></span><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20h18"/><path d="M6 16v-4M11 16V8M16 16v-6"/></svg><span><strong>Paperbot</strong> meet elke trade</span></li><li><span class="team-hb team-hb3" aria-hidden="true"></span><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5s.8-1.5 2-1.5H17a4 4 0 0 0 4-4c0-4.7-4-8.5-9-8.5z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="15.5" cy="8" r="1"/></svg><span><strong>Designer</strong> ontwerpt deze pagina</span></li><li><span class="team-hb team-hb4" aria-hidden="true"></span><svg class="team-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg><span><strong>Site</strong> houdt de site in de lucht</span></li></ul>
@@ -3026,7 +3053,21 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     }
     return null;
   }
+  function announcedFile(keys, def) {
+    var srcs = [lastRaw, bmRaw];
+    for (var i = 0; i < srcs.length; i++) {
+      var o = srcs[i]; if (!o || typeof o !== "object") continue;
+      for (var j = 0; j < keys.length; j++) {
+        var v = o[keys[j]];
+        if (v === true) return def;
+        if (typeof v === "string" && /^[A-Za-z0-9_-]{1,40}\.json$/.test(v)) return v;
+      }
+    }
+    return null;
+  }
   function loadMarkets() {
+    /* Teamfeed: alleen ophalen als paper-live.json/benchmark.json het aankondigt (geen 404 in de console) */
+    try { window.__cdTeamFeed = announcedFile(["team_feed", "team_feed_file"], "team-feed.json"); document.dispatchEvent(new CustomEvent("cd:teamfeed")); } catch (e) {}
     var file = marketsFile();
     if (!file) { mktState.models = {}; renderMarkets(); return Promise.resolve(); }
     return fetchJson(file, 4000)
@@ -3402,6 +3443,11 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
     wrap.classList.toggle("is-v", Math.abs(pts[3].x - pts[0].x) < 4);
     pts.forEach(function (p, i) { runner.style.setProperty("--x" + i, Math.round(p.x) + "px"); runner.style.setProperty("--y" + i, Math.round(p.y) + "px"); });
   }
+  window.__cdTeamStep = function (idx) { /* idx 0..3 = stap van het nieuwste bericht; null = terug naar de vaste cyclus */
+    var data = idx != null;
+    wrap.classList.toggle("is-data", data);
+    steps.forEach(function (st, k) { st.classList.toggle("is-hot", data && k === idx); });
+  };
   function update() {
     var go = visible && !document.hidden && !(mq && mq.matches);
     if (go && !running) { measure(); wrap.classList.add("is-run"); }
@@ -3417,6 +3463,118 @@ li[data-sym].is-sel{background:var(--sel-bg);box-shadow:inset 3px 0 0 var(--sel-
   var rt = null;
   window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { if (wrap.classList.contains("is-run")) measure(); }, 200); });
   update();
+})();
+</script>
+<script>
+/* —— Teamfeed 'Wat het team nu bespreekt': optioneel same-origin bestand, fail-closed, alles via textContent —— */
+(function initTeamFeed() {
+  "use strict";
+  var TEAM_FEED_CONFIG = {
+    file: "team-feed.json",                 /* standaard; wordt alleen opgehaald als aangekondigd (team_feed / team_feed_file) */
+    keys: { updated: ["updated", "updated_at"], items: ["items"], ts: ["ts", "time"], from: ["from"], to: ["to"], step: ["step"], text: ["text_nl"] },
+    max: 8, maxLen: 160, freshMin: 120, pollMs: 60000,
+    roles: { "trading-desk": "Trading Desk", "strategie-lab": "Strategie Lab", "optimizer": "Optimizer", "bernard": "Bernard", "ops": "Ops",
+             "newsbronnen": "Newsbronnen", "paperbot": "Paperbot", "designer": "Designer", "site": "Site" },
+    steps: { idee: 0, bouw: 1, controle: 2, live: 3 }
+  };
+  var C = TEAM_FEED_CONFIG;
+  var sec = document.getElementById("team-feed"); if (!sec) return;
+  var list = sec.querySelector(".team-feed-list");
+  var status = document.querySelector("#team .team-status"), statusT = status && status.querySelector(".team-status-t");
+  var defaultLabel = statusT ? statusT.textContent : "";
+  var BAD = [/\d\s*%|%\s*\d/, /=/, /threshold|drempel|config|tunnel|sand-|agent/i,
+             /https?:\/\/|www\.|\b[a-z0-9-]+\.(nl|com|io|org|net|dev|app|eu|be)\b/i, /\.(json|py)\b/i, /\b(?=[0-9a-f]*\d)[0-9a-f]{7,}\b/i];
+  var MON = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+  var shown = [], first = true, timer = null, file = null;
+  function pick(o, k) { if (!o || typeof o !== "object") return undefined; var n = C.keys[k]; for (var i = 0; i < n.length; i++) if (o[n[i]] != null) return o[n[i]]; return undefined; }
+  function parseTs(v) { if (typeof v !== "string" || !/Z$|[+-]\d\d:?\d\d$/.test(v)) return null; var d = new Date(v); return isNaN(d.getTime()) ? null : d; }
+  function ams(d) { var o = {}; try { new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(d).forEach(function (p) { o[p.type] = p.value; }); } catch (e) {} return o; }
+  function rel(d) {
+    var now = new Date(), s = (now - d) / 1000;
+    if (s < 60) return "zojuist";
+    if (s < 3600) return Math.floor(s / 60) + " min geleden";
+    var a = ams(d), n = ams(now), y = ams(new Date(now.getTime() - 864e5)), hm = a.hour + ":" + a.minute;
+    var same = function (x) { return x.year === a.year && x.month === a.month && x.day === a.day; };
+    if (same(n)) return s < 6 * 3600 ? Math.floor(s / 3600) + " uur geleden" : "vandaag " + hm;
+    if (same(y)) return "gisteren " + hm;
+    return Number(a.day) + " " + MON[Number(a.month) - 1] + " " + hm;
+  }
+  function clean(it) {
+    if (!it || typeof it !== "object") return null;
+    var from = pick(it, "from"), to = pick(it, "to"), step = pick(it, "step"), text = pick(it, "text"), at = parseTs(pick(it, "ts"));
+    if (typeof from !== "string" || !Object.prototype.hasOwnProperty.call(C.roles, from)) return null; /* onbekende afzender: niet tonen */
+    if (!at || at.getTime() > Date.now() + 5 * 60000 || typeof text !== "string") return null;
+    text = text.replace(/\s+/g, " ").trim(); if (!text) return null;
+    for (var i = 0; i < BAD.length; i++) if (BAD[i].test(text)) return null; /* tweede verdedigingslinie */
+    if (text.length > C.maxLen) text = text.slice(0, C.maxLen - 1).replace(/\s+$/, "") + "…";
+    return { at: at, from: from, to: typeof to === "string" && Object.prototype.hasOwnProperty.call(C.roles, to) && to !== from ? to : null,
+      step: typeof step === "string" && Object.prototype.hasOwnProperty.call(C.steps, step) ? C.steps[step] : null, text: text,
+      key: at.getTime() + "|" + from + "|" + text };
+  }
+  function off() {
+    sec.hidden = true; shown = []; while (list.firstChild) list.removeChild(list.firstChild);
+    if (statusT) statusT.textContent = defaultLabel; if (status) status.classList.remove("is-calm");
+    if (window.__cdTeamStep) window.__cdTeamStep(null);
+  }
+  function row(it) {
+    var li = document.createElement("li"); li.setAttribute("data-k", it.key);
+    var h = document.createElement("p"); h.className = "tf-head"; h.style.margin = "0";
+    var f = document.createElement("span"); f.className = "tf-from"; f.textContent = C.roles[it.from]; h.appendChild(f);
+    if (it.to) { var t = document.createElement("span"); t.className = "tf-to"; t.textContent = "→ " + C.roles[it.to]; h.appendChild(t); }
+    var tm = document.createElement("time"); tm.className = "tf-time"; tm.dateTime = it.at.toISOString(); h.appendChild(tm);
+    var p = document.createElement("p"); p.className = "tf-text"; p.textContent = it.text; p.title = it.text;
+    li.appendChild(h); li.appendChild(p);
+    return li;
+  }
+  function render(items) {
+    if (!items.length) { off(); return; }
+    var byKey = {}; Array.prototype.forEach.call(list.children, function (li) { byKey[li.getAttribute("data-k")] = li; });
+    var keep = {};
+    items.forEach(function (it, i) {
+      var li = byKey[it.key], isNew = !li;
+      if (isNew) { li = row(it); if (!first) li.classList.add("is-in"); }
+      li.querySelector(".tf-time").textContent = rel(it.at);
+      li.style.transform = "translateY(calc(var(--fh) * " + i + "))";
+      li.style.zIndex = String(10 - i);
+      if (isNew) { if (i === 0 && list.firstChild) list.insertBefore(li, list.firstChild); else list.appendChild(li); }
+      keep[it.key] = 1;
+    });
+    Object.keys(byKey).forEach(function (k) { if (!keep[k]) list.removeChild(byKey[k]); });
+    /* schermlezer volgorde = nieuwste eerst */
+    items.forEach(function (it) { var li = list.querySelector('[data-k="' + CSS.escape(it.key) + '"]'); if (li) list.appendChild(li); });
+    sec.hidden = false;
+    var newest = items[0], fresh = Date.now() - newest.at.getTime() < C.freshMin * 60000;
+    if (statusT) statusT.textContent = fresh ? "Team aan het werk" : "Laatste bericht " + rel(newest.at);
+    if (status) status.classList.toggle("is-calm", !fresh);
+    if (window.__cdTeamStep) window.__cdTeamStep(newest.step);
+    if (first) { first = false; list.setAttribute("aria-live", "polite"); } /* pas na de eerste lading aankondigen */
+  }
+  function load() {
+    if (!file) { off(); return; }
+    if (typeof fetch !== "function") return;
+    fetch(file + "?t=" + Math.floor(Date.now() / 60000), { cache: "no-cache", credentials: "omit" })
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (d) {
+        var arr = pick(d, "items");
+        if (!Array.isArray(arr)) { off(); return; }
+        var seen = {};
+        var items = arr.map(clean).filter(function (x) { if (!x || seen[x.key]) return false; seen[x.key] = 1; return true; })
+          .sort(function (a, b) { return b.at - a.at; }).slice(0, C.max);
+        render(items);
+      })
+      .catch(function () { if (!shown.length && !list.firstChild) off(); /* fail-closed; laatst getoonde stand blijft */ });
+  }
+  function setFile() {
+    var f = window.__cdTeamFeed;
+    f = typeof f === "string" && /^[A-Za-z0-9_-]{1,40}\.json$/.test(f) ? f : null;
+    if (f === file) return;
+    file = f; load();
+    if (timer) { clearInterval(timer); timer = null; }
+    if (file) timer = setInterval(function () { if (!document.hidden) load(); }, C.pollMs);
+  }
+  document.addEventListener("cd:teamfeed", setFile);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden && file) load(); });
+  setFile();
 })();
 </script>
 <script>
