@@ -1,13 +1,31 @@
 {
-  "generated_at": "2026-10-26T06:41:24Z",
+  "generated_at": "2026-10-27T06:50:32Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-daalt-terwijl-trump-iran-a-92cfde52",
-      "title": "Crypto wekker: Bitcoin daalt, terwijl Trump Iran-aanval afblaast",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-daalt-terwijl-trump-iran-aanval-afblaast/",
+      "id": "ripple-krijgt-groen-licht-cryptobedrijf-mag-bank-c109ee6f",
+      "title": "Ripple krijgt groen licht: cryptobedrijf mag bank worden",
+      "url": "https://newsbit.nl/ripple-krijgt-groen-licht-cryptobedrijf-mag-bank-worden/",
       "source": "Newsbit",
-      "published_at": "2026-10-26T06:30:41Z",
+      "published_at": "2026-10-27T06:41:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-wekker-bitcoin-wacht-op-cruciale-dag-priv-1ae4da4a",
+      "title": "Crypto wekker: Bitcoin wacht op cruciale dag, privacycoins stijgen hard",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-wacht-op-cruciale-dag-privacycoins-stijgen-hard/",
+      "source": "Newsbit",
+      "published_at": "2026-10-27T06:18:04Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "zcash-co-founder-proposes-ending-grants-funding--02c4a667",
+      "title": "Zcash co-founder proposes ending grants funding, citing $125 million treasury",
+      "url": "https://www.coindesk.com/markets/2026/10/27/zcash-co-founder-proposes-ending-grants-funding-citing-usd125-million-treasury",
+      "source": "CoinDesk",
+      "published_at": "2026-10-27T06:14:41Z",
       "category": "news",
       "sentiment": null
     },
@@ -16,36 +34,36 @@
       "title": "Here’s what happened in crypto today",
       "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
       "source": "Cointelegraph",
-      "published_at": "2026-10-26T05:44:44Z",
+      "published_at": "2026-10-27T06:08:28Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "india-s-largest-crypto-exchange-absorbs-16-milli-204fe85c",
-      "title": "India's largest crypto exchange absorbs $16 million loss from internal process failure tied to retired wallet",
-      "url": "https://www.coindesk.com/markets/2026/10/26/coindcx-absorbs-usd16-million-loss-from-internal-process-failure-tied-to-retired-wallet",
-      "source": "CoinDesk",
-      "published_at": "2026-10-26T05:39:17Z",
+      "id": "canada-s-draft-stablecoin-rules-cap-redemption-f-bbb14ccf",
+      "title": "Canada’s Draft Stablecoin Rules Cap Redemption Fees at 1% and Ban Yield",
+      "url": "https://decrypt.co/381889/canada-draft-stablecoin-rules-redemption-fees-ban-yield",
+      "source": "Decrypt",
+      "published_at": "2026-10-26T22:16:03Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-wallet-bug-let-rogue-servers-steal-funds-5b758755",
-      "title": "Bitcoin wallet bug let rogue servers steal funds when users tried to speed up payments",
-      "url": "https://www.coindesk.com/tech/2026/10/26/bitcoin-wallet-bug-let-rogue-servers-steal-funds-when-users-tried-to-speed-up-payments",
-      "source": "CoinDesk",
-      "published_at": "2026-10-26T05:15:20Z",
-      "category": "news",
-      "sentiment": null
+      "id": "macro-outlook-26-oktober-de-ecb-beslist-v-r-de-n-89603555",
+      "title": "Macro Outlook 26 oktober: de ECB beslist vóór de nieuwe groeicijfers",
+      "url": "https://cryptofocus.nl/nieuws/crypto/macro-outlook-2026-10-26/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-26T14:39:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
-      "id": "britse-banken-beperken-crypto-en-campagne-telt-1-592a4b80",
-      "title": "Britse banken beperken crypto en campagne telt 10.000 klachten",
-      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/britse-banken-beperken-crypto-en-campagne-telt-10-000-klachten/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-10-26T05:02:37Z",
-      "category": "news",
-      "sentiment": null
+      "id": "war-shutdowns-and-licensing-reshape-mena-s-443-b-f467ff13",
+      "title": "War, Shutdowns, and Licensing Reshape MENA’s $443 Billion Crypto Economy",
+      "url": "https://www.chainalysis.com/blog/middle-east-north-africa-crypto-adoption-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-26T12:55:36Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "bitcoin-optech-newsletter-428-806ff68d",
@@ -53,24 +71,6 @@
       "url": "https://bitcoinops.org/en/newsletters/2026/10/23/",
       "source": "Bitcoin Optech",
       "published_at": "2026-10-23T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "re-and-the-case-for-reinsurance-yield-onchain-856a0b48",
-      "title": "Re and the Case for Reinsurance Yield Onchain",
-      "url": "https://research.castlelabs.io/p/re-and-the-case-for-reinsurance-yield",
-      "source": "Castle Labs",
-      "published_at": "2026-10-21T14:56:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "what-drives-stablecoin-supply-growth-1ea37a48",
-      "title": "What Drives Stablecoin Supply Growth?",
-      "url": "https://coinmetrics.substack.com/p/what-drives-stablecoin-supply-growth",
-      "source": "Coin Metrics",
-      "published_at": "2026-10-20T13:03:46Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
