@@ -1,19 +1,28 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-27T02:19:38+00:00",
+  "updated": "2026-10-27T02:24:13+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 37071.59,
+    "cash_eur": 38817.54,
     "banked_eur": 9488.1,
-    "equity_approx": 39066.59,
-    "total": 48554.69,
-    "realized_pnl_eur": -51440.31,
-    "trades": 1635,
-    "open_positions": 1,
-    "rendement_pct": -51.4
+    "equity_approx": 38817.54,
+    "total": 48305.64,
+    "realized_pnl_eur": -51694.35,
+    "trades": 1636,
+    "open_positions": 0,
+    "rendement_pct": -51.7
   },
   "tape": [
+    {
+      "t": "2026-10-27T02:20:23+00:00",
+      "side": "SELL",
+      "symbol": "EDS",
+      "bedrag_eur": 1745.96,
+      "prijs_eur": 0.0001869083,
+      "pnl_eur": -254.04,
+      "reason": "stop-loss"
+    },
     {
       "t": "2026-10-27T02:19:38+00:00",
       "side": "BUY",
@@ -218,46 +227,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.0007289769,
       "reason": "instap"
-    },
-    {
-      "t": "2026-10-26T10:05:04+00:00",
-      "side": "SELL",
-      "symbol": "MINIGANG",
-      "bedrag_eur": 1004.52,
-      "prijs_eur": 0.0003343083,
-      "pnl_eur": -95.48,
-      "reason": "stop-loss"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-26T21:31:22+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T21:32:08+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T21:32:53+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T21:33:39+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T21:34:25+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T21:41:32+00:00",
-      "total": 48385.54
-    },
-    {
-      "t": "2026-10-26T22:15:40+00:00",
-      "total": 48385.54
-    },
     {
       "t": "2026-10-26T22:15:41+00:00",
       "total": 48380.54
@@ -469,18 +441,38 @@
     {
       "t": "2026-10-27T02:19:38+00:00",
       "total": 48554.69
-    }
-  ],
-  "open_positions": [
+    },
     {
-      "symbol": "EDS",
-      "opened_at": "2026-10-27T02:19:38+00:00",
-      "cost_eur": 2000.0,
-      "entry_price": 0.0002130351851851852,
-      "qty": 9364650.249045976
+      "t": "2026-10-27T02:20:23+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:20:23+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:21:09+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:21:55+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:22:41+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:23:26+00:00",
+      "total": 48305.65
+    },
+    {
+      "t": "2026-10-27T02:24:12+00:00",
+      "total": 48305.65
     }
   ],
-  "rendement_pct": -51.4,
+  "open_positions": [],
+  "rendement_pct": -51.7,
   "best_trades_week": [
     {
       "symbol": "BOW",
@@ -513,8 +505,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 21,
-  "week_pnl_eur": -205.52,
+  "n_trades_week": 22,
+  "week_pnl_eur": -459.56,
   "week_label": "week 44 (26 okt–1 nov)",
   "markets_live": true,
   "team_feed": true
