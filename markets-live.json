@@ -1,14 +1,14 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-27T16:23:38Z",
+ "updated": "2026-10-27T17:10:04Z",
  "markets": {
   "commodities": {
    "mode": "paper",
    "updated": "2026-10-27T15:25:23Z",
    "start_eur": 30000.0,
-   "total_eur": 30493.8,
-   "result_eur": 493.8,
+   "total_eur": 30491.82,
+   "result_eur": 491.82,
    "n_trades": 4,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -21,12 +21,12 @@
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 153.78,
-     "last_px": 163.62,
-     "last_px_source": "koers 17:23",
+     "last_px": 163.59,
+     "last_px_source": "koers 18:08",
      "units": 64.945604,
-     "value_eur": 10626.43,
-     "pnl_eur": 626.43,
-     "pnl_pct": 6.26,
+     "value_eur": 10624.45,
+     "pnl_eur": 624.45,
+     "pnl_pct": 6.24,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 3 van de 4 termijnen hoger dan ervoor."
     }
    ],
@@ -621,8 +621,8 @@
       "px": 367.82
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 371.99
+      "t": "2026-10-27T17:09:00Z",
+      "px": 372.16
      }
     ],
     "SLV": [
@@ -1103,8 +1103,8 @@
       "px": 48.66
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 49.1
+      "t": "2026-10-27T17:10:00Z",
+      "px": 49.12
      }
     ],
     "USO": [
@@ -1585,8 +1585,8 @@
       "px": 166.23
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 163.62
+      "t": "2026-10-27T17:08:00Z",
+      "px": 163.59
      }
     ]
    }
@@ -1595,8 +1595,8 @@
    "mode": "paper",
    "updated": "2026-10-27T15:25:23Z",
    "start_eur": 70000.0,
-   "total_eur": 68669.18,
-   "result_eur": -1330.82,
+   "total_eur": 68640.51,
+   "result_eur": -1359.49,
    "n_trades": 7,
    "n_trades_week": 1,
    "best_trades_week": [
@@ -1616,12 +1616,12 @@
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.18,
-     "last_px": 113.94,
-     "last_px_source": "koers 17:05",
+     "last_px": 113.86,
+     "last_px_source": "koers 17:24",
      "units": 36.71808,
-     "value_eur": 4183.66,
-     "pnl_eur": 19.52,
-     "pnl_pct": 0.47,
+     "value_eur": 4180.72,
+     "pnl_eur": 16.58,
+     "pnl_pct": 0.4,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1629,12 +1629,12 @@
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 346.01,
-     "last_px": 345.92,
-     "last_px_source": "koers 17:23",
+     "last_px": 345.45,
+     "last_px_source": "koers 18:09",
      "units": 24.058058,
-     "value_eur": 8322.16,
-     "pnl_eur": -11.31,
-     "pnl_pct": -0.14,
+     "value_eur": 8310.86,
+     "pnl_eur": -22.62,
+     "pnl_pct": -0.27,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1642,12 +1642,12 @@
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 544.64,
-     "last_px": 533.67,
-     "last_px_source": "koers 17:23",
+     "last_px": 532.16,
+     "last_px_source": "koers 18:10",
      "units": 9.170288,
-     "value_eur": 4893.91,
-     "pnl_eur": -106.09,
-     "pnl_pct": -2.12,
+     "value_eur": 4880.02,
+     "pnl_eur": -119.98,
+     "pnl_pct": -2.4,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1655,12 +1655,12 @@
      "name": "Amazon",
      "entry_ts": "2026-10-27T13:30:00Z",
      "entry_px": 250.35,
-     "last_px": 253.73,
-     "last_px_source": "koers 17:23",
+     "last_px": 253.57,
+     "last_px_source": "koers 18:09",
      "units": 3.325016,
-     "value_eur": 843.66,
-     "pnl_eur": 10.32,
-     "pnl_pct": 1.24,
+     "value_eur": 843.12,
+     "pnl_eur": 9.79,
+     "pnl_pct": 1.17,
      "reason_nl": "Gekocht: op 26-10 lag de koers op 1 van de 4 termijnen hoger dan ervoor."
     }
    ],
@@ -2255,8 +2255,8 @@
       "px": 343.91
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 345.92
+      "t": "2026-10-27T17:09:00Z",
+      "px": 345.45
      }
     ],
     "AMZN": [
@@ -2737,8 +2737,8 @@
       "px": 249.09
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 253.73
+      "t": "2026-10-27T17:09:00Z",
+      "px": 253.57
      }
     ],
     "GOOGL": [
@@ -3219,8 +3219,8 @@
       "px": 316.8
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 322.05
+      "t": "2026-10-27T17:09:00Z",
+      "px": 320.82
      }
     ],
     "IAEX.AS": [
@@ -3701,8 +3701,8 @@
       "px": 113.18
      },
      {
-      "t": "2026-10-27T16:05:00Z",
-      "px": 113.94
+      "t": "2026-10-27T16:24:00Z",
+      "px": 113.86
      }
     ],
     "MSFT": [
@@ -4183,8 +4183,8 @@
       "px": 532.6
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 533.67
+      "t": "2026-10-27T17:10:00Z",
+      "px": 532.16
      }
     ],
     "NVDA": [
@@ -4665,8 +4665,8 @@
       "px": 216.0
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 219.01
+      "t": "2026-10-27T17:10:00Z",
+      "px": 218.2
      }
     ],
     "SPY": [
@@ -5147,8 +5147,8 @@
       "px": 765.37
      },
      {
-      "t": "2026-10-27T16:23:00Z",
-      "px": 770.42
+      "t": "2026-10-27T17:09:00Z",
+      "px": 769.43
      }
     ]
    }
