@@ -1,14 +1,14 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-27T14:30:44Z",
+ "updated": "2026-10-27T15:25:24Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-10-27T09:13:48Z",
+   "updated": "2026-10-27T15:25:23Z",
    "start_eur": 30000.0,
-   "total_eur": 30548.32,
-   "result_eur": 548.32,
+   "total_eur": 30501.89,
+   "result_eur": 501.89,
    "n_trades": 4,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -21,12 +21,12 @@
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 153.78,
-     "last_px": 164.46,
-     "last_px_source": "koers 15:30",
+     "last_px": 163.74,
+     "last_px_source": "koers 16:25",
      "units": 64.945604,
-     "value_eur": 10680.95,
-     "pnl_eur": 680.95,
-     "pnl_pct": 6.81,
+     "value_eur": 10634.52,
+     "pnl_eur": 634.52,
+     "pnl_pct": 6.35,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 3 van de 4 termijnen hoger dan ervoor."
     }
    ],
@@ -621,8 +621,8 @@
       "px": 367.82
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 370.52
+      "t": "2026-10-27T15:25:00Z",
+      "px": 371.91
      }
     ],
     "SLV": [
@@ -1103,8 +1103,8 @@
       "px": 48.66
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 48.95
+      "t": "2026-10-27T15:25:00Z",
+      "px": 49.17
      }
     ],
     "USO": [
@@ -1585,18 +1585,18 @@
       "px": 166.23
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 164.46
+      "t": "2026-10-27T15:25:00Z",
+      "px": 163.74
      }
     ]
    }
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-10-27T09:13:48Z",
+   "updated": "2026-10-27T15:25:23Z",
    "start_eur": 70000.0,
-   "total_eur": 68587.46,
-   "result_eur": -1412.54,
+   "total_eur": 68684.55,
+   "result_eur": -1315.45,
    "n_trades": 7,
    "n_trades_week": 1,
    "best_trades_week": [
@@ -1608,20 +1608,20 @@
     }
    ],
    "week_label": "week 44 (26 okt–1 nov)",
-   "cash_eur": 51259.13,
-   "costs_eur": 127.0,
+   "cash_eur": 50425.79,
+   "costs_eur": 127.92,
    "open_positions": [
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.18,
-     "last_px": 113.2,
-     "last_px_source": "koers 15:05",
+     "last_px": 113.54,
+     "last_px_source": "koers 15:59",
      "units": 36.71808,
-     "value_eur": 4156.49,
-     "pnl_eur": -7.65,
-     "pnl_pct": -0.18,
+     "value_eur": 4168.97,
+     "pnl_eur": 4.83,
+     "pnl_pct": 0.12,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1629,12 +1629,12 @@
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 346.01,
-     "last_px": 345.05,
-     "last_px_source": "koers 15:30",
+     "last_px": 347.67,
+     "last_px_source": "koers 16:25",
      "units": 24.058058,
-     "value_eur": 8301.23,
-     "pnl_eur": -32.25,
-     "pnl_pct": -0.39,
+     "value_eur": 8364.27,
+     "pnl_eur": 30.79,
+     "pnl_pct": 0.37,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1642,16 +1642,40 @@
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 544.64,
-     "last_px": 531.13,
-     "last_px_source": "koers 15:30",
+     "last_px": 533.08,
+     "last_px_source": "koers 16:25",
      "units": 9.170288,
-     "value_eur": 4870.61,
-     "pnl_eur": -129.39,
-     "pnl_pct": -2.59,
+     "value_eur": 4888.45,
+     "pnl_eur": -111.55,
+     "pnl_pct": -2.23,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
+    },
+    {
+     "symbol": "AMZN",
+     "name": "Amazon",
+     "entry_ts": "2026-10-27T13:30:00Z",
+     "entry_px": 250.35,
+     "last_px": 251.75,
+     "last_px_source": "koers 16:25",
+     "units": 3.325016,
+     "value_eur": 837.07,
+     "pnl_eur": 3.74,
+     "pnl_pct": 0.45,
+     "reason_nl": "Gekocht: op 26-10 lag de koers op 1 van de 4 termijnen hoger dan ervoor."
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "AMZN",
+     "name": "Amazon",
+     "side": "BUY",
+     "ts": "2026-10-27T13:30:00Z",
+     "px": 250.35,
+     "notional_eur": 832.42,
+     "cost_eur": 0.92,
+     "status": "voorlopig",
+     "reason_nl": "Gekocht: op 26-10 lag de koers op 1 van de 4 termijnen hoger dan ervoor."
+    },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
@@ -1748,17 +1772,6 @@
      "px": 344.93,
      "notional_eur": 832.42,
      "cost_eur": 0.92,
-     "status": "bevestigd",
-     "reason_nl": "Bijgekocht: op 21-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
-    },
-    {
-     "symbol": "AMZN",
-     "name": "Amazon",
-     "side": "BUY",
-     "ts": "2026-10-22T13:30:00Z",
-     "px": 258.13,
-     "notional_eur": 1664.84,
-     "cost_eur": 1.83,
      "status": "bevestigd",
      "reason_nl": "Bijgekocht: op 21-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     }
@@ -2242,8 +2255,8 @@
       "px": 343.91
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 345.05
+      "t": "2026-10-27T15:25:00Z",
+      "px": 347.67
      }
     ],
     "AMZN": [
@@ -2724,8 +2737,8 @@
       "px": 249.09
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 250.61
+      "t": "2026-10-27T15:25:00Z",
+      "px": 251.75
      }
     ],
     "GOOGL": [
@@ -3206,8 +3219,8 @@
       "px": 316.8
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 319.46
+      "t": "2026-10-27T15:25:00Z",
+      "px": 320.17
      }
     ],
     "IAEX.AS": [
@@ -3688,8 +3701,8 @@
       "px": 113.18
      },
      {
-      "t": "2026-10-27T14:05:00Z",
-      "px": 113.2
+      "t": "2026-10-27T14:59:00Z",
+      "px": 113.54
      }
     ],
     "MSFT": [
@@ -4170,8 +4183,8 @@
       "px": 532.6
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 531.13
+      "t": "2026-10-27T15:25:00Z",
+      "px": 533.08
      }
     ],
     "NVDA": [
@@ -4652,8 +4665,8 @@
       "px": 216.0
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 217.41
+      "t": "2026-10-27T15:25:00Z",
+      "px": 217.86
      }
     ],
     "SPY": [
@@ -5134,8 +5147,8 @@
       "px": 765.37
      },
      {
-      "t": "2026-10-27T14:30:00Z",
-      "px": 766.94
+      "t": "2026-10-27T15:25:00Z",
+      "px": 769.69
      }
     ]
    }
