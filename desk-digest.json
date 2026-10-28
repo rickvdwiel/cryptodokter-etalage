@@ -1,40 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-27T16:58:00+01:00",
-  "digest_date": "2026-10-27",
-  "measured_at": "2026-10-27T16:54:17+01:00",
-  "window_4h_utc": "11:54-15:54",
+  "updated_at": "2026-10-28T16:52:00+01:00",
+  "digest_date": "2026-10-28",
+  "measured_at": "2026-10-28T16:48:09+01:00",
+  "window_4h_utc": "11:48-15:48",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4 uur 2 take-profits (+€926); 24 uur PF 1,16 (+€363); seizoen s2 −€50.240, totaal €49.760; MIN_LIQ 75k na 36 trades PF 0,65, meting loopt",
+  "headline": "Desk-digest: 4 uur PF 0,27 (−€771, 3 exits); 24 uur PF 1,52 (+€1.160); seizoen s2 −€49.080, totaal €50.920; MIN_LIQ 75k na 52 trades PF 0,84, meting loopt",
   "metrics_4h": {
-    "exits": 2,
-    "winrate_pct": 100.0,
-    "profit_factor": null,
-    "expectancy_eur": 463.03,
-    "net_eur": 926.05,
-    "fees_eur": 17.35,
-    "fees_per_hour_eur": 4.3
+    "exits": 3,
+    "winrate_pct": 33.3,
+    "profit_factor": 0.272,
+    "expectancy_eur": -257.14,
+    "net_eur": -771.42,
+    "fees_eur": 28.1,
+    "fees_per_hour_eur": 7.0
   },
   "metrics_8h": {
-    "exits": 2,
-    "winrate_pct": 100.0,
-    "profit_factor": null,
-    "expectancy_eur": 463.03,
-    "net_eur": 926.05
+    "exits": 6,
+    "winrate_pct": 66.7,
+    "profit_factor": 1.222,
+    "expectancy_eur": 39.15,
+    "net_eur": 234.88
   },
   "metrics_season": {
-    "exits": 910,
-    "winrate_pct": 48.5,
-    "profit_factor": 0.665,
-    "net_eur": -50239.54,
-    "fees_eur": 7215.72,
+    "exits": 928,
+    "winrate_pct": 48.8,
+    "profit_factor": 0.678,
+    "net_eur": -49079.87,
+    "fees_eur": 7376.38,
     "start_eur": 100000.0,
-    "total_eur": 49760.46
+    "total_eur": 50920.13
   },
   "summary_nl": [
-    "Sinds MIN_LIQUIDITY_USD 75.000 (live 25-10 00:32 NL): 45 exits uit 36 trades, PF 0,65, netto −€2.883, fees €353. De forward-meting vraagt ≥100 trades en ≥7 dagen; oordeel nog niet mogelijk."
+    "Over 8 uur: 6 exits uit 5 trades, winrate 67%, PF 1,22, netto +€235, fees €51. Over 24 uur: 18 exits, PF 1,52, netto +€1.160. Over 72 uur: 57 exits, PF 0,86, netto −€1.363.",
+    "Sinds MIN_LIQUIDITY_USD 75.000 (live 25-10 00:32 NL): 63 exits uit 52 trades, winrate 56%, PF 0,84, netto −€1.723, fees €516. De forward-meting vraagt ≥100 trades en ≥7 dagen; oordeel nog niet mogelijk."
   ]
 }
