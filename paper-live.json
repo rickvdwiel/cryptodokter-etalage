@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-10-28T07:21:20+00:00",
+  "updated": "2026-10-28T07:31:30+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 40752.71,
+    "cash_eur": 41161.07,
     "banked_eur": 9524.17,
-    "equity_approx": 40752.71,
-    "total": 50276.88,
-    "realized_pnl_eur": -49723.12,
-    "trades": 1663,
+    "equity_approx": 41161.07,
+    "total": 50685.24,
+    "realized_pnl_eur": -49314.75,
+    "trades": 1665,
     "open_positions": 0,
-    "rendement_pct": -49.7
+    "rendement_pct": -49.3
   },
   "tape": [
+    {
+      "t": "2026-10-28T07:31:30+00:00",
+      "side": "SELL",
+      "symbol": "GIGGLE",
+      "bedrag_eur": 2408.36,
+      "prijs_eur": 0.0081601667,
+      "pnl_eur": 408.36,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-10-28T07:24:23+00:00",
+      "side": "BUY",
+      "symbol": "GIGGLE",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0067426852,
+      "reason": "instap"
+    },
     {
       "t": "2026-10-28T06:21:10+00:00",
       "side": "SELL",
@@ -209,54 +226,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.0022818519,
       "reason": "instap"
-    },
-    {
-      "t": "2026-10-27T12:24:38+00:00",
-      "side": "SELL",
-      "symbol": "SEALS",
-      "bedrag_eur": 2681.26,
-      "prijs_eur": 0.000408375,
-      "pnl_eur": 681.26,
-      "reason": "winst genomen"
-    },
-    {
-      "t": "2026-10-27T11:28:36+00:00",
-      "side": "BUY",
-      "symbol": "SEALS",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0003030935,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-10-28T02:17:04+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:17:50+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:18:36+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:19:22+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:20:07+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:20:53+00:00",
-      "total": 50534.6
-    },
-    {
-      "t": "2026-10-28T02:24:22+00:00",
-      "total": 50534.6
-    },
     {
       "t": "2026-10-28T03:21:09+00:00",
       "total": 50534.6
@@ -468,10 +440,38 @@
     {
       "t": "2026-10-28T07:21:20+00:00",
       "total": 50276.88
+    },
+    {
+      "t": "2026-10-28T07:22:06+00:00",
+      "total": 50276.88
+    },
+    {
+      "t": "2026-10-28T07:22:51+00:00",
+      "total": 50276.88
+    },
+    {
+      "t": "2026-10-28T07:23:37+00:00",
+      "total": 50276.88
+    },
+    {
+      "t": "2026-10-28T07:24:22+00:00",
+      "total": 50276.88
+    },
+    {
+      "t": "2026-10-28T07:24:23+00:00",
+      "total": 50271.88
+    },
+    {
+      "t": "2026-10-28T07:31:30+00:00",
+      "total": 50685.25
+    },
+    {
+      "t": "2026-10-28T07:31:30+00:00",
+      "total": 50685.25
     }
   ],
   "open_positions": [],
-  "rendement_pct": -49.7,
+  "rendement_pct": -49.3,
   "best_trades_week": [
     {
       "symbol": "BOW",
@@ -504,8 +504,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 35,
-  "week_pnl_eur": 1511.68,
+  "n_trades_week": 36,
+  "week_pnl_eur": 1920.04,
   "week_label": "week 44 (26 okt–1 nov)",
   "markets_live": true,
   "team_feed": true
