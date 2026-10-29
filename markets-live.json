@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-29T20:19:25Z",
+ "updated": "2026-10-29T21:16:06Z",
  "markets": {
   "commodities": {
    "mode": "paper",
