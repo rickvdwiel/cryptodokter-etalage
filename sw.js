@@ -2,6 +2,7 @@
 var CACHE = "cryptodokter-app-v1";
 var SHELL = [
   "/",
+  "/app.html",
   "/manifest.json",
   "/favicon.svg",
   "/favicon-32.png",

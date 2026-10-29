@@ -1,9 +1,9 @@
 {
-  "id": "/",
+  "id": "/app.html",
   "name": "cryptodokter.nl",
   "short_name": "cryptodokter",
   "description": "Paper-fills, equity en radar van de paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.",
-  "start_url": "/",
+  "start_url": "/app.html",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0c1016",
