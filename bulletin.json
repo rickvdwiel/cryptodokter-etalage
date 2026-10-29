@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-10-28T06:44:07Z",
+  "generated_at": "2026-10-29T06:47:31Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-en-altcoins-stijgen-dag-va-dfbb6c1d",
-      "title": "Crypto wekker: Bitcoin en altcoins stijgen – dag van de waarheid breekt aan",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-en-altcoins-stijgen-dag-van-de-waarheid-breekt-aan/",
+      "id": "dtcc-tokeniseert-30-biljoen-aan-aandelen-jpmorga-a54f5df6",
+      "title": "DTCC Tokeniseert $30 Biljoen Aan Aandelen: JPMorgan En 19 Andere Banken Doen Mee",
+      "url": "https://www.crypto-gids.nl/dtcc-tokenisatie-30-biljoen-aandelen/",
+      "source": "Crypto Gids",
+      "published_at": "2026-10-29T06:47:29Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-wekker-bitcoin-beweegt-heftig-na-rentebes-e9dc2731",
+      "title": "Crypto wekker: Bitcoin beweegt heftig na rentebesluit, 13:30 uur wordt belangrijk",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-beweegt-heftig-na-rentebesluit-1330-uur-wordt-belangrijk/",
       "source": "Newsbit",
-      "published_at": "2026-10-28T06:21:33Z",
+      "published_at": "2026-10-29T06:20:07Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-treasury-datavault-ai-plunges-50-after-f-e3fd6e6f",
-      "title": "Bitcoin treasury Datavault AI plunges 50% after firm says it can’t access its BTC",
-      "url": "https://www.coindesk.com/markets/2026/10/28/bitcoin-treasury-datavault-ai-plunges-50-after-firm-says-it-can-t-access-its-btc",
-      "source": "CoinDesk",
-      "published_at": "2026-10-28T05:28:13Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "blackrock-en-sbi-willen-yenstablecoin-koppelen-a-756cc191",
-      "title": "BlackRock en SBI willen yenstablecoin koppelen aan digitale fondsen",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/blackrock-en-sbi-willen-yenstablecoin-koppelen-aan-digitale-fondsen/",
+      "id": "datalekken-treffen-coinbase-en-bithumb-klantgege-42cf6394",
+      "title": "Datalekken treffen Coinbase en Bithumb, klantgegevens liggen bloot",
+      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/datalekken-treffen-coinbase-en-bithumb-klantgegevens-liggen-bloot/",
       "source": "Crypto Insiders",
-      "published_at": "2026-10-28T05:02:27Z",
+      "published_at": "2026-10-29T05:05:26Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-nears-81-000-ahead-of-fed-decision-as-ze-9a13c921",
-      "title": "Bitcoin nears $81,000 ahead of Fed decision as ZEC jumps 8%",
-      "url": "https://www.coindesk.com/markets/2026/10/28/bitcoin-nears-usd81-000-ahead-of-fed-decision-as-zec-jumps-8",
-      "source": "CoinDesk",
-      "published_at": "2026-10-28T04:15:20Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "robinhood-s-tenev-warns-us-tokenization-uncertai-39c8c161",
-      "title": "Robinhood’s Tenev warns US tokenization uncertainty deters ‘serious assets’",
-      "url": "https://cointelegraph.com/news/robinhoods-tenev-warns-us-tokenization-uncertainty-deters-serious-assets",
+      "id": "your-fridge-could-one-day-stake-ether-launch-mem-6c4d7586",
+      "title": "Your fridge could one day stake Ether, launch memecoins: CFTC chair",
+      "url": "https://cointelegraph.com/news/a-fridge-that-launches-memecoins-cftc-floats-ai-crypto-future",
       "source": "Cointelegraph",
-      "published_at": "2026-10-28T03:55:57Z",
+      "published_at": "2026-10-29T04:39:49Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "international-law-enforcement-seizes-domain-of-v-8d51ffcc",
-      "title": "International Law Enforcement Seizes Domain of Virtualine Bulletproof Hosting Service",
-      "url": "https://www.chainalysis.com/blog/virtualine-bulletproof-hosting-seizure-october-2026/",
+      "id": "more-americans-have-tried-crypto-but-few-are-sti-40540d70",
+      "title": "More Americans Have Tried Crypto, But Few Are Sticking With It: Survey",
+      "url": "https://decrypt.co/382100/more-americans-tried-crypto-few-staying-survey",
+      "source": "Decrypt",
+      "published_at": "2026-10-28T19:46:03Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "treasury-sanctions-russians-north-koreans-suppor-0838f703",
+      "title": "Treasury Sanctions Russians, North Koreans supporting DPRK IT Worker Fraud",
+      "url": "https://www.chainalysis.com/blog/ofac-sanctions-dprk-it-worker-fraud/",
       "source": "Chainalysis",
-      "published_at": "2026-10-27T21:49:13Z",
+      "published_at": "2026-10-28T19:16:14Z",
+      "category": "outlook",
+      "sentiment": "bearish"
+    },
+    {
+      "id": "50-shades-of-gray-explore-pricing-gaps-in-midter-3efa1044",
+      "title": "50 Shades of Gray: Explore Pricing Gaps in Midterm Prediction Markets",
+      "url": "https://coinmetrics.substack.com/p/50-shades-of-gray-explore-pricing",
+      "source": "Coin Metrics",
+      "published_at": "2026-10-28T13:03:52Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
     {
-      "id": "war-shutdowns-and-licensing-reshape-mena-s-443-b-f467ff13",
-      "title": "War, Shutdowns, and Licensing Reshape MENA’s $443 Billion Crypto Economy",
-      "url": "https://www.chainalysis.com/blog/middle-east-north-africa-crypto-adoption-2026/",
-      "source": "Chainalysis",
-      "published_at": "2026-10-26T12:55:36Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-428-806ff68d",
-      "title": "Bitcoin Optech Newsletter #428",
-      "url": "https://bitcoinops.org/en/newsletters/2026/10/23/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-10-23T00:00:00Z",
+      "id": "rebundling-credit-b5568c35",
+      "title": "Rebundling Credit",
+      "url": "https://multicoin.capital/2026/10/28/rebundling-credit/",
+      "source": "Multicoin",
+      "published_at": "2026-10-28T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
