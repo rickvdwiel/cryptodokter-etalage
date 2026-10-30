@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-10-29T06:47:31Z",
+  "generated_at": "2026-10-30T06:44:55Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "dtcc-tokeniseert-30-biljoen-aan-aandelen-jpmorga-a54f5df6",
-      "title": "DTCC Tokeniseert $30 Biljoen Aan Aandelen: JPMorgan En 19 Andere Banken Doen Mee",
-      "url": "https://www.crypto-gids.nl/dtcc-tokenisatie-30-biljoen-aandelen/",
-      "source": "Crypto Gids",
-      "published_at": "2026-10-29T06:47:29Z",
+      "id": "bitcoin-koers-herstelt-na-sterke-amerikaanse-gro-01d5db64",
+      "title": "Bitcoin koers herstelt na sterke Amerikaanse groeicijfers",
+      "url": "https://nieuws.crypto.nl/bitcoin/bitcoin-koers-herstelt-na-sterke-amerikaanse-groeicijfers/",
+      "source": "Crypto-NL",
+      "published_at": "2026-10-30T06:40:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-beweegt-heftig-na-rentebes-e9dc2731",
-      "title": "Crypto wekker: Bitcoin beweegt heftig na rentebesluit, 13:30 uur wordt belangrijk",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-beweegt-heftig-na-rentebesluit-1330-uur-wordt-belangrijk/",
+      "id": "crypto-wekker-bitcoin-en-altcoins-dalen-hard-na--a22cd987",
+      "title": "Crypto wekker: Bitcoin en altcoins dalen hard na historische cyberaanval bij Binance",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-en-altcoins-dalen-hard-na-historische-cyberaanval-bij-binance/",
       "source": "Newsbit",
-      "published_at": "2026-10-29T06:20:07Z",
+      "published_at": "2026-10-30T06:34:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "datalekken-treffen-coinbase-en-bithumb-klantgege-42cf6394",
-      "title": "Datalekken treffen Coinbase en Bithumb, klantgegevens liggen bloot",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/datalekken-treffen-coinbase-en-bithumb-klantgegevens-liggen-bloot/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-10-29T05:05:26Z",
+      "id": "frankrijk-wil-meer-inzicht-in-crypto-van-belegge-8efe4121",
+      "title": "Frankrijk wil meer inzicht in crypto van beleggers",
+      "url": "https://nieuws.crypto.nl/markt-nieuws/frankrijk-wil-meer-inzicht-in-crypto-van-beleggers/",
+      "source": "Crypto-NL",
+      "published_at": "2026-10-30T06:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "your-fridge-could-one-day-stake-ether-launch-mem-6c4d7586",
-      "title": "Your fridge could one day stake Ether, launch memecoins: CFTC chair",
-      "url": "https://cointelegraph.com/news/a-fridge-that-launches-memecoins-cftc-floats-ai-crypto-future",
+      "id": "strategy-eyes-more-bitcoin-buys-as-saylor-touts--cfe2e8d5",
+      "title": "Strategy eyes more Bitcoin buys as Saylor touts $30B credit capacity",
+      "url": "https://cointelegraph.com/news/strategy-30-billion-digital-credit-capacity-bitcoin-buys",
       "source": "Cointelegraph",
-      "published_at": "2026-10-29T04:39:49Z",
+      "published_at": "2026-10-30T05:53:07Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "more-americans-have-tried-crypto-but-few-are-sti-40540d70",
-      "title": "More Americans Have Tried Crypto, But Few Are Sticking With It: Survey",
-      "url": "https://decrypt.co/382100/more-americans-tried-crypto-few-staying-survey",
-      "source": "Decrypt",
-      "published_at": "2026-10-28T19:46:03Z",
+      "id": "north-korea-s-tradertraitor-linked-to-6-3b-binan-0cb0ebeb",
+      "title": "North Korea’s TraderTraitor linked to $6.3B Binance hack",
+      "url": "https://cointelegraph.com/news/north-korea-linked-to-63b-binance-hack-by-crypto-investigators",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-30T05:51:41Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "south-africa-leads-sub-saharan-africa-s-13-4-cry-ed0dd318",
+      "title": "South Africa Leads Sub-Saharan Africa’s 13.4% Crypto Growth",
+      "url": "https://www.chainalysis.com/blog/sub-saharan-africa-crypto-adoption-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-29T06:55:01Z",
+      "category": "outlook",
+      "sentiment": "bullish"
     },
     {
       "id": "treasury-sanctions-russians-north-koreans-suppor-0838f703",
@@ -55,15 +64,6 @@
       "published_at": "2026-10-28T19:16:14Z",
       "category": "outlook",
       "sentiment": "bearish"
-    },
-    {
-      "id": "50-shades-of-gray-explore-pricing-gaps-in-midter-3efa1044",
-      "title": "50 Shades of Gray: Explore Pricing Gaps in Midterm Prediction Markets",
-      "url": "https://coinmetrics.substack.com/p/50-shades-of-gray-explore-pricing",
-      "source": "Coin Metrics",
-      "published_at": "2026-10-28T13:03:52Z",
-      "category": "outlook",
-      "sentiment": "neutral"
     },
     {
       "id": "rebundling-credit-b5568c35",
