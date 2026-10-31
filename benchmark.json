@@ -1,4 +1,4 @@
-{"schema":"benchmark/v1","paper_only":true,"start_eur":100000.0,"start_ts":"2026-10-11T23:52:41+00:00","updated_at":"2026-10-31T12:15:59+00:00","interval":"1h","loss_per_trade_old_eur":-21.48,"loss_per_trade_new_eur":-1.78,"season":{"n": 2, "start_ts": "2026-10-11T23:52:41Z", "start_eur": 100000.0, "total_eur_at_start": 100000.0, "deposits_eur": 0.0},"previous_seasons":[{"n": 1, "from": "2026-09-11", "to": "2026-10-12", "start_eur": 107100.0, "end_total_eur": 61619.56, "result_eur": -45480.44, "result_pct": -42.47, "fees_eur": 71275.0, "n_trades": 6836, "lesson": "Start incl. €7.100 papierstortingen. S1 vulde exits tegen de trigger, S2 tegen de geziene marktprijs: niet 1-op-1 vergelijkbaar."}],"series":[
+{"schema":"benchmark/v1","paper_only":true,"start_eur":100000.0,"start_ts":"2026-10-11T23:52:41+00:00","updated_at":"2026-10-31T19:15:24+00:00","interval":"1h","loss_per_trade_old_eur":-21.48,"loss_per_trade_new_eur":-1.78,"season":{"n": 2, "start_ts": "2026-10-11T23:52:41Z", "start_eur": 100000.0, "total_eur_at_start": 100000.0, "deposits_eur": 0.0},"previous_seasons":[{"n": 1, "from": "2026-09-11", "to": "2026-10-12", "start_eur": 107100.0, "end_total_eur": 61619.56, "result_eur": -45480.44, "result_pct": -42.47, "fees_eur": 71275.0, "n_trades": 6836, "lesson": "Start incl. €7.100 papierstortingen. S1 vulde exits tegen de trigger, S2 tegen de geziene marktprijs: niet 1-op-1 vergelijkbaar."}],"series":[
 {"ts":"2026-10-11T23:52:41+00:00","bot_total_eur":100000.0,"invested_eur":100000.0,"btc_hold_eur":100000.0,"basket_hold_eur":100000.0},
 {"ts":"2026-10-12T00:00:00+00:00","bot_total_eur":100000.0,"invested_eur":100000.0,"btc_hold_eur":100056.26,"basket_hold_eur":100225.05},
 {"ts":"2026-10-12T01:00:00+00:00","bot_total_eur":100000.0,"invested_eur":100000.0,"btc_hold_eur":100196.89,"basket_hold_eur":100273.86},
@@ -468,5 +468,12 @@
 {"ts":"2026-10-31T09:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":92755.16,"basket_hold_eur":81703.27},
 {"ts":"2026-10-31T10:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":92894.45,"basket_hold_eur":81920.15},
 {"ts":"2026-10-31T11:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":92834.18,"basket_hold_eur":81974.65},
-{"ts":"2026-10-31T12:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":93079.29,"basket_hold_eur":82071.13}
+{"ts":"2026-10-31T12:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":93079.29,"basket_hold_eur":82071.13},
+{"ts":"2026-10-31T13:00:00+00:00","bot_total_eur":49799.47,"invested_eur":100000.0,"btc_hold_eur":93004.29,"basket_hold_eur":82381.89},
+{"ts":"2026-10-31T14:00:00+00:00","bot_total_eur":49786.85,"invested_eur":100000.0,"btc_hold_eur":92953.39,"basket_hold_eur":82221.81},
+{"ts":"2026-10-31T15:00:00+00:00","bot_total_eur":47803.39,"invested_eur":100000.0,"btc_hold_eur":92848.92,"basket_hold_eur":82245.77},
+{"ts":"2026-10-31T16:00:00+00:00","bot_total_eur":47803.39,"invested_eur":100000.0,"btc_hold_eur":93075.27,"basket_hold_eur":82726.56},
+{"ts":"2026-10-31T17:00:00+00:00","bot_total_eur":47803.39,"invested_eur":100000.0,"btc_hold_eur":93087.33,"basket_hold_eur":82775.04},
+{"ts":"2026-10-31T18:00:00+00:00","bot_total_eur":47803.39,"invested_eur":100000.0,"btc_hold_eur":93174.39,"basket_hold_eur":82873.59},
+{"ts":"2026-10-31T19:00:00+00:00","bot_total_eur":47803.39,"invested_eur":100000.0,"btc_hold_eur":93083.31,"basket_hold_eur":82997.97}
 ]}
