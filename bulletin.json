@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-10-30T06:44:55Z",
+  "generated_at": "2026-10-31T06:45:02Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-koers-herstelt-na-sterke-amerikaanse-gro-01d5db64",
-      "title": "Bitcoin koers herstelt na sterke Amerikaanse groeicijfers",
-      "url": "https://nieuws.crypto.nl/bitcoin/bitcoin-koers-herstelt-na-sterke-amerikaanse-groeicijfers/",
-      "source": "Crypto-NL",
-      "published_at": "2026-10-30T06:40:00Z",
+      "id": "why-a-wallet-recovery-phrase-is-not-a-password-r-a2bd0fe4",
+      "title": "Why a wallet recovery phrase is not a password reset",
+      "url": "https://cryptofocus.nl/nieuws/bitcoin/wallet-recovery-phrase-not-password-reset/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-31T05:00:52Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-en-altcoins-dalen-hard-na--a22cd987",
-      "title": "Crypto wekker: Bitcoin en altcoins dalen hard na historische cyberaanval bij Binance",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-en-altcoins-dalen-hard-na-historische-cyberaanval-bij-binance/",
-      "source": "Newsbit",
-      "published_at": "2026-10-30T06:34:00Z",
+      "id": "binance-belooft-alle-verliezen-via-safu-te-dekke-f151e6a7",
+      "title": "Binance belooft alle verliezen via SAFU te dekken na incident van 6,3 miljard dollar",
+      "url": "https://bitcoinmagazine.nl/exchange-nieuws/binance-safu-dekt-verliezen-6-3-miljard",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-10-31T02:45:24Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "frankrijk-wil-meer-inzicht-in-crypto-van-belegge-8efe4121",
-      "title": "Frankrijk wil meer inzicht in crypto van beleggers",
-      "url": "https://nieuws.crypto.nl/markt-nieuws/frankrijk-wil-meer-inzicht-in-crypto-van-beleggers/",
-      "source": "Crypto-NL",
-      "published_at": "2026-10-30T06:00:00Z",
+      "id": "digital-euro-or-euro-stablecoin-the-difference-i-258fdebf",
+      "title": "Digital euro or euro stablecoin: the difference is who owes you the money",
+      "url": "https://cryptofocus.nl/nieuws/bitcoin/digital-euro-euro-stablecoin-who-owes-you-money/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-31T00:50:52Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "strategy-eyes-more-bitcoin-buys-as-saylor-touts--cfe2e8d5",
-      "title": "Strategy eyes more Bitcoin buys as Saylor touts $30B credit capacity",
-      "url": "https://cointelegraph.com/news/strategy-30-billion-digital-credit-capacity-bitcoin-buys",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-30T05:53:07Z",
+      "id": "binance-turns-up-in-india-s-500-million-plus-cry-c36cd88b",
+      "title": "Binance Turns Up in India’s $500 Million-Plus Crypto Probe as a Route for Foreign Payouts",
+      "url": "https://unchainedcrypto.com/binance-turns-up-in-indias-500-million-plus-crypto-probe-as-a-route-for-foreign-payouts/",
+      "source": "Unchained",
+      "published_at": "2026-10-31T00:45:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "north-korea-s-tradertraitor-linked-to-6-3b-binan-0cb0ebeb",
-      "title": "North Korea’s TraderTraitor linked to $6.3B Binance hack",
-      "url": "https://cointelegraph.com/news/north-korea-linked-to-63b-binance-hack-by-crypto-investigators",
-      "source": "Cointelegraph",
-      "published_at": "2026-10-30T05:51:41Z",
+      "id": "franklin-templeton-s-dividend-to-bitcoin-etfs-op-1e775376",
+      "title": "Franklin Templeton’s Dividend-to-Bitcoin ETFs Open on Nasdaq With About $72,000 in Trades",
+      "url": "https://unchainedcrypto.com/franklin-templetons-dividend-to-bitcoin-etfs-open-on-nasdaq-with-about-72000-in-trades/",
+      "source": "Unchained",
+      "published_at": "2026-10-31T00:15:00Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "the-6-4-billion-binance-hack-tracing-the-north-k-3dc3a1ab",
+      "title": "The $6.4 Billion Binance Hack: Tracing the North Korea Link",
+      "url": "https://www.chainalysis.com/blog/binance-exploit-latest-findings-and-response/",
+      "source": "Chainalysis",
+      "published_at": "2026-10-30T09:34:29Z",
+      "category": "outlook",
+      "sentiment": "bearish"
+    },
+    {
+      "id": "bitcoin-optech-newsletter-429-5c56a9c7",
+      "title": "Bitcoin Optech Newsletter #429",
+      "url": "https://bitcoinops.org/en/newsletters/2026/10/30/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-10-30T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "south-africa-leads-sub-saharan-africa-s-13-4-cry-ed0dd318",
@@ -55,24 +73,6 @@
       "published_at": "2026-10-29T06:55:01Z",
       "category": "outlook",
       "sentiment": "bullish"
-    },
-    {
-      "id": "treasury-sanctions-russians-north-koreans-suppor-0838f703",
-      "title": "Treasury Sanctions Russians, North Koreans supporting DPRK IT Worker Fraud",
-      "url": "https://www.chainalysis.com/blog/ofac-sanctions-dprk-it-worker-fraud/",
-      "source": "Chainalysis",
-      "published_at": "2026-10-28T19:16:14Z",
-      "category": "outlook",
-      "sentiment": "bearish"
-    },
-    {
-      "id": "rebundling-credit-b5568c35",
-      "title": "Rebundling Credit",
-      "url": "https://multicoin.capital/2026/10/28/rebundling-credit/",
-      "source": "Multicoin",
-      "published_at": "2026-10-28T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
     }
   ]
 }
