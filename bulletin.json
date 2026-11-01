@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-31T06:45:02Z",
+  "generated_at": "2026-11-01T06:45:33Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "why-a-wallet-recovery-phrase-is-not-a-password-r-a2bd0fe4",
-      "title": "Why a wallet recovery phrase is not a password reset",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin/wallet-recovery-phrase-not-password-reset/",
-      "source": "CryptoFocus",
-      "published_at": "2026-10-31T05:00:52Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "binance-belooft-alle-verliezen-via-safu-te-dekke-f151e6a7",
-      "title": "Binance belooft alle verliezen via SAFU te dekken na incident van 6,3 miljard dollar",
-      "url": "https://bitcoinmagazine.nl/exchange-nieuws/binance-safu-dekt-verliezen-6-3-miljard",
+      "id": "binance-heeft-90-procent-van-de-buit-uit-de-hack-7a55d644",
+      "title": "Binance heeft 90 procent van de buit uit de hack van 6,3 miljard dollar aangevuld",
+      "url": "https://bitcoinmagazine.nl/exchange-nieuws/binance-90-procent-aangevuld-opnames-openen-weer",
       "source": "Bitcoin Magazine NL",
-      "published_at": "2026-10-31T02:45:24Z",
+      "published_at": "2026-11-01T03:16:02Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "digital-euro-or-euro-stablecoin-the-difference-i-258fdebf",
-      "title": "Digital euro or euro stablecoin: the difference is who owes you the money",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin/digital-euro-euro-stablecoin-who-owes-you-money/",
+      "id": "a-public-bitcoin-address-can-expose-more-than-on-79664f9b",
+      "title": "A public Bitcoin address can expose more than one payment",
+      "url": "https://cryptofocus.nl/english/public-bitcoin-address-reuse-payment-privacy-guide/",
       "source": "CryptoFocus",
-      "published_at": "2026-10-31T00:50:52Z",
+      "published_at": "2026-11-01T00:50:52Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "binance-turns-up-in-india-s-500-million-plus-cry-c36cd88b",
-      "title": "Binance Turns Up in India’s $500 Million-Plus Crypto Probe as a Route for Foreign Payouts",
-      "url": "https://unchainedcrypto.com/binance-turns-up-in-indias-500-million-plus-crypto-probe-as-a-route-for-foreign-payouts/",
-      "source": "Unchained",
-      "published_at": "2026-10-31T00:45:00Z",
+      "id": "an-ethereum-block-can-be-included-before-its-cha-a4a5e3fa",
+      "title": "An Ethereum block can be included before its chain reaches finality",
+      "url": "https://cryptofocus.nl/english/ethereum-included-block-finality-checkpoints-guide/",
+      "source": "CryptoFocus",
+      "published_at": "2026-10-31T23:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "franklin-templeton-s-dividend-to-bitcoin-etfs-op-1e775376",
-      "title": "Franklin Templeton’s Dividend-to-Bitcoin ETFs Open on Nasdaq With About $72,000 in Trades",
-      "url": "https://unchainedcrypto.com/franklin-templetons-dividend-to-bitcoin-etfs-open-on-nasdaq-with-about-72000-in-trades/",
-      "source": "Unchained",
-      "published_at": "2026-10-31T00:15:00Z",
+      "id": "bitcoin-held-up-better-than-expected-after-binan-7390099b",
+      "title": "Bitcoin held up better than expected after Binance hack, Strive CEO says",
+      "url": "https://cointelegraph.com/markets/bitcoin-binance-hack-strive-ceo",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-31T15:26:46Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-turns-18-has-the-original-rebel-grown-up-c5c598d0",
+      "title": "Bitcoin turns 18: Has the original rebel grown up?",
+      "url": "https://cointelegraph.com/magazine/bitcoin-turns-18-has-the-original-rebel-grown-up",
+      "source": "Cointelegraph",
+      "published_at": "2026-10-31T14:27:52Z",
       "category": "news",
       "sentiment": null
     },
