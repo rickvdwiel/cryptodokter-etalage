@@ -1,42 +1,43 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-10-30T16:50:00+01:00",
-  "digest_date": "2026-10-30",
-  "measured_at": "2026-10-30T16:47:24+01:00",
-  "window_4h_utc": "11:47-15:47",
+  "updated_at": "2026-11-02T16:55:00+01:00",
+  "digest_date": "2026-11-02",
+  "measured_at": "2026-11-02T16:52:04+01:00",
+  "window_4h_utc": "11:52-15:52",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "8 uur 1 stop-loss (−€203); week ma–vr PF 1,18 (+€1.591); seizoen s2 −€49.545, totaal €50.455; MIN_LIQ 75k na 73 trades PF 0,83, meting loopt",
+  "headline": "Desk-digest: 4 uur 1 stop-loss en 1 take-profit (PF 0,68, −€115); weekend zwaar: sinds vrijdag 17 trades PF 0,17 (−€5.475, waaronder rug AMAZON −€1.996); seizoen s2 −€55.118, totaal €44.882; MIN_LIQ 75k na 88 trades PF 0,61, meting loopt",
   "metrics_4h": {
-    "exits": 1,
-    "winrate_pct": 100.0,
-    "profit_factor": null,
-    "expectancy_eur": 72.9,
-    "net_eur": 72.9,
-    "fees_eur": 12.44,
-    "fees_per_hour_eur": 3.11
+    "exits": 3,
+    "winrate_pct": 66.7,
+    "profit_factor": 0.68,
+    "expectancy_eur": -38.19,
+    "net_eur": -114.57,
+    "fees_eur": 19.74,
+    "fees_per_hour_eur": 4.94
   },
   "metrics_8h": {
-    "exits": 2,
+    "exits": 4,
     "winrate_pct": 50.0,
-    "profit_factor": 0.36,
-    "expectancy_eur": -64.9,
-    "net_eur": -129.81
+    "profit_factor": 0.45,
+    "expectancy_eur": -75.2,
+    "net_eur": -300.79
   },
   "metrics_season": {
-    "exits": 953,
-    "winrate_pct": 49.1,
-    "profit_factor": 0.68,
-    "net_eur": -49544.51,
-    "fees_eur": 7579.91,
+    "exits": 972,
+    "winrate_pct": 48.7,
+    "profit_factor": 0.66,
+    "net_eur": -55118.4,
+    "fees_eur": 7724.15,
     "start_eur": 100000.0,
-    "total_eur": 50455.49
+    "total_eur": 44881.6
   },
   "summary_nl": [
-    "Over 8 uur: LYX stop-loss −€203 (−8,8%, door de −6% heen) plus de SNOWMOON-partial; 2 exitregels, PF 0,36, netto −€130, fees €22. Over 24 uur: 8 trades, PF 0,64, −€232. Over 72 uur: 35 trades, PF 1,11, +€695.",
-    "Sinds MIN_LIQUIDITY_USD 75.000 (live 25-10 00:32 NL): 88 exitregels uit 73 trades, winrate 57%, PF 0,83, netto −€2.287, fees €717. De forward-meting vraagt ≥100 trades en ≥7 dagen (nu ongeveer 6,2 dagen); oordeel nog niet mogelijk.",
-    "Sinds de seizoensstart (s2, €100.000): 953 exitregels (768 trades), PF 0,680, netto −€49.544,51, fees €7.579,91; totaal nu €50.455,49. Drawdown vanaf de piek (€101.157) €50.701; diepste stand €48.301 (27-10). Laatste tick 16:33 NL, laatste trade 16:33 NL, 2 open posities, precies één web.server."
+    "Over 8 uur: daarbij NATHALIA stop-loss −€186; 4 exitregels uit 3 trades, PF 0,45, netto −€301, fees €29. Over 24 uur: 9 trades, PF 0,32, −€1.829. Over 72 uur: 15 trades, PF 0,14, −€5.371.",
+    "Sinds de vrijdag-digest: 19 exitregels uit 17 trades, winrate 26%, PF 0,17, netto −€5.475, fees €144. Exits: 13 stop-loss (3 bij hervatten, o.a. DONALD −€1.366 bij −67,8% en KONGO −€635 bij −30,7%), 3 take-profit, 2 partials en 1 rug (AMAZON −€1.996, liquiditeit van $76.610 naar $1.920, dus door het 75k-filter heen).",
+    "Sinds MIN_LIQUIDITY_USD 75.000 (live 25-10 00:32 NL): 107 exitregels uit 88 trades, winrate 51%, PF 0,61, netto −€7.762, fees €862. Ongeveer 8,7 dagen, maar de forward-meting vraagt ≥100 trades; oordeel nog niet mogelijk.",
+    "Sinds de seizoensstart (s2, €100.000): 972 exitregels (785 trades), PF 0,659, fees €7.724; totaal nu €44.881,60 (−€55.118,40). Drawdown vanaf de piek (€101.157) €56.275; diepste stand €44.631 (2-11 14:21 NL). Laatste tick 16:52 NL, laatste trade 14:24 NL, 0 open posities, precies één web.server."
   ]
 }
