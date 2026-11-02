@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-10-30T22:16:20Z",
+ "updated": "2026-11-02T08:00:31Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -12,7 +12,7 @@
    "n_trades": 4,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "week 44 (26 okt–1 nov)",
+   "week_label": "week 45 (2–8 nov)",
    "cash_eur": 19867.37,
    "costs_eur": 25.66,
    "open_positions": [
@@ -1598,28 +1598,9 @@
    "total_eur": 68331.54,
    "result_eur": -1668.46,
    "n_trades": 9,
-   "n_trades_week": 3,
-   "best_trades_week": [
-    {
-     "symbol": "NVDA",
-     "pnl_eur": -22.74,
-     "ts": "2026-10-29T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "AMZN",
-     "pnl_eur": -61.02,
-     "ts": "2026-10-30T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "AMZN",
-     "pnl_eur": -309.65,
-     "ts": "2026-10-26T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 44 (26 okt–1 nov)",
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 45 (2–8 nov)",
    "cash_eur": 44489.73,
    "costs_eur": 145.52,
    "open_positions": [
