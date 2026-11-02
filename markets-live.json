@@ -1,11 +1,11 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-02T08:00:31Z",
+ "updated": "2026-11-02T11:12:36Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-10-30T22:15:58Z",
+   "updated": "2026-11-02T09:20:53Z",
    "start_eur": 30000.0,
    "total_eur": 30832.14,
    "result_eur": 832.14,
@@ -1593,16 +1593,16 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-10-30T22:15:58Z",
+   "updated": "2026-11-02T09:20:53Z",
    "start_eur": 70000.0,
-   "total_eur": 68331.54,
-   "result_eur": -1668.46,
+   "total_eur": 68323.89,
+   "result_eur": -1676.11,
    "n_trades": 9,
    "n_trades_week": 0,
    "best_trades_week": [],
    "week_label": "week 45 (2–8 nov)",
-   "cash_eur": 44489.73,
-   "costs_eur": 145.52,
+   "cash_eur": 45313.91,
+   "costs_eur": 147.18,
    "open_positions": [
     {
      "symbol": "SPY",
@@ -1622,12 +1622,12 @@
      "name": "AEX",
      "entry_ts": "2026-10-14T07:00:00Z",
      "entry_px": 113.43,
-     "last_px": 113.3,
-     "last_px_source": "officiële last_close 2026-10-30",
-     "units": 58.634893,
-     "value_eur": 6643.33,
-     "pnl_eur": -20.81,
-     "pnl_pct": -0.31,
+     "last_px": 113.22,
+     "last_px_source": "koers 11:52",
+     "units": 51.329289,
+     "value_eur": 5811.5,
+     "pnl_eur": -22.32,
+     "pnl_pct": -0.38,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1671,6 +1671,17 @@
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "IAEX.AS",
+     "name": "AEX",
+     "side": "SELL",
+     "ts": "2026-11-02T08:00:00Z",
+     "px": 113.04,
+     "notional_eur": 825.83,
+     "cost_eur": 1.65,
+     "status": "voorlopig",
+     "reason_nl": "Deels verkocht: op 30-10 lag de koers op 1 van de 4 termijnen lager dan ervoor."
+    },
     {
      "symbol": "SPY",
      "name": "S&P 500",
@@ -1769,17 +1780,6 @@
      "cost_eur": 1.83,
      "status": "bevestigd",
      "reason_nl": "Bijgekocht: op 27-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
-    },
-    {
-     "symbol": "NVDA",
-     "name": "Nvidia",
-     "side": "BUY",
-     "ts": "2026-10-28T13:30:00Z",
-     "px": 219.88,
-     "notional_eur": 832.42,
-     "cost_eur": 0.92,
-     "status": "bevestigd",
-     "reason_nl": "Gekocht: op 27-10 lag de koers op 2 van de 4 termijnen hoger dan ervoor."
     }
    ],
    "price_series": {
@@ -3231,10 +3231,6 @@
     ],
     "IAEX.AS": [
      {
-      "t": "2026-05-14T15:30:00Z",
-      "px": 102.62
-     },
-     {
       "t": "2026-05-15T15:30:00Z",
       "px": 101.54
      },
@@ -3709,6 +3705,10 @@
      {
       "t": "2026-10-30T16:30:00Z",
       "px": 113.3
+     },
+     {
+      "t": "2026-11-02T10:52:00Z",
+      "px": 113.22
      }
     ],
     "MSFT": [
