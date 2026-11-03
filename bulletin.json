@@ -1,60 +1,69 @@
 {
-  "generated_at": "2026-11-02T06:45:47Z",
+  "generated_at": "2026-11-03T06:45:43Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "binance-ziet-5-8-miljard-vertrekken-na-grote-hac-bc4eb7a8",
-      "title": "Binance ziet $5,8 miljard vertrekken na grote hack",
-      "url": "https://nieuws.crypto.nl/net-binnen/binance-ziet-58-miljard-vertrekken-na-grote-hack/",
-      "source": "Crypto-NL",
-      "published_at": "2026-11-02T06:40:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-bitcoin-koers-stijgt-door-hoop-op--33d88d73",
-      "title": "Crypto wekker: Bitcoin koers stijgt door hoop op vredesdeal VS-Iran",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-stijgt-door-hoop-op-vredesdeal-vs-iran/",
+      "id": "crypto-wekker-nieuwe-verkoopgolf-trekt-bitcoin-o-e59b444d",
+      "title": "Crypto wekker: nieuwe verkoopgolf trekt Bitcoin omlaag, Amerika stemt vandaag",
+      "url": "https://newsbit.nl/crypto-wekker-nieuwe-verkoopgolf-trekt-bitcoin-omlaag-amerika-stemt-vandaag/",
       "source": "Newsbit",
-      "published_at": "2026-11-02T06:31:33Z",
+      "published_at": "2026-11-03T06:28:10Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "btcpay-server-warns-of-hot-wallet-thefts-running-a5f0756b",
-      "title": "BTCPay Server warns of hot wallet thefts running on outdated software",
-      "url": "https://cointelegraph.com/news/btcpay-server-hot-wallet-thefts-older-versions",
+      "id": "cryptobedrijf-achter-digitale-aandelen-wil-naar--d3db361c",
+      "title": "Cryptobedrijf achter digitale aandelen wil naar Amerikaanse beurs",
+      "url": "https://www.crypto-insiders.nl/nieuws/aandelen/cryptobedrijf-achter-digitale-aandelen-wil-naar-amerikaanse-beurs/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-03T06:02:18Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-com-to-withdraw-hong-kong-consumer-app-ci-565a6d13",
+      "title": "Crypto.com to withdraw Hong Kong consumer app citing regulatory changes",
+      "url": "https://cointelegraph.com/news/crypto-com-hong-kong-app-shutdown-license-pending",
       "source": "Cointelegraph",
-      "published_at": "2026-11-02T05:34:02Z",
+      "published_at": "2026-11-03T05:10:19Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bank-of-korea-probes-financial-firms-exposure-to-d3e29864",
-      "title": "Bank of Korea probes financial firms’ exposure to crypto risks",
-      "url": "https://cointelegraph.com/news/bank-of-korea-probes-financial-firms-exposure-to-crypto-risks",
+      "id": "ai-cryptoproject-geeft-eigen-blockchain-op-en-ve-0898d5a2",
+      "title": "AI-cryptoproject geeft eigen blockchain op en verhuist naar Solana",
+      "url": "https://www.crypto-insiders.nl/nieuws/altcoin/ai-cryptoproject-geeft-eigen-blockchain-op-en-verhuist-naar-solana/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-03T05:03:56Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "binance-begins-second-withdrawal-phase-exchange--fedd563d",
+      "title": "Binance begins second withdrawal phase, exchange outflows slow",
+      "url": "https://cointelegraph.com/news/binance-begins-second-withdrawal-phase-following-record-hack",
       "source": "Cointelegraph",
-      "published_at": "2026-11-02T03:55:50Z",
+      "published_at": "2026-11-03T03:03:44Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "macro-outlook-late-editie-drie-amerikaanse-rappo-84500a7a",
-      "title": "Macro Outlook, late editie: drie Amerikaanse rapporten, drie meetperioden",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin/macro-outlook-2026-11-01/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-01T22:05:00Z",
+      "id": "designing-for-sovereignty-ethereum-for-digital-p-f73b5d19",
+      "title": "Designing for sovereignty: Ethereum for digital public infrastructure",
+      "url": "https://blog.ethereum.org/en/2026/11/03/digital-pub-infra",
+      "source": "Ethereum Foundation",
+      "published_at": "2026-11-03T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
     {
-      "id": "binance-resumes-withdrawals-following-6-3-billio-624dd6a9",
-      "title": "Binance resumes withdrawals following $6.3 billion breach",
-      "url": "https://techcrunch.com/2026/11/01/binance-resumes-withdrawals-following-6-3-billion-breach/",
-      "source": "TechCrunch",
-      "published_at": "2026-11-01T16:20:10Z",
-      "category": "news",
-      "sentiment": null
+      "id": "disrupting-the-mercado-bitcoin-attack-how-chaina-4adc889b",
+      "title": "Disrupting the Mercado Bitcoin Attack: How Chainalysis Led the Freeze of Nearly $10M in Stolen Funds",
+      "url": "https://www.chainalysis.com/blog/chainalysis-response-mercado-bitcoin/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-02T22:59:13Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "the-6-4-billion-binance-hack-tracing-the-north-k-3dc3a1ab",
@@ -64,15 +73,6 @@
       "published_at": "2026-10-30T09:34:29Z",
       "category": "outlook",
       "sentiment": "bearish"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-429-5c56a9c7",
-      "title": "Bitcoin Optech Newsletter #429",
-      "url": "https://bitcoinops.org/en/newsletters/2026/10/30/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-10-30T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
     }
   ]
 }
