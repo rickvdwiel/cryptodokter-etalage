@@ -1,19 +1,54 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-11-03T15:34:04+00:00",
+  "updated": "2026-11-03T15:52:13+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 32500.43,
-    "banked_eur": 10200.69,
-    "equity_approx": 34495.43,
-    "total": 44696.12,
-    "realized_pnl_eur": -55298.88,
-    "trades": 1775,
-    "open_positions": 1,
-    "rendement_pct": -55.3
+    "cash_eur": 34490.85,
+    "banked_eur": 10265.87,
+    "equity_approx": 34490.85,
+    "total": 44756.72,
+    "realized_pnl_eur": -55243.28,
+    "trades": 1779,
+    "open_positions": 0,
+    "rendement_pct": -55.2
   },
   "tape": [
+    {
+      "t": "2026-11-03T15:49:55+00:00",
+      "side": "SELL",
+      "symbol": "UNDERDOG",
+      "bedrag_eur": 1783.68,
+      "prijs_eur": 0.0001400667,
+      "pnl_eur": -216.32,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-11-03T15:49:10+00:00",
+      "side": "BUY",
+      "symbol": "UNDERDOG",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0001562694,
+      "reason": "instap"
+    },
+    {
+      "t": "2026-11-03T15:40:24+00:00",
+      "side": "SELL",
+      "symbol": "TRUMP",
+      "bedrag_eur": 1306.74,
+      "prijs_eur": 0.0002130333,
+      "pnl_eur": 206.74,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-11-03T15:34:49+00:00",
+      "side": "PARTIAL",
+      "symbol": "TRUMP",
+      "bedrag_eur": 965.18,
+      "prijs_eur": 0.0001923167,
+      "pnl_eur": 65.18,
+      "reason": "deels winst genomen"
+    },
     {
       "t": "2026-11-03T15:31:46+00:00",
       "side": "BUY",
@@ -193,91 +228,9 @@
       "prijs_eur": 1.13667e-05,
       "pnl_eur": 72.69,
       "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-11-02T13:21:26+00:00",
-      "side": "BUY",
-      "symbol": "AGC",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 1.04647e-05,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-11-02T12:13:43+00:00",
-      "side": "SELL",
-      "symbol": "MAMESUKE",
-      "bedrag_eur": 1639.53,
-      "prijs_eur": 0.0003179,
-      "pnl_eur": -360.47,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-11-02T12:12:12+00:00",
-      "side": "BUY",
-      "symbol": "MAMESUKE",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0003858574,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-11-02T08:03:22+00:00",
-      "side": "SELL",
-      "symbol": "NATHALIA",
-      "bedrag_eur": 1813.79,
-      "prijs_eur": 0.0002272417,
-      "pnl_eur": -186.21,
-      "reason": "stop-loss"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-11-03T09:28:09+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T09:28:54+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T09:29:40+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T09:30:25+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T09:31:38+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:19:43+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:20:29+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:21:15+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:22:00+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:22:46+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T10:26:29+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T11:21:46+00:00",
-      "total": 44697.29
-    },
     {
       "t": "2026-11-03T11:22:31+00:00",
       "total": 44697.29
@@ -469,18 +422,58 @@
     {
       "t": "2026-11-03T15:34:03+00:00",
       "total": 44776.79
-    }
-  ],
-  "open_positions": [
+    },
     {
-      "symbol": "TRUMP",
-      "opened_at": "2026-11-03T15:31:46+00:00",
-      "cost_eur": 2000.0,
-      "entry_price": 0.00017843333333333332,
-      "qty": 11180646.366523445
+      "t": "2026-11-03T15:34:49+00:00",
+      "total": 44848.92
+    },
+    {
+      "t": "2026-11-03T15:34:49+00:00",
+      "total": 44848.93
+    },
+    {
+      "t": "2026-11-03T15:34:49+00:00",
+      "total": 44860.87
+    },
+    {
+      "t": "2026-11-03T15:40:24+00:00",
+      "total": 44973.04
+    },
+    {
+      "t": "2026-11-03T15:40:24+00:00",
+      "total": 44973.04
+    },
+    {
+      "t": "2026-11-03T15:49:08+00:00",
+      "total": 44973.04
+    },
+    {
+      "t": "2026-11-03T15:49:10+00:00",
+      "total": 44968.04
+    },
+    {
+      "t": "2026-11-03T15:49:55+00:00",
+      "total": 44756.72
+    },
+    {
+      "t": "2026-11-03T15:49:55+00:00",
+      "total": 44756.72
+    },
+    {
+      "t": "2026-11-03T15:50:41+00:00",
+      "total": 44756.72
+    },
+    {
+      "t": "2026-11-03T15:51:27+00:00",
+      "total": 44756.72
+    },
+    {
+      "t": "2026-11-03T15:52:12+00:00",
+      "total": 44756.72
     }
   ],
-  "rendement_pct": -55.3,
+  "open_positions": [],
+  "rendement_pct": -55.2,
   "best_trades_week": [
     {
       "symbol": "ANAKIN",
@@ -495,6 +488,12 @@
       "exit_kind": "take-profit"
     },
     {
+      "symbol": "TRUMP",
+      "pnl_eur": 271.92,
+      "ts": "2026-11-03T15:40:24Z",
+      "exit_kind": "take-profit"
+    },
+    {
       "symbol": "MAMESUKE",
       "pnl_eur": 249.23,
       "ts": "2026-11-03T13:21:35Z",
@@ -505,16 +504,10 @@
       "pnl_eur": 245.9,
       "ts": "2026-11-02T13:24:29Z",
       "exit_kind": "take-profit"
-    },
-    {
-      "symbol": "ARIA",
-      "pnl_eur": 200.71,
-      "ts": "2026-11-03T06:19:49Z",
-      "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 14,
-  "week_pnl_eur": -231.15,
+  "n_trades_week": 16,
+  "week_pnl_eur": -175.54,
   "week_label": "week 45 (2–8 nov)",
   "markets_live": true,
   "team_feed": true
