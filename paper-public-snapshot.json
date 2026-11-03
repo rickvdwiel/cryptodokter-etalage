@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-11-03T12:22:06+00:00",
+  "updated": "2026-11-03T13:23:53+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 34496.59,
+    "cash_eur": 34745.82,
     "banked_eur": 10200.69,
-    "equity_approx": 34496.59,
-    "total": 44697.28,
-    "realized_pnl_eur": -55302.71,
-    "trades": 1768,
+    "equity_approx": 34745.82,
+    "total": 44946.51,
+    "realized_pnl_eur": -55053.49,
+    "trades": 1770,
     "open_positions": 0,
-    "rendement_pct": -55.3
+    "rendement_pct": -55.1
   },
   "tape": [
+    {
+      "t": "2026-11-03T13:21:35+00:00",
+      "side": "SELL",
+      "symbol": "MAMESUKE",
+      "bedrag_eur": 2249.23,
+      "prijs_eur": 0.000258225,
+      "pnl_eur": 249.23,
+      "reason": "winst genomen"
+    },
+    {
+      "t": "2026-11-03T13:20:50+00:00",
+      "side": "BUY",
+      "symbol": "MAMESUKE",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 0.0002284657,
+      "reason": "instap"
+    },
     {
       "t": "2026-11-03T06:21:20+00:00",
       "side": "SELL",
@@ -210,59 +227,9 @@
       "bedrag_eur": 2000.0,
       "prijs_eur": 0.0014588889,
       "reason": "instap"
-    },
-    {
-      "t": "2026-11-01T23:11:59+00:00",
-      "side": "SELL",
-      "symbol": "AI",
-      "bedrag_eur": 971.45,
-      "prijs_eur": 0.0001282417,
-      "pnl_eur": -128.55,
-      "reason": "stop-loss"
-    },
-    {
-      "t": "2026-11-01T22:17:50+00:00",
-      "side": "PARTIAL",
-      "symbol": "AI",
-      "bedrag_eur": 974.92,
-      "prijs_eur": 0.0001573,
-      "pnl_eur": 74.92,
-      "reason": "deels winst genomen"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-11-03T07:13:22+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:14:08+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:14:54+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:15:39+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:17:25+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:18:12+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:18:57+00:00",
-      "total": 44697.29
-    },
-    {
-      "t": "2026-11-03T07:19:43+00:00",
-      "total": 44697.29
-    },
     {
       "t": "2026-11-03T07:20:28+00:00",
       "total": 44697.29
@@ -470,10 +437,42 @@
     {
       "t": "2026-11-03T12:22:06+00:00",
       "total": 44697.29
+    },
+    {
+      "t": "2026-11-03T12:25:41+00:00",
+      "total": 44697.29
+    },
+    {
+      "t": "2026-11-03T13:20:48+00:00",
+      "total": 44697.29
+    },
+    {
+      "t": "2026-11-03T13:20:50+00:00",
+      "total": 44692.29
+    },
+    {
+      "t": "2026-11-03T13:21:35+00:00",
+      "total": 44946.51
+    },
+    {
+      "t": "2026-11-03T13:21:35+00:00",
+      "total": 44946.51
+    },
+    {
+      "t": "2026-11-03T13:22:21+00:00",
+      "total": 44946.51
+    },
+    {
+      "t": "2026-11-03T13:23:07+00:00",
+      "total": 44946.51
+    },
+    {
+      "t": "2026-11-03T13:23:52+00:00",
+      "total": 44946.51
     }
   ],
   "open_positions": [],
-  "rendement_pct": -55.3,
+  "rendement_pct": -55.1,
   "best_trades_week": [
     {
       "symbol": "ANAKIN",
@@ -485,6 +484,12 @@
       "symbol": "HEDGE",
       "pnl_eur": 306.51,
       "ts": "2026-11-02T22:13:09Z",
+      "exit_kind": "take-profit"
+    },
+    {
+      "symbol": "MAMESUKE",
+      "pnl_eur": 249.23,
+      "ts": "2026-11-03T13:21:35Z",
       "exit_kind": "take-profit"
     },
     {
@@ -500,8 +505,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 11,
-  "week_pnl_eur": -234.98,
+  "n_trades_week": 12,
+  "week_pnl_eur": 14.25,
   "week_label": "week 45 (2–8 nov)",
   "markets_live": true,
   "team_feed": true
