@@ -1,11 +1,11 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-03T22:22:00Z",
+ "updated": "2026-11-04T09:14:49Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-11-03T22:21:27Z",
+   "updated": "2026-11-04T09:14:48Z",
    "start_eur": 30000.0,
    "total_eur": 30143.88,
    "result_eur": 143.88,
@@ -1593,12 +1593,12 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-11-03T22:21:27Z",
+   "updated": "2026-11-04T09:14:48Z",
    "start_eur": 70000.0,
-   "total_eur": 67898.78,
-   "result_eur": -2101.22,
-   "n_trades": 11,
-   "n_trades_week": 2,
+   "total_eur": 67895.68,
+   "result_eur": -2104.32,
+   "n_trades": 12,
+   "n_trades_week": 3,
    "best_trades_week": [
     {
      "symbol": "NVDA",
@@ -1611,25 +1611,18 @@
      "pnl_eur": -33.23,
      "ts": "2026-11-02T00:00:00Z",
      "exit_kind": "signal_exit"
+    },
+    {
+     "symbol": "IAEX.AS",
+     "pnl_eur": -121.07,
+     "ts": "2026-11-04T00:00:00Z",
+     "exit_kind": "signal_exit"
     }
    ],
    "week_label": "week 45 (2–8 nov)",
-   "cash_eur": 56603.28,
-   "costs_eur": 160.96,
+   "cash_eur": 60713.34,
+   "costs_eur": 169.2,
    "open_positions": [
-    {
-     "symbol": "IAEX.AS",
-     "name": "AEX",
-     "entry_ts": "2026-10-14T07:00:00Z",
-     "entry_px": 113.43,
-     "last_px": 112.02,
-     "last_px_source": "officiële last_close 2026-11-03",
-     "units": 36.71808,
-     "value_eur": 4113.16,
-     "pnl_eur": -60.03,
-     "pnl_pct": -1.44,
-     "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
-    },
     {
      "symbol": "AAPL",
      "name": "Apple",
@@ -1658,6 +1651,17 @@
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "IAEX.AS",
+     "name": "AEX",
+     "side": "SELL",
+     "ts": "2026-11-04T08:00:00Z",
+     "px": 112.16,
+     "notional_eur": 4118.3,
+     "cost_eur": 8.24,
+     "status": "voorlopig",
+     "reason_nl": "Verkocht: op 03-11 lag de koers op 4 van de 4 termijnen lager dan ervoor."
+    },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
@@ -1756,17 +1760,6 @@
      "cost_eur": 4.99,
      "status": "bevestigd",
      "reason_nl": "Bijgekocht: op 29-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
-    },
-    {
-     "symbol": "MSFT",
-     "name": "Microsoft",
-     "side": "BUY",
-     "ts": "2026-10-30T13:30:00Z",
-     "px": 525.27,
-     "notional_eur": 1664.84,
-     "cost_eur": 1.83,
-     "status": "bevestigd",
-     "reason_nl": "Bijgekocht: op 29-10 lag de koers op 3 van de 4 termijnen hoger dan ervoor."
     }
    ],
    "price_series": {
@@ -3218,10 +3211,6 @@
     ],
     "IAEX.AS": [
      {
-      "t": "2026-05-18T15:30:00Z",
-      "px": 102.04
-     },
-     {
       "t": "2026-05-19T15:30:00Z",
       "px": 102.44
      },
@@ -3696,6 +3685,10 @@
      {
       "t": "2026-11-03T16:30:00Z",
       "px": 112.02
+     },
+     {
+      "t": "2026-11-04T08:55:00Z",
+      "px": 112.68
      }
     ],
     "MSFT": [
