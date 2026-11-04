@@ -1,14 +1,14 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-04T17:16:44Z",
+ "updated": "2026-11-04T19:14:20Z",
  "markets": {
   "commodities": {
    "mode": "paper",
    "updated": "2026-11-04T15:21:32Z",
    "start_eur": 30000.0,
-   "total_eur": 29715.93,
-   "result_eur": -284.07,
+   "total_eur": 29683.65,
+   "result_eur": -316.35,
    "n_trades": 4,
    "n_trades_week": 0,
    "best_trades_week": [],
@@ -21,12 +21,12 @@
      "name": "Olie",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 153.78,
-     "last_px": 144.91,
-     "last_px_source": "koers 18:16",
+     "last_px": 143.91,
+     "last_px_source": "koers 20:14",
      "units": 32.273602,
-     "value_eur": 4676.77,
-     "pnl_eur": -292.56,
-     "pnl_pct": -5.89,
+     "value_eur": 4644.49,
+     "pnl_eur": -324.83,
+     "pnl_pct": -6.54,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 3 van de 4 termijnen hoger dan ervoor."
     }
    ],
@@ -621,8 +621,8 @@
       "px": 359.26
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 372.4
+      "t": "2026-11-04T19:14:00Z",
+      "px": 372.23
      }
     ],
     "SLV": [
@@ -1103,8 +1103,8 @@
       "px": 44.84
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 47.16
+      "t": "2026-11-04T19:14:00Z",
+      "px": 47.19
      }
     ],
     "USO": [
@@ -1585,8 +1585,8 @@
       "px": 158.17
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 144.91
+      "t": "2026-11-04T19:14:00Z",
+      "px": 143.91
      }
     ]
    }
@@ -1595,8 +1595,8 @@
    "mode": "paper",
    "updated": "2026-11-04T15:21:32Z",
    "start_eur": 70000.0,
-   "total_eur": 68287.08,
-   "result_eur": -1712.92,
+   "total_eur": 68272.24,
+   "result_eur": -1727.76,
    "n_trades": 12,
    "n_trades_week": 3,
    "best_trades_week": [
@@ -1628,12 +1628,12 @@
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 346.16,
-     "last_px": 354.35,
-     "last_px_source": "koers 18:16",
+     "last_px": 352.53,
+     "last_px_source": "koers 20:14",
      "units": 7.245345,
-     "value_eur": 2567.39,
-     "pnl_eur": 56.62,
-     "pnl_pct": 2.25,
+     "value_eur": 2554.2,
+     "pnl_eur": 43.43,
+     "pnl_pct": 1.73,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1641,12 +1641,12 @@
      "name": "Microsoft",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 539.66,
-     "last_px": 556.27,
-     "last_px_source": "koers 18:16",
+     "last_px": 555.91,
+     "last_px_source": "koers 20:14",
      "units": 4.585144,
-     "value_eur": 2550.58,
-     "pnl_eur": 73.42,
-     "pnl_pct": 2.96,
+     "value_eur": 2548.93,
+     "pnl_eur": 71.76,
+     "pnl_pct": 2.9,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
     }
    ],
@@ -2241,8 +2241,8 @@
       "px": 331.9
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 354.35
+      "t": "2026-11-04T19:14:00Z",
+      "px": 352.53
      }
     ],
     "AMZN": [
@@ -2723,8 +2723,8 @@
       "px": 250.69
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 267.71
+      "t": "2026-11-04T19:14:00Z",
+      "px": 268.81
      }
     ],
     "GOOGL": [
@@ -3205,8 +3205,8 @@
       "px": 280.03
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 291.39
+      "t": "2026-11-04T19:14:00Z",
+      "px": 291.42
      }
     ],
     "IAEX.AS": [
@@ -4169,8 +4169,8 @@
       "px": 520.99
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 556.27
+      "t": "2026-11-04T19:14:00Z",
+      "px": 555.91
      }
     ],
     "NVDA": [
@@ -4651,8 +4651,8 @@
       "px": 206.69
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 202.82
+      "t": "2026-11-04T19:14:00Z",
+      "px": 203.89
      }
     ],
     "SPY": [
@@ -5133,8 +5133,8 @@
       "px": 754.35
      },
      {
-      "t": "2026-11-04T17:16:00Z",
-      "px": 767.58
+      "t": "2026-11-04T19:14:00Z",
+      "px": 768.43
      }
     ]
    }
