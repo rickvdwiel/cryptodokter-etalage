@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1016">
+<meta name="robots" content="noindex">
+<meta name="description" content="Paper-fills, equity en radar van de paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="cryptodokter.nl">
+<title>cryptodokter.nl</title>
+<link rel="canonical" href="https://cryptodokter.nl/">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  html, body { margin: 0; height: 100%; background: #0c1016; }
+  iframe { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; background: #0c1016; }
+</style>
+</head>
+<body>
+<iframe src="/" title="cryptodokter.nl"></iframe>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(function () {});
+  });
+}
+</script>
+</body>
+</html>

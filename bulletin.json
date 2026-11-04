@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-10-26T06:41:24Z",
+  "generated_at": "2026-11-04T06:48:02Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-daalt-terwijl-trump-iran-a-92cfde52",
-      "title": "Crypto wekker: Bitcoin daalt, terwijl Trump Iran-aanval afblaast",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-daalt-terwijl-trump-iran-aanval-afblaast/",
+      "id": "crypto-wekker-bitcoin-herstelt-knap-na-trumps-af-ea6a446b",
+      "title": "Crypto wekker: Bitcoin herstelt knap na Trumps afstraffing bij de verkiezingen",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-herstelt-knap-na-trumps-afstraffing-bij-de-verkiezingen/",
       "source": "Newsbit",
-      "published_at": "2026-10-26T06:30:41Z",
+      "published_at": "2026-11-04T06:24:36Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+      "id": "ethereum-dev-targets-2028-for-quantum-resistance-59965b77",
+      "title": "Ethereum dev targets 2028 for quantum resistance, a year early",
+      "url": "https://cointelegraph.com/news/ethereum-post-quantum-transition-2028-target",
       "source": "Cointelegraph",
-      "published_at": "2026-10-26T05:44:44Z",
+      "published_at": "2026-11-04T05:46:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "india-s-largest-crypto-exchange-absorbs-16-milli-204fe85c",
-      "title": "India's largest crypto exchange absorbs $16 million loss from internal process failure tied to retired wallet",
-      "url": "https://www.coindesk.com/markets/2026/10/26/coindcx-absorbs-usd16-million-loss-from-internal-process-failure-tied-to-retired-wallet",
-      "source": "CoinDesk",
-      "published_at": "2026-10-26T05:39:17Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-wallet-bug-let-rogue-servers-steal-funds-5b758755",
-      "title": "Bitcoin wallet bug let rogue servers steal funds when users tried to speed up payments",
-      "url": "https://www.coindesk.com/tech/2026/10/26/bitcoin-wallet-bug-let-rogue-servers-steal-funds-when-users-tried-to-speed-up-payments",
-      "source": "CoinDesk",
-      "published_at": "2026-10-26T05:15:20Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "britse-banken-beperken-crypto-en-campagne-telt-1-592a4b80",
-      "title": "Britse banken beperken crypto en campagne telt 10.000 klachten",
-      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/britse-banken-beperken-crypto-en-campagne-telt-10-000-klachten/",
+      "id": "kritieke-fout-opgelost-in-ethereum-netwerk-dat-b-89adf144",
+      "title": "Kritieke fout opgelost in Ethereum-netwerk dat betalingen afschermt",
+      "url": "https://www.crypto-insiders.nl/nieuws/ethereum/kritieke-fout-opgelost-in-ethereum-netwerk-dat-betalingen-afschermt/",
       "source": "Crypto Insiders",
-      "published_at": "2026-10-26T05:02:37Z",
+      "published_at": "2026-11-04T05:10:08Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-optech-newsletter-428-806ff68d",
-      "title": "Bitcoin Optech Newsletter #428",
-      "url": "https://bitcoinops.org/en/newsletters/2026/10/23/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-10-23T00:00:00Z",
+      "id": "de-grootste-cryptobeurs-van-brazili-stopt-storti-f6950849",
+      "title": "De grootste cryptobeurs van Brazilië stopt stortingen en opnames na beveiligingsincident",
+      "url": "https://bitcoinmagazine.nl/exchange-nieuws/mercado-bitcoin-stopt-opnames-na-beveiligingsincident",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-04T04:45:34Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "zachxbt-identifies-french-bank-as-alleged-victim-e7b77401",
+      "title": "ZachXBT identifies French bank as alleged victim of $133M crypto theft",
+      "url": "https://cointelegraph.com/news/zachxbt-french-bank-credit-mutuel-arkea-133m-crypto-theft",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-04T03:35:30Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "dprk-hackers-perfected-their-fake-interview-play-9447369b",
+      "title": "DPRK Hackers Perfected Their Fake Interview Playbook Over Dozens of Attacks Before Binance",
+      "url": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-03T19:43:21Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
     {
-      "id": "re-and-the-case-for-reinsurance-yield-onchain-856a0b48",
-      "title": "Re and the Case for Reinsurance Yield Onchain",
-      "url": "https://research.castlelabs.io/p/re-and-the-case-for-reinsurance-yield",
-      "source": "Castle Labs",
-      "published_at": "2026-10-21T14:56:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "what-drives-stablecoin-supply-growth-1ea37a48",
-      "title": "What Drives Stablecoin Supply Growth?",
-      "url": "https://coinmetrics.substack.com/p/what-drives-stablecoin-supply-growth",
+      "id": "stock-market-that-never-sleeps-inside-the-premiu-d9f232c7",
+      "title": "Stock Market that Never Sleeps: Inside the Premiums and Liquidity Gaps of Tokenized Equities",
+      "url": "https://coinmetrics.substack.com/p/stock-market-that-never-sleeps-inside",
       "source": "Coin Metrics",
-      "published_at": "2026-10-20T13:03:46Z",
+      "published_at": "2026-11-03T17:43:25Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "designing-for-sovereignty-ethereum-for-digital-p-f73b5d19",
+      "title": "Designing for sovereignty: Ethereum for digital public infrastructure",
+      "url": "https://blog.ethereum.org/en/2026/11/03/digital-pub-infra",
+      "source": "Ethereum Foundation",
+      "published_at": "2026-11-03T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }

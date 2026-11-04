@@ -1,0 +1,47 @@
+{
+  "id": "/app.html",
+  "name": "cryptodokter.nl",
+  "short_name": "cryptodokter",
+  "description": "Paper-fills, equity en radar van de paper-bot. Alleen papier: geen live orders, geen beleggingsadvies.",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0c1016",
+  "theme_color": "#0c1016",
+  "lang": "nl",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Resultaten",
+      "url": "/#resultaten"
+    },
+    {
+      "name": "Open posities",
+      "url": "/#open-posities"
+    },
+    {
+      "name": "Bulletin",
+      "url": "/#marktbulletin"
+    }
+  ]
+}
