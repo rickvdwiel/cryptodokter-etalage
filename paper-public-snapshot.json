@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-11-04T16:04:14+00:00",
+  "updated": "2026-11-04T16:17:32+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 34180.2,
+    "cash_eur": 33907.34,
     "banked_eur": 10597.82,
-    "equity_approx": 34180.2,
-    "total": 44778.02,
-    "realized_pnl_eur": -55221.97,
-    "trades": 1798,
+    "equity_approx": 33907.34,
+    "total": 44505.16,
+    "realized_pnl_eur": -55494.83,
+    "trades": 1800,
     "open_positions": 0,
-    "rendement_pct": -55.2
+    "rendement_pct": -55.5
   },
   "tape": [
+    {
+      "t": "2026-11-04T16:16:46+00:00",
+      "side": "SELL",
+      "symbol": "BOOTR",
+      "bedrag_eur": 1727.14,
+      "prijs_eur": 1.254e-06,
+      "pnl_eur": -272.86,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-11-04T16:15:15+00:00",
+      "side": "BUY",
+      "symbol": "BOOTR",
+      "bedrag_eur": 2000.0,
+      "prijs_eur": 1.4449e-06,
+      "reason": "instap"
+    },
     {
       "t": "2026-11-04T15:23:33+00:00",
       "side": "SELL",
@@ -212,50 +229,9 @@
       "prijs_eur": 0.0001923167,
       "pnl_eur": 65.18,
       "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-11-03T15:31:46+00:00",
-      "side": "BUY",
-      "symbol": "TRUMP",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0001784333,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-11-03T15:21:30+00:00",
-      "side": "SELL",
-      "symbol": "BINGUS",
-      "bedrag_eur": 1784.49,
-      "prijs_eur": 0.0002717917,
-      "pnl_eur": -215.51,
-      "reason": "stop-loss"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-11-04T13:16:39+00:00",
-      "total": 44889.8
-    },
-    {
-      "t": "2026-11-04T13:17:25+00:00",
-      "total": 44889.8
-    },
-    {
-      "t": "2026-11-04T13:18:10+00:00",
-      "total": 44889.8
-    },
-    {
-      "t": "2026-11-04T13:20:28+00:00",
-      "total": 44889.8
-    },
-    {
-      "t": "2026-11-04T14:16:14+00:00",
-      "total": 44889.8
-    },
-    {
-      "t": "2026-11-04T14:17:00+00:00",
-      "total": 44889.8
-    },
     {
       "t": "2026-11-04T14:17:45+00:00",
       "total": 44889.8
@@ -471,10 +447,34 @@
     {
       "t": "2026-11-04T16:04:14+00:00",
       "total": 44778.03
+    },
+    {
+      "t": "2026-11-04T16:15:14+00:00",
+      "total": 44778.03
+    },
+    {
+      "t": "2026-11-04T16:15:15+00:00",
+      "total": 44773.03
+    },
+    {
+      "t": "2026-11-04T16:16:00+00:00",
+      "total": 44737.93
+    },
+    {
+      "t": "2026-11-04T16:16:46+00:00",
+      "total": 44505.17
+    },
+    {
+      "t": "2026-11-04T16:16:46+00:00",
+      "total": 44505.17
+    },
+    {
+      "t": "2026-11-04T16:17:31+00:00",
+      "total": 44505.17
     }
   ],
   "open_positions": [],
-  "rendement_pct": -55.2,
+  "rendement_pct": -55.5,
   "best_trades_week": [
     {
       "symbol": "ANAKIN",
@@ -507,8 +507,8 @@
       "exit_kind": "take-profit"
     }
   ],
-  "n_trades_week": 23,
-  "week_pnl_eur": -154.24,
+  "n_trades_week": 24,
+  "week_pnl_eur": -427.1,
   "week_label": "week 45 (2–8 nov)",
   "markets_live": true,
   "team_feed": true
