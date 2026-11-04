@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-11-03T06:45:43Z",
+  "generated_at": "2026-11-04T06:48:02Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-nieuwe-verkoopgolf-trekt-bitcoin-o-e59b444d",
-      "title": "Crypto wekker: nieuwe verkoopgolf trekt Bitcoin omlaag, Amerika stemt vandaag",
-      "url": "https://newsbit.nl/crypto-wekker-nieuwe-verkoopgolf-trekt-bitcoin-omlaag-amerika-stemt-vandaag/",
+      "id": "crypto-wekker-bitcoin-herstelt-knap-na-trumps-af-ea6a446b",
+      "title": "Crypto wekker: Bitcoin herstelt knap na Trumps afstraffing bij de verkiezingen",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-herstelt-knap-na-trumps-afstraffing-bij-de-verkiezingen/",
       "source": "Newsbit",
-      "published_at": "2026-11-03T06:28:10Z",
+      "published_at": "2026-11-04T06:24:36Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "cryptobedrijf-achter-digitale-aandelen-wil-naar--d3db361c",
-      "title": "Cryptobedrijf achter digitale aandelen wil naar Amerikaanse beurs",
-      "url": "https://www.crypto-insiders.nl/nieuws/aandelen/cryptobedrijf-achter-digitale-aandelen-wil-naar-amerikaanse-beurs/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-03T06:02:18Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-com-to-withdraw-hong-kong-consumer-app-ci-565a6d13",
-      "title": "Crypto.com to withdraw Hong Kong consumer app citing regulatory changes",
-      "url": "https://cointelegraph.com/news/crypto-com-hong-kong-app-shutdown-license-pending",
+      "id": "ethereum-dev-targets-2028-for-quantum-resistance-59965b77",
+      "title": "Ethereum dev targets 2028 for quantum resistance, a year early",
+      "url": "https://cointelegraph.com/news/ethereum-post-quantum-transition-2028-target",
       "source": "Cointelegraph",
-      "published_at": "2026-11-03T05:10:19Z",
+      "published_at": "2026-11-04T05:46:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ai-cryptoproject-geeft-eigen-blockchain-op-en-ve-0898d5a2",
-      "title": "AI-cryptoproject geeft eigen blockchain op en verhuist naar Solana",
-      "url": "https://www.crypto-insiders.nl/nieuws/altcoin/ai-cryptoproject-geeft-eigen-blockchain-op-en-verhuist-naar-solana/",
+      "id": "kritieke-fout-opgelost-in-ethereum-netwerk-dat-b-89adf144",
+      "title": "Kritieke fout opgelost in Ethereum-netwerk dat betalingen afschermt",
+      "url": "https://www.crypto-insiders.nl/nieuws/ethereum/kritieke-fout-opgelost-in-ethereum-netwerk-dat-betalingen-afschermt/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-03T05:03:56Z",
+      "published_at": "2026-11-04T05:10:08Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "binance-begins-second-withdrawal-phase-exchange--fedd563d",
-      "title": "Binance begins second withdrawal phase, exchange outflows slow",
-      "url": "https://cointelegraph.com/news/binance-begins-second-withdrawal-phase-following-record-hack",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-03T03:03:44Z",
+      "id": "de-grootste-cryptobeurs-van-brazili-stopt-storti-f6950849",
+      "title": "De grootste cryptobeurs van Brazilië stopt stortingen en opnames na beveiligingsincident",
+      "url": "https://bitcoinmagazine.nl/exchange-nieuws/mercado-bitcoin-stopt-opnames-na-beveiligingsincident",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-04T04:45:34Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "zachxbt-identifies-french-bank-as-alleged-victim-e7b77401",
+      "title": "ZachXBT identifies French bank as alleged victim of $133M crypto theft",
+      "url": "https://cointelegraph.com/news/zachxbt-french-bank-credit-mutuel-arkea-133m-crypto-theft",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-04T03:35:30Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "dprk-hackers-perfected-their-fake-interview-play-9447369b",
+      "title": "DPRK Hackers Perfected Their Fake Interview Playbook Over Dozens of Attacks Before Binance",
+      "url": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-03T19:43:21Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "stock-market-that-never-sleeps-inside-the-premiu-d9f232c7",
+      "title": "Stock Market that Never Sleeps: Inside the Premiums and Liquidity Gaps of Tokenized Equities",
+      "url": "https://coinmetrics.substack.com/p/stock-market-that-never-sleeps-inside",
+      "source": "Coin Metrics",
+      "published_at": "2026-11-03T17:43:25Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "designing-for-sovereignty-ethereum-for-digital-p-f73b5d19",
@@ -55,24 +73,6 @@
       "published_at": "2026-11-03T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
-    },
-    {
-      "id": "disrupting-the-mercado-bitcoin-attack-how-chaina-4adc889b",
-      "title": "Disrupting the Mercado Bitcoin Attack: How Chainalysis Led the Freeze of Nearly $10M in Stolen Funds",
-      "url": "https://www.chainalysis.com/blog/chainalysis-response-mercado-bitcoin/",
-      "source": "Chainalysis",
-      "published_at": "2026-11-02T22:59:13Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "the-6-4-billion-binance-hack-tracing-the-north-k-3dc3a1ab",
-      "title": "The $6.4 Billion Binance Hack: Tracing the North Korea Link",
-      "url": "https://www.chainalysis.com/blog/binance-exploit-latest-findings-and-response/",
-      "source": "Chainalysis",
-      "published_at": "2026-10-30T09:34:29Z",
-      "category": "outlook",
-      "sentiment": "bearish"
     }
   ]
 }
