@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-11-04T06:48:02Z",
+  "generated_at": "2026-11-05T06:44:13Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-herstelt-knap-na-trumps-af-ea6a446b",
-      "title": "Crypto wekker: Bitcoin herstelt knap na Trumps afstraffing bij de verkiezingen",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-herstelt-knap-na-trumps-afstraffing-bij-de-verkiezingen/",
+      "id": "crypto-wekker-bitcoin-trapt-op-de-rem-trump-bere-abae8b1b",
+      "title": "Crypto wekker: Bitcoin trapt op de rem, Trump bereidt ‘grootschalige’ Iran-aanval voor",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-trapt-op-de-rem-trump-bereidt-grootschalige-iran-aanval-voor/",
       "source": "Newsbit",
-      "published_at": "2026-11-04T06:24:36Z",
+      "published_at": "2026-11-05T06:21:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ethereum-dev-targets-2028-for-quantum-resistance-59965b77",
-      "title": "Ethereum dev targets 2028 for quantum resistance, a year early",
-      "url": "https://cointelegraph.com/news/ethereum-post-quantum-transition-2028-target",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-04T05:46:33Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "kritieke-fout-opgelost-in-ethereum-netwerk-dat-b-89adf144",
-      "title": "Kritieke fout opgelost in Ethereum-netwerk dat betalingen afschermt",
-      "url": "https://www.crypto-insiders.nl/nieuws/ethereum/kritieke-fout-opgelost-in-ethereum-netwerk-dat-betalingen-afschermt/",
+      "id": "amerikaanse-kiezers-remmen-datacenters-waar-bitc-ca655219",
+      "title": "Amerikaanse kiezers remmen datacenters waar bitcoinminers op mikken",
+      "url": "https://www.crypto-insiders.nl/nieuws/mining/amerikaanse-kiezers-remmen-datacenters-waar-bitcoinminers-op-mikken/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-04T05:10:08Z",
+      "published_at": "2026-11-05T06:19:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "de-grootste-cryptobeurs-van-brazili-stopt-storti-f6950849",
-      "title": "De grootste cryptobeurs van Brazilië stopt stortingen en opnames na beveiligingsincident",
-      "url": "https://bitcoinmagazine.nl/exchange-nieuws/mercado-bitcoin-stopt-opnames-na-beveiligingsincident",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-11-04T04:45:34Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "zachxbt-identifies-french-bank-as-alleged-victim-e7b77401",
-      "title": "ZachXBT identifies French bank as alleged victim of $133M crypto theft",
-      "url": "https://cointelegraph.com/news/zachxbt-french-bank-credit-mutuel-arkea-133m-crypto-theft",
+      "id": "binance-polymarket-seek-polygon-hard-fork-to-rec-55dcf8de",
+      "title": "Binance, Polymarket seek Polygon hard fork to recover $6.8M in stolen crypto",
+      "url": "https://cointelegraph.com/news/polygon-hard-fork-binance-polymarket-6-8m-hack-recovery",
       "source": "Cointelegraph",
-      "published_at": "2026-11-04T03:35:30Z",
+      "published_at": "2026-11-05T06:02:29Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "coinbase-zegt-ruim-99-van-crypto-van-klanten-off-f01860b8",
+      "title": "Coinbase zegt ruim 99% van crypto van klanten offline te bewaren",
+      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/coinbase-zegt-ruim-99-van-crypto-van-klanten-offline-te-bewaren/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-05T05:03:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "india-warns-ai-powered-hackers-targeting-crypto--e42bc8ac",
+      "title": "India warns AI-powered hackers targeting crypto exchanges at ‘machine speed’",
+      "url": "https://cointelegraph.com/news/india-warns-ai-powered-hackers-targeting-crypto-exchanges-at-machine-speed",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-05T01:51:21Z",
       "category": "news",
       "sentiment": null
     },
@@ -66,10 +66,10 @@
       "sentiment": "neutral"
     },
     {
-      "id": "designing-for-sovereignty-ethereum-for-digital-p-f73b5d19",
-      "title": "Designing for sovereignty: Ethereum for digital public infrastructure",
-      "url": "https://blog.ethereum.org/en/2026/11/03/digital-pub-infra",
-      "source": "Ethereum Foundation",
+      "id": "bitcoin-optech-newsletter-429-recap-podcast-3625622b",
+      "title": "Bitcoin Optech Newsletter #429 Recap Podcast",
+      "url": "https://bitcoinops.org/en/podcast/2026/11/03/",
+      "source": "Bitcoin Optech",
       "published_at": "2026-11-03T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
