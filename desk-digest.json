@@ -1,40 +1,40 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-05T16:56:00+01:00",
-  "digest_date": "2026-11-05",
-  "measured_at": "2026-11-05T16:54:11+01:00",
-  "window_4h_utc": "11:54-15:54",
+  "updated_at": "2026-11-06T16:53:25+01:00",
+  "digest_date": "2026-11-06",
+  "measured_at": "2026-11-06T16:52:33+01:00",
+  "window_4h_utc": "11:52-15:52",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u 2 trades PF 1,80 +€118, 8u 5 trades PF 6,44 +€806; seizoen s2 −€55.467, totaal €44.533",
+  "headline": "Desk-digest: 4u 3 trades PF 0,00 −€642, 8u zelfde 3 trades PF 0,00 −€642; seizoen s2 −€57.720, totaal €42.280",
   "metrics_4h": {
-    "exits": 2,
-    "winrate_pct": 50.0,
-    "profit_factor": 1.796,
-    "expectancy_eur": 58.99,
-    "net_eur": 117.98,
-    "fees_eur": 20.32,
-    "fees_per_hour_eur": 5.08
+    "exits": 3,
+    "winrate_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_eur": -213.98,
+    "net_eur": -641.94,
+    "fees_eur": 28.43,
+    "fees_per_hour_eur": 7.11
   },
   "metrics_8h": {
-    "exits": 5,
-    "winrate_pct": 80.0,
-    "profit_factor": 6.438,
-    "expectancy_eur": 161.15,
-    "net_eur": 805.73
+    "exits": 3,
+    "winrate_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_eur": -213.98,
+    "net_eur": -641.94
   },
   "metrics_season": {
-    "exits": 815,
+    "exits": 824,
     "winrate_pct": 37.9,
-    "profit_factor": 0.659,
-    "net_eur": -55466.6,
-    "fees_eur": 8023.65,
+    "profit_factor": 0.652,
+    "net_eur": -57719.76,
+    "fees_eur": 8108.12,
     "start_eur": 100000.0,
-    "total_eur": 44533.4
+    "total_eur": 42280.24
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 815 trades, PF 0,659, fees €8.024; totaal €44.533 (−€55.467). Precies één web.server."
+    "Sinds seizoensstart s2 (€100.000): 824 trades, PF 0,652, fees €8.108; totaal €42.280 (−€57.720). Drawdown vanaf piek ~€58.877. Precies één web.server."
   ]
 }
