@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-05T06:44:13Z",
+  "generated_at": "2026-11-06T06:52:43Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-trapt-op-de-rem-trump-bere-abae8b1b",
-      "title": "Crypto wekker: Bitcoin trapt op de rem, Trump bereidt ‘grootschalige’ Iran-aanval voor",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-trapt-op-de-rem-trump-bereidt-grootschalige-iran-aanval-voor/",
+      "id": "bitcoin-crasht-naar-76-000-door-ai-chipaandelen--1bff1688",
+      "title": "Bitcoin Crasht Naar $76.000 Door AI-Chipaandelen-Sell-Off Op Wall Street",
+      "url": "https://www.crypto-gids.nl/bitcoin-crash-ai-chipaandelen-nasdaq/",
+      "source": "Crypto Gids",
+      "published_at": "2026-11-06T06:48:02Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-wekker-bitcoin-beleeft-slechtste-dag-in-m-ef27fd99",
+      "title": "Crypto wekker: Bitcoin beleeft slechtste dag in maanden tijdens beurscrash",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-beleeft-slechtste-dag-in-maanden-tijdens-beurscrash/",
       "source": "Newsbit",
-      "published_at": "2026-11-05T06:21:33Z",
+      "published_at": "2026-11-06T06:22:33Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "amerikaanse-kiezers-remmen-datacenters-waar-bitc-ca655219",
-      "title": "Amerikaanse kiezers remmen datacenters waar bitcoinminers op mikken",
-      "url": "https://www.crypto-insiders.nl/nieuws/mining/amerikaanse-kiezers-remmen-datacenters-waar-bitcoinminers-op-mikken/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-05T06:19:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "binance-polymarket-seek-polygon-hard-fork-to-rec-55dcf8de",
-      "title": "Binance, Polymarket seek Polygon hard fork to recover $6.8M in stolen crypto",
-      "url": "https://cointelegraph.com/news/polygon-hard-fork-binance-polymarket-6-8m-hack-recovery",
+      "id": "crypto-exchanges-tout-cold-storage-ratios-after--02bb37dc",
+      "title": "Crypto exchanges tout cold storage ratios after Binance attack",
+      "url": "https://cointelegraph.com/news/binance-hack-puts-crypto-exchanges-cold-wallet-ratio-under-spotlight",
       "source": "Cointelegraph",
-      "published_at": "2026-11-05T06:02:29Z",
+      "published_at": "2026-11-06T05:07:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "coinbase-zegt-ruim-99-van-crypto-van-klanten-off-f01860b8",
-      "title": "Coinbase zegt ruim 99% van crypto van klanten offline te bewaren",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/coinbase-zegt-ruim-99-van-crypto-van-klanten-offline-te-bewaren/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-05T05:03:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "india-warns-ai-powered-hackers-targeting-crypto--e42bc8ac",
-      "title": "India warns AI-powered hackers targeting crypto exchanges at ‘machine speed’",
-      "url": "https://cointelegraph.com/news/india-warns-ai-powered-hackers-targeting-crypto-exchanges-at-machine-speed",
+      "id": "core-scientific-to-quit-bitcoin-mining-by-year-e-23819db7",
+      "title": "Core Scientific to quit Bitcoin mining by year-end as AI business surges",
+      "url": "https://cointelegraph.com/news/core-scientific-to-quit-bitcoin-mining-by-year-end-as-ai-business-surges",
       "source": "Cointelegraph",
-      "published_at": "2026-11-05T01:51:21Z",
+      "published_at": "2026-11-06T00:19:49Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "aave-s-risk-manager-wants-a-borrowing-speed-limi-ff518385",
+      "title": "Aave’s Risk Manager Wants a Borrowing Speed Limit After Binance Hackers Took $44.6 Million",
+      "url": "https://unchainedcrypto.com/aaves-risk-manager-wants-a-borrowing-speed-limit-after-binance-hackers-took-44-6-million/",
+      "source": "Unchained",
+      "published_at": "2026-11-05T23:28:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "micha-l-van-de-poppe-at-bitcoin-amsterdam-says-a-518be740",
+      "title": "Michaël van de Poppe at Bitcoin Amsterdam says a bank lockout in Paraguay shows “the entire Bitcoin thesis”",
+      "url": "https://cryptofocus.nl/bitcoin-amsterdam/michael-van-de-poppe-mn-capital-interview/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-05T18:46:16Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "dprk-hackers-perfected-their-fake-interview-play-9447369b",
@@ -62,15 +71,6 @@
       "url": "https://coinmetrics.substack.com/p/stock-market-that-never-sleeps-inside",
       "source": "Coin Metrics",
       "published_at": "2026-11-03T17:43:25Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-429-recap-podcast-3625622b",
-      "title": "Bitcoin Optech Newsletter #429 Recap Podcast",
-      "url": "https://bitcoinops.org/en/podcast/2026/11/03/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-11-03T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
