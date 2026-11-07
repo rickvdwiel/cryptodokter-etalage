@@ -1,58 +1,67 @@
 {
-  "generated_at": "2026-11-06T06:52:43Z",
+  "generated_at": "2026-11-07T06:42:22Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-crasht-naar-76-000-door-ai-chipaandelen--1bff1688",
-      "title": "Bitcoin Crasht Naar $76.000 Door AI-Chipaandelen-Sell-Off Op Wall Street",
-      "url": "https://www.crypto-gids.nl/bitcoin-crash-ai-chipaandelen-nasdaq/",
-      "source": "Crypto Gids",
-      "published_at": "2026-11-06T06:48:02Z",
+      "id": "binance-france-rekent-vanaf-29-november-maandeli-6edbef16",
+      "title": "Binance France rekent vanaf 29 november maandelijks op slapende saldi",
+      "url": "https://bitcoinmagazine.nl/nieuws/binance-france-rekent-vanaf-29-november-maandelijks-op-slapende-saldi",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-07T03:35:21Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-beleeft-slechtste-dag-in-m-ef27fd99",
-      "title": "Crypto wekker: Bitcoin beleeft slechtste dag in maanden tijdens beurscrash",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-beleeft-slechtste-dag-in-maanden-tijdens-beurscrash/",
-      "source": "Newsbit",
-      "published_at": "2026-11-06T06:22:33Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-exchanges-tout-cold-storage-ratios-after--02bb37dc",
-      "title": "Crypto exchanges tout cold storage ratios after Binance attack",
-      "url": "https://cointelegraph.com/news/binance-hack-puts-crypto-exchanges-cold-wallet-ratio-under-spotlight",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-06T05:07:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "core-scientific-to-quit-bitcoin-mining-by-year-e-23819db7",
-      "title": "Core Scientific to quit Bitcoin mining by year-end as AI business surges",
-      "url": "https://cointelegraph.com/news/core-scientific-to-quit-bitcoin-mining-by-year-end-as-ai-business-surges",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-06T00:19:49Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "aave-s-risk-manager-wants-a-borrowing-speed-limi-ff518385",
-      "title": "Aave’s Risk Manager Wants a Borrowing Speed Limit After Binance Hackers Took $44.6 Million",
-      "url": "https://unchainedcrypto.com/aaves-risk-manager-wants-a-borrowing-speed-limit-after-binance-hackers-took-44-6-million/",
-      "source": "Unchained",
-      "published_at": "2026-11-05T23:28:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "micha-l-van-de-poppe-at-bitcoin-amsterdam-says-a-518be740",
-      "title": "Michaël van de Poppe at Bitcoin Amsterdam says a bank lockout in Paraguay shows “the entire Bitcoin thesis”",
-      "url": "https://cryptofocus.nl/bitcoin-amsterdam/michael-van-de-poppe-mn-capital-interview/",
+      "id": "why-a-newer-ethereum-transaction-can-wait-behind-15bc632e",
+      "title": "Why a newer Ethereum transaction can wait behind an older one",
+      "url": "https://cryptofocus.nl/nieuws/ethereum-pending-transactions-nonce-order-explained/",
       "source": "CryptoFocus",
-      "published_at": "2026-11-05T18:46:16Z",
+      "published_at": "2026-11-07T03:27:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "treasury-cuts-crypto-exchange-mexc-off-from-us-f-5d2f0a49",
+      "title": "Treasury Cuts Crypto Exchange MEXC Off From US Financial System",
+      "url": "https://decrypt.co/382758/treasury-cuts-off-crypto-exchange-mexc-us-financial-system",
+      "source": "Decrypt",
+      "published_at": "2026-11-06T21:06:03Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "vs-breidt-aanpak-van-cryptoscams-uit-met-45-nieu-8f49c291",
+      "title": "VS breidt aanpak van cryptoscams uit met 45 nieuwe sancties",
+      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/vs-breidt-aanpak-van-cryptoscams-uit-met-45-nieuwe-sancties/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-06T21:02:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "gnosis-pay-breach-exposes-card-details-personal--224fc1fb",
+      "title": "Gnosis Pay breach exposes card details, personal data and crypto wallet information",
+      "url": "https://cointelegraph.com/news/gnosis-pay-breach-exposes-card-details-personal-data-crypto-wallet-information",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-06T20:51:23Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-optech-newsletter-430-d8ac0546",
+      "title": "Bitcoin Optech Newsletter #430",
+      "url": "https://bitcoinops.org/en/newsletters/2026/11/06/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-11-06T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "eip-8037-eip-8038-glamsterdam-21eda8d9",
+      "title": "EIP-8037/EIP-8038 Glamsterdam",
+      "url": "https://blog.ethereum.org/en/2026/11/06/glamsterdam-8037-8038",
+      "source": "Ethereum Foundation",
+      "published_at": "2026-11-06T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
@@ -62,15 +71,6 @@
       "url": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
       "source": "Chainalysis",
       "published_at": "2026-11-03T19:43:21Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "stock-market-that-never-sleeps-inside-the-premiu-d9f232c7",
-      "title": "Stock Market that Never Sleeps: Inside the Premiums and Liquidity Gaps of Tokenized Equities",
-      "url": "https://coinmetrics.substack.com/p/stock-market-that-never-sleeps-inside",
-      "source": "Coin Metrics",
-      "published_at": "2026-11-03T17:43:25Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
