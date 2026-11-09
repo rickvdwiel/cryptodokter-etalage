@@ -1,6 +1,12 @@
 {
- "updated": "2026-10-26T21:30:52Z",
+ "updated": "2026-11-09T21:30:02Z",
  "items": [
+  {
+   "ts": "2026-11-09T21:30:02Z",
+   "from": "ops",
+   "to": "newsbronnen",
+   "text_nl": "Ops gaf het fomo-weekoverzicht door aan Newsbronnen, alleen als achtergrond en niet als koopsignaal."
+  },
   {
    "ts": "2026-10-26T21:30:52Z",
    "from": "ops",
