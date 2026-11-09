@@ -1,18 +1,18 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-06T22:16:23Z",
+ "updated": "2026-11-09T09:13:48Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-11-06T22:16:07Z",
+   "updated": "2026-11-09T09:13:47Z",
    "start_eur": 30000.0,
    "total_eur": 29822.77,
    "result_eur": -177.23,
    "n_trades": 4,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "week 45 (2–8 nov)",
+   "week_label": "week 46 (9–15 nov)",
    "cash_eur": 24983.74,
    "costs_eur": 37.94,
    "open_positions": [
@@ -1606,47 +1606,28 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-11-06T22:16:07Z",
+   "updated": "2026-11-09T09:13:47Z",
    "start_eur": 70000.0,
-   "total_eur": 67397.04,
-   "result_eur": -2602.96,
+   "total_eur": 67394.65,
+   "result_eur": -2605.35,
    "n_trades": 13,
-   "n_trades_week": 4,
-   "best_trades_week": [
-    {
-     "symbol": "NVDA",
-     "pnl_eur": -6.97,
-     "ts": "2026-11-02T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "SPY",
-     "pnl_eur": -33.23,
-     "ts": "2026-11-02T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "SPY",
-     "pnl_eur": -35.05,
-     "ts": "2026-11-06T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 45 (2–8 nov)",
-   "cash_eur": 47225.72,
-   "costs_eur": 197.59,
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 46 (9–15 nov)",
+   "cash_eur": 48851.88,
+   "costs_eur": 200.85,
    "open_positions": [
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
      "entry_ts": "2026-11-05T08:00:00Z",
      "entry_px": 113.78,
-     "last_px": 111.8,
-     "last_px_source": "officiële last_close 2026-11-06",
-     "units": 29.237827,
-     "value_eur": 3268.79,
-     "pnl_eur": -64.54,
-     "pnl_pct": -1.94,
+     "last_px": 112.2,
+     "last_px_source": "koers 09:58",
+     "units": 14.618914,
+     "value_eur": 1640.24,
+     "pnl_eur": -26.42,
+     "pnl_pct": -1.59,
      "reason_nl": "Gekocht: op 04-11 lag de koers op 2 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1690,6 +1671,17 @@
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "IAEX.AS",
+     "name": "AEX",
+     "side": "SELL",
+     "ts": "2026-11-09T08:00:00Z",
+     "px": 111.46,
+     "notional_eur": 1629.42,
+     "cost_eur": 3.26,
+     "status": "voorlopig",
+     "reason_nl": "Deels verkocht: op 06-11 lag de koers op 3 van de 4 termijnen lager dan ervoor."
+    },
     {
      "symbol": "SPY",
      "name": "S&P 500",
@@ -1788,17 +1780,6 @@
      "cost_eur": 8.24,
      "status": "bevestigd",
      "reason_nl": "Verkocht: op 03-11 lag de koers op 4 van de 4 termijnen lager dan ervoor."
-    },
-    {
-     "symbol": "AAPL",
-     "name": "Apple",
-     "side": "SELL",
-     "ts": "2026-11-04T14:30:00Z",
-     "px": 341.57,
-     "notional_eur": 2458.36,
-     "cost_eur": 2.7,
-     "status": "bevestigd",
-     "reason_nl": "Deels verkocht: op 03-11 lag de koers op 3 van de 4 termijnen lager dan ervoor."
     }
    ],
    "price_series": {
@@ -3250,10 +3231,6 @@
     ],
     "IAEX.AS": [
      {
-      "t": "2026-05-21T15:30:00Z",
-      "px": 104.18
-     },
-     {
       "t": "2026-05-22T15:30:00Z",
       "px": 105.2
      },
@@ -3728,6 +3705,10 @@
      {
       "t": "2026-11-06T16:30:00Z",
       "px": 111.8
+     },
+     {
+      "t": "2026-11-09T08:58:00Z",
+      "px": 112.2
      }
     ],
     "MSFT": [
