@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-11-09T06:48:48Z",
+  "generated_at": "2026-11-10T06:44:53Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-zakt-naar-74-000-markt-verliest-ruim-1-m-29f7c88e",
-      "title": "Bitcoin Zakt Naar $74.000: Markt Verliest Ruim $1 Miljard Aan Liquidaties, XRP En Solana Op Dieptepunt",
-      "url": "https://www.crypto-gids.nl/bitcoin-zakt-naar-74-000-markt-verliest-ruim-1-miljard-aan-liquidaties-xrp-en-solana-op-dieptepunt/",
-      "source": "Crypto Gids",
-      "published_at": "2026-11-09T06:45:43Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-bitcoin-op-laagste-koers-in-maande-de0492df",
-      "title": "Crypto wekker: Bitcoin op laagste koers in maanden, Ethereum en XRP dalen 5%",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-op-laagste-koers-in-maanden-ethereum-en-xrp-dalen-5/",
+      "id": "crypto-wekker-bitcoin-stelt-teleur-vanmiddag-wor-7443a6ee",
+      "title": "Crypto wekker: Bitcoin stelt teleur, vanmiddag wordt belangrijk",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-stelt-teleur-vanmiddag-wordt-belangrijk/",
       "source": "Newsbit",
-      "published_at": "2026-11-09T06:38:17Z",
+      "published_at": "2026-11-10T06:21:56Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-betaallink-lezen-amount-staat-in-btc-ook-bde5fe64",
-      "title": "Bitcoin-betaallink lezen: amount staat in BTC, ook als je wallet sats toont",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin-betaallink-amount-btc-sats-bip321/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-09T05:00:00Z",
+      "id": "amerikaanse-diensten-breiden-onderzoek-naar-bina-20f3c7f9",
+      "title": "Amerikaanse diensten breiden onderzoek naar Binance en Iran uit",
+      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/amerikaanse-diensten-breiden-onderzoek-naar-binance-en-iran-uit/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-10T06:18:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "vitalik-pivots-eth-to-store-of-value-crypto-suff-569a6cee",
-      "title": "Vitalik ‘pivots’ ETH to store of value, crypto suffers after US midterms: Hodler’s Digest",
-      "url": "https://cointelegraph.com/magazine/vitaliks-pivots-to-eth-as-a-store-of-value-us-election-weighs-on-crypto-hodlers-digest",
+      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
-      "published_at": "2026-11-08T22:59:06Z",
+      "published_at": "2026-11-10T06:00:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "this-bitcoin-developer-s-idea-would-make-quantum-6025c5ab",
-      "title": "This Bitcoin Developer’s Idea Would Make Quantum Attacks a Losing Bet",
-      "url": "https://decrypt.co/382761/bitcoin-developer-quantum-landmines-losing-bet",
-      "source": "Decrypt",
-      "published_at": "2026-11-08T14:01:03Z",
+      "id": "noord-koreaanse-hackers-gebruiken-memecoins-om-b-d88a0a61",
+      "title": "Noord-Koreaanse hackers gebruiken memecoins om buit van Binance-hack wit te wassen",
+      "url": "https://newsbit.nl/noord-koreaanse-hackers-gebruiken-memecoins-om-buit-van-binance-hack-wit-te-wassen/",
+      "source": "Newsbit",
+      "published_at": "2026-11-10T05:13:00Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "crypto-exchanges-need-hard-dollar-caps-on-hot-wa-20345202",
+      "title": "Crypto exchanges need hard dollar caps on hot wallets, CertiK says",
+      "url": "https://cointelegraph.com/news/crypto-exchanges-need-dollar-caps-on-hot-wallets-certik?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-10T05:05:58Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "sanctioned-canadian-crypto-otcs-served-iran-and--a6522d77",
+      "title": "Sanctioned Canadian Crypto OTCs Served Iran and Drug Cartels",
+      "url": "https://www.chainalysis.com/blog/ofac-canadian-otcs/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-09T18:35:38Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "western-europe-s-2-trillion-crypto-economy-holds-92eb136c",
+      "title": "Western Europe’s $2 Trillion Crypto Economy Holds Firm",
+      "url": "https://www.chainalysis.com/blog/western-europe-crypto-adoption-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-09T17:21:46Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "bitcoin-optech-newsletter-430-d8ac0546",
@@ -53,24 +71,6 @@
       "url": "https://bitcoinops.org/en/newsletters/2026/11/06/",
       "source": "Bitcoin Optech",
       "published_at": "2026-11-06T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "eip-8037-eip-8038-glamsterdam-21eda8d9",
-      "title": "EIP-8037/EIP-8038 Glamsterdam",
-      "url": "https://blog.ethereum.org/en/2026/11/06/glamsterdam-8037-8038",
-      "source": "Ethereum Foundation",
-      "published_at": "2026-11-06T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "dprk-hackers-perfected-their-fake-interview-play-9447369b",
-      "title": "DPRK Hackers Perfected Their Fake Interview Playbook Over Dozens of Attacks Before Binance",
-      "url": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
-      "source": "Chainalysis",
-      "published_at": "2026-11-03T19:43:21Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
