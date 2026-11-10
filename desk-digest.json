@@ -1,14 +1,14 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-09T16:50:00+01:00",
-  "digest_date": "2026-11-09",
-  "measured_at": "2026-11-09T16:48:51+01:00",
-  "window_4h_utc": "11:48-15:48",
+  "updated_at": "2026-11-10T16:55:00+01:00",
+  "digest_date": "2026-11-10",
+  "measured_at": "2026-11-10T16:53:00+01:00",
+  "window_4h_utc": "11:53-15:53",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u 0 trades, 8u 1 trade −€231 (SL); seizoen s2 −€62.859, totaal €37.141",
+  "headline": "Desk-digest: 4u 0 trades, 8u 2 trades PF 0 −€2.197 (SL); seizoen s2 −€66.925, totaal €33.075",
   "metrics_4h": {
     "exits": 0,
     "winrate_pct": null,
@@ -19,22 +19,22 @@
     "fees_per_hour_eur": 0.0
   },
   "metrics_8h": {
-    "exits": 1,
+    "exits": 2,
     "winrate_pct": 0.0,
     "profit_factor": 0.0,
-    "expectancy_eur": -230.61,
-    "net_eur": -230.61
+    "expectancy_eur": -1098.36,
+    "net_eur": -2196.71
   },
   "metrics_season": {
-    "exits": 856,
-    "winrate_pct": 37.6,
-    "profit_factor": 0.64,
-    "net_eur": -62859.4,
-    "fees_eur": 8415.64,
+    "exits": 864,
+    "winrate_pct": 37.4,
+    "profit_factor": 0.626,
+    "net_eur": -66924.52,
+    "fees_eur": 8485.55,
     "start_eur": 100000.0,
-    "total_eur": 37140.6
+    "total_eur": 33075.48
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 856 trades, PF 0,640, fees €8.416; totaal €37.141 (−€62.859). Bot tikt (laatste tick 16:48 NL, 0 open), precies één web.server."
+    "Sinds seizoensstart s2 (€100.000): 864 trades, PF 0,626, fees €8.486; totaal €33.075 (−€66.925). Bot tikt (laatste tick 16:53 NL, 0 open), precies één web.server."
   ]
 }
