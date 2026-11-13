@@ -1,41 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-12T16:50:00+01:00",
-  "digest_date": "2026-11-12",
-  "measured_at": "2026-11-12T16:47:40+01:00",
-  "window_4h_utc": "11:47-15:47",
+  "updated_at": "2026-11-13T16:58:00+01:00",
+  "digest_date": "2026-11-13",
+  "measured_at": "2026-11-13T16:56:00+01:00",
+  "window_4h_utc": "11:56-15:56",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u 1 trade (+€490), 8u 3 trades PF 1,71 +€234; seizoen s2 −€69.587, totaal €30.413",
+  "headline": "Desk-digest: 4u=8u 1 trade (−€302, SL), PF 0; week 37 trades PF 0,18 −€12.299; seizoen s2 −€72.325, totaal €27.675",
   "metrics_4h": {
     "exits": 1,
-    "winrate_pct": 100.0,
-    "profit_factor": null,
-    "expectancy_eur": 490.31,
-    "net_eur": 490.31,
-    "fees_eur": 11.24,
-    "fees_per_hour_eur": 2.81
+    "winrate_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_eur": -302.27,
+    "net_eur": -302.27,
+    "fees_eur": 16.64,
+    "fees_per_hour_eur": 4.16
   },
   "metrics_8h": {
-    "exits": 3,
-    "winrate_pct": 33.3,
-    "profit_factor": 1.713,
-    "expectancy_eur": 68.04,
-    "net_eur": 234.47,
-    "fees_eur": 25.55
+    "exits": 1,
+    "winrate_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_eur": -302.27,
+    "net_eur": -302.27,
+    "fees_eur": 16.64
   },
   "metrics_season": {
-    "exits": 878,
-    "winrate_pct": 37.2,
-    "profit_factor": 0.62,
-    "net_eur": -69587.33,
-    "fees_eur": 8619,
+    "exits": 888,
+    "winrate_pct": 37.0,
+    "profit_factor": 0.612,
+    "net_eur": -72324.73,
+    "fees_eur": 8719.38,
     "start_eur": 100000.0,
-    "total_eur": 30412.67
+    "total_eur": 27675.27
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 878 trades, PF 0,62, fees ca. €8.619; totaal €30.413 (−€69.587). Eén web.server, portfolio bijgewerkt 16:47 NL."
+    "Sinds seizoensstart s2 (€100.000): 888 trades, PF 0,61, fees ca. €8.719; totaal €27.675 (−€72.325). Week ma–vr: 37 trades, PF 0,18, −€12.299. Eén web.server, laatste tick 16:55 NL, 1 open."
   ]
 }
