@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-12T06:46:19Z",
+  "generated_at": "2026-11-13T06:49:07Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-strategy-vliegt-uit-msci-bitcoin-k-7af2d81c",
-      "title": "Crypto wekker: Strategy vliegt uit MSCI, Bitcoin koers onder druk",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-mist-beursrally-forse-tegenvaller-voor-strategy/",
+      "id": "altcoins-in-vrije-val-ethereum-xrp-en-solana-cra-64a5798c",
+      "title": "Altcoins in vrije val: Ethereum, XRP en solana crashen – maar er gebeurt iets opvallends",
+      "url": "https://newsbit.nl/altcoins-in-vrije-val-ethereum-xrp-en-solana-crashen-maar-er-gebeurt-iets-opvallends/",
       "source": "Newsbit",
-      "published_at": "2026-11-12T06:03:00Z",
+      "published_at": "2026-11-13T06:47:46Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "south-korea-to-permit-crypto-withdrawal-freezes--07b05bf9",
-      "title": "South Korea to permit crypto withdrawal freezes during hacking threats",
-      "url": "https://cointelegraph.com/news/south-korea-crypto-withdrawal-freezes-suspected-hacks",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-12T05:54:48Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "cryptobeurs-opent-24-7-handel-in-ruim-70-digital-1f22149a",
-      "title": "Cryptobeurs opent 24/7 handel in ruim 70 digitale aandelen en fondsen",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/cryptobeurs-opent-247-handel-in-ruim-70-digitale-aandelen-en-fondsen/",
+      "id": "cryptobedrijf-bit-digital-bouwt-bitcoinmining-ve-85e0b695",
+      "title": "Cryptobedrijf Bit Digital bouwt bitcoinmining verder af",
+      "url": "https://www.crypto-insiders.nl/nieuws/mining/cryptobedrijf-bit-digital-bouwt-bitcoinmining-verder-af/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-12T05:04:00Z",
+      "published_at": "2026-11-13T06:18:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ethereum-transient-storage-lasts-across-calls-th-65fbb6d6",
-      "title": "Ethereum transient storage lasts across calls, then clears after the transaction",
-      "url": "https://cryptofocus.nl/nieuws/ethereum-transient-storage-call-transaction-lifetime/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-12T04:30:00Z",
+      "id": "bitcoin-slides-below-70k-amid-thin-liquidity-etf-82e9c572",
+      "title": "Bitcoin slides below $70K amid thin liquidity, ETF outflows",
+      "url": "https://cointelegraph.com/markets/bitcoin-falls-below-70k-crypto-extreme-fear",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-13T06:00:15Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "stablecoin-drain-etf-outflows-leave-bitcoin-runn-fd3377e4",
-      "title": "Stablecoin Drain, ETF Outflows Leave Bitcoin 'Running on Empty'",
-      "url": "https://decrypt.co/383094/stablecoin-drain-etf-outflows-bitcoin-running-empty",
+      "id": "18-crypto-firms-seek-to-join-court-fight-over-il-0e7fef92",
+      "title": "18 Crypto Firms Seek to Join Court Fight Over Illinois’ 0.2% Crypto Tax",
+      "url": "https://unchainedcrypto.com/18-crypto-firms-seek-to-join-court-fight-over-illinois-0-2-crypto-tax/",
+      "source": "Unchained",
+      "published_at": "2026-11-13T00:27:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "north-korea-stole-400-million-in-crypto-using-de-1b82a70f",
+      "title": "North Korea Stole $400 Million in Crypto Using Deepfake Video Calls, DOJ Says",
+      "url": "https://decrypt.co/383208/north-korea-stole-400-million-crypto-deepfake-video-calls",
       "source": "Decrypt",
-      "published_at": "2026-11-11T21:46:03Z",
+      "published_at": "2026-11-12T22:06:03Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "macro-outlook-ai-investeringen-kunnen-productivi-42acd6ed",
+      "title": "Macro Outlook: AI-investeringen kunnen productiviteit eerst drukken",
+      "url": "https://cryptofocus.nl/nieuws/bitcoin/macro-outlook-2026-11-12/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-12T07:30:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "countdown-to-ant-what-the-pre-ipo-perps-markets--c82dd6e8",
@@ -62,15 +71,6 @@
       "url": "https://www.chainalysis.com/blog/chinese-ai-proxy-services/",
       "source": "Chainalysis",
       "published_at": "2026-11-10T16:02:36Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "defi-moats-in-an-ai-world-and-the-implications-f-ef48a7d2",
-      "title": "DeFi moats in an AI world and the implications for value capture",
-      "url": "https://multicoin.capital/2026/11/10/defi-moats-in-an-ai-world-and-the-implications-for-value-capture/",
-      "source": "Multicoin",
-      "published_at": "2026-11-10T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
