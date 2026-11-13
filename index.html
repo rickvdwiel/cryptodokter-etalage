@@ -1215,6 +1215,16 @@ html.hero-sk .alp-snow{display:none}
   .alp-stage .sk-pic .alp-img{object-position:28% 22%}
 }
 html.hero-sk .ballon,html.hero-sk .ballon-staart{display:none} /* ballon hoort bij de Alpen-Bernard */
+/* ===== Tabwissel zonder verspringen: Crypto, Grondstoffen en Aandelen delen één geometrie =====
+   Voorheen: op Crypto lag de cockpitkaart 12vw over de foto en zweefde de tabbalk daarboven; op de andere tabs zakte de
+   tabbalk naar de onderrand (+173 px op 1440) en sprong hij op Grondstoffen ná het decoderen van de foto naar rechts (+891 px).
+   Nu: tabbalk altijd rechtsonder in het beeld (notitieboek en gezichten vrij), inhoud altijd direct onder het beeld. */
+html{scrollbar-gutter:stable}
+@media (min-width:768px){
+  html main>.hero,html:not(.mkt-x) main>.hero,main>.mkt-panel{margin-top:0}
+  .alp-stage .mkt-tabs,html.mkt-x .alp-stage .mkt-tabs,html.hero-sk .alp-stage .mkt-tabs{bottom:14px;text-align:right}
+}
+@media (max-width:767.98px){html main>.hero,html:not(.mkt-x) main>.hero,main>.mkt-panel{margin-top:8px}main>.mkt-panel{padding-top:14px}} /* inhoud begint op mobiel op dezelfde hoogte als de cryptokaart */
 /* ===== Rustige stijl (voorstel): één kop, neutraal resultaat, opties-menu, rood alleen voor echte fouten ===== */
 :root{--surf:#171d24;--surf2:#1e252e;--line:#2c3540;--warn:#e0b25a;--warn-bg:rgba(224,178,90,.1);--err:#ff9aa2}
 html[data-theme="licht"]{--warn:#8a5a00;--warn-bg:rgba(176,120,0,.09);--err:#b8322a}
