@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-11-13T06:49:07Z",
+  "generated_at": "2026-11-14T06:43:05Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "altcoins-in-vrije-val-ethereum-xrp-en-solana-cra-64a5798c",
-      "title": "Altcoins in vrije val: Ethereum, XRP en solana crashen – maar er gebeurt iets opvallends",
-      "url": "https://newsbit.nl/altcoins-in-vrije-val-ethereum-xrp-en-solana-crashen-maar-er-gebeurt-iets-opvallends/",
-      "source": "Newsbit",
-      "published_at": "2026-11-13T06:47:46Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "cryptobedrijf-bit-digital-bouwt-bitcoinmining-ve-85e0b695",
-      "title": "Cryptobedrijf Bit Digital bouwt bitcoinmining verder af",
-      "url": "https://www.crypto-insiders.nl/nieuws/mining/cryptobedrijf-bit-digital-bouwt-bitcoinmining-verder-af/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-13T06:18:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-slides-below-70k-amid-thin-liquidity-etf-82e9c572",
-      "title": "Bitcoin slides below $70K amid thin liquidity, ETF outflows",
-      "url": "https://cointelegraph.com/markets/bitcoin-falls-below-70k-crypto-extreme-fear",
+      "id": "bitcoin-etfs-shed-2-35b-in-two-weeks-as-blackroc-fa94794c",
+      "title": "Bitcoin ETFs shed $2.35B in two weeks as BlackRock’s losing streak hits 11 sessions",
+      "url": "https://cointelegraph.com/markets/bitcoin-etf-outflows-2-35-billion-blackrock-11-session-streak",
       "source": "Cointelegraph",
-      "published_at": "2026-11-13T06:00:15Z",
+      "published_at": "2026-11-14T06:33:13Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "18-crypto-firms-seek-to-join-court-fight-over-il-0e7fef92",
-      "title": "18 Crypto Firms Seek to Join Court Fight Over Illinois’ 0.2% Crypto Tax",
-      "url": "https://unchainedcrypto.com/18-crypto-firms-seek-to-join-court-fight-over-illinois-0-2-crypto-tax/",
+      "id": "arca-s-jeff-dorman-calls-vitalik-buterin-s-eth-s-29d03ccb",
+      "title": "Arca’s Jeff Dorman Calls Vitalik Buterin’s ETH Store-of-Value Pitch ‘Really Misguided’",
+      "url": "https://unchainedcrypto.com/arcas-jeff-dorman-calls-vitalik-buterins-eth-store-of-value-pitch-really-misguided/",
       "source": "Unchained",
-      "published_at": "2026-11-13T00:27:00Z",
+      "published_at": "2026-11-14T02:52:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "north-korea-stole-400-million-in-crypto-using-de-1b82a70f",
-      "title": "North Korea Stole $400 Million in Crypto Using Deepfake Video Calls, DOJ Says",
-      "url": "https://decrypt.co/383208/north-korea-stole-400-million-crypto-deepfake-video-calls",
-      "source": "Decrypt",
-      "published_at": "2026-11-12T22:06:03Z",
+      "id": "blockstream-lanceert-bitcoin-custody-voor-instel-866a989c",
+      "title": "Blockstream lanceert Bitcoin-custody voor instellingen met Thales",
+      "url": "https://bitcoinmagazine.nl/bitcoin-nieuws/blockstream-lanceert-bitcoin-custody-voor-instellingen-met-thales",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-14T01:35:53Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "bitcoin-dreigt-voor-het-eerst-twee-jaar-op-rij-i-ec7a08c5",
+      "title": "Bitcoin dreigt voor het eerst twee jaar op rij in het rood te eindigen",
+      "url": "https://newsbit.nl/bitcoin-op-weg-naar-negatieve-records-door-belabberde-vorm/",
+      "source": "Newsbit",
+      "published_at": "2026-11-13T20:59:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "jpmorgan-s-bitcoin-and-crypto-linked-holdings-ap-5e8abfaa",
+      "title": "JPMorgan’s Bitcoin and Crypto-Linked Holdings Approach $1 Billion",
+      "url": "https://decrypt.co/383267/jpmorgan-bitcoin-crypto-linked-holdings-approach-1-billion",
+      "source": "Decrypt",
+      "published_at": "2026-11-13T20:16:03Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "fincen-bars-u-s-institutions-from-moving-funds-f-29b1fcf2",
+      "title": "FinCEN Bars U.S. Institutions From Moving Funds for MEXC Global",
+      "url": "https://www.chainalysis.com/blog/fincen-mexc-global-november-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-13T15:19:15Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "bitcoin-optech-newsletter-431-52557dfc",
+      "title": "Bitcoin Optech Newsletter #431",
+      "url": "https://bitcoinops.org/en/newsletters/2026/11/13/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-11-13T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "macro-outlook-ai-investeringen-kunnen-productivi-42acd6ed",
@@ -53,24 +71,6 @@
       "url": "https://cryptofocus.nl/nieuws/bitcoin/macro-outlook-2026-11-12/",
       "source": "CryptoFocus",
       "published_at": "2026-11-12T07:30:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "countdown-to-ant-what-the-pre-ipo-perps-markets--c82dd6e8",
-      "title": "Countdown to ANT: What the Pre-IPO Perps Markets Say About Anthropic’s IPO",
-      "url": "https://coinmetrics.substack.com/p/countdown-to-ant-what-the-pre-ipo",
-      "source": "Coin Metrics",
-      "published_at": "2026-11-10T17:14:31Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "the-shadow-market-behind-china-s-ai-model-distil-8575ca56",
-      "title": "The Shadow Market Behind China’s AI Model Distillation Boom",
-      "url": "https://www.chainalysis.com/blog/chinese-ai-proxy-services/",
-      "source": "Chainalysis",
-      "published_at": "2026-11-10T16:02:36Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
