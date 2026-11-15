@@ -1,13 +1,40 @@
 {
-  "generated_at": "2026-11-14T06:43:05Z",
+  "generated_at": "2026-11-15T06:46:15Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-etfs-shed-2-35b-in-two-weeks-as-blackroc-fa94794c",
-      "title": "Bitcoin ETFs shed $2.35B in two weeks as BlackRock’s losing streak hits 11 sessions",
-      "url": "https://cointelegraph.com/markets/bitcoin-etf-outflows-2-35-billion-blackrock-11-session-streak",
+      "id": "rwa-protocol-stusdt-winds-down-three-years-after-522a814a",
+      "title": "RWA protocol stUSDT winds down three years after $2.3B TVL peak",
+      "url": "https://cointelegraph.com/news/rwa-protocol-stusdt-winds-down-three-years-after-23b-tvl-peak",
       "source": "Cointelegraph",
-      "published_at": "2026-11-14T06:33:13Z",
+      "published_at": "2026-11-15T06:27:26Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "cryptomarkt-kleurt-dieprood-bitcoin-en-xrp-hard--6d7f6819",
+      "title": "Cryptomarkt kleurt dieprood: Bitcoin en XRP hard onderuit",
+      "url": "https://newsbit.nl/cryptomarkt-kleurt-dieprood-bitcoin-en-xrp-hard-onderuit/",
+      "source": "Newsbit",
+      "published_at": "2026-11-14T21:36:02Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "amerikaanse-beursreus-wil-aandelen-via-solana-ve-6e3e6795",
+      "title": "Amerikaanse beursreus wil aandelen via Solana verplaatsen",
+      "url": "https://www.crypto-insiders.nl/nieuws/solana/amerikaanse-beursreus-wil-aandelen-via-solana-verplaatsen/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-14T21:02:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "what-is-canton-network-the-privacy-blockchain-bu-e1470c5c",
+      "title": "What Is Canton Network? The Privacy Blockchain Built for Wall Street",
+      "url": "https://decrypt.co/resources/what-is-canton-network-the-privacy-blockchain-built-for-wall-street",
+      "source": "Decrypt",
+      "published_at": "2026-11-14T16:01:02Z",
       "category": "news",
       "sentiment": null
     },
@@ -17,33 +44,6 @@
       "url": "https://unchainedcrypto.com/arcas-jeff-dorman-calls-vitalik-buterins-eth-store-of-value-pitch-really-misguided/",
       "source": "Unchained",
       "published_at": "2026-11-14T02:52:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "blockstream-lanceert-bitcoin-custody-voor-instel-866a989c",
-      "title": "Blockstream lanceert Bitcoin-custody voor instellingen met Thales",
-      "url": "https://bitcoinmagazine.nl/bitcoin-nieuws/blockstream-lanceert-bitcoin-custody-voor-instellingen-met-thales",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-11-14T01:35:53Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-dreigt-voor-het-eerst-twee-jaar-op-rij-i-ec7a08c5",
-      "title": "Bitcoin dreigt voor het eerst twee jaar op rij in het rood te eindigen",
-      "url": "https://newsbit.nl/bitcoin-op-weg-naar-negatieve-records-door-belabberde-vorm/",
-      "source": "Newsbit",
-      "published_at": "2026-11-13T20:59:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "jpmorgan-s-bitcoin-and-crypto-linked-holdings-ap-5e8abfaa",
-      "title": "JPMorgan’s Bitcoin and Crypto-Linked Holdings Approach $1 Billion",
-      "url": "https://decrypt.co/383267/jpmorgan-bitcoin-crypto-linked-holdings-approach-1-billion",
-      "source": "Decrypt",
-      "published_at": "2026-11-13T20:16:03Z",
       "category": "news",
       "sentiment": null
     },
