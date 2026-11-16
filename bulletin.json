@@ -1,42 +1,51 @@
 {
-  "generated_at": "2026-11-15T06:46:15Z",
+  "generated_at": "2026-11-16T06:43:33Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "rwa-protocol-stusdt-winds-down-three-years-after-522a814a",
-      "title": "RWA protocol stUSDT winds down three years after $2.3B TVL peak",
-      "url": "https://cointelegraph.com/news/rwa-protocol-stusdt-winds-down-three-years-after-23b-tvl-peak",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-15T06:27:26Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "cryptomarkt-kleurt-dieprood-bitcoin-en-xrp-hard--6d7f6819",
-      "title": "Cryptomarkt kleurt dieprood: Bitcoin en XRP hard onderuit",
-      "url": "https://newsbit.nl/cryptomarkt-kleurt-dieprood-bitcoin-en-xrp-hard-onderuit/",
-      "source": "Newsbit",
-      "published_at": "2026-11-14T21:36:02Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "amerikaanse-beursreus-wil-aandelen-via-solana-ve-6e3e6795",
-      "title": "Amerikaanse beursreus wil aandelen via Solana verplaatsen",
-      "url": "https://www.crypto-insiders.nl/nieuws/solana/amerikaanse-beursreus-wil-aandelen-via-solana-verplaatsen/",
+      "id": "brits-voorstel-wil-verspilde-windstroom-inzetten-6f8ae3e2",
+      "title": "Brits voorstel wil verspilde windstroom inzetten voor Bitcoin-mining",
+      "url": "https://www.crypto-insiders.nl/nieuws/mining/brits-voorstel-wil-verspilde-windstroom-inzetten-voor-bitcoin-mining/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-14T21:02:00Z",
+      "published_at": "2026-11-16T06:11:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "what-is-canton-network-the-privacy-blockchain-bu-e1470c5c",
-      "title": "What Is Canton Network? The Privacy Blockchain Built for Wall Street",
-      "url": "https://decrypt.co/resources/what-is-canton-network-the-privacy-blockchain-built-for-wall-street",
-      "source": "Decrypt",
-      "published_at": "2026-11-14T16:01:02Z",
+      "id": "crypto-wekker-bitcoin-wacht-op-nvidia-en-anthrop-9c147481",
+      "title": "Crypto Wekker: Bitcoin wacht op Nvidia en Anthropic, wordt dit de ommekeer?",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-veert-op-van-62-000-na-weekverlies-van-13/",
+      "source": "Newsbit",
+      "published_at": "2026-11-16T06:02:01Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "aster-ceo-suspects-foul-play-after-token-plunges-af3b9e45",
+      "title": "Aster CEO suspects foul play after token plunges 32% in minutes",
+      "url": "https://cointelegraph.com/markets/aster-ceo-suspects-foul-play-after-token-plunges-32-in-minutes",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-16T05:28:40Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "how-wall-street-is-racing-to-claim-the-onchain-d-b7426e16",
+      "title": "How Wall Street Is Racing to Claim the Onchain Dollar",
+      "url": "https://decrypt.co/383284/how-wall-street-racing-onchain-dollar-stablecoins",
+      "source": "Decrypt",
+      "published_at": "2026-11-15T16:01:02Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "macro-outlook-nederlandse-groei-ligt-boven-de-eu-6db3d839",
+      "title": "Macro Outlook: Nederlandse groei ligt boven de eurozone, maar het tempo daalt",
+      "url": "https://cryptofocus.nl/nieuws/tradfi/macro-outlook-2026-11-15/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-15T13:18:49Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "arca-s-jeff-dorman-calls-vitalik-buterin-s-eth-s-29d03ccb",
@@ -62,15 +71,6 @@
       "url": "https://bitcoinops.org/en/newsletters/2026/11/13/",
       "source": "Bitcoin Optech",
       "published_at": "2026-11-13T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "macro-outlook-ai-investeringen-kunnen-productivi-42acd6ed",
-      "title": "Macro Outlook: AI-investeringen kunnen productiviteit eerst drukken",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin/macro-outlook-2026-11-12/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-12T07:30:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
