@@ -1,11 +1,11 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-17T09:24:11Z",
+ "updated": "2026-11-17T11:26:25Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-11-16T22:26:43Z",
+   "updated": "2026-11-17T09:24:46Z",
    "start_eur": 30000.0,
    "total_eur": 29462.53,
    "result_eur": -537.47,
@@ -1579,16 +1579,16 @@
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-11-16T22:26:43Z",
+   "updated": "2026-11-17T09:24:46Z",
    "start_eur": 70000.0,
-   "total_eur": 66922.34,
-   "result_eur": -3077.66,
+   "total_eur": 66924.33,
+   "result_eur": -3075.67,
    "n_trades": 13,
    "n_trades_week": 0,
    "best_trades_week": [],
    "week_label": "week 47 (16–22 nov)",
-   "cash_eur": 36147.92,
-   "costs_eur": 233.15,
+   "cash_eur": 36969.61,
+   "costs_eur": 234.8,
    "open_positions": [
     {
      "symbol": "SPY",
@@ -1608,12 +1608,12 @@
      "name": "AEX",
      "entry_ts": "2026-11-05T08:00:00Z",
      "entry_px": 114.01,
-     "last_px": 112.36,
-     "last_px_source": "koers 10:08",
-     "units": 58.357834,
-     "value_eur": 6557.09,
-     "pnl_eur": -109.58,
-     "pnl_pct": -1.64,
+     "last_px": 112.38,
+     "last_px_source": "koers 11:59",
+     "units": 51.053513,
+     "value_eur": 5737.39,
+     "pnl_eur": -94.84,
+     "pnl_pct": -1.63,
      "reason_nl": "Gekocht: op 04-11 lag de koers op 2 van de 4 termijnen hoger dan ervoor."
     },
     {
@@ -1670,6 +1670,17 @@
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "IAEX.AS",
+     "name": "AEX",
+     "side": "SELL",
+     "ts": "2026-11-17T08:00:00Z",
+     "px": 112.72,
+     "notional_eur": 823.34,
+     "cost_eur": 1.65,
+     "status": "voorlopig",
+     "reason_nl": "Deels verkocht: op 16-11 lag de koers op 1 van de 4 termijnen lager dan ervoor."
+    },
     {
      "symbol": "IAEX.AS",
      "name": "AEX",
@@ -1768,17 +1779,6 @@
      "cost_eur": 4.3,
      "status": "bevestigd",
      "reason_nl": "Deels verkocht: op 11-11 lag de koers op 3 van de 4 termijnen lager dan ervoor."
-    },
-    {
-     "symbol": "IAEX.AS",
-     "name": "AEX",
-     "side": "BUY",
-     "ts": "2026-11-11T08:00:00Z",
-     "px": 114.0,
-     "notional_eur": 1663.34,
-     "cost_eur": 3.33,
-     "status": "bevestigd",
-     "reason_nl": "Bijgekocht: op 10-11 lag de koers op 2 van de 4 termijnen hoger dan ervoor."
     }
    ],
    "price_series": {
@@ -3706,8 +3706,8 @@
       "px": 113.6
      },
      {
-      "t": "2026-11-17T09:08:00Z",
-      "px": 112.36
+      "t": "2026-11-17T10:59:00Z",
+      "px": 112.38
      }
     ],
     "MSFT": [
