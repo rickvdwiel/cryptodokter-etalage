@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-18T13:19:40Z",
+ "updated": "2026-11-18T14:25:31Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -1603,7 +1603,7 @@
      "entry_ts": "2026-11-05T08:00:00Z",
      "entry_px": 114.01,
      "last_px": 110.8,
-     "last_px_source": "koers 13:57",
+     "last_px_source": "koers 15:05",
      "units": 21.900213,
      "value_eur": 2426.54,
      "pnl_eur": -75.29,
@@ -3700,7 +3700,7 @@
       "px": 111.12
      },
      {
-      "t": "2026-11-18T12:57:00Z",
+      "t": "2026-11-18T14:05:00Z",
       "px": 110.8
      }
     ],
