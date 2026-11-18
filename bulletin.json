@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-11-17T06:48:45Z",
+  "generated_at": "2026-11-18T06:49:03Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "strive-koopt-251-bitcoin-na-kleinere-aankoop-een-d119ad35",
-      "title": "Strive koopt 251 Bitcoin na kleinere aankoop een week eerder",
-      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/strive-koopt-251-bitcoin-na-kleinere-aankoop-een-week-eerder/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-17T06:12:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-nvidia-cijfers-vanavond-cruciaal-v-8b959271",
-      "title": "Crypto Wekker: Nvidia-cijfers vanavond cruciaal voor Bitcoin koers",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-houdt-stand-rond-65-000-dollar-in-aanloop-naar-cijfers-nvidia/",
-      "source": "Newsbit",
-      "published_at": "2026-11-17T06:07:12Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "clients-forgive-a-50-60-correction-but-not-a-hac-67e41500",
-      "title": "Clients forgive a 50-60% correction but not a hack, says Amdax founder Lucas Wensing",
-      "url": "https://cryptofocus.nl/beleggersfair/lucas-wensing-amdax-interview/",
+      "id": "binance-handled-its-hack-communication-perfectly-b7be72f6",
+      "title": "Binance handled its hack communication perfectly, says Cryptic founder Arya Nedaee",
+      "url": "https://cryptofocus.nl/beleggersfair/arya-nedaee-cryptic-interview/",
       "source": "CryptoFocus",
-      "published_at": "2026-11-17T06:05:53Z",
+      "published_at": "2026-11-18T06:01:30Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "hackers-inject-credit-card-crypto-stealing-malwa-e18018ca",
-      "title": "Hackers inject credit card, crypto-stealing malware into 178 major websites",
-      "url": "https://cointelegraph.com/news/hackers-inject-malware-into-178-major-websites",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-17T01:02:05Z",
+      "id": "crypto-wekker-bitcoin-mist-nvidia-feestje-vanavo-1027563d",
+      "title": "Crypto wekker: Bitcoin mist Nvidia-feestje, vanavond volgt nieuwe test",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-mist-nvidia-feestje-vanavond-volgt-nieuwe-test/",
+      "source": "Newsbit",
+      "published_at": "2026-11-18T05:59:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-wallet-maker-trezor-says-customer-data-w-39776af8",
-      "title": "Bitcoin Wallet Maker Trezor Says Customer Data Was Exposed Again",
-      "url": "https://decrypt.co/383397/bitcoin-wallet-trezor-third-party-breach-customer-data",
+      "id": "vermogensbeheerder-lanceert-fonds-voor-stablecoi-d1fffbf8",
+      "title": "Vermogensbeheerder lanceert fonds voor stablecoinreserves op Ethereum",
+      "url": "https://www.crypto-insiders.nl/nieuws/ethereum/vermogensbeheerder-lanceert-fonds-voor-stablecoinreserves-op-ethereum/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-18T05:03:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "world-bank-taps-circle-and-citi-to-test-stableco-beab8c8f",
+      "title": "World Bank Taps Circle and Citi to Test Stablecoins for Development Payments",
+      "url": "https://decrypt.co/383485/world-bank-circle-citi-test-stablecoins-development-payments",
       "source": "Decrypt",
-      "published_at": "2026-11-16T22:18:03Z",
+      "published_at": "2026-11-17T20:56:03Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "fincen-bars-u-s-institutions-from-moving-funds-f-29b1fcf2",
-      "title": "FinCEN Bars U.S. Institutions From Moving Funds for MEXC Global",
-      "url": "https://www.chainalysis.com/blog/fincen-mexc-global-november-2026/",
-      "source": "Chainalysis",
-      "published_at": "2026-11-13T15:19:15Z",
-      "category": "outlook",
-      "sentiment": "neutral"
+      "id": "eastern-europe-crypto-flows-fall-7-9-as-ukraine--c12eccb7",
+      "title": "Eastern Europe crypto flows fall 7.9% as Ukraine draws $12B in stablecoins",
+      "url": "https://cointelegraph.com/news/eastern-europe-crypto-activity-decline-chainalysis",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-17T20:05:04Z",
+      "category": "news",
+      "sentiment": null
     },
     {
-      "id": "bitcoin-optech-newsletter-431-52557dfc",
-      "title": "Bitcoin Optech Newsletter #431",
-      "url": "https://bitcoinops.org/en/newsletters/2026/11/13/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-11-13T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "countdown-to-ant-what-the-pre-ipo-perps-markets--c82dd6e8",
-      "title": "Countdown to ANT: What the Pre-IPO Perps Markets Say About Anthropic’s IPO",
-      "url": "https://coinmetrics.substack.com/p/countdown-to-ant-what-the-pre-ipo",
+      "id": "following-the-funding-the-shift-towards-the-equi-35259f1c",
+      "title": "Following the Funding: The Shift Towards the Equity Basis Trade",
+      "url": "https://coinmetrics.substack.com/p/following-the-funding-the-shift-towards",
       "source": "Coin Metrics",
-      "published_at": "2026-11-10T17:14:31Z",
+      "published_at": "2026-11-17T19:45:33Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "refugees-atms-and-tax-shifts-what-s-driving-cryp-8ac294e7",
+      "title": "Refugees, ATMs, and Tax Shifts: What’s Driving Crypto in Eastern Europe",
+      "url": "https://www.chainalysis.com/blog/eastern-europe-crypto-adoption-2026/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-17T13:55:51Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "bitcoin-optech-newsletter-431-recap-podcast-f8dc1147",
+      "title": "Bitcoin Optech Newsletter #431 Recap Podcast",
+      "url": "https://bitcoinops.org/en/podcast/2026/11/17/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-11-17T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
