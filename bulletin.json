@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-11-18T06:49:03Z",
+  "generated_at": "2026-11-19T06:43:43Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "binance-handled-its-hack-communication-perfectly-b7be72f6",
-      "title": "Binance handled its hack communication perfectly, says Cryptic founder Arya Nedaee",
-      "url": "https://cryptofocus.nl/beleggersfair/arya-nedaee-cryptic-interview/",
+      "id": "vs-pakt-cryptofraude-aan-met-nieuw-centrum-db80a2fc",
+      "title": "VS pakt cryptofraude aan met nieuw centrum",
+      "url": "https://nieuws.crypto.nl/markt-nieuws/vs-pakt-cryptofraude-aan-met-nieuw-centrum/",
+      "source": "Crypto-NL",
+      "published_at": "2026-11-19T06:40:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "crypto-s-final-shakeout-then-a-bullish-2027-and--006a1ecd",
+      "title": "Crypto’s final shakeout, then a bullish 2027 and 2028, says Elliott Wave trader Elroy Heisterkamp",
+      "url": "https://cryptofocus.nl/beleggersfair/elroy-heisterkamp-daytradingcommunity-interview/",
       "source": "CryptoFocus",
-      "published_at": "2026-11-18T06:01:30Z",
+      "published_at": "2026-11-19T06:08:59Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-wekker-bitcoin-mist-nvidia-feestje-vanavo-1027563d",
-      "title": "Crypto wekker: Bitcoin mist Nvidia-feestje, vanavond volgt nieuwe test",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-mist-nvidia-feestje-vanavond-volgt-nieuwe-test/",
+      "id": "crypto-wekker-sterke-dollar-drukt-bitcoin-naar-6-743f1014",
+      "title": "Crypto Wekker: Sterke dollar drukt Bitcoin naar 63.300 dollar",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-wederom-2-lager-door-sterke-amerikaanse-dollar/",
       "source": "Newsbit",
-      "published_at": "2026-11-18T05:59:00Z",
+      "published_at": "2026-11-19T06:01:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "vermogensbeheerder-lanceert-fonds-voor-stablecoi-d1fffbf8",
-      "title": "Vermogensbeheerder lanceert fonds voor stablecoinreserves op Ethereum",
-      "url": "https://www.crypto-insiders.nl/nieuws/ethereum/vermogensbeheerder-lanceert-fonds-voor-stablecoinreserves-op-ethereum/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-18T05:03:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "world-bank-taps-circle-and-citi-to-test-stableco-beab8c8f",
-      "title": "World Bank Taps Circle and Citi to Test Stablecoins for Development Payments",
-      "url": "https://decrypt.co/383485/world-bank-circle-citi-test-stablecoins-development-payments",
-      "source": "Decrypt",
-      "published_at": "2026-11-17T20:56:03Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "eastern-europe-crypto-flows-fall-7-9-as-ukraine--c12eccb7",
-      "title": "Eastern Europe crypto flows fall 7.9% as Ukraine draws $12B in stablecoins",
-      "url": "https://cointelegraph.com/news/eastern-europe-crypto-activity-decline-chainalysis",
+      "id": "bitcoin-carry-trades-could-beat-treasury-bills-i-24457f9e",
+      "title": "Bitcoin carry trades could beat Treasury bills in 2027, Sygnum predicts",
+      "url": "https://cointelegraph.com/markets/sygnum-bitcoin-carry-trades-2027",
       "source": "Cointelegraph",
-      "published_at": "2026-11-17T20:05:04Z",
+      "published_at": "2026-11-19T06:00:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "ledger-confirms-tampered-bitcoin-wallets-in-berl-5ebe6a69",
+      "title": "Ledger Confirms Tampered Bitcoin Wallets in Berlin as Spy Implant Probe Spreads Beyond Asia",
+      "url": "https://decrypt.co/383586/ledger-confirms-tampered-bitcoin-wallets-berlin-spreads-beyond-asia",
+      "source": "Decrypt",
+      "published_at": "2026-11-18T22:16:02Z",
       "category": "news",
       "sentiment": null
     },
