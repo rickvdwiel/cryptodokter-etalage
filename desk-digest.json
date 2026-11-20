@@ -1,42 +1,42 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-19T16:56:00+01:00",
-  "digest_date": "2026-11-19",
-  "measured_at": "2026-11-19T16:51:00+01:00",
-  "window_4h_utc": "11:51-15:51",
+  "updated_at": "2026-11-20T16:55:00+01:00",
+  "digest_date": "2026-11-20",
+  "measured_at": "2026-11-20T16:48:00+01:00",
+  "window_4h_utc": "11:48-15:48",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u 4 trades PF 0,54 −€476; 8u 6 trades PF 0,68; 72u 22 trades PF 0,24 −€6.118; seizoen s2 −€78.467, totaal €21.533",
+  "headline": "Desk-digest: 4u en 8u geen exits; 72u 23 trades PF 0,22 −€5.858; week ma–vr 34 trades PF 0,29 −€8.003; seizoen s2 −€80.198, totaal €19.802",
   "metrics_4h": {
-    "exits": 4,
-    "winrate_pct": 25.0,
-    "profit_factor": 0.539,
-    "expectancy_eur": -118.94,
-    "net_eur": -475.77,
-    "fees_eur": 38.86,
-    "fees_per_hour_eur": 9.72
+    "exits": 0,
+    "winrate_pct": null,
+    "profit_factor": null,
+    "expectancy_eur": null,
+    "net_eur": 0,
+    "fees_eur": 0,
+    "fees_per_hour_eur": 0
   },
   "metrics_8h": {
-    "exits": 6,
-    "winrate_pct": 33.3,
-    "profit_factor": 0.68,
-    "expectancy_eur": -64.38,
-    "net_eur": -386.29,
-    "fees_eur": 59.11
+    "exits": 0,
+    "winrate_pct": null,
+    "profit_factor": null,
+    "expectancy_eur": null,
+    "net_eur": 0,
+    "fees_eur": 0
   },
   "metrics_season": {
-    "exits": 929,
+    "exits": 935,
     "winrate_pct": 36.7,
-    "profit_factor": 0.603,
-    "net_eur": -78467.07,
-    "fees_eur": 9107.43,
-    "start_eur": 100000.0,
-    "total_eur": 21532.93
+    "profit_factor": 0.599,
+    "net_eur": -80197.93,
+    "fees_eur": 9154.39,
+    "start_eur": 100000,
+    "total_eur": 19802.07
   },
   "summary_nl": [
-    "Laatste 4u: 4 trades, WR 25%, PF 0,54, −€476, fees €39 (€9,7/u). 8u: 6 trades, PF 0,68. 72u: 22 trades, PF 0,24, −€6.118, fees €205.",
-    "Sinds seizoensstart s2 (€100.000): 929 trades, PF 0,60, fees €9.107; totaal €21.533 (−€78.467). Eén web.server (pid 10070), laatste tick 16:30 NL. Paper-only."
+    "Laatste 4u en 8u: geen exits, geen fees. 72u: 23 trades, WR 22%, PF 0,22, −€5.858, fees €207. Week ma–vr: 34 trades, PF 0,29, −€8.003, fees €306.",
+    "Sinds seizoensstart s2 (€100.000): 935 trades, PF 0,60, fees €9.154; totaal €19.802 (−€80.198). Eén web.server (pid 9230), laatste tick 16:47 NL, 0 open. Paper-only."
   ]
 }
