@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-19T06:43:43Z",
+  "generated_at": "2026-11-20T06:46:37Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "vs-pakt-cryptofraude-aan-met-nieuw-centrum-db80a2fc",
-      "title": "VS pakt cryptofraude aan met nieuw centrum",
-      "url": "https://nieuws.crypto.nl/markt-nieuws/vs-pakt-cryptofraude-aan-met-nieuw-centrum/",
-      "source": "Crypto-NL",
-      "published_at": "2026-11-19T06:40:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-s-final-shakeout-then-a-bullish-2027-and--006a1ecd",
-      "title": "Crypto’s final shakeout, then a bullish 2027 and 2028, says Elliott Wave trader Elroy Heisterkamp",
-      "url": "https://cryptofocus.nl/beleggersfair/elroy-heisterkamp-daytradingcommunity-interview/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-19T06:08:59Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "crypto-wekker-sterke-dollar-drukt-bitcoin-naar-6-743f1014",
-      "title": "Crypto Wekker: Sterke dollar drukt Bitcoin naar 63.300 dollar",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-wederom-2-lager-door-sterke-amerikaanse-dollar/",
+      "id": "crypto-wekker-bitcoin-keldert-richting-60-000-zo-c04d14b0",
+      "title": "Crypto wekker: Bitcoin keldert richting $60.000, zorgen nemen toe",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-weer-2-onderuit-en-op-cruciaal-niveau/",
       "source": "Newsbit",
-      "published_at": "2026-11-19T06:01:00Z",
+      "published_at": "2026-11-20T06:05:19Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "bitcoin-carry-trades-could-beat-treasury-bills-i-24457f9e",
-      "title": "Bitcoin carry trades could beat Treasury bills in 2027, Sygnum predicts",
-      "url": "https://cointelegraph.com/markets/sygnum-bitcoin-carry-trades-2027",
+      "id": "tradfi-and-crypto-will-stop-being-two-worlds-say-c9a70d95",
+      "title": "TradFi and crypto will stop being two worlds, says BeursInside founder Zita Chengadu",
+      "url": "https://cryptofocus.nl/beleggersfair/zita-chengadu-beursinside-interview/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-20T04:58:28Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "iosco-waarschuwt-voor-quantumdreiging-bitcoin-mi-104d2404",
+      "title": "IOSCO waarschuwt voor quantumdreiging, bitcoin misschien het kwetsbaarst",
+      "url": "https://bitcoinmagazine.nl/bitcoin-nieuws/iosco-waarschuwt-voor-quantumdreiging-bitcoin-misschien-het-kwetsbaarst",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-20T04:25:19Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "institutions-pile-back-into-us-bitcoin-etfs-in-q-97690477",
+      "title": "Institutions pile back into US Bitcoin ETFs in Q3 after selling streak",
+      "url": "https://cointelegraph.com/markets/institutional-bitcoin-etf-holdings-clock-record-quarter-after-selling-streak",
       "source": "Cointelegraph",
-      "published_at": "2026-11-19T06:00:00Z",
+      "published_at": "2026-11-20T03:33:22Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "ledger-confirms-tampered-bitcoin-wallets-in-berl-5ebe6a69",
-      "title": "Ledger Confirms Tampered Bitcoin Wallets in Berlin as Spy Implant Probe Spreads Beyond Asia",
-      "url": "https://decrypt.co/383586/ledger-confirms-tampered-bitcoin-wallets-berlin-spreads-beyond-asia",
+      "id": "citi-says-customers-are-responsible-when-ai-bank-69ac885f",
+      "title": "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue—Even After a Hack",
+      "url": "https://decrypt.co/383677/citi-customers-responsible-ai-banking-agents-rogue-hack",
       "source": "Decrypt",
-      "published_at": "2026-11-18T22:16:02Z",
+      "published_at": "2026-11-19T22:36:02Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "how-chain-our-ai-workspace-helps-investigators-f-2923265a",
+      "title": "How Chain, Our AI Workspace, Helps Investigators Fight Crime",
+      "url": "https://www.chainalysis.com/blog/how-chain-our-ai-workspace-helps-investigators-fight-crime/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-19T15:08:06Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "following-the-funding-the-shift-towards-the-equi-35259f1c",
@@ -53,15 +62,6 @@
       "url": "https://coinmetrics.substack.com/p/following-the-funding-the-shift-towards",
       "source": "Coin Metrics",
       "published_at": "2026-11-17T19:45:33Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "refugees-atms-and-tax-shifts-what-s-driving-cryp-8ac294e7",
-      "title": "Refugees, ATMs, and Tax Shifts: What’s Driving Crypto in Eastern Europe",
-      "url": "https://www.chainalysis.com/blog/eastern-europe-crypto-adoption-2026/",
-      "source": "Chainalysis",
-      "published_at": "2026-11-17T13:55:51Z",
       "category": "outlook",
       "sentiment": "neutral"
     },
