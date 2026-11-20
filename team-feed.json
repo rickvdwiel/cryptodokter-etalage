@@ -1,6 +1,18 @@
 {
- "updated": "2026-11-16T21:26:33Z",
+ "updated": "2026-11-20T02:02:20Z",
  "items": [
+  {
+   "ts": "2026-11-20T02:02:20Z",
+   "from": "ops",
+   "to": "designer",
+   "text_nl": "Ops zette de rustigere tabwissel en het nieuwe beeld voor Aandelen live, Designer kijkt het na."
+  },
+  {
+   "ts": "2026-11-20T01:55:50Z",
+   "from": "ops",
+   "to": "trading-desk",
+   "text_nl": "Ops vroeg Trading Desk om te bekijken of de jacht op kleine nieuwe munten rustiger moet."
+  },
   {
    "ts": "2026-11-16T21:26:33Z",
    "from": "ops",
