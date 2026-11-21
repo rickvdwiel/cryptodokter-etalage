@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-20T06:46:37Z",
+  "generated_at": "2026-11-21T06:46:00Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-bitcoin-keldert-richting-60-000-zo-c04d14b0",
-      "title": "Crypto wekker: Bitcoin keldert richting $60.000, zorgen nemen toe",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-koers-weer-2-onderuit-en-op-cruciaal-niveau/",
-      "source": "Newsbit",
-      "published_at": "2026-11-20T06:05:19Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "tradfi-and-crypto-will-stop-being-two-worlds-say-c9a70d95",
-      "title": "TradFi and crypto will stop being two worlds, says BeursInside founder Zita Chengadu",
-      "url": "https://cryptofocus.nl/beleggersfair/zita-chengadu-beursinside-interview/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-20T04:58:28Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "iosco-waarschuwt-voor-quantumdreiging-bitcoin-mi-104d2404",
-      "title": "IOSCO waarschuwt voor quantumdreiging, bitcoin misschien het kwetsbaarst",
-      "url": "https://bitcoinmagazine.nl/bitcoin-nieuws/iosco-waarschuwt-voor-quantumdreiging-bitcoin-misschien-het-kwetsbaarst",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-11-20T04:25:19Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "institutions-pile-back-into-us-bitcoin-etfs-in-q-97690477",
-      "title": "Institutions pile back into US Bitcoin ETFs in Q3 after selling streak",
-      "url": "https://cointelegraph.com/markets/institutional-bitcoin-etf-holdings-clock-record-quarter-after-selling-streak",
+      "id": "hong-kong-pushes-to-bring-crypto-custodians-advi-3a1394a1",
+      "title": "Hong Kong pushes to bring crypto custodians, advisers under licensing rules",
+      "url": "https://cointelegraph.com/news/hong-kong-crypto-custody-advisory-licensing-bill",
       "source": "Cointelegraph",
-      "published_at": "2026-11-20T03:33:22Z",
+      "published_at": "2026-11-21T05:40:35Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "citi-says-customers-are-responsible-when-ai-bank-69ac885f",
-      "title": "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue—Even After a Hack",
-      "url": "https://decrypt.co/383677/citi-customers-responsible-ai-banking-agents-rogue-hack",
-      "source": "Decrypt",
-      "published_at": "2026-11-19T22:36:02Z",
+      "id": "a-flat-index-can-leave-a-daily-2x-etf-lower-fb118fbe",
+      "title": "A flat index can leave a daily 2x ETF lower",
+      "url": "https://cryptofocus.nl/nieuws/tradfi/a-flat-index-can-leave-a-daily-2x-etf-lower/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-20T22:31:15Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "adviseurs-en-platforms-beheren-41-van-gemelde-bi-5ca593c0",
+      "title": "Adviseurs en platforms beheren 41% van gemelde bitcoinfondsposities",
+      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/adviseurs-en-platforms-beheren-41-van-gemelde-bitcoinfondsposities/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-20T21:13:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "nvidia-shares-sink-to-52-week-low-after-report-s-c578c092",
+      "title": "Nvidia Shares Sink to 52-Week Low After Report SEC Is Probing Accounting",
+      "url": "https://decrypt.co/383744/nvidia-shares-sink-52-week-low-sec-probing-accounting",
+      "source": "Decrypt",
+      "published_at": "2026-11-20T20:36:54Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "nvidia-aandeel-crasht-13-na-nieuws-over-sec-onde-df042a4f",
+      "title": "Nvidia aandeel crasht 13% na nieuws over SEC-onderzoek",
+      "url": "https://newsbit.nl/nvidia-aandeel-crasht-13-na-nieuws-over-sec-onderzoek/",
+      "source": "Newsbit",
+      "published_at": "2026-11-20T20:23:26Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-optech-newsletter-432-3734e8a0",
+      "title": "Bitcoin Optech Newsletter #432",
+      "url": "https://bitcoinops.org/en/newsletters/2026/11/20/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-11-20T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "how-chain-our-ai-workspace-helps-investigators-f-2923265a",
@@ -62,15 +71,6 @@
       "url": "https://coinmetrics.substack.com/p/following-the-funding-the-shift-towards",
       "source": "Coin Metrics",
       "published_at": "2026-11-17T19:45:33Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-431-recap-podcast-f8dc1147",
-      "title": "Bitcoin Optech Newsletter #431 Recap Podcast",
-      "url": "https://bitcoinops.org/en/podcast/2026/11/17/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-11-17T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
