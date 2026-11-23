@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-20T22:20:00Z",
+ "updated": "2026-11-23T08:00:09Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -12,7 +12,7 @@
    "n_trades": 7,
    "n_trades_week": 0,
    "best_trades_week": [],
-   "week_label": "week 47 (16–22 nov)",
+   "week_label": "week 48 (23–29 nov)",
    "cash_eur": 29462.53,
    "costs_eur": 51.02,
    "open_positions": [],
@@ -1584,28 +1584,9 @@
    "total_eur": 66276.53,
    "result_eur": -3723.47,
    "n_trades": 16,
-   "n_trades_week": 3,
-   "best_trades_week": [
-    {
-     "symbol": "SPY",
-     "pnl_eur": -69.67,
-     "ts": "2026-11-17T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "GOOGL",
-     "pnl_eur": -130.49,
-     "ts": "2026-11-19T00:00:00Z",
-     "exit_kind": "signal_exit"
-    },
-    {
-     "symbol": "IAEX.AS",
-     "pnl_eur": -233.38,
-     "ts": "2026-11-19T00:00:00Z",
-     "exit_kind": "signal_exit"
-    }
-   ],
-   "week_label": "week 47 (16–22 nov)",
+   "n_trades_week": 0,
+   "best_trades_week": [],
+   "week_label": "week 48 (23–29 nov)",
    "cash_eur": 55998.19,
    "costs_eur": 269.9,
    "open_positions": [
