@@ -1,7 +1,7 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-23T13:24:40Z",
+ "updated": "2026-11-23T14:20:21Z",
  "markets": {
   "commodities": {
    "mode": "paper",
@@ -3667,8 +3667,8 @@
       "px": 106.72
      },
      {
-      "t": "2026-11-23T13:09:00Z",
-      "px": 108.0
+      "t": "2026-11-23T14:02:00Z",
+      "px": 108.8
      }
     ],
     "MSFT": [
