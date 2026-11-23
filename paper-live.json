@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-11-23T14:30:33+00:00",
+  "updated": "2026-11-23T15:07:01+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 5860.07,
+    "cash_eur": 5000.0,
     "banked_eur": 12378.54,
-    "equity_approx": 5860.07,
-    "total": 18238.61,
+    "equity_approx": 5857.92,
+    "total": 18236.46,
     "realized_pnl_eur": -81761.39,
-    "trades": 2120,
-    "open_positions": 0,
+    "trades": 2121,
+    "open_positions": 1,
     "rendement_pct": -81.8
   },
   "tape": [
+    {
+      "t": "2026-11-23T15:23:08+00:00",
+      "side": "SELL",
+      "symbol": "JACKET",
+      "bedrag_eur": 171.01,
+      "prijs_eur": 0.0001797583,
+      "pnl_eur": -689.06,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-11-23T15:07:01+00:00",
+      "side": "BUY",
+      "symbol": "JACKET",
+      "bedrag_eur": 860.07,
+      "prijs_eur": 0.0008995546,
+      "reason": "instap"
+    },
     {
       "t": "2026-11-23T06:30:13+00:00",
       "side": "SELL",
@@ -211,42 +228,9 @@
       "prijs_eur": 0.0016133333,
       "pnl_eur": 462.75,
       "reason": "winst genomen"
-    },
-    {
-      "t": "2026-11-21T00:27:31+00:00",
-      "side": "BUY",
-      "symbol": "JENSEN",
-      "bedrag_eur": 2000.0,
-      "prijs_eur": 0.0013036481,
-      "reason": "instap"
-    },
-    {
-      "t": "2026-11-20T21:20:04+00:00",
-      "side": "SELL",
-      "symbol": "BTC",
-      "bedrag_eur": 1795.49,
-      "prijs_eur": 0.00112475,
-      "pnl_eur": -204.51,
-      "reason": "stop-loss"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-11-23T06:52:39+00:00",
-      "total": 18238.61
-    },
-    {
-      "t": "2026-11-23T06:53:57+00:00",
-      "total": 18238.61
-    },
-    {
-      "t": "2026-11-23T07:17:27+00:00",
-      "total": 18238.61
-    },
-    {
-      "t": "2026-11-23T07:18:13+00:00",
-      "total": 18238.61
-    },
     {
       "t": "2026-11-23T07:18:58+00:00",
       "total": 18238.61
@@ -470,9 +454,33 @@
     {
       "t": "2026-11-23T14:30:33+00:00",
       "total": 18238.61
+    },
+    {
+      "t": "2026-11-23T15:05:29+00:00",
+      "total": 18238.61
+    },
+    {
+      "t": "2026-11-23T15:06:15+00:00",
+      "total": 18238.61
+    },
+    {
+      "t": "2026-11-23T15:07:01+00:00",
+      "total": 18238.61
+    },
+    {
+      "t": "2026-11-23T15:07:01+00:00",
+      "total": 18236.46
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "JACKET",
+      "opened_at": "2026-11-23T15:07:01+00:00",
+      "cost_eur": 860.07,
+      "entry_price": 0.0008995546296296296,
+      "qty": 953714.3170540154
+    }
+  ],
   "rendement_pct": -81.8,
   "best_trades_week": [
     {
@@ -482,8 +490,8 @@
       "exit_kind": "trailing"
     }
   ],
-  "n_trades_week": 3,
-  "week_pnl_eur": -522.35,
+  "n_trades_week": 4,
+  "week_pnl_eur": -1211.41,
   "week_label": "week 48 (23–29 nov)",
   "markets_live": true,
   "team_feed": true
