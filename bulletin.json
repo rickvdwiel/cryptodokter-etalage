@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-22T06:43:06Z",
+  "generated_at": "2026-11-23T06:41:19Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "bitcoin-koers-duikt-onder-60-000-na-zware-beursv-20785c7f",
-      "title": "Bitcoin koers duikt onder $60.000 na zware beursverliezen",
-      "url": "https://nieuws.crypto.nl/bitcoin/bitcoin-koers-duikt-onder-60-000-na-zware-beursverliezen/",
+      "id": "cryptobeurzen-stoppen-cyber-transacties-na-mogel-7af3f6c9",
+      "title": "Cryptobeurzen stoppen CYBER-transacties na mogelijke hack",
+      "url": "https://nieuws.crypto.nl/altcoin-nieuws/cryptobeurzen-stoppen-cyber-transacties-na-mogelijke-hack/",
       "source": "Crypto-NL",
-      "published_at": "2026-11-22T06:00:00Z",
+      "published_at": "2026-11-23T06:40:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "chainflip-confirms-12m-hack-offers-attacker-10-b-6fbdb359",
-      "title": "Chainflip confirms $12M hack, offers attacker 10% bounty",
-      "url": "https://cointelegraph.com/news/chainflip-12m-crypto-hack-10-percent-bounty",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-22T05:28:43Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoin-veert-op-na-cryptocrash-maar-maandverlie-ffe85589",
-      "title": "Bitcoin veert op na cryptocrash, maar maandverlies blijft bijna 26 procent",
-      "url": "https://cryptofocus.nl/nieuws/crypto/bitcoin-altcoins-cryptocrash-herstel-21-november-2026/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-21T22:12:06Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitcoinbezit-strategy-bijna-14-miljard-minder-wa-f0f5028f",
-      "title": "Bitcoinbezit Strategy bijna $14 miljard minder waard dan aankoopprijs",
-      "url": "https://www.crypto-insiders.nl/nieuws/bitcoin/bitcoinbezit-strategy-bijna-14-miljard-minder-waard-dan-aankoopprijs/",
+      "id": "bitcoinminer-bitfufu-ziet-omzet-dalen-ondanks-ho-ae9e5169",
+      "title": "Bitcoinminer BitFuFu ziet omzet dalen ondanks hogere productie",
+      "url": "https://www.crypto-insiders.nl/nieuws/mining/bitcoinminer-bitfufu-ziet-omzet-dalen-ondanks-hogere-productie/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-21T21:01:00Z",
+      "published_at": "2026-11-23T06:17:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "gta-6-leaker-dangles-a-pc-port-behind-a-15-milli-77475009",
-      "title": "GTA 6 Leaker Dangles a PC Port Behind a $15 Million Crypto Pump",
-      "url": "https://decrypt.co/383756/gta-6-leaker-dangles-pc-port-15-million-crypto-pump",
-      "source": "Decrypt",
-      "published_at": "2026-11-21T18:01:02Z",
+      "id": "crypto-wekker-bitcoin-terug-op-61-500-dollar-hou-86a7680c",
+      "title": "Crypto wekker: Bitcoin terug op 61.500 dollar, houdt herstel stand?",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-crasht-naar-nieuwe-bodem-wat-nu/",
+      "source": "Newsbit",
+      "published_at": "2026-11-23T06:02:00Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "here-s-what-happened-in-crypto-today-dbbfea56",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-23T06:00:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "half-of-wallets-on-trump-s-dinner-list-got-token-fc1ceebc",
+      "title": "Half of wallets on Trump’s dinner list got tokens from non-US exchanges",
+      "url": "https://cointelegraph.com/news/half-wallets-trumps-dinner-list-got-tokens-from-non-us-exchanges?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-23T00:53:49Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "why-do-math-when-ai-can-1fdc0bc3",
+      "title": "Why do math when AI can?",
+      "url": "https://a16zfrontier.substack.com/p/why-do-math-when-ai-can",
+      "source": "a16z crypto",
+      "published_at": "2026-11-21T16:17:43Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "bitcoin-optech-newsletter-432-3734e8a0",
@@ -62,15 +71,6 @@
       "url": "https://www.chainalysis.com/blog/how-chain-our-ai-workspace-helps-investigators-fight-crime/",
       "source": "Chainalysis",
       "published_at": "2026-11-19T15:08:06Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "following-the-funding-the-shift-towards-the-equi-35259f1c",
-      "title": "Following the Funding: The Shift Towards the Equity Basis Trade",
-      "url": "https://coinmetrics.substack.com/p/following-the-funding-the-shift-towards",
-      "source": "Coin Metrics",
-      "published_at": "2026-11-17T19:45:33Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
