@@ -1,41 +1,42 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-23T16:56:00+01:00",
-  "digest_date": "2026-11-23",
-  "measured_at": "2026-11-23T16:53:00+01:00",
-  "window_4h_utc": "11:53-15:53",
+  "updated_at": "2026-11-24T16:55:00+01:00",
+  "digest_date": "2026-11-24",
+  "measured_at": "2026-11-24T16:52:00+01:00",
+  "window_4h_utc": "11:52-15:52",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u=8u 2 trades PF 0,01 −€684 (JACKET stop-loss −79,8% = −€689); 72u 13 trades PF 0,30 −€2.248; seizoen s2 −€82.446, totaal €17.554",
+  "headline": "Desk-digest: 4u=8u 1 trade (SBF take-profit +€18,54) PF n.v.t. fees €0,54; 72u 16 trades PF 0,19 −€933; seizoen s2 −€82.490, totaal €17.510",
   "metrics_4h": {
-    "exits": 2,
-    "winrate_pct": 50,
-    "profit_factor": 0.007,
-    "expectancy_eur": -342.2,
-    "net_eur": -684.39,
-    "fees_eur": 3.45,
-    "fees_per_hour_eur": 0.86
+    "exits": 1,
+    "winrate_pct": 100,
+    "profit_factor": null,
+    "expectancy_eur": 18.54,
+    "net_eur": 18.55,
+    "fees_eur": 0.54,
+    "fees_per_hour_eur": 0.14
   },
   "metrics_8h": {
-    "exits": 2,
-    "winrate_pct": 50,
-    "profit_factor": 0.007,
-    "expectancy_eur": -342.2,
-    "net_eur": -684.39,
-    "fees_eur": 3.45
+    "exits": 1,
+    "winrate_pct": 100,
+    "profit_factor": null,
+    "expectancy_eur": 18.54,
+    "net_eur": 18.55,
+    "fees_eur": 0.54
   },
   "metrics_season": {
-    "exits": 948,
+    "exits": 952,
     "winrate_pct": 36.8,
     "profit_factor": 0.594,
-    "net_eur": -82445.78,
+    "net_eur": -82490.15,
     "fees_eur": 9234.21,
     "start_eur": 100000,
-    "total_eur": 17554.22
+    "total_eur": 17509.85,
+    "note": "PF/fees van gisteren; niet herberekend"
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 948 trades, PF 0,59, fees €9.234; totaal €17.554 (−€82.446). Eén web.server (pid 9230), laatste tick 16:53 NL, 0 open. Paper-only."
+    "Sinds seizoensstart s2 (€100.000): 952 trades, totaal €17.510 (−€82.490). Eén web.server (pid 9230), laatste tick 16:51 NL, 0 open. Paper-only."
   ]
 }

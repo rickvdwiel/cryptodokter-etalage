@@ -1,19 +1,36 @@
 {
   "ok": true,
   "paper_only": true,
-  "updated": "2026-11-24T15:45:08+00:00",
+  "updated": "2026-11-24T16:07:12+00:00",
   "kpis": {
     "start_eur": 100000.0,
-    "cash_eur": 5117.28,
+    "cash_eur": 5096.21,
     "banked_eur": 12392.57,
-    "equity_approx": 5117.28,
-    "total": 17509.85,
-    "realized_pnl_eur": -82490.15,
-    "trades": 2139,
+    "equity_approx": 5096.21,
+    "total": 17488.78,
+    "realized_pnl_eur": -82511.22,
+    "trades": 2141,
     "open_positions": 0,
     "rendement_pct": -82.5
   },
   "tape": [
+    {
+      "t": "2026-11-24T16:07:12+00:00",
+      "side": "SELL",
+      "symbol": "JIMMY",
+      "bedrag_eur": 96.21,
+      "prijs_eur": 9.607e-07,
+      "pnl_eur": -21.07,
+      "reason": "stop-loss"
+    },
+    {
+      "t": "2026-11-24T15:53:13+00:00",
+      "side": "BUY",
+      "symbol": "JIMMY",
+      "bedrag_eur": 117.28,
+      "prijs_eur": 1.1652e-06,
+      "reason": "instap"
+    },
     {
       "t": "2026-11-24T14:28:37+00:00",
       "side": "SELL",
@@ -211,50 +228,9 @@
       "prijs_eur": 0.0002093667,
       "pnl_eur": -212.94,
       "reason": "stop-loss"
-    },
-    {
-      "t": "2026-11-23T02:24:40+00:00",
-      "side": "PARTIAL",
-      "symbol": "HUSS",
-      "bedrag_eur": 497.55,
-      "prijs_eur": 0.0003372417,
-      "pnl_eur": 14.44,
-      "reason": "deels winst genomen"
-    },
-    {
-      "t": "2026-11-23T02:23:55+00:00",
-      "side": "BUY",
-      "symbol": "HUSS",
-      "bedrag_eur": 1073.57,
-      "prijs_eur": 0.0003258185,
-      "reason": "instap"
     }
   ],
   "equity_points": [
-    {
-      "t": "2026-11-24T07:58:17+00:00",
-      "total": 17491.3
-    },
-    {
-      "t": "2026-11-24T07:59:03+00:00",
-      "total": 17491.3
-    },
-    {
-      "t": "2026-11-24T07:59:48+00:00",
-      "total": 17491.3
-    },
-    {
-      "t": "2026-11-24T08:00:34+00:00",
-      "total": 17491.3
-    },
-    {
-      "t": "2026-11-24T08:01:19+00:00",
-      "total": 17491.3
-    },
-    {
-      "t": "2026-11-24T08:02:05+00:00",
-      "total": 17491.3
-    },
     {
       "t": "2026-11-24T08:02:50+00:00",
       "total": 17491.3
@@ -470,6 +446,30 @@
     {
       "t": "2026-11-24T15:45:08+00:00",
       "total": 17509.85
+    },
+    {
+      "t": "2026-11-24T15:51:39+00:00",
+      "total": 17509.85
+    },
+    {
+      "t": "2026-11-24T15:52:25+00:00",
+      "total": 17509.85
+    },
+    {
+      "t": "2026-11-24T15:53:11+00:00",
+      "total": 17509.85
+    },
+    {
+      "t": "2026-11-24T15:53:13+00:00",
+      "total": 17509.56
+    },
+    {
+      "t": "2026-11-24T16:07:12+00:00",
+      "total": 17488.78
+    },
+    {
+      "t": "2026-11-24T16:07:12+00:00",
+      "total": 17488.78
     }
   ],
   "open_positions": [],
@@ -500,8 +500,8 @@
       "exit_kind": "trailing"
     }
   ],
-  "n_trades_week": 11,
-  "week_pnl_eur": -1251.11,
+  "n_trades_week": 12,
+  "week_pnl_eur": -1272.19,
   "week_label": "week 48 (23–29 nov)",
   "markets_live": true,
   "team_feed": true
