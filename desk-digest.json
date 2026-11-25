@@ -1,42 +1,41 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-24T16:55:00+01:00",
-  "digest_date": "2026-11-24",
-  "measured_at": "2026-11-24T16:52:00+01:00",
-  "window_4h_utc": "11:52-15:52",
+  "updated_at": "2026-11-25T16:55:00+01:00",
+  "digest_date": "2026-11-25",
+  "measured_at": "2026-11-25T16:50:00+01:00",
+  "window_4h_utc": "11:47-15:47",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u=8u 1 trade (SBF take-profit +€18,54) PF n.v.t. fees €0,54; 72u 16 trades PF 0,19 −€933; seizoen s2 −€82.490, totaal €17.510",
+  "headline": "Desk-digest: 4u=8u 0 trades, fees €0; 72u 15 trades PF 0,08 −€1.281 (fees €25); seizoen s2 −€82.520, totaal €17.480",
   "metrics_4h": {
-    "exits": 1,
-    "winrate_pct": 100,
+    "exits": 0,
+    "winrate_pct": null,
     "profit_factor": null,
-    "expectancy_eur": 18.54,
-    "net_eur": 18.55,
-    "fees_eur": 0.54,
-    "fees_per_hour_eur": 0.14
+    "expectancy_eur": null,
+    "net_eur": 0,
+    "fees_eur": 0,
+    "fees_per_hour_eur": 0
   },
   "metrics_8h": {
-    "exits": 1,
-    "winrate_pct": 100,
+    "exits": 0,
+    "winrate_pct": null,
     "profit_factor": null,
-    "expectancy_eur": 18.54,
-    "net_eur": 18.55,
-    "fees_eur": 0.54
+    "expectancy_eur": null,
+    "net_eur": 0,
+    "fees_eur": 0
   },
   "metrics_season": {
-    "exits": 952,
-    "winrate_pct": 36.8,
+    "exits": 958,
+    "winrate_pct": 36.7,
     "profit_factor": 0.594,
-    "net_eur": -82490.15,
-    "fees_eur": 9234.21,
+    "net_eur": -82519.84,
+    "fees_eur": 9239.81,
     "start_eur": 100000,
-    "total_eur": 17509.85,
-    "note": "PF/fees van gisteren; niet herberekend"
+    "total_eur": 17480.16
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 952 trades, totaal €17.510 (−€82.490). Eén web.server (pid 9230), laatste tick 16:51 NL, 0 open. Paper-only."
+    "Sinds seizoensstart s2 (€100.000): 958 trades, PF 0,594, totaal €17.480 (−€82.520), fees €9.240. Eén web.server (pid 9230), laatste tick 16:30 NL, 0 open. Paper-only."
   ]
 }
