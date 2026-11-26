@@ -1,51 +1,69 @@
 {
-  "generated_at": "2026-11-25T06:48:11Z",
+  "generated_at": "2026-11-26T06:47:23Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-inflatiecijfers-vandaag-kunnen-bit-e8b78097",
-      "title": "Crypto Wekker: inflatiecijfers vandaag kunnen Bitcoin maken of breken",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-weer-onder-60-000-inflatiecijfers-zetten-markt-op-scherp/",
+      "id": "crypto-wekker-houdt-bitcoin-60-000-vast-tijdens--38704ed0",
+      "title": "Crypto wekker: houdt Bitcoin $60.000 vast tijdens stille Thanksgiving?",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-herpakt-61-000-na-wilde-handelsdag/",
       "source": "Newsbit",
-      "published_at": "2026-11-25T06:01:26Z",
+      "published_at": "2026-11-26T06:06:46Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "solana-dex-velocity-halts-trading-over-bug-just--bfccba5f",
-      "title": "Solana DEX Velocity halts trading over bug just months after relaunch",
-      "url": "https://cointelegraph.com/news/solana-dex-velocity-halts-transactions-over-bug-coming-2-months-after-relaunch",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-25T05:32:55Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "bitvavo-schrapt-openstaande-orders-voor-drie-cry-80494e31",
-      "title": "Bitvavo schrapt openstaande orders voor drie cryptomunten",
-      "url": "https://www.crypto-insiders.nl/nieuws/bitvavo/bitvavo-schrapt-openstaande-orders-voor-drie-cryptomunten/",
+      "id": "cryptobeurs-bithumb-ontdekt-grotere-omvang-van-d-aeed3d05",
+      "title": "Cryptobeurs Bithumb ontdekt grotere omvang van datalek",
+      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/cryptobeurs-bithumb-ontdekt-grotere-omvang-van-datalek/",
       "source": "Crypto Insiders",
-      "published_at": "2026-11-25T05:02:00Z",
+      "published_at": "2026-11-26T06:03:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "stablecoin-supply-fell-more-than-17-billion-in-a-eb91530c",
-      "title": "Stablecoin Supply Fell More Than $17 Billion in a Month. At Past Turns, It Moved After Bitcoin",
-      "url": "https://unchainedcrypto.com/stablecoin-supply-fell-more-than-17-billion-in-a-month-at-past-turns-it-moved-after-bitcoin/",
-      "source": "Unchained",
-      "published_at": "2026-11-24T21:16:28Z",
+      "id": "uk-regulator-plans-tighter-defi-rules-citing-6-3-f54ddeed",
+      "title": "UK regulator plans tighter DeFi rules, citing $6.3B Binance hack: Report",
+      "url": "https://cointelegraph.com/news/uk-fca-defi-regulation-binance-hack",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-26T05:53:08Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "crypto-gekocht-wanneer-gelden-de-veertien-dagen--5f01184b",
-      "title": "Crypto gekocht: wanneer gelden de veertien dagen bedenktijd?",
-      "url": "https://cryptofocus.nl/nieuws/tradfi/mica-herroepingsrecht-tokens-al-tot-handel-toegelaten/",
-      "source": "CryptoFocus",
-      "published_at": "2026-11-24T18:21:15Z",
+      "id": "europol-volgt-cryptosporen-achter-miljardenindus-0f79a606",
+      "title": "Europol volgt cryptosporen achter miljardenindustrie van illegale streaming",
+      "url": "https://bitcoinmagazine.nl/nieuws/europol-traceert-26-miljoen-crypto-illegale-iptv",
+      "source": "Bitcoin Magazine NL",
+      "published_at": "2026-11-26T03:15:23Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "another-bitcoin-mining-firm-flags-hashrate-hijac-8afd69e1",
+      "title": "Another Bitcoin Mining Firm Flags 'Hashrate Hijacking' Attacks That Reroute Rewards",
+      "url": "https://decrypt.co/383999/another-bitcoin-mining-firm-hashrate-hijacking-attacks",
+      "source": "Decrypt",
+      "published_at": "2026-11-25T20:36:03Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "chainalysis-nodes-london-2026-chain-our-ai-works-145cb54b",
+      "title": "Chainalysis Nodes London 2026: Chain, Our AI Workspace ‘Tips the Scales’ for Defenders",
+      "url": "https://www.chainalysis.com/blog/nodes-london-2026-chain-ai-workspace/",
+      "source": "Chainalysis",
+      "published_at": "2026-11-25T18:32:40Z",
+      "category": "outlook",
+      "sentiment": "neutral"
+    },
+    {
+      "id": "devcon-8-india-recap-four-days-in-mumbai-and-wha-8a387a92",
+      "title": "Devcon 8 India Recap: Four Days in Mumbai, and What's Next",
+      "url": "https://blog.ethereum.org/en/2026/11/25/devcon-mumbai-wrap",
+      "source": "Ethereum Foundation",
+      "published_at": "2026-11-25T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "after-the-countdown-how-pre-ipo-perps-priced-ant-caba2d00",
@@ -53,24 +71,6 @@
       "url": "https://coinmetrics.substack.com/p/after-the-countdown-how-pre-ipo-perps",
       "source": "Coin Metrics",
       "published_at": "2026-11-24T14:01:22Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "bitcoin-optech-newsletter-432-recap-podcast-ae7eb589",
-      "title": "Bitcoin Optech Newsletter #432 Recap Podcast",
-      "url": "https://bitcoinops.org/en/podcast/2026/11/24/",
-      "source": "Bitcoin Optech",
-      "published_at": "2026-11-24T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "pqai-1-one-hash-to-rule-them-all-keccak-256-for--39cb0e8a",
-      "title": "PQAI #1: One hash to rule them all — Keccak-256 for Ethereum's post-quantum, post-AI era",
-      "url": "https://blog.ethereum.org/en/2026/11/24/pqai-1",
-      "source": "Ethereum Foundation",
-      "published_at": "2026-11-24T00:00:00Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
