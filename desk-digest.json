@@ -1,14 +1,14 @@
 {
   "schema": "desk-digest/v1",
   "paper_only": true,
-  "updated_at": "2026-11-26T16:52:00+01:00",
-  "digest_date": "2026-11-26",
-  "measured_at": "2026-11-26T16:48:00+01:00",
-  "window_4h_utc": "11:47-15:47",
+  "updated_at": "2026-11-27T16:54:36+01:00",
+  "digest_date": "2026-11-27",
+  "measured_at": "2026-11-27T16:54:36+01:00",
+  "window_4h_utc": "11:54-15:54",
   "season": "s2",
   "season_start_utc": "2026-10-11T23:52:41Z",
   "verdict": "HOLD",
-  "headline": "Desk-digest: 4u 0 trades, fees €0; 8u 1 trade +€1,73 (fees €0,42); 72u 15 trades PF 0,52 −€70 (fees €7); seizoen s2 −€82.516, totaal €17.484",
+  "headline": "Desk-digest: 4u 0 trades; 8u 1 trade MONKY rug −€25,11; 72u 16 trades PF 0,19 −€86; seizoen s2 −€82.597, totaal €17.403",
   "metrics_4h": {
     "exits": 0,
     "winrate_pct": null,
@@ -20,22 +20,23 @@
   },
   "metrics_8h": {
     "exits": 1,
-    "winrate_pct": 100.0,
-    "profit_factor": null,
-    "expectancy_eur": 1.73,
-    "net_eur": 1.73,
-    "fees_eur": 0.42
+    "winrate_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_eur": -25.11,
+    "net_eur": -25.11,
+    "fees_eur": 0.06
   },
   "metrics_season": {
-    "exits": 963,
-    "winrate_pct": 37.0,
+    "exits": 970,
+    "winrate_pct": 36.9,
     "profit_factor": 0.594,
-    "net_eur": -82515.95,
-    "fees_eur": 9241.7,
+    "net_eur": -82597.07,
+    "fees_eur": 9243.34,
     "start_eur": 100000,
-    "total_eur": 17484.05
+    "total_eur": 17402.93
   },
   "summary_nl": [
-    "Sinds seizoensstart s2 (€100.000): 963 trades, WR 37,0%, PF 0,594, totaal €17.484 (−€82.516), fees €9.242. Eén web.server (pid 9230), laatste tick 16:47 NL, 0 open. Paper-only."
+    "Laatste 4u: geen exits, fees €0. 8u: 1 exit (MONKY RUG_EXIT −€25,11, fees €0,06). 72u: 16 exits, WR 43,8%, PF 0,19, −€86.",
+    "Sinds seizoensstart s2: 970 exits, WR 36,9%, PF 0,594, totaal €17.403 (−€82.597), fees €9.243. Eén web.server (pid 9230), laatste tick 16:54 NL, 0 open. Paper-only."
   ]
 }
