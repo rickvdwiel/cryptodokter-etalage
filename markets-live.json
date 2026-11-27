@@ -1,22 +1,47 @@
 {
  "schema": "markets-live/v1",
  "paper_only": true,
- "updated": "2026-11-27T14:20:01Z",
+ "updated": "2026-11-27T15:19:22Z",
  "markets": {
   "commodities": {
    "mode": "paper",
-   "updated": "2026-11-27T09:21:47Z",
+   "updated": "2026-11-27T15:19:22Z",
    "start_eur": 30000.0,
-   "total_eur": 29462.53,
-   "result_eur": -537.47,
+   "total_eur": 29457.99,
+   "result_eur": -542.01,
    "n_trades": 7,
    "n_trades_week": 0,
    "best_trades_week": [],
    "week_label": "week 48 (23–29 nov)",
-   "cash_eur": 29462.53,
-   "costs_eur": 51.02,
-   "open_positions": [],
+   "cash_eur": 28630.38,
+   "costs_eur": 52.06,
+   "open_positions": [
+    {
+     "symbol": "USO",
+     "name": "Olie",
+     "entry_ts": "2026-11-27T14:30:00Z",
+     "entry_px": 139.98,
+     "last_px": 139.39,
+     "last_px_source": "koers 16:18",
+     "units": 5.937339,
+     "value_eur": 827.61,
+     "pnl_eur": -4.54,
+     "pnl_pct": -0.55,
+     "reason_nl": "Gekocht: op 25-11 lag de koers op 1 van de 4 termijnen hoger dan ervoor."
+    }
+   ],
    "recent_fills": [
+    {
+     "symbol": "USO",
+     "name": "Olie",
+     "side": "BUY",
+     "ts": "2026-11-27T14:30:00Z",
+     "px": 139.98,
+     "notional_eur": 831.11,
+     "cost_eur": 1.04,
+     "status": "voorlopig",
+     "reason_nl": "Gekocht: op 25-11 lag de koers op 1 van de 4 termijnen hoger dan ervoor."
+    },
     {
      "symbol": "GLD",
      "name": "Goud",
@@ -115,25 +140,10 @@
      "cost_eur": 3.06,
      "status": "bevestigd",
      "reason_nl": "Deels verkocht: op 04-11 lag de koers op 3 van de 4 termijnen lager dan ervoor."
-    },
-    {
-     "symbol": "USO",
-     "name": "Olie",
-     "side": "SELL",
-     "ts": "2026-11-03T14:30:00Z",
-     "px": 157.45,
-     "notional_eur": 2547.59,
-     "cost_eur": 3.18,
-     "status": "bevestigd",
-     "reason_nl": "Deels verkocht: op 02-11 lag de koers op 2 van de 4 termijnen lager dan ervoor."
     }
    ],
    "price_series": {
     "GLD": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 397.27
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 390.78
@@ -609,13 +619,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 327.45
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 332.88
      }
     ],
     "SLV": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 61.58
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 59.01
@@ -1091,13 +1101,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 37.1
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 39.32
      }
     ],
     "USO": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 135.15
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 131.3
@@ -1573,18 +1583,22 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 139.89
+     },
+     {
+      "t": "2026-11-27T15:18:00Z",
+      "px": 139.39
      }
     ]
    }
   },
   "equities": {
    "mode": "paper",
-   "updated": "2026-11-27T09:21:47Z",
+   "updated": "2026-11-27T15:19:22Z",
    "start_eur": 70000.0,
-   "total_eur": 66541.3,
-   "result_eur": -3458.7,
-   "n_trades": 19,
-   "n_trades_week": 3,
+   "total_eur": 66591.57,
+   "result_eur": -3408.43,
+   "n_trades": 20,
+   "n_trades_week": 4,
    "best_trades_week": [
     {
      "symbol": "NVDA",
@@ -1594,49 +1608,58 @@
     },
     {
      "symbol": "AMZN",
-     "pnl_eur": -509.73,
-     "ts": "2026-11-23T00:00:00Z",
+     "pnl_eur": -41.43,
+     "ts": "2026-11-27T00:00:00Z",
      "exit_kind": "signal_exit"
     },
     {
-     "symbol": "MSFT",
-     "pnl_eur": -892.39,
+     "symbol": "AMZN",
+     "pnl_eur": -509.73,
      "ts": "2026-11-23T00:00:00Z",
      "exit_kind": "signal_exit"
     }
    ],
    "week_label": "week 48 (23–29 nov)",
-   "cash_eur": 60634.84,
-   "costs_eur": 283.1,
+   "cash_eur": 62302.37,
+   "costs_eur": 284.93,
    "open_positions": [
     {
      "symbol": "AAPL",
      "name": "Apple",
      "entry_ts": "2026-10-13T13:30:00Z",
      "entry_px": 352.29,
-     "last_px": 355.58,
-     "last_px_source": "officiële last_close 2026-11-25",
-     "units": 14.344936,
-     "value_eur": 5100.77,
-     "pnl_eur": 41.63,
-     "pnl_pct": 0.82,
+     "last_px": 357.71,
+     "last_px_source": "koers 16:19",
+     "units": 11.990731,
+     "value_eur": 4289.2,
+     "pnl_eur": 60.33,
+     "pnl_pct": 1.43,
      "reason_nl": "Gekocht: op 12-10 lag de koers op 4 van de 4 termijnen hoger dan ervoor."
-    },
-    {
-     "symbol": "AMZN",
-     "name": "Amazon",
-     "entry_ts": "2026-11-24T14:30:00Z",
-     "entry_px": 252.54,
-     "last_px": 244.43,
-     "last_px_source": "officiële last_close 2026-11-25",
-     "units": 3.296182,
-     "value_eur": 805.69,
-     "pnl_eur": -27.65,
-     "pnl_pct": -3.32,
-     "reason_nl": "Gekocht: op 23-11 lag de koers op 2 van de 4 termijnen hoger dan ervoor."
     }
    ],
    "recent_fills": [
+    {
+     "symbol": "AMZN",
+     "name": "Amazon",
+     "side": "SELL",
+     "ts": "2026-11-27T14:30:00Z",
+     "px": 250.45,
+     "notional_eur": 825.53,
+     "cost_eur": 0.91,
+     "status": "voorlopig",
+     "reason_nl": "Verkocht: op 25-11 lag de koers op 4 van de 4 termijnen lager dan ervoor."
+    },
+    {
+     "symbol": "AAPL",
+     "name": "Apple",
+     "side": "SELL",
+     "ts": "2026-11-27T14:30:00Z",
+     "px": 358.44,
+     "notional_eur": 843.84,
+     "cost_eur": 0.93,
+     "status": "voorlopig",
+     "reason_nl": "Deels verkocht: op 25-11 lag de koers op 1 van de 4 termijnen lager dan ervoor."
+    },
     {
      "symbol": "AAPL",
      "name": "Apple",
@@ -1724,36 +1747,10 @@
      "cost_eur": 2.55,
      "status": "bevestigd",
      "reason_nl": "Verkocht: op 20-11 lag de koers op 4 van de 4 termijnen lager dan ervoor."
-    },
-    {
-     "symbol": "AMZN",
-     "name": "Amazon",
-     "side": "SELL",
-     "ts": "2026-11-23T14:30:00Z",
-     "px": 260.26,
-     "notional_eur": 1628.65,
-     "cost_eur": 1.79,
-     "status": "bevestigd",
-     "reason_nl": "Verkocht: op 20-11 lag de koers op 4 van de 4 termijnen lager dan ervoor."
-    },
-    {
-     "symbol": "AMZN",
-     "name": "Amazon",
-     "side": "SELL",
-     "ts": "2026-11-20T14:30:00Z",
-     "px": 253.41,
-     "notional_eur": 3116.83,
-     "cost_eur": 3.43,
-     "status": "bevestigd",
-     "reason_nl": "Deels verkocht: op 19-11 lag de koers op 2 van de 4 termijnen lager dan ervoor."
     }
    ],
    "price_series": {
     "AAPL": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 301.54
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 290.55
@@ -2229,13 +2226,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 355.58
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 357.71
      }
     ],
     "AMZN": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 245.22
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 244.19
@@ -2711,13 +2708,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 244.43
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 251.9
      }
     ],
     "GOOGL": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 363.31
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 364.26
@@ -3193,9 +3190,17 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 273.1
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 271.8
      }
     ],
     "IAEX.AS": [
+     {
+      "t": "2026-06-10T15:30:00Z",
+      "px": 106.2
+     },
      {
       "t": "2026-06-11T15:30:00Z",
       "px": 107.22
@@ -3671,17 +3676,9 @@
      {
       "t": "2026-11-26T16:30:00Z",
       "px": 108.5
-     },
-     {
-      "t": "2026-11-27T14:00:00Z",
-      "px": 109.64
      }
     ],
     "MSFT": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 411.74
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 403.41
@@ -4157,13 +4154,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 489.93
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 491.47
      }
     ],
     "NVDA": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 208.64
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 208.19
@@ -4639,13 +4636,13 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 149.3
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 147.11
      }
     ],
     "SPY": [
-     {
-      "t": "2026-06-08T20:00:00Z",
-      "px": 739.22
-     },
      {
       "t": "2026-06-09T20:00:00Z",
       "px": 737.05
@@ -5121,6 +5118,10 @@
      {
       "t": "2026-11-25T21:00:00Z",
       "px": 716.7
+     },
+     {
+      "t": "2026-11-27T15:19:00Z",
+      "px": 722.79
      }
     ]
    }
