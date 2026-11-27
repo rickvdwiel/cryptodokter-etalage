@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-11-26T06:47:23Z",
+  "generated_at": "2026-11-27T06:44:31Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-houdt-bitcoin-60-000-vast-tijdens--38704ed0",
-      "title": "Crypto wekker: houdt Bitcoin $60.000 vast tijdens stille Thanksgiving?",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-herpakt-61-000-na-wilde-handelsdag/",
+      "id": "crypto-wekker-om-09-00-uur-valt-het-doek-voor-7--85024a02",
+      "title": "Crypto wekker: om 09.00 uur valt het doek voor 7 miljard aan Bitcoin-opties",
+      "url": "https://newsbit.nl/crypto-wekker-bitcoin-nadert-62-000-miljarden-aan-opties-lopen-af/",
       "source": "Newsbit",
-      "published_at": "2026-11-26T06:06:46Z",
+      "published_at": "2026-11-27T06:02:16Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "cryptobeurs-bithumb-ontdekt-grotere-omvang-van-d-aeed3d05",
-      "title": "Cryptobeurs Bithumb ontdekt grotere omvang van datalek",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/cryptobeurs-bithumb-ontdekt-grotere-omvang-van-datalek/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-26T06:03:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "uk-regulator-plans-tighter-defi-rules-citing-6-3-f54ddeed",
-      "title": "UK regulator plans tighter DeFi rules, citing $6.3B Binance hack: Report",
-      "url": "https://cointelegraph.com/news/uk-fca-defi-regulation-binance-hack",
+      "id": "japan-s-crypto-security-group-taps-seal-to-speed-ecc98e31",
+      "title": "Japan’s crypto security group taps SEAL to speed up hack response",
+      "url": "https://cointelegraph.com/news/japans-crypto-security-group-taps-seal-to-speed-up-hack-response",
       "source": "Cointelegraph",
-      "published_at": "2026-11-26T05:53:08Z",
+      "published_at": "2026-11-27T05:22:36Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "europol-volgt-cryptosporen-achter-miljardenindus-0f79a606",
-      "title": "Europol volgt cryptosporen achter miljardenindustrie van illegale streaming",
-      "url": "https://bitcoinmagazine.nl/nieuws/europol-traceert-26-miljoen-crypto-illegale-iptv",
-      "source": "Bitcoin Magazine NL",
-      "published_at": "2026-11-26T03:15:23Z",
+      "id": "binance-heft-opnamebeperkingen-door-miljardenhac-609eae47",
+      "title": "Binance heft opnamebeperkingen door miljardenhack volledig op",
+      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/binance-heft-opnamebeperkingen-door-miljardenhack-volledig-op/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-27T05:02:00Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "another-bitcoin-mining-firm-flags-hashrate-hijac-8afd69e1",
-      "title": "Another Bitcoin Mining Firm Flags 'Hashrate Hijacking' Attacks That Reroute Rewards",
-      "url": "https://decrypt.co/383999/another-bitcoin-mining-firm-hashrate-hijacking-attacks",
+      "id": "selling-crypto-on-coinbase-does-not-automaticall-64c68802",
+      "title": "Selling crypto on Coinbase does not automatically clear a deposit hold",
+      "url": "https://cryptofocus.nl/nieuws/bitcoin/coinbase-sale-cash-balance-deposit-hold-withdrawal/",
+      "source": "CryptoFocus",
+      "published_at": "2026-11-27T04:10:16Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "what-is-self-custody-how-to-hold-your-own-crypto-5bc6be0e",
+      "title": "What Is Self-Custody? How to Hold Your Own Crypto Keys",
+      "url": "https://decrypt.co/resources/what-is-self-custody-how-to-hold-your-own-crypto-keys",
       "source": "Decrypt",
-      "published_at": "2026-11-25T20:36:03Z",
+      "published_at": "2026-11-26T21:01:03Z",
       "category": "news",
       "sentiment": null
     },
