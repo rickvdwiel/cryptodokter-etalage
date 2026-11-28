@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-11-27T06:44:31Z",
+  "generated_at": "2026-11-28T06:41:47Z",
   "disclaimer": "Context only. No investment advice. Paper trading only.",
   "items": [
     {
-      "id": "crypto-wekker-om-09-00-uur-valt-het-doek-voor-7--85024a02",
-      "title": "Crypto wekker: om 09.00 uur valt het doek voor 7 miljard aan Bitcoin-opties",
-      "url": "https://newsbit.nl/crypto-wekker-bitcoin-nadert-62-000-miljarden-aan-opties-lopen-af/",
-      "source": "Newsbit",
-      "published_at": "2026-11-27T06:02:16Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "japan-s-crypto-security-group-taps-seal-to-speed-ecc98e31",
-      "title": "Japan’s crypto security group taps SEAL to speed up hack response",
-      "url": "https://cointelegraph.com/news/japans-crypto-security-group-taps-seal-to-speed-up-hack-response",
-      "source": "Cointelegraph",
-      "published_at": "2026-11-27T05:22:36Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "binance-heft-opnamebeperkingen-door-miljardenhac-609eae47",
-      "title": "Binance heft opnamebeperkingen door miljardenhack volledig op",
-      "url": "https://www.crypto-insiders.nl/nieuws/wallets-en-exchanges/binance-heft-opnamebeperkingen-door-miljardenhack-volledig-op/",
-      "source": "Crypto Insiders",
-      "published_at": "2026-11-27T05:02:00Z",
-      "category": "news",
-      "sentiment": null
-    },
-    {
-      "id": "selling-crypto-on-coinbase-does-not-automaticall-64c68802",
-      "title": "Selling crypto on Coinbase does not automatically clear a deposit hold",
-      "url": "https://cryptofocus.nl/nieuws/bitcoin/coinbase-sale-cash-balance-deposit-hold-withdrawal/",
+      "id": "uniswap-v3-s-decreaseliquidity-call-is-not-the-f-748df211",
+      "title": "Uniswap v3’s decreaseLiquidity call is not the final wallet transfer",
+      "url": "https://cryptofocus.nl/nieuws/uniswap-v3-decrease-liquidity-collect-wallet-transfer/",
       "source": "CryptoFocus",
-      "published_at": "2026-11-27T04:10:16Z",
+      "published_at": "2026-11-28T04:10:16Z",
       "category": "news",
       "sentiment": null
     },
     {
-      "id": "what-is-self-custody-how-to-hold-your-own-crypto-5bc6be0e",
-      "title": "What Is Self-Custody? How to Hold Your Own Crypto Keys",
-      "url": "https://decrypt.co/resources/what-is-self-custody-how-to-hold-your-own-crypto-keys",
-      "source": "Decrypt",
-      "published_at": "2026-11-26T21:01:03Z",
+      "id": "den-s-jonah-erlich-says-its-onchain-rules-block--0afac6f7",
+      "title": "Den’s Jonah Erlich Says Its Onchain Rules Block Rogue Transfers Even if Den Is Hacked",
+      "url": "https://unchainedcrypto.com/dens-jonah-erlich-says-its-onchain-rules-block-rogue-transfers-even-if-den-is-hacked/",
+      "source": "Unchained",
+      "published_at": "2026-11-27T21:38:29Z",
       "category": "news",
       "sentiment": null
+    },
+    {
+      "id": "franklin-templeton-makes-room-for-hype-in-crypto-6466ce93",
+      "title": "Franklin Templeton makes room for HYPE in crypto index ETF",
+      "url": "https://cointelegraph.com/news/franklin-templeton-hype-crypto-index-etf",
+      "source": "Cointelegraph",
+      "published_at": "2026-11-27T21:15:29Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "xrp-staat-voor-grote-uitbreiding-nog-maar-n-stem-fc316b59",
+      "title": "XRP staat voor grote uitbreiding: nog maar één stem nodig",
+      "url": "https://newsbit.nl/xrp-staat-voor-belangrijke-doorbraak-nog-een-stem-nodig/",
+      "source": "Newsbit",
+      "published_at": "2026-11-27T21:11:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "china-stelt-regels-vast-voor-vrijwillige-identit-8bb1977b",
+      "title": "China stelt regels vast voor vrijwillige identiteit op blockchain",
+      "url": "https://www.crypto-insiders.nl/nieuws/overheid-en-regulatie/china-stelt-regels-vast-voor-vrijwillige-identiteit-op-blockchain/",
+      "source": "Crypto Insiders",
+      "published_at": "2026-11-27T21:03:00Z",
+      "category": "news",
+      "sentiment": null
+    },
+    {
+      "id": "bitcoin-optech-newsletter-433-f0d4f360",
+      "title": "Bitcoin Optech Newsletter #433",
+      "url": "https://bitcoinops.org/en/newsletters/2026/11/27/",
+      "source": "Bitcoin Optech",
+      "published_at": "2026-11-27T00:00:00Z",
+      "category": "outlook",
+      "sentiment": "neutral"
     },
     {
       "id": "chainalysis-nodes-london-2026-chain-our-ai-works-145cb54b",
@@ -62,15 +71,6 @@
       "url": "https://blog.ethereum.org/en/2026/11/25/devcon-mumbai-wrap",
       "source": "Ethereum Foundation",
       "published_at": "2026-11-25T00:00:00Z",
-      "category": "outlook",
-      "sentiment": "neutral"
-    },
-    {
-      "id": "after-the-countdown-how-pre-ipo-perps-priced-ant-caba2d00",
-      "title": "After the Countdown: How Pre-IPO Perps Priced Anthropic’s Debut",
-      "url": "https://coinmetrics.substack.com/p/after-the-countdown-how-pre-ipo-perps",
-      "source": "Coin Metrics",
-      "published_at": "2026-11-24T14:01:22Z",
       "category": "outlook",
       "sentiment": "neutral"
     }
